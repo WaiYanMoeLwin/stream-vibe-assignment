@@ -22,16 +22,28 @@ fetch('temp/mock-movie-data.json').then(async (response) => {
     }
     console.log('selectedEntries', selectedEntries);
 
-    // Render the background mashup for the free trial CTA section
-    const freeTrialCTA = document.getElementById('free-trial-cta');
-    const backgroundMashup = freeTrialCTA.querySelector('.background-mashup');
-    selectedEntries.forEach((entry) => {
+    // Render the background mashup
+    const renderBackgroundMashup = (mashup, entry) => {
         const imgContainer = document.createElement('div');
         imgContainer.classList.add('background-mashup-image');
         const img = document.createElement('img');
         img.src = entry.poster;
         img.alt = entry.title;
         imgContainer.appendChild(img);
-        backgroundMashup.appendChild(imgContainer);
+        mashup.appendChild(imgContainer);
+    }
+
+    // Render the background mashup for the hero section
+    const heroSection = document.getElementById('hero');
+    const mashup = heroSection.querySelector('.background-mashup');
+    selectedEntries.forEach((entry) => {
+        renderBackgroundMashup(mashup, entry);
+    });
+
+    // Render the background mashup for the free trial CTA
+    const freeTrialCTA = document.getElementById('free-trial-cta');
+    const backgroundMashup = freeTrialCTA.querySelector('.background-mashup');
+    selectedEntries.forEach((entry) => {
+        renderBackgroundMashup(backgroundMashup, entry);
     });
 });

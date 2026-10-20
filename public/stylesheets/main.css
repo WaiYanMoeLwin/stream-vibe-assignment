@@ -15,10 +15,6 @@ h1, h2, h3, h4, h5, h6 {
   color: #ffffff;
 }
 
-main {
-  padding: 0 8rem;
-}
-
 header {
   display: flex;
   flex-direction: row;
@@ -27,9 +23,11 @@ header {
   background-color: transparent;
   justify-content: space-between;
   padding: 2rem 8rem;
-  position: sticky;
+  position: fixed;
   top: 0;
+  width: 100%;
   z-index: 1000;
+  box-sizing: border-box;
 }
 
 a {
@@ -105,6 +103,7 @@ nav.main-nav ul:has(:last-child > a.active) {
   justify-content: center;
   align-items: center;
   justify-content: space-between;
+  margin: 0 8rem;
   padding: 8rem 6rem;
   background: linear-gradient(89.97deg, #0F0F0F 2.42%, rgba(20, 15, 15, 0.974681) 25.46%, rgba(34, 14, 14, 0.909574) 46.72%, rgba(229, 0, 0, 0) 168.98%);
   border-radius: 1.2rem;
@@ -127,6 +126,7 @@ nav.main-nav ul:has(:last-child > a.active) {
   font-weight: 600;
   border-radius: 0.8rem;
   border: none;
+  cursor: pointer;
   color: #ffffff;
 }
 #free-trial-cta .background-mashup {
@@ -257,6 +257,85 @@ footer .footer-info a:hover {
   main {
     padding: 0 1.5rem;
   }
+}
+#hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+#hero .hero-logo {
+  width: 30rem;
+  height: 30rem;
+  margin: 20rem 0 10rem;
+}
+#hero .hero-content {
+  padding: 0 15rem;
+  text-align: center;
+}
+#hero .hero-content .hero-title {
+  font-size: 4.8rem;
+  font-weight: 700;
+  margin: 1rem 0;
+}
+#hero .hero-content button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 1.4rem 2rem;
+  background-color: #e50000;
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 0.8rem;
+  border: none;
+  cursor: pointer;
+  align-self: center;
+  align-items: center;
+  font-size: 1.4rem;
+  gap: 1rem;
+  padding: 1.6rem 2.8rem;
+  margin: 4rem auto 15rem;
+}
+#hero .hero-content button img {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+#hero .background-mashup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70rem;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-auto-rows: 20rem;
+  gap: 1rem;
+  overflow: hidden;
+  z-index: -2;
+}
+#hero .background-mashup img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#hero .fade-out-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60rem;
+  z-index: -1;
+  background: linear-gradient(to bottom, rgb(20, 20, 20) 0%, rgba(20, 20, 20, 0) 100%);
+}
+#hero .fade-out-bottom {
+  position: absolute;
+  top: 10rem;
+  left: 0;
+  width: 100%;
+  height: 60rem;
+  z-index: -1;
+  background: linear-gradient(to top, rgb(20, 20, 20) 0%, rgba(20, 20, 20, 0) 100%);
 }
 
 /*# sourceMappingURL=main.css.map */

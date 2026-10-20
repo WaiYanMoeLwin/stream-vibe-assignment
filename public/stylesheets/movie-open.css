@@ -126,6 +126,7 @@ nav.main-nav ul:has(:last-child > a.active) {
   font-weight: 600;
   border-radius: 0.8rem;
   border: none;
+  cursor: pointer;
   color: #ffffff;
 }
 #free-trial-cta .background-mashup {
