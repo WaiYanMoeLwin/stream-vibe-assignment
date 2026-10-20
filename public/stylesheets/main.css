@@ -4,9 +4,10 @@ html {
 
 body {
   font-family: "Manrope", sans-serif;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 400;
   color: #999999;
+  background-color: #141414;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -15,10 +16,79 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 main {
-  padding: 0 16rem;
+  padding: 0 8rem;
 }
 
-@media screen and (max-width: 1440px) {
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  justify-content: space-between;
+  padding: 2rem 8rem;
+  z-index: 1000;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 1.4rem;
+}
+nav a {
+  text-decoration: none;
+  color: inherit;
+  color: #999999;
+}
+nav a.active {
+  color: #ffffff;
+  padding: 1.2rem 2rem;
+  background-color: #1a1a1a;
+  border-radius: 0.8rem;
+  border: 1px solid #1a1a1a;
+}
+nav a:hover {
+  color: #ffffff;
+  padding: 1.2rem 2rem;
+  background-color: #141414;
+  border-radius: 0.8rem;
+  border: 1px solid #141414;
+}
+nav button {
+  background-color: transparent;
+  border: none;
+  width: 2.4rem;
+  height: 2.4rem;
+  padding: 0;
+  cursor: pointer;
+}
+nav button img {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+nav.main-nav {
+  background-color: #0f0f0f;
+  border: 3px solid rgb(31, 31, 31);
+  border-radius: 1rem;
+}
+nav.main-nav ul {
+  gap: 1.6rem;
+  padding: 2rem 3rem;
+}
+nav.main-nav ul:has(:first-child > a.active) {
+  padding: 2rem 3rem 2rem 1rem;
+}
+nav.main-nav ul:has(:last-child > a.active) {
+  padding: 2rem 1rem 2rem 3rem;
+}
+
+@media screen and (max-width: 1439px) {
   body {
     font-size: 1.6rem;
   }
@@ -26,7 +96,7 @@ main {
     padding: 0 8rem;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1023px) {
   body {
     font-size: 1.4rem;
   }
@@ -34,7 +104,7 @@ main {
     padding: 0 4rem;
   }
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 767px) {
   body {
     font-size: 1.4rem;
   }

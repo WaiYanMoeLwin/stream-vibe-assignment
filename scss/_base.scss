@@ -38,9 +38,10 @@ html {
 
 body {
     font-family: 'Manrope', sans-serif;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 400;
     color: $grey-60;
+    background-color: $black-08;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -49,10 +50,93 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 main {
-    padding: 0 16rem;
+    padding: 0 8rem;
 }
 
-@media screen and (max-width: 1440px) {
+@mixin flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    @include flex-row;
+    background-color: transparent;
+    justify-content: space-between;
+    padding: 2rem 8rem;
+    z-index: 1000;
+}
+
+@mixin reset-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+@mixin reset-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+nav {
+    ul {
+        @include flex-row;
+        @include reset-list;
+        gap: 1.4rem;
+    }
+    a {
+        @include reset-link;
+        color: $grey-60;
+    }
+    a.active {
+        color: $white;
+        padding: 1.2rem 2rem;
+        background-color: $black-10;
+        border-radius: 0.8rem;
+        border: 1px solid $black-10;
+    }
+    a:hover {
+        color: $white;
+        padding: 1.2rem 2rem;
+        background-color: $black-08;
+        border-radius: 0.8rem;
+        border: 1px solid $black-08;
+    }
+
+    button {
+        background-color: transparent;
+        border: none;
+        width: 2.4rem;
+        height: 2.4rem;
+        padding: 0;
+        cursor: pointer;
+
+        img {
+            width: 1.8rem;
+            height: 1.8rem;
+        }
+    }
+}
+
+nav.main-nav {
+    background-color: $black-06;
+    border: 3px solid rgba(31, 31, 31, 1);
+    border-radius: 1rem;
+
+    ul {
+        gap: 1.6rem;
+        padding: 2rem 3rem;
+    }
+    ul:has(:first-child > a.active) {
+        padding: 2rem 3rem 2rem 1rem;
+    }
+    ul:has(:last-child > a.active) {
+        padding: 2rem 1rem 2rem 3rem;
+    }
+}
+
+@media screen and (max-width: 1439px) {
     body {
         font-size: 1.6rem;
     }
@@ -61,7 +145,7 @@ main {
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1023px) {
     body {
         font-size: 1.4rem;
     }
@@ -70,7 +154,7 @@ main {
     }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 767px) {
     body {
         font-size: 1.4rem;
     }
