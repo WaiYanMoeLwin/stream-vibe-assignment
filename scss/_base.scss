@@ -49,10 +49,6 @@ h1, h2, h3, h4, h5, h6 {
     color: $white;
 }
 
-main {
-    padding: 0 8rem;
-}
-
 @mixin flex-row {
     display: flex;
     flex-direction: row;
@@ -65,9 +61,11 @@ header {
     background-color: transparent;
     justify-content: space-between;
     padding: 2rem 8rem;
-    position: sticky;
+    position: fixed;
     top: 0;
+    width: 100%;
     z-index: 1000;
+    box-sizing: border-box;
 }
 
 @mixin reset-list {
@@ -159,6 +157,7 @@ nav.main-nav {
 #free-trial-cta {
     @include flex-row;
     justify-content: space-between;
+    margin: 0 8rem;
     padding: 8rem 6rem;
     background: linear-gradient(89.97deg, #0F0F0F 2.42%, rgba(20, 15, 15, 0.974681) 25.46%, rgba(34, 14, 14, 0.909574) 46.72%, rgba(229, 0, 0, 0) 168.98%);
     border-radius: 1.2rem;
