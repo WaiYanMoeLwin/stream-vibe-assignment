@@ -1,0 +1,80 @@
+// Define variables for colors
+$white: #ffffff;
+$black: #000000;
+
+// Red Shades
+$red-45: #e50000;
+$red-50: #ff0000;
+$red-55: #ff1919;
+$red-60: #ff3333;
+$red-80: #ff9999;
+$red-90: #ffcccc;
+$red-95: #ffe5e5;
+$red-99: #fffafa;
+
+// Black Shades
+$black-06: #0f0f0f;
+$black-08: #141414;
+$black-10: #1a1a1a;
+$black-12: #1f1f1f;
+$black-15: #262626;
+$black-20: #333333;
+$black-25: #404040;
+$black-30: #4c4c4c;
+
+// Grey Shades
+$grey-60: #999999;
+$grey-65: #a6a6a6;
+$grey-70: #b3b3b3;
+$grey-75: #bfbfbf;
+$grey-90: #e4e4e7;
+$grey-95: #f1f1f3;
+$grey-97: #f7f7f8;
+$grey-99: #fcfcfd;
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: $grey-60;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    color: $white;
+}
+
+main {
+    padding: 0 16rem;
+}
+
+@media screen and (max-width: 1440px) {
+    body {
+        font-size: 1.6rem;
+    }
+    main {
+        padding: 0 8rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 1.4rem;
+    }
+    main {
+        padding: 0 4rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 1.4rem;
+    }
+    main {
+        padding: 0 1.5rem;
+    }
+}

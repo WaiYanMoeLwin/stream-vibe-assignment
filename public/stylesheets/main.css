@@ -1,0 +1,46 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #999999;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+main {
+  padding: 0 16rem;
+}
+
+@media screen and (max-width: 1440px) {
+  body {
+    font-size: 1.6rem;
+  }
+  main {
+    padding: 0 8rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 1.4rem;
+  }
+  main {
+    padding: 0 4rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 1.4rem;
+  }
+  main {
+    padding: 0 1.5rem;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
