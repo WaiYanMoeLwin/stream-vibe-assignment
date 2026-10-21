@@ -170,3 +170,42 @@ fetch('temp/mock-genres.json').then(async (response) => {
     const perPage = 5;
     renderPagination(paginationElement, genresData, currentPage, perPage, genresElement, renderGenres);
 });
+
+fetch('temp/devices.json').then(async (response) => {
+    const devicesData = await response.json();
+    console.log('devicesData', devicesData);
+
+    // Render the devices
+    const renderDevices = (element, devices) => {
+        devices.forEach((device) => {
+            const deviceContainer = document.createElement('div');
+            deviceContainer.classList.add('device-container');
+
+            const deviceHeader = document.createElement('div');
+            deviceHeader.classList.add('device-header');
+
+            const deviceImage = document.createElement('img');
+            deviceImage.src = device.icon;
+            deviceImage.alt = device.name;
+
+            const deviceName = document.createElement('h3');
+            deviceName.classList.add('device-name');
+            deviceName.textContent = device.name;
+
+            deviceHeader.appendChild(deviceImage);
+            deviceHeader.appendChild(deviceName);
+
+            const deviceDescription = document.createElement('p');
+            deviceDescription.classList.add('device-description');
+            deviceDescription.textContent = device.description;
+
+            deviceContainer.appendChild(deviceHeader);
+            deviceContainer.appendChild(deviceDescription);
+
+            element.appendChild(deviceContainer);
+        });
+    };
+
+    const devicesElement = document.querySelector('#devices .device-cards');
+    renderDevices(devicesElement, devicesData);
+});
