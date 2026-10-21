@@ -1,5 +1,9 @@
 @use "base";
 
+header.main-header {
+    position: fixed;
+}
+
 #hero {
     display: flex;
     flex-direction: column;
@@ -288,6 +292,89 @@
 
                     .faq-sub-container {
                         align-items: flex-start;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#pricing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 8rem;
+    margin-bottom: 12rem;
+
+    .billing-cycles-selector {
+        @include base.flex-row;
+        align-items: center;
+        padding: 0.8rem;
+        background-color: base.$black-06;
+        border-radius: 0.8rem;
+        border: 1px solid base.$black-15;
+
+        .billing-cycle-button {
+            padding: 1.2rem 2rem;
+            background-color: transparent;
+            border: none;
+            border-radius: 0.6rem;
+            font-size: 1.4rem;
+            cursor: pointer;
+
+            &.active {
+                background-color: base.$black-12;
+                color: base.$white;
+            }
+        }
+    }
+
+    .pricing-cards {
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+
+        .pricing-card {
+            box-sizing: border-box;
+            padding: 4rem;
+            background-color: base.$black-10;
+            border: 1px solid base.$black-15;
+            border-radius: 1rem;
+
+            .plan-title {
+                font-size: 2rem;
+                font-weight: 700;
+                margin: 0 0 1.2rem 0;
+            }
+            .plan-description {
+                margin: 0 0 4rem 0;
+            }
+            .plan-price {
+                font-weight: 500;
+                margin: 0 0 4rem 0;
+
+                .plan-price-numeric {
+                    font-size: 3rem;
+                    font-weight: 600;
+                    color: base.$white;
+                }
+            }
+
+            .pricing-card-buttons-container {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1.2rem;
+
+                button {
+                    @include base.primary-button;
+                    border-radius: 0.6rem;
+                    padding: 1.4rem auto;
+                    font-size: 1.4rem;
+
+                    &.start-free-trial-button {
+                        background-color: base.$black-08;
+                        border: 1px solid base.$black-15;
                     }
                 }
             }

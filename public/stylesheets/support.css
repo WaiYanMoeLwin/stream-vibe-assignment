@@ -18,6 +18,13 @@ h1, h2, h3, h4, h5, h6 {
   color: #ffffff;
 }
 
+button {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #999999;
+}
+
 header.main-header {
   display: flex;
   flex-direction: row;
@@ -25,7 +32,7 @@ header.main-header {
   align-items: center;
   background-color: transparent;
   padding: 2rem 8rem;
-  position: fixed;
+  position: sticky;
   top: 0;
   width: 100%;
   z-index: 1000;
@@ -124,6 +131,7 @@ nav.main-nav ul:has(:last-child > a.active) {
   padding: 1.4rem 2rem;
   background-color: #e50000;
   color: #ffffff;
+  font-family: "Manrope", sans-serif;
   font-size: 1.4rem;
   font-weight: 600;
   border-radius: 0.8rem;

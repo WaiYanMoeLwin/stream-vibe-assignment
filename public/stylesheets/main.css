@@ -18,6 +18,13 @@ h1, h2, h3, h4, h5, h6 {
   color: #ffffff;
 }
 
+button {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #999999;
+}
+
 header.main-header {
   display: flex;
   flex-direction: row;
@@ -25,7 +32,7 @@ header.main-header {
   align-items: center;
   background-color: transparent;
   padding: 2rem 8rem;
-  position: fixed;
+  position: sticky;
   top: 0;
   width: 100%;
   z-index: 1000;
@@ -124,6 +131,7 @@ nav.main-nav ul:has(:last-child > a.active) {
   padding: 1.4rem 2rem;
   background-color: #e50000;
   color: #ffffff;
+  font-family: "Manrope", sans-serif;
   font-size: 1.4rem;
   font-weight: 600;
   border-radius: 0.8rem;
@@ -301,6 +309,10 @@ footer .footer-info a:hover {
     padding: 0 1.5rem;
   }
 }
+header.main-header {
+  position: fixed;
+}
+
 #hero {
   display: flex;
   flex-direction: column;
@@ -332,6 +344,7 @@ footer .footer-info a:hover {
   padding: 1.4rem 2rem;
   background-color: #e50000;
   color: #ffffff;
+  font-family: "Manrope", sans-serif;
   font-size: 1.4rem;
   font-weight: 600;
   border-radius: 0.8rem;
@@ -517,6 +530,7 @@ footer .footer-info a:hover {
   padding: 1.4rem 2rem;
   background-color: #e50000;
   color: #ffffff;
+  font-family: "Manrope", sans-serif;
   font-size: 1.4rem;
   font-weight: 600;
   border-radius: 0.8rem;
@@ -591,6 +605,90 @@ footer .footer-info a:hover {
 }
 #faq .faq-items-container .faq-list .faq-container.expanded .faq-sub-container {
   align-items: flex-start;
+}
+
+#pricing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 8rem;
+  margin-bottom: 12rem;
+}
+#pricing .billing-cycles-selector {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-items: center;
+  padding: 0.8rem;
+  background-color: #0f0f0f;
+  border-radius: 0.8rem;
+  border: 1px solid #262626;
+}
+#pricing .billing-cycles-selector .billing-cycle-button {
+  padding: 1.2rem 2rem;
+  background-color: transparent;
+  border: none;
+  border-radius: 0.6rem;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+#pricing .billing-cycles-selector .billing-cycle-button.active {
+  background-color: #1f1f1f;
+  color: #ffffff;
+}
+#pricing .pricing-cards {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+#pricing .pricing-cards .pricing-card {
+  box-sizing: border-box;
+  padding: 4rem;
+  background-color: #1a1a1a;
+  border: 1px solid #262626;
+  border-radius: 1rem;
+}
+#pricing .pricing-cards .pricing-card .plan-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 1.2rem 0;
+}
+#pricing .pricing-cards .pricing-card .plan-description {
+  margin: 0 0 4rem 0;
+}
+#pricing .pricing-cards .pricing-card .plan-price {
+  font-weight: 500;
+  margin: 0 0 4rem 0;
+}
+#pricing .pricing-cards .pricing-card .plan-price .plan-price-numeric {
+  font-size: 3rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+#pricing .pricing-cards .pricing-card .pricing-card-buttons-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+#pricing .pricing-cards .pricing-card .pricing-card-buttons-container button {
+  padding: 1.4rem 2rem;
+  background-color: #e50000;
+  color: #ffffff;
+  font-family: "Manrope", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  border-radius: 0.8rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.6rem;
+  padding: 1.4rem auto;
+  font-size: 1.4rem;
+}
+#pricing .pricing-cards .pricing-card .pricing-card-buttons-container button.start-free-trial-button {
+  background-color: #141414;
+  border: 1px solid #262626;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -306,3 +306,99 @@ fetch('temp/faqs.json').then(async (response) => {
     const faqElement = document.querySelector('#faq .faq-items-container');
     renderFAQs(faqElement, faqData, numberOfColumns);
 });
+
+fetch('temp/pricing-plans.json').then(async (response) => {
+    const pricingPlansData = await response.json();
+    console.log('pricingPlansData', pricingPlansData);
+
+    const billingCycles = pricingPlansData.billingCycles;
+    const currency = pricingPlansData.currency;
+    const plans = pricingPlansData.plans;
+
+    const renderBillingCycles = (selectorElement, billingCycles, currency, pricingPlansElement, renderPricingPlans) => {
+        // Clear existing billing cycle options
+        selectorElement.innerHTML = '';
+
+        billingCycles.forEach((cycle) => {
+            const cycleButton = document.createElement('button');
+            cycleButton.classList.add('billing-cycle-button');
+            cycleButton.textContent = cycle.label;
+
+            cycleButton.addEventListener('click', () => {
+                // Remove active class from all buttons
+                selectorElement.querySelectorAll('.billing-cycle-button').forEach((btn) => {
+                    btn.classList.remove('active');
+                });
+                // Add active class to the clicked button
+                cycleButton.classList.add('active');
+                // Render the pricing plans for the selected billing cycle
+                renderPricingPlans(pricingPlansElement, plans, cycle.id, currency);
+            });
+
+            selectorElement.appendChild(cycleButton);
+        });
+
+        // Set the first billing cycle as active by default
+        if (billingCycles.length > 0) {
+            selectorElement.querySelector('.billing-cycle-button').classList.add('active');
+            renderPricingPlans(pricingPlansElement, plans, billingCycles[0].id, currency);
+        }
+    }
+
+    const renderPricingPlans = (element, plans, billingCycle, currency) => {
+        // Clear existing pricing plans
+        element.innerHTML = '';
+
+        plans.forEach((plan) => {
+            const pricingCard = document.createElement('div');
+            pricingCard.classList.add('pricing-card');
+
+            const planTitle = document.createElement('h3');
+            planTitle.classList.add('plan-title');
+            planTitle.textContent = plan.name;
+
+            const planDescription = document.createElement('p');
+            planDescription.classList.add('plan-description');
+            planDescription.textContent = plan.description;
+
+            const planPrice = document.createElement('p');
+            planPrice.classList.add('plan-price');
+
+            const planPriceNumeric = document.createElement('span');
+            planPriceNumeric.classList.add('plan-price-numeric');
+            planPriceNumeric.textContent = `${currency.symbol}${plan.price[billingCycle]}`
+
+            const planPriceSuffix = document.createElement('span');
+            planPriceSuffix.classList.add('plan-price-suffix');
+            planPriceSuffix.textContent = billingCycles.find(cycle => cycle.id === billingCycle).suffix;
+
+            planPrice.appendChild(planPriceNumeric);
+            planPrice.appendChild(planPriceSuffix);
+
+            pricingCard.appendChild(planTitle);
+            pricingCard.appendChild(planDescription);
+            pricingCard.appendChild(planPrice);
+
+            const buttonsContainer = document.createElement('div');
+            buttonsContainer.classList.add('pricing-card-buttons-container');
+
+            const startFreeTrialButton = document.createElement('button');
+            startFreeTrialButton.classList.add('start-free-trial-button');
+            startFreeTrialButton.textContent = 'Start Free Trial';
+            buttonsContainer.appendChild(startFreeTrialButton);
+
+            const choosePlanButton = document.createElement('button');
+            choosePlanButton.classList.add('choose-plan-button');
+            choosePlanButton.textContent = 'Choose Plan';
+            buttonsContainer.appendChild(choosePlanButton);
+
+            pricingCard.appendChild(buttonsContainer);
+
+            element.appendChild(pricingCard);
+        });
+    }
+
+    const pricingPlansElement = document.querySelector('#pricing .pricing-cards');
+    const billingCyclesSelectorElement = document.querySelector('#pricing .billing-cycles-selector');
+    renderBillingCycles(billingCyclesSelectorElement, billingCycles, currency, pricingPlansElement, renderPricingPlans);
+});
