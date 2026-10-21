@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <header>
+    <header class="main-header">
         <img src="public/images/logo.png" alt="StreamVibe Logo" class="logo">
         <nav class="main-nav">
             <ul>
@@ -48,9 +48,31 @@
                 <button class="hero-button"><img src="public/images/icons/play.svg" alt="Play"> Start Watching
                     Now</button>
             </article>
-            <div class="background-mashup"></div>
-            <div class="fade-out-top"></div>
-            <div class="fade-out-bottom"></div>
+            <div class="background-mashup">
+                <div class="fade-out-top"></div>
+                <div class="fade-out-bottom"></div>
+            </div>
+        </section>
+
+        <section id="categories">
+            <header class="section-header">
+                <article>
+                    <h2 class="section-title">Explore our wide variety of categories</h2>
+                    <p class="section-description">Whether you're looking for a comedy to make you laugh, a drama to
+                        make
+                        you
+                        think, or a documentary to learn something
+                        new</p>
+                </article>
+                <div class="pagination">
+                    <button class="pagination-button" aria-label="Previous"><img
+                            src="public/images/icons/arrow-left.svg" alt="Previous"></button>
+                    <div class="pages"></div>
+                    <button class="pagination-button" aria-label="Next"><img src="public/images/icons/arrow-right.svg"
+                            alt="Next"></button>
+                </div>
+            </header>
+            <article class="category-cards"></article>
         </section>
 
         <section id="free-trial-cta">

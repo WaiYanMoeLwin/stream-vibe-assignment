@@ -38,10 +38,11 @@ html {
 
 body {
     font-family: 'Manrope', sans-serif;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: 400;
     color: $grey-60;
     background-color: $black-08;
+    margin: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -52,14 +53,13 @@ h1, h2, h3, h4, h5, h6 {
 @mixin flex-row {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
-header {
+header.main-header {
     @include flex-row;
     background-color: transparent;
-    justify-content: space-between;
     padding: 2rem 8rem;
     position: fixed;
     top: 0;
@@ -149,6 +149,7 @@ nav.main-nav {
     padding: 1.4rem 2rem;
     background-color: $red-45;
     color: $white;
+    font-size: 1.4rem;
     font-weight: 600;
     border-radius: 0.8rem;
     border: none;
@@ -157,7 +158,6 @@ nav.main-nav {
 
 #free-trial-cta {
     @include flex-row;
-    justify-content: space-between;
     margin: 0 8rem;
     padding: 8rem 6rem;
     background: linear-gradient(89.97deg, #0F0F0F 2.42%, rgba(20, 15, 15, 0.974681) 25.46%, rgba(34, 14, 14, 0.909574) 46.72%, rgba(229, 0, 0, 0) 168.98%);
@@ -268,7 +268,6 @@ footer {
 
     .footer-info {
         @include flex-row;
-        justify-content: space-between;
         border-top: 1px solid $black-15;
         padding: 2rem 0 0 0;
 
@@ -279,6 +278,47 @@ footer {
         a:hover {
             color: $white;
             transform: scale(1.05);
+        }
+    }
+}
+
+.pagination {
+    @include flex-row;
+    background-color: $black-06;
+    border-radius: 1rem;
+    border: 1px solid $black-12;
+    padding: 1.2rem;
+    gap: 1.2rem;
+
+    button {
+        background-color: $black-10;
+        border: 1px solid $black-12;
+        border-radius: 0.6rem;
+        padding: 1rem;
+        cursor: pointer;
+
+        img {
+            width: 1.8rem;
+            height: 1.5rem;
+        }
+    }
+
+    .pages {
+        @include flex-row;
+        gap: 0.3rem;
+
+        .pagination-page {
+            background-color: $black-20;
+            width: 1.4rem;
+            height: 0.4rem;
+            padding: 0;
+            border-radius: 100rem;
+            border: none;
+
+            &.active {
+                background-color: $red-45;
+                width: 1.8rem;
+            }
         }
     }
 }
