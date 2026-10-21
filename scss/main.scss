@@ -83,12 +83,18 @@
 
 .section-header {
     @include base.flex-row;
+    align-items: end;
     width: 100%;
     margin-bottom: 6rem;
 
     .section-title {
         font-size: 2.8rem;
         font-weight: 700;
+        margin: 0 0 1rem;
+    }
+    
+    .section-description {
+        margin: 0;
     }
 }
 
@@ -201,5 +207,90 @@
             }
         }
     }
+}
 
+#faq {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 8rem;
+    margin-bottom: 12rem;
+
+    .section-header {
+        button {
+            @include base.primary-button;
+            border-radius: 0.6rem;
+        }
+    }
+
+    .faq-items-container {
+        @include base.flex-row;
+        align-items: flex-start;
+        gap: 4rem;
+
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-content: space-between;
+
+            .faq-container {
+                @include base.flex-row;
+                padding: 2.4rem;
+                gap: 1.6rem;
+                width: 62rem;
+                box-sizing: border-box;
+                
+                .faq-sub-container {
+                    @include base.flex-row;
+                    gap: 1.6rem;
+
+                    .faq-number {
+                        font-weight: 600;
+                        color: base.$white;
+                        padding: 1.6rem;
+                        background-color: base.$black-12;
+                        border-radius: 0.8rem;
+                        border: 1px solid base.$black-15;
+                    }
+
+                    .faq-question {
+                        font-size: 2rem;
+                        font-weight: 500;
+                        margin: 0;
+                    }
+                }
+
+                button.faq-toggle-button {
+                    padding: 0.2rem;
+                    background-color: transparent;
+                    border: none;
+                    border-radius: 0.6rem;
+                    cursor: pointer;
+
+                    img {
+                        width: 2.4rem;
+                        height: 2.4rem;
+                    }
+
+                    &:hover {
+                        background-color: base.$black-15;
+                        transform: scale(1.1);
+                    }
+                }
+
+                .hidden {
+                    display: none;
+                }
+
+                &.expanded {
+                    align-items: flex-start;
+
+                    .faq-sub-container {
+                        align-items: flex-start;
+                    }
+                }
+            }
+        }
+    }
 }

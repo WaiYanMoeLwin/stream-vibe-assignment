@@ -390,12 +390,17 @@ footer .footer-info a:hover {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  align-items: end;
   width: 100%;
   margin-bottom: 6rem;
 }
 .section-header .section-title {
   font-size: 2.8rem;
   font-weight: 700;
+  margin: 0 0 1rem;
+}
+.section-header .section-description {
+  margin: 0;
 }
 
 #categories {
@@ -499,6 +504,93 @@ footer .footer-info a:hover {
   align-items: center;
   justify-content: flex-start;
   gap: 1.2rem;
+}
+
+#faq {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 8rem;
+  margin-bottom: 12rem;
+}
+#faq .section-header button {
+  padding: 1.4rem 2rem;
+  background-color: #e50000;
+  color: #ffffff;
+  font-size: 1.4rem;
+  font-weight: 600;
+  border-radius: 0.8rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.6rem;
+}
+#faq .faq-items-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-items: flex-start;
+  gap: 4rem;
+}
+#faq .faq-items-container .faq-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: space-between;
+}
+#faq .faq-items-container .faq-list .faq-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.4rem;
+  gap: 1.6rem;
+  width: 62rem;
+  box-sizing: border-box;
+}
+#faq .faq-items-container .faq-list .faq-container .faq-sub-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.6rem;
+}
+#faq .faq-items-container .faq-list .faq-container .faq-sub-container .faq-number {
+  font-weight: 600;
+  color: #ffffff;
+  padding: 1.6rem;
+  background-color: #1f1f1f;
+  border-radius: 0.8rem;
+  border: 1px solid #262626;
+}
+#faq .faq-items-container .faq-list .faq-container .faq-sub-container .faq-question {
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 0;
+}
+#faq .faq-items-container .faq-list .faq-container button.faq-toggle-button {
+  padding: 0.2rem;
+  background-color: transparent;
+  border: none;
+  border-radius: 0.6rem;
+  cursor: pointer;
+}
+#faq .faq-items-container .faq-list .faq-container button.faq-toggle-button img {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+#faq .faq-items-container .faq-list .faq-container button.faq-toggle-button:hover {
+  background-color: #262626;
+  transform: scale(1.1);
+}
+#faq .faq-items-container .faq-list .faq-container .hidden {
+  display: none;
+}
+#faq .faq-items-container .faq-list .faq-container.expanded {
+  align-items: flex-start;
+}
+#faq .faq-items-container .faq-list .faq-container.expanded .faq-sub-container {
+  align-items: flex-start;
 }
 
 /*# sourceMappingURL=main.css.map */
