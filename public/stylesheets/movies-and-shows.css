@@ -285,6 +285,10 @@ footer .footer-info a:hover {
   width: 1.8rem;
 }
 
+.hidden {
+  display: none;
+}
+
 @media screen and (max-width: 1439px) {
   body {
     font-size: 1.6rem;
@@ -308,6 +312,96 @@ footer .footer-info a:hover {
   main {
     padding: 0 1.5rem;
   }
+}
+#trailers-carousel {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  height: 70rem;
+  overflow: hidden;
+  padding: 0 4rem 1.6rem;
+  border-radius: 1.2rem;
+  border: 1px solid;
+  border-image: linear-gradient(180deg, rgb(38, 38, 38) 0%, rgba(38, 38, 38, 0) 100%) 1;
+  margin: 0 8rem 18rem;
+}
+#trailers-carousel .section-header {
+  text-align: center;
+  margin-bottom: 2.4rem;
+  padding: 0 12rem;
+}
+#trailers-carousel .section-header .trailer-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0;
+}
+#trailers-carousel .section-header .trailer-description {
+  margin: 0;
+}
+#trailers-carousel .media-buttons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+#trailers-carousel .media-buttons-container img {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+#trailers-carousel .media-buttons-container .play-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 2rem;
+  background-color: #e50000;
+  color: #ffffff;
+  font-family: "Manrope", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  border-radius: 0.8rem;
+  border: none;
+  cursor: pointer;
+  gap: 1rem;
+  margin: 0;
+}
+#trailers-carousel .media-buttons-container .watch-list-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 0;
+}
+#trailers-carousel .media-buttons-container .watch-list-buttons button {
+  background-color: #0f0f0f;
+  border: 1px solid #262626;
+  border-radius: 0.8rem;
+  padding: 1.2rem;
+  margin: 0;
+}
+#trailers-carousel .pagination {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+}
+#trailers-carousel .pagination .pagination-button {
+  background-color: #0f0f0f;
+  padding: 1.2rem;
+}
+#trailers-carousel .pagination .pagination-button img {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+#trailers-carousel .pagination .pages .pagination-page {
+  width: 1.6rem;
+}
+#trailers-carousel .pagination .pages .pagination-page.active {
+  width: 2.3rem;
 }
 
 /*# sourceMappingURL=movies-and-shows.css.map */

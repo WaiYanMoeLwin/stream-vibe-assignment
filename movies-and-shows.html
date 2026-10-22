@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="public/stylesheets/movies-and-shows.css">
-    <script src="js/index.js" defer></script>
+    <script type="module" src="js/movies-and-shows.js" defer></script>
     <title>Movies & Shows - StreamVibe</title>
 </head>
 
@@ -34,6 +34,34 @@
     </header>
 
     <main>
+        <section id="trailers-carousel">
+            <article class="section-header">
+                <h2 class="trailer-title"></h2>
+                <p class="trailer-description"></p>
+            </article>
+            <article class="media-buttons-container">
+                <button class="play-button"><img src="public/images/icons/play.svg" alt="Play"> Play Now</button>
+                <div class="watch-list-buttons">
+                    <button class="add-to-watch-list-button" aria-label="Add to Watch List">
+                        <img src="public/images/icons/plus.svg" alt="Add to Watch List">
+                    </button>
+                    <button class="like-button" aria-label="Like">
+                        <img src="public/images/icons/like.svg" alt="Like">
+                    </button>
+                    <button class="mute-button muted" aria-label="Mute/Unmute">
+                        <img src="public/images/icons/audio.svg" alt="Unmute">
+                        <img src="public/images/icons/mute.svg" class="hidden" alt="Mute">
+                    </button>
+                </div>
+            </article>
+            <article class="pagination">
+                <button class="prev-button pagination-button" aria-label="Previous"><img
+                        src="public/images/icons/arrow-left.svg" alt="Previous Trailer"></button>
+                <div class="pages"></div>
+                <button class="next-button pagination-button" aria-label="Next"><img
+                        src="public/images/icons/arrow-right.svg" alt="Next Trailer"></button>
+            </article>
+        </section>
 
         <section id="free-trial-cta">
             <article>

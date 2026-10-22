@@ -285,6 +285,10 @@ footer .footer-info a:hover {
   width: 1.8rem;
 }
 
+.hidden {
+  display: none;
+}
+
 @media screen and (max-width: 1439px) {
   body {
     font-size: 1.6rem;

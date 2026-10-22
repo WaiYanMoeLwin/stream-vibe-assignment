@@ -1,1 +1,89 @@
 @use "base";
+
+#trailers-carousel {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 70rem;
+    overflow: hidden;
+    padding: 0 4rem 1.6rem;
+    border-radius: 1.2rem;
+    border: 1px solid;
+    border-image: linear-gradient(180deg, rgba(38, 38, 38, 1) 0%, rgba(38, 38, 38, 0) 100%) 1;
+    margin: 0 8rem 18rem;
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 2.4rem;
+        padding: 0 12rem;
+
+        .trailer-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 0;
+        }
+        .trailer-description {
+            margin: 0;
+        }
+    }
+
+    .media-buttons-container {
+        @include base.flex-row;
+        justify-content: center;
+        gap: 2rem;
+        margin-bottom: 4rem;
+
+        img {
+            width: 2.4rem;
+            height: 2.4rem;
+        }
+
+        .play-button {
+            @include base.flex-row;
+            @include base.primary-button;
+            gap: 1rem;
+            margin: 0
+        }
+
+        .watch-list-buttons {
+            @include base.flex-row;
+            gap: 0.8rem;
+            margin: 0;
+
+            button {
+                background-color: base.$black-06;
+                border: 1px solid base.$black-15;
+                border-radius: 0.8rem;
+                padding: 1.2rem;
+                margin: 0;
+            }
+        }
+    }
+
+    .pagination {
+        width: 100%;
+        background-color: transparent;
+        border: none;
+
+        .pagination-button {
+            background-color: base.$black-06;
+            padding: 1.2rem;
+
+            img {
+                width: 2.4rem;
+                height: 2.4rem;
+            }
+        }
+
+        .pages {
+            .pagination-page {
+                width: 1.6rem;
+
+                &.active {
+                    width: 2.3rem;
+                }
+            }
+        }
+    }
+}
