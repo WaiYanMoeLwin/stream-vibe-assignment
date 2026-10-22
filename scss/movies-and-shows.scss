@@ -11,7 +11,7 @@
     border-radius: 1.2rem;
     border: 1px solid;
     border-image: linear-gradient(180deg, rgba(38, 38, 38, 1) 0%, rgba(38, 38, 38, 0) 100%) 1;
-    margin: 0 8rem 18rem;
+    margin: 0 8rem 12rem;
 
     .section-header {
         text-align: center;
@@ -68,12 +68,9 @@
 
         .pagination-button {
             background-color: base.$black-06;
+            width: 4.8rem;
+            height: 4.8rem;
             padding: 1.2rem;
-
-            img {
-                width: 2.4rem;
-                height: 2.4rem;
-            }
         }
 
         .pages {
@@ -82,6 +79,167 @@
 
                 &.active {
                     width: 2.3rem;
+                }
+            }
+        }
+    }
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 8rem 12rem;
+    padding: 4rem;
+    gap: 8rem;
+    position: relative;
+    border: 1px solid base.$black-15;
+    border-radius: 1.2rem;
+
+    .content-title {
+        background-color: base.$red-45;
+        padding: 0.8rem 2rem;
+        font-size: 1.6rem;
+        border-radius: 0.6rem;
+        display: inline-block;
+        margin: 0;
+        position: absolute;
+        top: -1.6rem;
+        left: 4rem;
+    }
+
+    .section-header {
+        @include base.flex-row;
+        width: 100%;
+        margin-bottom: 4rem;
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 0;
+        }
+    }
+
+    .genre-cards, .popular-genre-cards {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        width: 100%;
+        gap: 2rem;
+
+        .genre-item-container {
+            padding: 2.4rem;
+            background-color: base.$black-10;
+            border-radius: 1rem;
+            border: 1px solid base.$black-15;
+            gap: 2rem;
+
+            .genre-images-container {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+                height: 19rem;
+                border-radius: 0.5rem;
+                gap: 0.5rem;
+                position: relative;
+                .fade-out-bottom {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 0;
+                    background: linear-gradient(180deg, rgba(26, 26, 26, 0) 0%, #1A1A1A 101.79%);
+                }
+
+                .genre-image {
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                    border-radius: 0.6rem;
+                }
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .genre-title-container {
+                @include base.flex-row;
+
+                .genre-title {
+                    font-size: 1.6rem;
+                    font-weight: 600;
+                    margin: 0;
+                }
+                img {
+                    width: 2.4rem;
+                    height: 2.4rem;
+                }
+            }
+        }
+    }
+    .popular-genre-cards {
+        grid-template-columns: repeat(4, 1fr);
+
+        .genre-item-container {
+            .genre-images-container {
+                height: 21rem;
+            }
+        }
+
+        .top-10-tag {
+            display: inline-block;
+            color: base.$white;
+            background-color: base.$red-45;
+            font-size: 1.2rem;
+            line-height: 1rem;
+            font-weight: 600;
+            padding: 0.8rem;
+            border-radius: 0.4rem;
+        }
+    }
+
+    .content-cards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        width: 100%;
+        gap: 2rem;
+
+        .content-card {
+            padding: 1.6rem;
+            background-color: base.$black-10;
+            border-radius: 1rem;
+            border: 1px solid base.$black-15;
+
+            .content-image-container {
+                width: 100%;
+                height: auto;
+                border-radius: 1rem;
+                overflow: hidden;
+                margin-bottom: 1.6rem;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .content-info-container {
+                @include base.flex-row;
+                justify-content: space-between;
+                align-items: center;
+
+                .content-info {
+                    @include base.flex-row;
+                    justify-content: center;
+                    gap: 0.4rem;
+                    background-color: base.$black-08;
+                    border-radius: 5rem;
+                    border: 1px solid base.$black-15;
+                    padding: 0.6rem;
+                    font-size: 1.2rem;
                 }
             }
         }

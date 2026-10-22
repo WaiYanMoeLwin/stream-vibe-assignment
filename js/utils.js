@@ -1,6 +1,6 @@
 
 // Render the pagination
-export const renderPagination = (paginationElement, items, currentPage, perPage, mainElement, renderMainElement, isCarousel=false) => {
+export const renderPagination = (paginationElement, items, currentPage, perPage, mainElement, renderMainElement) => {
     const totalPages = Math.ceil(items.length / perPage);
     const pageElement = paginationElement.querySelector('.pages');
     
@@ -27,40 +27,23 @@ export const renderPagination = (paginationElement, items, currentPage, perPage,
     const prevButton = paginationElement.querySelector('.pagination-button[aria-label="Previous"]');
     const nextButton = paginationElement.querySelector('.pagination-button[aria-label="Next"]');
     
-    if (!isCarousel) {
-        prevButton.disabled = currentPage === 1;
-        nextButton.disabled = currentPage === totalPages;
-
-        prevButton.onclick = () => {
-            if (currentPage > 1) {
-                renderPagination(paginationElement, items, currentPage - 1, perPage, mainElement, renderMainElement);
-            }
-        };
-
-        nextButton.onclick = () => {
-            if (currentPage < totalPages) {
-                renderPagination(paginationElement, items, currentPage + 1, perPage, mainElement, renderMainElement);
-            }
-        };
-    } else {
-        prevButton.onclick = () => {
-            if (currentPage > 1) {
-                renderPagination(paginationElement, items, currentPage - 1, perPage, mainElement, renderMainElement, true);
-            } else {
-                // If on the first page, loop to the last page
-                renderPagination(paginationElement, items, totalPages, perPage, mainElement, renderMainElement, true);
-            }
-        };
-        
-        nextButton.onclick = () => {
-            if (currentPage < totalPages) {
-                renderPagination(paginationElement, items, currentPage + 1, perPage, mainElement, renderMainElement, true);
-            } else {
-                // If on the last page, loop to the first page
-                renderPagination(paginationElement, items, 1, perPage, mainElement, renderMainElement, true);
-            }
-        };
-    }
+    prevButton.onclick = () => {
+        if (currentPage > 1) {
+            renderPagination(paginationElement, items, currentPage - 1, perPage, mainElement, renderMainElement, true);
+        } else {
+            // If on the first page, loop to the last page
+            renderPagination(paginationElement, items, totalPages, perPage, mainElement, renderMainElement, true);
+        }
+    };
+    
+    nextButton.onclick = () => {
+        if (currentPage < totalPages) {
+            renderPagination(paginationElement, items, currentPage + 1, perPage, mainElement, renderMainElement, true);
+        } else {
+            // If on the last page, loop to the first page
+            renderPagination(paginationElement, items, 1, perPage, mainElement, renderMainElement, true);
+        }
+    };
 
     // Render the items for the current page
     renderMainElement(mainElement, items, currentPage, perPage);

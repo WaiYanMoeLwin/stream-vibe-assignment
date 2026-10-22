@@ -258,12 +258,14 @@ footer .footer-info a:hover {
   background-color: #1a1a1a;
   border: 1px solid #1f1f1f;
   border-radius: 0.6rem;
+  width: 4.4rem;
+  height: 4.4rem;
   padding: 1rem;
   cursor: pointer;
 }
 .pagination button img {
-  width: 1.8rem;
-  height: 1.5rem;
+  width: 2.4rem;
+  height: 2.4rem;
 }
 .pagination .pages {
   display: flex;
@@ -484,6 +486,10 @@ header.main-header {
   font-size: 1.6rem;
   font-weight: 600;
   margin: 0;
+}
+#categories .category-cards .genre-item-container .genre-title-container img {
+  width: 2.4rem;
+  height: 2.4rem;
 }
 
 #devices {

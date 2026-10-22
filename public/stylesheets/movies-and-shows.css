@@ -258,12 +258,14 @@ footer .footer-info a:hover {
   background-color: #1a1a1a;
   border: 1px solid #1f1f1f;
   border-radius: 0.6rem;
+  width: 4.4rem;
+  height: 4.4rem;
   padding: 1rem;
   cursor: pointer;
 }
 .pagination button img {
-  width: 1.8rem;
-  height: 1.5rem;
+  width: 2.4rem;
+  height: 2.4rem;
 }
 .pagination .pages {
   display: flex;
@@ -324,7 +326,7 @@ footer .footer-info a:hover {
   border-radius: 1.2rem;
   border: 1px solid;
   border-image: linear-gradient(180deg, rgb(38, 38, 38) 0%, rgba(38, 38, 38, 0) 100%) 1;
-  margin: 0 8rem 18rem;
+  margin: 0 8rem 12rem;
 }
 #trailers-carousel .section-header {
   text-align: center;
@@ -391,17 +393,168 @@ footer .footer-info a:hover {
 }
 #trailers-carousel .pagination .pagination-button {
   background-color: #0f0f0f;
+  width: 4.8rem;
+  height: 4.8rem;
   padding: 1.2rem;
-}
-#trailers-carousel .pagination .pagination-button img {
-  width: 2.4rem;
-  height: 2.4rem;
 }
 #trailers-carousel .pagination .pages .pagination-page {
   width: 1.6rem;
 }
 #trailers-carousel .pagination .pages .pagination-page.active {
   width: 2.3rem;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 8rem 12rem;
+  padding: 4rem;
+  gap: 8rem;
+  position: relative;
+  border: 1px solid #262626;
+  border-radius: 1.2rem;
+}
+.content-container .content-title {
+  background-color: #e50000;
+  padding: 0.8rem 2rem;
+  font-size: 1.6rem;
+  border-radius: 0.6rem;
+  display: inline-block;
+  margin: 0;
+  position: absolute;
+  top: -1.6rem;
+  left: 4rem;
+}
+.content-container .section-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 4rem;
+}
+.content-container .section-header .section-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0;
+}
+.content-container .genre-cards, .content-container .popular-genre-cards {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  width: 100%;
+  gap: 2rem;
+}
+.content-container .genre-cards .genre-item-container, .content-container .popular-genre-cards .genre-item-container {
+  padding: 2.4rem;
+  background-color: #1a1a1a;
+  border-radius: 1rem;
+  border: 1px solid #262626;
+  gap: 2rem;
+}
+.content-container .genre-cards .genre-item-container .genre-images-container, .content-container .popular-genre-cards .genre-item-container .genre-images-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  height: 19rem;
+  border-radius: 0.5rem;
+  gap: 0.5rem;
+  position: relative;
+}
+.content-container .genre-cards .genre-item-container .genre-images-container .fade-out-bottom, .content-container .popular-genre-cards .genre-item-container .genre-images-container .fade-out-bottom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: linear-gradient(180deg, rgba(26, 26, 26, 0) 0%, #1A1A1A 101.79%);
+}
+.content-container .genre-cards .genre-item-container .genre-images-container .genre-image, .content-container .popular-genre-cards .genre-item-container .genre-images-container .genre-image {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 0.6rem;
+}
+.content-container .genre-cards .genre-item-container .genre-images-container img, .content-container .popular-genre-cards .genre-item-container .genre-images-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.content-container .genre-cards .genre-item-container .genre-title-container, .content-container .popular-genre-cards .genre-item-container .genre-title-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.content-container .genre-cards .genre-item-container .genre-title-container .genre-title, .content-container .popular-genre-cards .genre-item-container .genre-title-container .genre-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin: 0;
+}
+.content-container .genre-cards .genre-item-container .genre-title-container img, .content-container .popular-genre-cards .genre-item-container .genre-title-container img {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+.content-container .popular-genre-cards {
+  grid-template-columns: repeat(4, 1fr);
+}
+.content-container .popular-genre-cards .genre-item-container .genre-images-container {
+  height: 21rem;
+}
+.content-container .popular-genre-cards .top-10-tag {
+  display: inline-block;
+  color: #ffffff;
+  background-color: #e50000;
+  font-size: 1.2rem;
+  line-height: 1rem;
+  font-weight: 600;
+  padding: 0.8rem;
+  border-radius: 0.4rem;
+}
+.content-container .content-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  gap: 2rem;
+}
+.content-container .content-cards .content-card {
+  padding: 1.6rem;
+  background-color: #1a1a1a;
+  border-radius: 1rem;
+  border: 1px solid #262626;
+}
+.content-container .content-cards .content-card .content-image-container {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  overflow: hidden;
+  margin-bottom: 1.6rem;
+}
+.content-container .content-cards .content-card .content-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.content-container .content-cards .content-card .content-info-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+}
+.content-container .content-cards .content-card .content-info-container .content-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  background-color: #141414;
+  border-radius: 5rem;
+  border: 1px solid #262626;
+  padding: 0.6rem;
+  font-size: 1.2rem;
 }
 
 /*# sourceMappingURL=movies-and-shows.css.map */
