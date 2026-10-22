@@ -410,16 +410,150 @@ footer .footer-info a:hover {
 #content-info .main-info .episodes-section {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
-  padding: 3rem;
+  gap: 2.4rem;
+  padding: 2rem 4rem;
 }
 #content-info .main-info .episodes-section.hidden {
   display: none;
 }
 #content-info .main-info .episodes-section .seasons-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
+}
+#content-info .main-info .episodes-section .seasons-list .season-item {
+  display: flex;
+  flex-direction: column;
+  padding: 2.4rem 4rem;
+  gap: 2.4rem;
+  background-color: #0f0f0f;
+  border: 1px solid #262626;
+  border-radius: 1.2rem;
+}
+#content-info .main-info .episodes-section .seasons-list .season-item .season-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.8rem;
+}
+#content-info .main-info .episodes-section .seasons-list .season-item .season-header .season-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+#content-info .main-info .episodes-section .seasons-list .season-item .season-header .season-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0;
+}
+#content-info .main-info .episodes-section .seasons-list .season-item .season-header .episode-count {
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin: 0;
+}
+#content-info .main-info .episodes-section .seasons-list .season-item .season-header .expand-button, #content-info .main-info .episodes-section .seasons-list .season-item .season-header .collapse-button {
+  justify-content: center;
+  align-items: center;
+  padding: 1.2rem;
+  background-color: #141414;
+  border: 1px solid #262626;
+  border-radius: 10rem;
+  width: 4.4rem;
+  height: 4.4rem;
+  box-sizing: border-box;
+}
+#content-info .main-info .episodes-section .seasons-list .season-item .season-header .expand-button img, #content-info .main-info .episodes-section .seasons-list .season-item .season-header .collapse-button img {
+  width: 2rem;
+  height: 2rem;
+}
+#content-info .main-info .episodes-section .seasons-list .season-item .episodes-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+#content-info .main-info .episodes-section .seasons-list .season-item .episodes-list.hidden {
+  display: none;
+}
+#content-info .main-info .episodes-section .seasons-list .season-item .episodes-list .episode-item {
+  display: grid;
+  grid-template-columns: min-content min-content auto;
+  align-items: center;
+  grid-auto-rows: min-content;
+  gap: 1.8rem;
+  padding: 3rem 0 4rem;
+  flex: 1;
+  border-top: 1px solid #262626;
+}
+#content-info .main-info .episodes-section .seasons-list .season-item .episodes-list .episode-item .episode-number {
+  font-size: 2.4rem;
+  font-weight: 600;
+  margin: 0;
+}
+#content-info .main-info .episodes-section .seasons-list .season-item .episodes-list .episode-item .episode-thumbnail {
+  height: 12rem;
+  width: 17rem;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid #262626;
+  position: relative;
+}
+#content-info .main-info .episodes-section .seasons-list .season-item .episodes-list .episode-item .episode-thumbnail .thumbnail-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+#content-info .main-info .episodes-section .seasons-list .season-item .episodes-list .episode-item .episode-thumbnail .play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1rem;
+  border-radius: 6.7rem;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+#content-info .main-info .episodes-section .seasons-list .season-item .episodes-list .episode-item .episode-thumbnail .play-button .play-icon {
+  width: 3rem;
+  height: 3rem;
+}
+#content-info .main-info .episodes-section .seasons-list .season-item .episodes-list .episode-item .episode-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+#content-info .main-info .episodes-section .seasons-list .season-item .episodes-list .episode-item .episode-header .episode-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0;
+}
+#content-info .main-info .episodes-section .seasons-list .season-item .episodes-list .episode-item .episode-header .episode-duration {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem;
+  border-radius: 0.6rem;
+  background-color: #141414;
+  border: 1px solid #262626;
+}
+#content-info .main-info .episodes-section .seasons-list .season-item .episodes-list .episode-item .episode-header .episode-duration .duration-text {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin: 0;
+}
+#content-info .main-info .episodes-section .seasons-list .season-item .episodes-list .episode-item .episode-header .episode-duration img {
+  width: 2rem;
+  height: 2rem;
 }
 #content-info .main-info section {
   padding: 4rem;

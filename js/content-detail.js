@@ -26,6 +26,14 @@ fetch('temp/mock-movie-data.json').then( async response => {
         renderMainContentInfo(document.querySelector('#content-info .main-info'), contentEntry);
         renderSideBarContentInfo(document.querySelector('#content-info .sidebar-info'), contentEntry);
 
+        if (contentEntry.type === 'show') {
+            const episodesSection = document.querySelector('.main-info .episodes-section');
+            episodesSection.classList.remove('hidden');
+            const seasonsElement = episodesSection.querySelector('.seasons-list');
+
+            renderSeasonList(seasonsElement, contentEntry.seasons);
+        }
+
     } else {
         console.error('Content entry not found for ID:', contentId);
     }
@@ -300,5 +308,137 @@ const renderSideBarContentInfo = (sidebarContentInfoElement, contentEntry) => {
         composerItem.appendChild(composerInfo);
 
         musicElement.appendChild(composerItem);
+    });
+}
+
+const renderSeasonList = (seasonsElement, seasons) => {
+    console.log('Rendering seasons:', seasons);
+
+    seasons.forEach((season) => {
+        const seasonItem = document.createElement('li');
+        seasonItem.classList.add('season-item');
+
+        const seasonHeader = document.createElement('div');
+        seasonHeader.classList.add('season-header');
+
+        const seasonInfo = document.createElement('div');
+        seasonInfo.classList.add('season-info');
+
+        const seasonTitle = document.createElement('h3');
+        seasonTitle.classList.add('season-title');
+        seasonTitle.textContent = `Season ${season.seasonNumber.toString().padStart(2, '0')}`;
+
+        const episodeCount = document.createElement('span');
+        episodeCount.classList.add('episode-count');
+        episodeCount.textContent = `${season.episodes.length} Episodes`;
+
+        const expandButton = document.createElement('button');
+        expandButton.classList.add('expand-button');
+        const expandIcon = document.createElement('img');
+        expandIcon.src = 'public/images/icons/arrow-down.svg';
+        expandIcon.alt = 'Expand';
+        expandButton.appendChild(expandIcon);
+
+        const collapseButton = document.createElement('button');
+        collapseButton.classList.add('collapse-button', 'hidden');
+        const collapseIcon = document.createElement('img');
+        collapseIcon.src = 'public/images/icons/arrow-up.svg';
+        collapseIcon.alt = 'Collapse';
+        collapseButton.appendChild(collapseIcon);
+
+        const episodesList = document.createElement('ol');
+        episodesList.classList.add('episodes-list', 'hidden');
+
+        seasonInfo.appendChild(seasonTitle);
+        seasonInfo.appendChild(episodeCount);
+
+        seasonHeader.appendChild(seasonInfo);
+        seasonHeader.appendChild(expandButton);
+        seasonHeader.appendChild(collapseButton);
+
+        season.episodes.forEach((episode) => {
+            const episodeItem = document.createElement('li');
+            episodeItem.classList.add('episode-item');
+            
+            const episodeNumber = document.createElement('span');
+            const episodeThumbnail = document.createElement('div');
+            const episodeInfo = document.createElement('div');
+
+            const episodeHeader = document.createElement('div');
+            const episodeTitle = document.createElement('h4');
+            const episodeDescription = document.createElement('p');
+            const episodeDuration = document.createElement('div');
+
+            episodeNumber.classList.add('episode-number');
+            episodeNumber.textContent = `${episode.episodeNumber.toString().padStart(2, '0')}`;
+
+            episodeThumbnail.classList.add('episode-thumbnail');
+            const thumbnailImg = document.createElement('img');
+            thumbnailImg.classList.add('thumbnail-img');
+            thumbnailImg.src = episode.thumbnail;
+            thumbnailImg.alt = episode.title;
+            episodeThumbnail.appendChild(thumbnailImg);
+
+            const playButton = document.createElement('button');
+            playButton.classList.add('play-button');
+            const playIcon = document.createElement('img');
+            playIcon.classList.add('play-icon');
+            playIcon.src = 'public/images/icons/play-circle.svg';
+            playIcon.alt = 'Play';
+            playButton.appendChild(playIcon);
+            episodeThumbnail.appendChild(playButton);
+
+            episodeInfo.classList.add('episode-info');
+            episodeTitle.classList.add('episode-title');
+            episodeTitle.textContent = episode.title;
+
+            episodeDescription.classList.add('episode-description');
+            episodeDescription.textContent = episode.description;
+
+            episodeDuration.classList.add('episode-duration');
+            const durationIcon = document.createElement('img');
+            durationIcon.src = 'public/images/icons/clock-unfilled.svg';
+            durationIcon.alt = 'Duration';
+            const durationText = document.createElement('span');
+            durationText.textContent = episode.durationMinutes + ' min';
+            episodeDuration.appendChild(durationIcon);
+            episodeDuration.appendChild(durationText);
+
+            episodeHeader.classList.add('episode-header');
+            episodeHeader.appendChild(episodeTitle);
+            episodeHeader.appendChild(episodeDuration);
+
+            episodeInfo.appendChild(episodeHeader);
+            episodeInfo.appendChild(episodeDescription);
+
+            episodeItem.appendChild(episodeNumber);
+            episodeItem.appendChild(episodeThumbnail);
+            episodeItem.appendChild(episodeInfo);
+
+            episodesList.appendChild(episodeItem);
+
+            expandButton.addEventListener('click', () => {
+                episodesList.classList.remove('hidden');
+                expandButton.classList.add('hidden');
+                collapseButton.classList.remove('hidden');
+            });
+
+            collapseButton.addEventListener('click', () => {
+                episodesList.classList.add('hidden');
+                expandButton.classList.remove('hidden');
+                collapseButton.classList.add('hidden');
+            });
+
+            playButton.addEventListener('click', () => {
+                // Implement the logic to play the episode video
+                console.log(`Playing episode: ${episode.title}`);
+            });
+        
+        });
+
+        seasonItem.appendChild(seasonHeader);
+        seasonItem.appendChild(episodesList);
+
+        seasonsElement.appendChild(seasonItem);
     });
 }
