@@ -242,6 +242,11 @@
                     font-size: 1.2rem;
                 }
             }
+
+            &:hover {
+                transform: scale(1.05);
+                cursor: pointer;
+            }
         }
     }
 }

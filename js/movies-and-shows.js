@@ -376,8 +376,6 @@ fetch('temp/must-watch-shows.json').then(async response => {
     });
 });
 
-
-
 // Render the content
 const renderContentCards = (containerElement, entries, currentPage, perPage) => {
     // Clear existing content
@@ -403,6 +401,12 @@ const renderContentCards = (containerElement, entries, currentPage, perPage) => 
 
         card.appendChild(imgContainer);
         card.appendChild(infoContainer);
+
+        card.addEventListener('click', () => {
+            const type = entry.type;
+            const id = entry.id;
+            window.location.href = `${type}-open.html?id=${id}`;
+        });
 
         containerElement.appendChild(card);
     });

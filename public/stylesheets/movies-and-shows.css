@@ -556,5 +556,9 @@ footer .footer-info a:hover {
   padding: 0.6rem;
   font-size: 1.2rem;
 }
+.content-container .content-cards .content-card:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
 
 /*# sourceMappingURL=movies-and-shows.css.map */
