@@ -564,7 +564,12 @@ header.main-header {
   padding: 2.4rem;
   gap: 1.6rem;
   width: 62rem;
+  border-bottom: 1px solid;
+  border-image: linear-gradient(90deg, rgba(229, 0, 0, 0) 0%, #E50000 16.67%, rgba(229, 0, 0, 0) 100%) 1;
   box-sizing: border-box;
+}
+#faq .faq-items-container .faq-list .faq-container:last-child {
+  border-bottom: none;
 }
 #faq .faq-items-container .faq-list .faq-container .faq-sub-container {
   display: flex;
