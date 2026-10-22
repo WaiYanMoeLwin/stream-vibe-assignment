@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="public/stylesheets/content-detail.css">
+    <script type="module" src="js/content-detail.js" defer></script>
+    <title>Movies & Shows - StreamVibe</title>
+</head>
+
+<body>
+    <header class="main-header">
+        <img src="public/images/logo.png" alt="StreamVibe Logo" class="logo">
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html" aria-label="Home">Home</a></li>
+                <li><a href="movies-and-shows.html" aria-label="Movies & Shows" class="active">Movies &amp; Shows</a>
+                </li>
+                <li><a href="support.html" aria-label="Support">Support</a></li>
+                <li><a href="subscriptions.html" aria-label="Subscriptions">Subscriptions</a></li>
+            </ul>
+        </nav>
+        <nav>
+            <ul>
+                <li><button aria-label="Search"><img src="public/images/icons/search.svg" alt="Search"></button></li>
+                <li><button aria-label="Notifications"><img src="public/images/icons/noti-bell.svg"
+                            alt="Notifications"></button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="thumbnail">
+            <article class="section-header">
+                <h1 class="title"></h1>
+                <p class="description"></p>
+            </article>
+            <article class="media-buttons-container">
+                <button class="play-button"><img src="public/images/icons/play.svg" alt="Play"> Play Now</button>
+                <div class="watch-list-buttons">
+                    <button class="add-to-watch-list-button" aria-label="Add to Watch List">
+                        <img src="public/images/icons/plus.svg" alt="Add to Watch List">
+                    </button>
+                    <button class="like-button" aria-label="Like">
+                        <img src="public/images/icons/like.svg" alt="Like">
+                    </button>
+                    <button class="mute-button muted" aria-label="Mute/Unmute">
+                        <img src="public/images/icons/audio.svg" alt="Unmute">
+                        <img src="public/images/icons/mute.svg" class="hidden" alt="Mute">
+                    </button>
+                </div>
+            </article>
+        </section>
+
+        <section id="content-info">
+            <article class="main-info">
+                <section class="episodes-section hidden">
+                    <h2 class="section-title">Seasons and Episodes</h2>
+                    <div class="seasons-list"></div>
+                </section>
+                <section class="description-section">
+                    <header class="section-header">
+                        <h2 class="section-title">Description</h2>
+                    </header>
+                    <p class="description"></p>
+                </section>
+                <section class="cast-section">
+                    <header class="section-header">
+                        <h2 class="section-title">Cast</h2>
+                        <div class="pagination">
+                            <button class="pagination-button" aria-label="Previous"><img
+                                    src="public/images/icons/arrow-left.svg" alt="Previous"></button>
+                            <button class="pagination-button" aria-label="Next"><img
+                                    src="public/images/icons/arrow-right.svg" alt="Next"></button>
+                        </div>
+                    </header>
+                    <div class="cast-list"></div>
+                </section>
+                <section class="reviews-section">
+                    <header class="section-header">
+                        <h2 class="section-title">Reviews</h2>
+                        <button class="add-review-button" aria-label="Add Review">
+                            <img src="public/images/icons/plus.svg" alt="Add Review">
+                            Add Your Review
+                        </button>
+                    </header>
+                    <div class="reviews-list"></div>
+                    <div class="pagination">
+                        <button class="pagination-button" aria-label="Previous"><img
+                                src="public/images/icons/arrow-left.svg" alt="Previous"></button>
+                        <div class="pages"></div>
+                        <button class="pagination-button" aria-label="Next"><img
+                                src="public/images/icons/arrow-right.svg" alt="Next"></button>
+                    </div>
+                </section>
+            </article>
+            <aside class="sidebar-info">
+                <section class="released-year-section">
+                    <header class="section-header">
+                        <img src="public/images/icons/calendar.svg" alt="Calendar Icon">
+                        <h2 class="section-title">
+                            Released Year
+                        </h2>
+                    </header>
+                    <p class="released-year"></p>
+                </section>
+                <section class="available-languages-section">
+                    <header class="section-header">
+                        <img src="public/images/icons/language.svg" alt="Language Icon">
+                        <h2 class="section-title">
+                            Available Languages
+                        </h2>
+                    </header>
+                    <ul class="available-languages-list"></ul>
+                </section>
+                <section class="content-rating-section">
+                    <header class="section-header">
+                        <img src="public/images/icons/star-rating.svg" alt="Star Icon">
+                        <h2 class="section-title">
+                            Ratings
+                        </h2>
+                    </header>
+                    <div class="content-rating"></div>
+                </section>
+                <section class="genres-section">
+                    <header class="section-header">
+                        <img src="public/images/icons/genres.svg" alt="Genre Icon">
+                        <h2 class="section-title">
+                            Genres
+                        </h2>
+                    </header>
+                    <ul class="genres-list"></ul>
+                </section>
+                <section class="director-section">
+                    <header class="section-header">
+                        <h2 class="section-title">
+                            Director
+                        </h2>
+                    </header>
+                    <ul class="director-names">
+                    </ul>
+                </section>
+                <section class="music-section">
+                    <header class="section-header">
+                        <h2 class="section-title">
+                            Music
+                        </h2>
+                    </header>
+                    <ul class="music-composers"></ul>
+                </section>
+            </aside>
+        </section>
+
+        <section id="free-trial-cta">
+            <article>
+                <h2 class="cta-title">Start your free trial today!</h2>
+                <p class="cta-description">
+                    This is a clear and concise call to action that encourages users to sign up for a free trial of
+                    StreamVibe.
+                </p>
+            </article>
+            <button class="cta-button">Start a Free Trial</button>
+            <div class="background-mashup"></div>
+        </section>
+    </main>
+
+    <footer>
+        <section class="footer-links">
+            <div class="footer-column">
+                <h3 class="footer-column-title"><a href="index.html">Home</a></h3>
+                <ul class="footer-column-list">
+                    <li><a href="index.html#categories">Categories</a></li>
+                    <li><a href="index.html#devices">Devices</a></li>
+                    <li><a href="index.html#pricing">Pricing</a></li>
+                    <li><a href="index.html#faq">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-column-title"><a href="movies-and-shows.html">Movies</a></h3>
+                <ul class="footer-column-list">
+                    <li><a href="movies-and-shows.html#movies-genres">Genres</a></li>
+                    <li><a href="movies-and-shows.html#movies-trending">Trending</a></li>
+                    <li><a href="movies-and-shows.html#movies-new-releases">New Releases</a></li>
+                    <li><a href="movies-and-shows.html#movies-popular">Popular</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-column-title"><a href="movies-and-shows.html">Shows</a></h3>
+                <ul class="footer-column-list">
+                    <li><a href="movies-and-shows.html#shows-genres">Genres</a></li>
+                    <li><a href="movies-and-shows.html#shows-trending">Trending</a></li>
+                    <li><a href="movies-and-shows.html#shows-new-releases">New Releases</a></li>
+                    <li><a href="movies-and-shows.html#shows-popular">Popular</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-column-title"><a href="support.html">Support</a></h3>
+                <ul class="footer-column-list">
+                    <li><a href="support.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-column-title"><a href="subscriptions.html">Subscriptions</a></h3>
+                <ul class="footer-column-list">
+                    <li><a href="subscriptions.html#plans">Plans</a></li>
+                    <li><a href="subscriptions.html#features">Features</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-column-title">Connect With Us</h3>
+                <ul class="social-media-links">
+                    <li><a href="https://www.facebook.com" class="social-media-link" target="_blank"
+                            rel="noopener noreferrer"><img src="public/images/icons/facebook.svg" alt="Facebook"></a>
+                    </li>
+                    <li><a href="https://www.x.com" class="social-media-link" target="_blank"
+                            rel="noopener noreferrer"><img src="public/images/icons/x.svg" alt="X"></a></li>
+                    <li><a href="https://www.instagram.com" class="social-media-link" target="_blank"
+                            rel="noopener noreferrer"><img src="public/images/icons/instagram.svg" alt="Instagram"></a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="footer-info">
+            <p>&copy; 2023 StreamVibe. All rights reserved.</p>
+            <div class="footer-legal-links">
+                <a href="terms-of-use.html">Terms of Use</a> |
+                <a href="privacy-policy.html">Privacy Policy</a> |
+                <a href="cookie-policy.html">Cookie Policy</a>
+            </div>
+        </section>
+    </footer>
+</body>
+
+</html>

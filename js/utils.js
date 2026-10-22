@@ -1,27 +1,29 @@
 
 // Render the pagination
-export const renderPagination = (paginationElement, items, currentPage, perPage, mainElement, renderMainElement) => {
+export const renderPagination = (paginationElement, items, currentPage, perPage, mainElement, renderMainElement, hasPages = true) => {
     const totalPages = Math.ceil(items.length / perPage);
-    const pageElement = paginationElement.querySelector('.pages');
-    
-    // Clear existing pagination pages
-    pageElement.innerHTML = '';
+    if (hasPages) {
+        const pageElement = paginationElement.querySelector('.pages');
+        
+        // Clear existing pagination pages
+        pageElement.innerHTML = '';
 
-    for (let i = 1; i <= totalPages; i++) {
-        const pageButton = document.createElement('button');
-        pageButton.classList.add('pagination-page');
-        pageButton.ariaLabel = `Page ${i}`;
-        pageButton.value = i;
+        for (let i = 1; i <= totalPages; i++) {
+            const pageButton = document.createElement('button');
+            pageButton.classList.add('pagination-page');
+            pageButton.ariaLabel = `Page ${i}`;
+            pageButton.value = i;
 
-        if (i === currentPage) {
-            pageButton.classList.add('active');
+            if (i === currentPage) {
+                pageButton.classList.add('active');
+            }
+
+            pageButton.addEventListener('click', () => {
+                // Update the current page and re-render the items
+                renderPagination(paginationElement, items, i, perPage, mainElement, renderMainElement);
+            });
+            pageElement.appendChild(pageButton);
         }
-
-        pageButton.addEventListener('click', () => {
-            // Update the current page and re-render the items
-            renderPagination(paginationElement, items, i, perPage, mainElement, renderMainElement);
-        });
-        pageElement.appendChild(pageButton);
     }
 
     const prevButton = paginationElement.querySelector('.pagination-button[aria-label="Previous"]');
@@ -29,19 +31,19 @@ export const renderPagination = (paginationElement, items, currentPage, perPage,
     
     prevButton.onclick = () => {
         if (currentPage > 1) {
-            renderPagination(paginationElement, items, currentPage - 1, perPage, mainElement, renderMainElement, true);
+            renderPagination(paginationElement, items, currentPage - 1, perPage, mainElement, renderMainElement, hasPages);
         } else {
             // If on the first page, loop to the last page
-            renderPagination(paginationElement, items, totalPages, perPage, mainElement, renderMainElement, true);
+            renderPagination(paginationElement, items, totalPages, perPage, mainElement, renderMainElement, hasPages);
         }
     };
     
     nextButton.onclick = () => {
         if (currentPage < totalPages) {
-            renderPagination(paginationElement, items, currentPage + 1, perPage, mainElement, renderMainElement, true);
+            renderPagination(paginationElement, items, currentPage + 1, perPage, mainElement, renderMainElement, hasPages);
         } else {
             // If on the last page, loop to the first page
-            renderPagination(paginationElement, items, 1, perPage, mainElement, renderMainElement, true);
+            renderPagination(paginationElement, items, 1, perPage, mainElement, renderMainElement, hasPages);
         }
     };
 

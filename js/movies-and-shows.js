@@ -382,7 +382,7 @@ const renderContentCards = (containerElement, entries, currentPage, perPage) => 
     containerElement.innerHTML = '';
 
     // Render the content cards
-    const entriesToRender = entries.slice((currentPage - 1) * perPage, currentPage * perPage);
+    const entriesToRender = entries.slice((currentPage - 1) * perPage, entries.length < currentPage * perPage ? entries.length : currentPage * perPage);
     entriesToRender.forEach((entry) => {
         const card = document.createElement('div');
         card.classList.add('content-card');
@@ -405,7 +405,7 @@ const renderContentCards = (containerElement, entries, currentPage, perPage) => 
         card.addEventListener('click', () => {
             const type = entry.type;
             const id = entry.id;
-            window.location.href = `${type}-open.html?id=${id}`;
+            window.location.href = `content-detail.html?id=${id}`;
         });
 
         containerElement.appendChild(card);
@@ -414,7 +414,7 @@ const renderContentCards = (containerElement, entries, currentPage, perPage) => 
 
 // Render the trailers in the carousel
 const renderTrailers = (carousel, trailers, currentPage, perPage) => {
-    const trailer = trailers.slice((currentPage - 1) * perPage, currentPage * perPage)[0];
+    const trailer = trailers.slice((currentPage - 1) * perPage, trailers.length < currentPage * perPage ? trailers.length : currentPage * perPage)[0];
     const trailerTitle = carousel.querySelector('.trailer-title');
     trailerTitle.textContent = trailer.title;
 
