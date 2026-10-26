@@ -1,5 +1,9 @@
 @use "base";
 
+header.main-header {
+    margin-bottom: 10rem;
+}
+
 #contact-us {
     @include base.flex-row;
     align-items: flex-start;

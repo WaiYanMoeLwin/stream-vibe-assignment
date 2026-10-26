@@ -1,5 +1,9 @@
 @use "base";
 
+header.main-header {
+    margin-bottom: 10rem;
+}
+
 #plans {
     display: flex;
     flex-direction: column;
