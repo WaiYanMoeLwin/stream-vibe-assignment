@@ -1,1 +1,170 @@
 @use "base";
+
+#plans {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 8rem;
+    margin-bottom: 12rem;
+
+    .section-header {
+        @include base.flex-row;
+        align-items: end;
+        width: 100%;
+        margin-bottom: 6rem;
+
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin: 0 0 1rem;
+        }
+        
+        .section-description {
+            margin: 0;
+        }
+    }
+
+    .billing-cycles-selector {
+        @include base.flex-row;
+        align-items: center;
+        padding: 0.8rem;
+        background-color: base.$black-06;
+        border-radius: 0.8rem;
+        border: 1px solid base.$black-15;
+
+        .billing-cycle-button {
+            padding: 1.2rem 2rem;
+            background-color: transparent;
+            border: none;
+            border-radius: 0.6rem;
+            font-size: 1.4rem;
+            cursor: pointer;
+
+            &.active {
+                background-color: base.$black-12;
+                color: base.$white;
+            }
+        }
+    }
+
+    .pricing-cards {
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+
+        .pricing-card {
+            box-sizing: border-box;
+            padding: 4rem;
+            background-color: base.$black-10;
+            border: 1px solid base.$black-15;
+            border-radius: 1rem;
+
+            .plan-title {
+                font-size: 2rem;
+                font-weight: 700;
+                margin: 0 0 1.2rem 0;
+            }
+            .plan-description {
+                margin: 0 0 4rem 0;
+            }
+            .plan-price {
+                font-weight: 500;
+                margin: 0 0 4rem 0;
+
+                .plan-price-numeric {
+                    font-size: 3rem;
+                    font-weight: 600;
+                    color: base.$white;
+                }
+            }
+
+            .pricing-card-buttons-container {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1.2rem;
+
+                button {
+                    @include base.primary-button;
+                    border-radius: 0.6rem;
+                    padding: 1.4rem auto;
+                    font-size: 1.4rem;
+
+                    &.start-free-trial-button {
+                        background-color: base.$black-08;
+                        border: 1px solid base.$black-15;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#features {
+    display: flex;
+    flex-direction: column;
+    padding: 0 8rem;
+    margin-bottom: 12rem;
+
+    .feature-comparison-title {
+        font-size: 3.8rem;
+        font-weight: 700;
+        margin: 0 0 1rem;
+    }
+    .feature-comparison-description {
+        font-size: 1.6rem;
+        margin: 0 15rem 6rem 0;
+    }
+    .feature-comparison-table {
+        border-collapse: separate;
+        border-spacing: 0;
+        
+        thead {
+            background-color: base.$black-06;
+        }
+        th, td {
+            display: flex;
+            align-items: center;
+            padding: 2.4rem;
+            text-align: left;
+            border: 1px solid base.$black-15;
+        }
+        tr {
+            display: grid;
+        }
+
+        th {
+            @include base.flex-row;
+            justify-content: flex-start;
+            gap: 0.8rem;
+
+            .popular-badge {
+                background-color: base.$red-45;
+                color: base.$white;
+                font-size: 1.4rem;
+                font-weight: 500;
+                padding: 0.6rem;
+                border-radius: 0.2rem;
+            }
+            .feature-header-title {
+                font-size: 1.8rem;
+                font-weight: 600;
+                margin: 0;
+                display: inline-block;
+            }
+        }
+
+        tr:first-child th:first-child{
+            border-top-left-radius: 1rem;
+        }
+        tr:first-child th:last-child{
+            border-top-right-radius: 1rem;
+        }
+        tr:last-child td:first-child{
+            border-bottom-left-radius: 1rem;
+        }
+        tr:last-child td:last-child{
+            border-bottom-right-radius: 1rem;
+        }
+    }
+}

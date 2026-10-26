@@ -315,5 +315,172 @@ footer .footer-info a:hover {
     padding: 0 1.5rem;
   }
 }
+#plans {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 8rem;
+  margin-bottom: 12rem;
+}
+#plans .section-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-items: end;
+  width: 100%;
+  margin-bottom: 6rem;
+}
+#plans .section-header .section-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin: 0 0 1rem;
+}
+#plans .section-header .section-description {
+  margin: 0;
+}
+#plans .billing-cycles-selector {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-items: center;
+  padding: 0.8rem;
+  background-color: #0f0f0f;
+  border-radius: 0.8rem;
+  border: 1px solid #262626;
+}
+#plans .billing-cycles-selector .billing-cycle-button {
+  padding: 1.2rem 2rem;
+  background-color: transparent;
+  border: none;
+  border-radius: 0.6rem;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+#plans .billing-cycles-selector .billing-cycle-button.active {
+  background-color: #1f1f1f;
+  color: #ffffff;
+}
+#plans .pricing-cards {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+#plans .pricing-cards .pricing-card {
+  box-sizing: border-box;
+  padding: 4rem;
+  background-color: #1a1a1a;
+  border: 1px solid #262626;
+  border-radius: 1rem;
+}
+#plans .pricing-cards .pricing-card .plan-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 1.2rem 0;
+}
+#plans .pricing-cards .pricing-card .plan-description {
+  margin: 0 0 4rem 0;
+}
+#plans .pricing-cards .pricing-card .plan-price {
+  font-weight: 500;
+  margin: 0 0 4rem 0;
+}
+#plans .pricing-cards .pricing-card .plan-price .plan-price-numeric {
+  font-size: 3rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+#plans .pricing-cards .pricing-card .pricing-card-buttons-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+#plans .pricing-cards .pricing-card .pricing-card-buttons-container button {
+  padding: 1.4rem 2rem;
+  background-color: #e50000;
+  color: #ffffff;
+  font-family: "Manrope", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  border-radius: 0.8rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.6rem;
+  padding: 1.4rem auto;
+  font-size: 1.4rem;
+}
+#plans .pricing-cards .pricing-card .pricing-card-buttons-container button.start-free-trial-button {
+  background-color: #141414;
+  border: 1px solid #262626;
+}
+
+#features {
+  display: flex;
+  flex-direction: column;
+  padding: 0 8rem;
+  margin-bottom: 12rem;
+}
+#features .feature-comparison-title {
+  font-size: 3.8rem;
+  font-weight: 700;
+  margin: 0 0 1rem;
+}
+#features .feature-comparison-description {
+  font-size: 1.6rem;
+  margin: 0 15rem 6rem 0;
+}
+#features .feature-comparison-table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+#features .feature-comparison-table thead {
+  background-color: #0f0f0f;
+}
+#features .feature-comparison-table th, #features .feature-comparison-table td {
+  display: flex;
+  align-items: center;
+  padding: 2.4rem;
+  text-align: left;
+  border: 1px solid #262626;
+}
+#features .feature-comparison-table tr {
+  display: grid;
+}
+#features .feature-comparison-table th {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.8rem;
+}
+#features .feature-comparison-table th .popular-badge {
+  background-color: #e50000;
+  color: #ffffff;
+  font-size: 1.4rem;
+  font-weight: 500;
+  padding: 0.6rem;
+  border-radius: 0.2rem;
+}
+#features .feature-comparison-table th .feature-header-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0;
+  display: inline-block;
+}
+#features .feature-comparison-table tr:first-child th:first-child {
+  border-top-left-radius: 1rem;
+}
+#features .feature-comparison-table tr:first-child th:last-child {
+  border-top-right-radius: 1rem;
+}
+#features .feature-comparison-table tr:last-child td:first-child {
+  border-bottom-left-radius: 1rem;
+}
+#features .feature-comparison-table tr:last-child td:last-child {
+  border-bottom-right-radius: 1rem;
+}
 
 /*# sourceMappingURL=subscriptions.css.map */
