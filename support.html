@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="public/stylesheets/support.css">
-    <script src="js/index.js" defer></script>
+    <script type="module" src="js/support.js" defer></script>
     <title>Support - StreamVibe</title>
 </head>
 
@@ -33,6 +33,68 @@
     </header>
 
     <main>
+        <section id="contact-us">
+            <article class="contact-us-content">
+                <div class="contact-us-text">
+                    <h1 class="title">Welcome to our support page!</h1>
+                    <p class="description">
+                        We're here to help you with any problems you may be having with our product.
+                    </p>
+                </div>
+                <div class="banner-image">
+                    <div class="background-mashup"></div>
+                </div>
+            </article>
+            <form id="contact-form" class="contact-form">
+                <div class="form-field first-name">
+                    <label for="first-name">First Name</label>
+                    <input type="text" id="first-name" name="first-name" placeholder="Enter First Name" required>
+                </div>
+
+                <div class="form-field last-name">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" id="last-name" name="last-name" placeholder="Enter Last Name" required>
+                </div>
+                <div class="form-field email">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your Email" required>
+                </div>
+
+                <div class="form-field phone">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your Phone Number" required>
+                </div>
+
+                <div class="form-field message">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Enter your Message" rows="5" required></textarea>
+                </div>
+
+                <div class="form-field form-footer">
+                    <div class="form-field privacy-policy">
+                        <label for="privacy-policy">I agree with Terms of Use and Privacy Policy</label>
+                        <input type="checkbox" id="privacy-policy" name="privacy-policy" required>
+                    </div>
+
+                    <button type="submit" id="submit-button">Send Message</button>
+
+                </div>
+            </form>
+        </section>
+
+        <section id="faq">
+            <header class="section-header">
+                <article>
+                    <h2 class="section-title">Frequently Asked Questions</h2>
+                    <p class="section-description">
+                        Got questions? We've got answers! Check out our FAQ section to find answers to the most common
+                        questions about StreamVibe.
+                    </p>
+                </article>
+                <button>Ask a Question</button>
+            </header>
+            <article class="faq-items-container"></article>
+        </section>
 
         <section id="free-trial-cta">
             <article>
