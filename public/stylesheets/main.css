@@ -39,6 +39,20 @@ header.main-header {
   z-index: 1000;
   box-sizing: border-box;
 }
+header.main-header button.menu {
+  width: 2.4rem;
+  height: 2.4rem;
+  padding: 1.2rem;
+  background-color: #1a1a1a;
+  border-radius: 0.6rem;
+  border: 1px solid #262626;
+  cursor: pointer;
+  box-sizing: content-box;
+}
+header.main-header button.menu img {
+  width: 100%;
+  height: 100%;
+}
 
 a {
   text-decoration: none;
@@ -293,27 +307,186 @@ footer .footer-info a:hover {
 }
 
 @media screen and (max-width: 1439px) {
-  body {
-    font-size: 1.6rem;
+  header.main-header {
+    padding: 2rem 4rem;
+    margin-bottom: 3rem;
   }
-  main {
-    padding: 0 8rem;
+  nav ul {
+    gap: 1.2rem;
+  }
+  nav a.active {
+    padding: 1rem 1.6rem;
+  }
+  nav a:hover {
+    padding: 1rem 1.6rem;
+  }
+  nav.main-nav ul {
+    padding: 1.6rem 2rem;
+  }
+  nav.main-nav ul:has(:first-child > a.active) {
+    padding: 1.6rem 2rem 1.6rem 1rem;
+  }
+  nav.main-nav ul:has(:last-child > a.active) {
+    padding: 1.6rem 1rem 1.6rem 2rem;
+  }
+  #free-trial-cta {
+    padding: 6rem 4rem;
+    margin: 0 4rem 8rem;
+  }
+  #free-trial-cta .background-mashup {
+    top: -2rem;
+    grid-auto-rows: 5rem;
+  }
+  footer {
+    padding: 6rem 4rem 2rem 4rem;
+    margin-top: 8rem;
+  }
+  footer .footer-links {
+    gap: 1.6rem;
+    margin-bottom: 6rem;
+  }
+  footer .footer-info {
+    padding: 1.6rem 0 0 0;
+  }
+  .pagination {
+    padding: 1rem;
+    gap: 1rem;
+  }
+  .pagination button {
+    width: 4rem;
+    height: 4rem;
+    padding: 0.8rem;
+  }
+  .pagination button img {
+    width: 2rem;
+    height: 2rem;
   }
 }
 @media screen and (max-width: 1023px) {
   body {
     font-size: 1.4rem;
   }
-  main {
-    padding: 0 4rem;
+  header.main-header {
+    padding: 4rem 2rem 1.4rem;
+  }
+  header.main-header nav {
+    display: none;
+  }
+  header.main-header nav.active {
+    display: flex;
+    gap: 1.2rem;
+    position: fixed;
+    padding: 2rem;
+    width: 90%;
+    top: 10rem;
+    left: 5%;
+    box-sizing: border-box;
+  }
+  header.main-header nav.active ul {
+    justify-content: flex-end;
+    gap: 1.2rem;
+    width: 100%;
+  }
+  header.main-header nav.main-nav.active {
+    padding-top: 4rem;
+  }
+  header.main-header nav.main-nav.active ul {
+    flex-direction: column;
+  }
+  header.main-header nav.main-nav.active ul li {
+    text-align: center;
+    width: 100%;
+  }
+  header.main-header nav.main-nav.active ul li a {
+    display: block;
+    width: 100%;
+  }
+  header.main-header nav.main-nav.active ul li a.active {
+    padding: 1.2rem 0;
+  }
+  header.main-header nav.main-nav.active ul li a:hover {
+    padding: 1.2rem 0;
+  }
+  .scrollbar {
+    position: relative;
+    height: 0.5rem;
+    width: 20rem;
+    margin: 2.4rem 0;
+    border-radius: 2rem;
+    background-color: #333333;
+    cursor: pointer;
+  }
+  .scrollbar .scrollbar-thumb {
+    position: absolute;
+    height: 100%;
+    background-color: #e50000;
+    border-radius: 2rem;
+  }
+  .scrollbar .scrollbar-thumb:hover {
+    background-color: #ff3333;
+  }
+  #free-trial-cta {
+    flex-direction: column;
+    padding: 5rem 3rem;
+    margin: 0 2rem 8rem;
+    background: linear-gradient(180deg, #0F0F0F 2.42%, rgba(20, 15, 15, 0.974681) 25.46%, rgba(34, 14, 14, 0.909574) 46.72%, rgba(229, 0, 0, 0) 168.98%);
+  }
+  #free-trial-cta .background-mashup {
+    top: -10rem;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: 16rem;
+  }
+  #free-trial-cta .cta-title {
+    text-align: center;
+    font-size: 2.4rem;
+  }
+  #free-trial-cta .cta-description {
+    text-align: center;
+    margin: 1rem 0 5rem;
+  }
+  footer {
+    padding: 6rem 2rem 2rem 2rem;
+  }
+  footer .footer-links {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem 0;
+    margin-bottom: 5rem;
+  }
+  footer .footer-links .footer-column-title {
+    font-size: 1.6rem;
+    margin: 0 0 1.6rem 0;
+  }
+  footer .footer-links .footer-column-list {
+    gap: 0.8rem;
   }
 }
 @media screen and (max-width: 767px) {
-  body {
-    font-size: 1.4rem;
+  header.main-header {
+    padding: 4rem 1.6rem 1.4rem;
   }
-  main {
-    padding: 0 1.5rem;
+  .scrollbar {
+    width: 10rem;
+  }
+  #free-trial-cta {
+    margin: 0 1.6rem 8rem;
+  }
+  #free-trial-cta .background-mashup {
+    top: -8rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  footer {
+    padding: 6rem 1.6rem 2rem 1.6rem;
+  }
+  footer .footer-links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  footer .footer-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+  footer .footer-info p {
+    margin: 0;
   }
 }
 header.main-header {
@@ -446,7 +619,6 @@ header.main-header {
   background-color: #1a1a1a;
   border-radius: 1rem;
   border: 1px solid #262626;
-  gap: 2rem;
 }
 #categories .category-cards .genre-item-container .genre-images-container {
   display: grid;
@@ -702,6 +874,263 @@ header.main-header {
 #pricing .pricing-cards .pricing-card .pricing-card-buttons-container button.start-free-trial-button {
   background-color: #141414;
   border: 1px solid #262626;
+}
+
+@media screen and (max-width: 1439px) {
+  #hero .hero-logo {
+    width: 25rem;
+    height: 25rem;
+    margin: 15rem 0 8rem;
+  }
+  #hero .hero-content {
+    padding: 0 10rem;
+  }
+  #hero .hero-content .hero-title {
+    font-size: 4.2rem;
+  }
+  #hero .hero-content button {
+    margin: 3rem auto 10rem;
+  }
+  #hero .background-mashup {
+    height: 60rem;
+    grid-auto-rows: 16rem;
+  }
+  #hero .background-mashup .fade-out-top {
+    height: 45rem;
+  }
+  #hero .background-mashup .fade-out-bottom {
+    height: 45rem;
+  }
+  .section-header {
+    margin-bottom: 5rem;
+  }
+  .section-header .section-title {
+    font-size: 2.4rem;
+  }
+  .section-header .section-description {
+    font-size: 1.4rem;
+  }
+  #categories {
+    padding: 0 4rem;
+    margin-bottom: 10rem;
+  }
+  #categories .category-cards {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+  #devices {
+    padding: 0 4rem;
+    margin-bottom: 10rem;
+  }
+  #devices .section-header article {
+    margin-right: 10rem;
+  }
+  #devices .device-cards {
+    gap: 1.5rem;
+  }
+  #devices .device-cards .device-container {
+    padding: 3rem;
+    gap: 1.5rem;
+  }
+  #devices .device-cards .device-container .device-header {
+    gap: 1rem;
+  }
+  #faq {
+    padding: 0 4rem;
+    margin-bottom: 10rem;
+  }
+  #faq .section-header button {
+    width: 15rem;
+  }
+  #faq .faq-items-container {
+    gap: 3rem;
+  }
+  #faq .faq-items-container .faq-list .faq-container {
+    padding: 1.6rem;
+    gap: 1.4rem;
+    width: 44rem;
+  }
+  #faq .faq-items-container .faq-list .faq-container .faq-sub-container {
+    gap: 1.2rem;
+  }
+  #faq .faq-items-container .faq-list .faq-container .faq-sub-container .faq-question {
+    font-size: 1.8rem;
+  }
+  #pricing {
+    padding: 0 4rem;
+    margin-bottom: 10rem;
+  }
+  #pricing .billing-cycles-selector {
+    padding: 0.6rem;
+  }
+  #pricing .billing-cycles-selector .billing-cycle-button {
+    padding: 1rem 1.5rem;
+  }
+  #pricing .pricing-cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  #pricing .pricing-cards .pricing-card {
+    padding: 3rem;
+  }
+  #pricing .pricing-cards .pricing-card .plan-title {
+    font-size: 1.8rem;
+  }
+  #pricing .pricing-cards .pricing-card .plan-price {
+    margin-bottom: 3rem;
+  }
+  #pricing .pricing-cards .pricing-card .plan-price .plan-price-numeric {
+    font-size: 2.5rem;
+  }
+  #pricing .pricing-cards .pricing-card .pricing-card-buttons-container {
+    gap: 1rem;
+  }
+  #pricing .pricing-cards .pricing-card .pricing-card-buttons-container button {
+    padding: 1.2rem 1.2rem;
+    font-size: 1.2rem;
+  }
+}
+@media screen and (max-width: 1023px) {
+  #hero .hero-logo {
+    width: 22.5rem;
+    height: 22.5rem;
+    margin: 15rem 0 5rem;
+  }
+  #hero .hero-content {
+    padding: 0 1rem;
+  }
+  #hero .hero-content .hero-title {
+    font-size: 3.6rem;
+  }
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+  .section-header .section-title {
+    font-size: 2rem;
+  }
+  #categories {
+    padding: 0 2rem;
+    margin-bottom: 2.5rem;
+  }
+  #categories .pagination {
+    display: none;
+  }
+  #categories .categories-title {
+    font-size: 2.4rem;
+  }
+  #categories .category-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    gap: 2rem;
+  }
+  #categories .category-cards::-webkit-scrollbar {
+    display: none;
+  }
+  #categories .category-cards .genre-item-container {
+    padding: 2rem;
+  }
+  #categories .category-cards .genre-item-container .genre-images-container {
+    height: 14rem;
+    width: 14rem;
+  }
+  #devices {
+    padding: 0 2rem;
+    margin-bottom: 8rem;
+  }
+  #devices .section-header article {
+    margin-right: 0;
+  }
+  #devices .device-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+  #devices .device-cards .device-container {
+    padding: 2.4rem;
+    gap: 2rem;
+  }
+  #devices .device-cards .device-container .device-header {
+    gap: 1rem;
+  }
+  #devices .device-cards .device-container .device-header .device-name {
+    font-size: 1.8rem;
+  }
+  #faq {
+    padding: 0 2rem;
+    margin-bottom: 8rem;
+  }
+  #faq .faq-items-container {
+    width: 100%;
+    flex-direction: column;
+    gap: 0;
+  }
+  #faq .faq-items-container .faq-list {
+    width: 100%;
+    border-bottom: 1px solid;
+    border-image: linear-gradient(90deg, rgba(229, 0, 0, 0) 0%, #E50000 16.67%, rgba(229, 0, 0, 0) 100%) 1;
+  }
+  #faq .faq-items-container .faq-list .faq-container {
+    width: 100%;
+    padding: 4rem 1rem;
+  }
+  #faq .faq-items-container .faq-list:last-child {
+    border-bottom: none;
+  }
+  #faq .faq-items-container .faq-list .faq-sub-container {
+    gap: 1.6rem;
+  }
+  #faq .faq-items-container .faq-list .faq-sub-container .faq-number {
+    font-size: 1.6rem;
+  }
+  #pricing {
+    padding: 0 2rem;
+    margin-bottom: 8rem;
+  }
+  #pricing .billing-cycles-selector {
+    padding: 0.6rem;
+  }
+  #pricing .billing-cycles-selector .billing-cycle-button {
+    padding: 1rem 1.5rem;
+  }
+  #pricing .pricing-cards {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  #pricing .pricing-cards .pricing-card {
+    padding: 2.4rem;
+  }
+  #pricing .pricing-cards .pricing-card .plan-title {
+    font-size: 1.8rem;
+  }
+  #pricing .pricing-cards .pricing-card .plan-description {
+    margin-bottom: 3rem;
+  }
+  #pricing .pricing-cards .pricing-card .plan-price {
+    margin-bottom: 3rem;
+  }
+  #pricing .pricing-cards .pricing-card .plan-price .plan-price-numeric {
+    font-size: 2.5rem;
+  }
+  #pricing .pricing-cards .pricing-card .pricing-card-buttons-container {
+    gap: 1rem;
+  }
+  #pricing .pricing-cards .pricing-card .pricing-card-buttons-container button {
+    padding: 1.2rem 1.2rem;
+    font-size: 1.2rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  #hero .hero-description-extended {
+    display: none;
+  }
+  #devices .device-cards {
+    grid-template-columns: 1fr;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

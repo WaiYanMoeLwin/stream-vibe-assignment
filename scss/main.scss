@@ -126,7 +126,6 @@ header.main-header {
             background-color: base.$black-10;
             border-radius: 1rem;
             border: 1px solid base.$black-15;
-            gap: 2rem;
 
             .genre-images-container {
                 display: grid;
@@ -384,6 +383,321 @@ header.main-header {
                     }
                 }
             }
+        }
+    }
+}
+
+
+
+@media screen and (max-width: 1439px) {
+    #hero {
+        .hero-logo {
+            width: 25rem;
+            height: 25rem;
+            margin: 15rem 0 8rem;
+        }
+        .hero-content {
+            padding: 0 10rem;
+
+            .hero-title {
+                font-size: 4.2rem;
+            }
+
+            button {
+                margin: 3rem auto 10rem;
+            }
+        }
+        .background-mashup {
+            height: 60rem;
+            grid-auto-rows: 16rem;
+            .fade-out-top {
+                height: 45rem;
+            }
+            .fade-out-bottom {
+                height: 45rem;
+            }
+        }
+    }
+
+    .section-header {
+        margin-bottom: 5rem;
+        .section-title {
+            font-size: 2.4rem;
+        }
+        .section-description {
+            font-size: 1.4rem;
+        }
+    }
+
+    #categories {
+        padding: 0 4rem;
+        margin-bottom: 10rem;
+
+        .category-cards {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+    }
+
+    #devices {
+        padding: 0 4rem;
+        margin-bottom: 10rem;
+
+        .section-header {
+            article {
+                margin-right: 10rem;
+            }
+        }
+
+        .device-cards {
+            gap: 1.5rem;
+
+            .device-container {
+                padding: 3rem;
+                gap: 1.5rem;
+
+                .device-header {
+                    gap: 1rem;
+                }
+            }
+        }
+    }
+    
+    #faq {
+        padding: 0 4rem;
+        margin-bottom: 10rem;
+
+        .section-header {
+            button {
+                width: 15rem;
+            }
+        }
+
+        .faq-items-container {
+            gap: 3rem;
+            .faq-list {
+                .faq-container {
+                    padding: 1.6rem;
+                    gap: 1.4rem;
+                    width: 44rem;
+
+                    .faq-sub-container {
+                        gap: 1.2rem;
+                        .faq-question {
+                            font-size: 1.8rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #pricing {
+        padding: 0 4rem;
+        margin-bottom: 10rem;
+
+        .billing-cycles-selector {
+            padding: 0.6rem;
+
+            .billing-cycle-button {
+                padding: 1rem 1.5rem;
+            }
+        }
+
+        .pricing-cards {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+
+            .pricing-card {
+                padding: 3rem;
+
+                .plan-title {
+                    font-size: 1.8rem;
+                }
+                .plan-price {
+                    margin-bottom: 3rem;
+
+                    .plan-price-numeric {
+                        font-size: 2.5rem;
+                    }
+                }
+
+                .pricing-card-buttons-container {
+                    gap: 1rem;
+
+                    button {
+                        padding: 1.2rem 1.2rem;
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    #hero {
+        .hero-logo {
+            width: 22.5rem;
+            height: 22.5rem;
+            margin: 15rem 0 5rem;
+        }
+        .hero-content {
+            padding: 0 1rem;
+            .hero-title {
+                font-size: 3.6rem;
+            }
+        }
+    }
+
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+        margin-bottom: 4rem;
+        .section-title {
+            font-size: 2rem;
+        }
+    }
+
+    #categories {
+        padding: 0 2rem;
+        margin-bottom: 2.5rem;
+        .pagination {
+            display: none;
+        }
+        .categories-title {
+            font-size: 2.4rem;
+        }
+        .category-cards {
+            @include base.flex-row;
+            flex-wrap: nowrap;
+            overflow-x: scroll;
+            gap: 2rem;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+            .genre-item-container {
+                padding: 2rem;
+                .genre-images-container {
+                    height: 14rem;
+                    width: 14rem;
+                }
+            }
+        }
+    }
+
+    #devices {
+        padding: 0 2rem;
+        margin-bottom: 8rem;
+
+        .section-header {
+            article {
+                margin-right: 0;
+            }
+        }
+        .device-cards {
+            grid-template-columns: 1fr 1fr;
+            .device-container {
+                padding: 2.4rem;
+                gap: 2rem;
+                .device-header {
+                    gap: 1rem;
+                    .device-name {
+                        font-size: 1.8rem;
+                    }
+                }
+            }
+        }
+    }
+    #faq {
+        padding: 0 2rem;
+        margin-bottom: 8rem;
+
+        .faq-items-container {
+            width: 100%;
+            flex-direction: column;
+            gap: 0;
+
+            .faq-list {
+                width: 100%;
+                border-bottom: 1px solid;
+                border-image: linear-gradient(90deg, rgba(229, 0, 0, 0) 0%, #E50000 16.67%, rgba(229, 0, 0, 0) 100%) 1;
+                .faq-container {
+                    width: 100%;
+                    padding: 4rem 1rem;
+                }
+                &:last-child {
+                    border-bottom: none;
+                }
+                .faq-sub-container {
+                    gap: 1.6rem;
+                    .faq-number {
+                        font-size: 1.6rem;
+                    }
+
+
+                }
+            }
+        }
+    }
+
+    #pricing {
+        padding: 0 2rem;
+        margin-bottom: 8rem;
+
+        .billing-cycles-selector {
+            padding: 0.6rem;
+
+            .billing-cycle-button {
+                padding: 1rem 1.5rem;
+            }
+        }
+
+        .pricing-cards {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+
+            .pricing-card {
+                padding: 2.4rem;
+
+                .plan-title {
+                    font-size: 1.8rem;
+                }
+                .plan-description {
+                    margin-bottom: 3rem;
+                }
+                .plan-price {
+                    margin-bottom: 3rem;
+
+                    .plan-price-numeric {
+                        font-size: 2.5rem;
+                    }
+                }
+
+                .pricing-card-buttons-container {
+                    gap: 1rem;
+
+                    button {
+                        padding: 1.2rem 1.2rem;
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    #hero {
+        .hero-description-extended {
+            display: none;
+        }
+    }
+
+    #devices {
+        .device-cards {
+            grid-template-columns: 1fr;
         }
     }
 }

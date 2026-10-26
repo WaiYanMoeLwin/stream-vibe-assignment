@@ -1,4 +1,10 @@
-import { renderBackgroundMashup, renderGenres, renderPagination } from './utils.js';
+import { menuToggle, renderBackgroundMashup, renderGenres, renderPagination } from './utils.js';
+
+const menuButton = document.querySelector('header.main-header button.menu');
+const navElements = document.querySelectorAll('header.main-header nav');
+menuButton.addEventListener('click', () => {
+    menuToggle(menuButton, navElements);
+});
 
 fetch('temp/mock-movie-data.json').then(async (response) => {
     const moviesAndShowsData = await response.json();
@@ -22,7 +28,14 @@ fetch('temp/mock-genres.json').then(async (response) => {
     const genresElement = document.querySelector('#categories .category-cards');
     const paginationElement = document.querySelector('#categories .pagination');
     const currentPage = 1;
-    const perPage = 5;
+    let perPage = 5;
+
+    if (window.innerWidth < 1439) {
+        perPage = 4;
+    }
+    if (window.innerWidth < 1023) {
+        perPage = genresData.length; // Show all genres on smaller screens
+    }
     renderPagination(paginationElement, genresData, currentPage, perPage, genresElement, renderGenres);
 });
 

@@ -76,6 +76,22 @@ header.main-header {
     width: 100%;
     z-index: 1000;
     box-sizing: border-box;
+
+    button.menu {
+        width: 2.4rem;
+        height: 2.4rem;
+        padding: 1.2rem;
+        background-color: $black-10;
+        border-radius: 0.6rem;
+        border: 1px solid $black-15;
+        cursor: pointer;
+        box-sizing: content-box;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
 }
 
 @mixin reset-list {
@@ -341,11 +357,72 @@ footer {
 }
 
 @media screen and (max-width: 1439px) {
-    body {
-        font-size: 1.6rem;
+    header.main-header {
+        padding: 2rem 4rem;
+        margin-bottom: 3rem;
     }
-    main {
-        padding: 0 8rem;
+
+    nav {
+        ul {
+            gap: 1.2rem;
+        }
+        a.active {
+            padding: 1rem 1.6rem;
+        }
+        a:hover {
+            padding: 1rem 1.6rem;
+        }
+    }
+    nav.main-nav {
+        ul {
+            padding: 1.6rem 2rem;
+        }
+        ul:has(:first-child > a.active) {
+            padding: 1.6rem 2rem 1.6rem 1rem;
+        }
+        ul:has(:last-child > a.active) {
+            padding: 1.6rem 1rem 1.6rem 2rem;
+        }
+    }
+
+    #free-trial-cta {
+        padding: 6rem 4rem;
+        margin: 0 4rem 8rem;
+
+        .background-mashup {
+            top: -2rem;
+            grid-auto-rows: 5rem;
+        }
+    }
+
+    footer {
+        padding: 6rem 4rem 2rem 4rem;
+        margin-top: 8rem;
+
+        .footer-links {
+            gap: 1.6rem;
+            margin-bottom: 6rem;
+        }
+
+        .footer-info {
+            padding: 1.6rem 0 0 0;
+        }
+    }
+
+    .pagination {
+        padding: 1rem;
+        gap: 1rem;
+
+        button {
+            width: 4rem;
+            height: 4rem;
+            padding: 0.8rem;
+
+            img {
+                width: 2rem;
+                height: 2rem;
+            }
+        }
     }
 }
 
@@ -353,16 +430,141 @@ footer {
     body {
         font-size: 1.4rem;
     }
-    main {
-        padding: 0 4rem;
+
+    header.main-header {
+        padding: 4rem 2rem 1.4rem;
+
+        nav {
+            display: none;
+        }
+        nav.active {
+            display: flex;
+            gap: 1.2rem;
+            position: fixed;
+            padding: 2rem;
+            width: 90%;
+            top: 10rem;
+            left: 5%;
+            box-sizing: border-box;
+            ul {
+                justify-content: flex-end;
+                gap: 1.2rem;
+                width: 100%;
+            }
+        }
+        nav.main-nav.active {
+            padding-top: 4rem;
+            ul {
+                flex-direction: column;
+                li {
+                    text-align: center;
+                    width: 100%;
+                    a {
+                        display: block;
+                        width: 100%;
+                        &.active {
+                            padding: 1.2rem 0;
+                        }
+                        &:hover {
+                            padding: 1.2rem 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .scrollbar {
+        position: relative;
+        height: 0.5rem;
+        width: 20rem;
+        margin: 2.4rem 0;
+        border-radius: 2rem;
+        background-color: $black-20;
+        cursor: pointer;
+
+        .scrollbar-thumb {
+            position: absolute;
+            height: 100%;
+            background-color: $red-45;
+            border-radius: 2rem;
+
+            &:hover {
+                background-color: $red-60;
+            }
+        }
+    }
+
+    #free-trial-cta {
+        flex-direction: column;
+        padding: 5rem 3rem;
+        margin: 0 2rem 8rem;
+        background: linear-gradient(180deg, #0F0F0F 2.42%, rgba(20, 15, 15, 0.974681) 25.46%, rgba(34, 14, 14, 0.909574) 46.72%, rgba(229, 0, 0, 0) 168.98%);
+
+        .background-mashup {
+            top: -10rem;
+            grid-template-columns: repeat(6, 1fr);
+            grid-auto-rows: 16rem;
+        }
+        .cta-title {
+            text-align: center;
+            font-size: 2.4rem;
+        }
+        .cta-description {
+            text-align: center;
+            margin: 1rem 0 5rem;
+        }
+    }
+
+    footer {
+        padding: 6rem 2rem 2rem 2rem;
+        .footer-links {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem 0;
+            margin-bottom: 5rem;
+
+            .footer-column-title {
+                font-size: 1.6rem;
+                margin: 0 0 1.6rem 0;
+            }
+            .footer-column-list {
+                gap: 0.8rem;
+            }
+        }
     }
 }
 
 @media screen and (max-width: 767px) {
-    body {
-        font-size: 1.4rem;
+    header.main-header {
+        padding: 4rem 1.6rem 1.4rem;
     }
-    main {
-        padding: 0 1.5rem;
+
+    .scrollbar {
+        width: 10rem;
+    }
+
+    #free-trial-cta {
+        margin: 0 1.6rem 8rem;
+
+        .background-mashup {
+            top: -8rem;
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    footer {
+        padding: 6rem 1.6rem 2rem 1.6rem;
+        .footer-links {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .footer-info {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 2rem;
+            p {
+                margin: 0;
+            }
+        }
     }
 }

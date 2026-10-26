@@ -85,9 +85,9 @@ export const renderBackgroundMashup = (containerElement, entries, maxEntries = 3
 }
 
 // Render the genres
-export const renderGenres = (element, genres, currentPage, perPage) => {
+export const renderGenres = (genresContainer, genres, currentPage, perPage) => {
     // Clear existing genres
-    element.innerHTML = '';
+    genresContainer.innerHTML = '';
 
     const genresToRender = genres.slice((currentPage - 1) * perPage, currentPage * perPage);
     genresToRender.forEach((genre) => {
@@ -146,6 +146,58 @@ export const renderGenres = (element, genres, currentPage, perPage) => {
         genreItem.appendChild(imagesContainer);
         genreItem.appendChild(genreTitleContainer);
 
-        element.appendChild(genreItem);
+        genresContainer.appendChild(genreItem);
+    });
+
+    // Render the scrollbar for the genres section]
+    const scrollbar = genresContainer.parentElement.querySelector('.scrollbar');
+    const scrollbarThumb = scrollbar.querySelector('.scrollbar-thumb');
+    if (window.innerWidth < 1023) {
+        scrollbar.classList.remove('hidden');
+    } else {
+        scrollbar.classList.add('hidden');
+    }
+    const scrollbarThumbWidth = 100 / genres.length;
+    scrollbarThumb.style.width = `${scrollbarThumbWidth}%`;
+
+    genresContainer.addEventListener('scroll', () => {
+        const scrollLeft = genresContainer.scrollLeft;
+        const scrollWidth = genresContainer.scrollWidth - genresContainer.clientWidth;
+        const scrollPercentage = (scrollLeft / scrollWidth) * (100 - scrollbarThumbWidth);
+        scrollbarThumb.style.left = `${scrollPercentage}%`;
+    });
+
+    scrollbar.addEventListener('click', (event) => {
+        const scrollbarRect = scrollbar.getBoundingClientRect();
+        const clickX = event.clientX - scrollbarRect.left;
+        const scrollWidth = genresContainer.scrollWidth - genresContainer.clientWidth;
+        const scrollPercentage = clickX / scrollbarRect.width;
+        genresContainer.scrollLeft = scrollPercentage * scrollWidth;
+    });
+
+    scrollbarThumb.addEventListener('mousedown', (event) => {
+        event.preventDefault();
+        const initialX = event.clientX;
+        const initialScrollLeft = genresContainer.scrollLeft;
+
+        const onMouseMove = (moveEvent) => {
+            const deltaX = moveEvent.clientX - initialX;
+            const scrollWidth = genresContainer.scrollWidth - genresContainer.clientWidth;
+            const scrollbarWidth = scrollbar.offsetWidth - scrollbarThumb.offsetWidth;
+            const scrollPercentage = deltaX / scrollbarWidth;
+            genresContainer.scrollLeft = initialScrollLeft + scrollPercentage * scrollWidth;
+        };
+
+        document.addEventListener('mousemove', onMouseMove);
+
+        document.addEventListener('mouseup', () => {
+            document.removeEventListener('mousemove', onMouseMove);
+        });
+    });
+};
+
+export const menuToggle = (menuButton, navElements) => {
+    navElements.forEach((navElement) => {
+        navElement.classList.toggle('active');
     });
 };

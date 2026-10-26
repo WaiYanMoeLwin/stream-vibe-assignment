@@ -39,6 +39,20 @@ header.main-header {
   z-index: 1000;
   box-sizing: border-box;
 }
+header.main-header button.menu {
+  width: 2.4rem;
+  height: 2.4rem;
+  padding: 1.2rem;
+  background-color: #1a1a1a;
+  border-radius: 0.6rem;
+  border: 1px solid #262626;
+  cursor: pointer;
+  box-sizing: content-box;
+}
+header.main-header button.menu img {
+  width: 100%;
+  height: 100%;
+}
 
 a {
   text-decoration: none;
@@ -293,27 +307,186 @@ footer .footer-info a:hover {
 }
 
 @media screen and (max-width: 1439px) {
-  body {
-    font-size: 1.6rem;
+  header.main-header {
+    padding: 2rem 4rem;
+    margin-bottom: 3rem;
   }
-  main {
-    padding: 0 8rem;
+  nav ul {
+    gap: 1.2rem;
+  }
+  nav a.active {
+    padding: 1rem 1.6rem;
+  }
+  nav a:hover {
+    padding: 1rem 1.6rem;
+  }
+  nav.main-nav ul {
+    padding: 1.6rem 2rem;
+  }
+  nav.main-nav ul:has(:first-child > a.active) {
+    padding: 1.6rem 2rem 1.6rem 1rem;
+  }
+  nav.main-nav ul:has(:last-child > a.active) {
+    padding: 1.6rem 1rem 1.6rem 2rem;
+  }
+  #free-trial-cta {
+    padding: 6rem 4rem;
+    margin: 0 4rem 8rem;
+  }
+  #free-trial-cta .background-mashup {
+    top: -2rem;
+    grid-auto-rows: 5rem;
+  }
+  footer {
+    padding: 6rem 4rem 2rem 4rem;
+    margin-top: 8rem;
+  }
+  footer .footer-links {
+    gap: 1.6rem;
+    margin-bottom: 6rem;
+  }
+  footer .footer-info {
+    padding: 1.6rem 0 0 0;
+  }
+  .pagination {
+    padding: 1rem;
+    gap: 1rem;
+  }
+  .pagination button {
+    width: 4rem;
+    height: 4rem;
+    padding: 0.8rem;
+  }
+  .pagination button img {
+    width: 2rem;
+    height: 2rem;
   }
 }
 @media screen and (max-width: 1023px) {
   body {
     font-size: 1.4rem;
   }
-  main {
-    padding: 0 4rem;
+  header.main-header {
+    padding: 4rem 2rem 1.4rem;
+  }
+  header.main-header nav {
+    display: none;
+  }
+  header.main-header nav.active {
+    display: flex;
+    gap: 1.2rem;
+    position: fixed;
+    padding: 2rem;
+    width: 90%;
+    top: 10rem;
+    left: 5%;
+    box-sizing: border-box;
+  }
+  header.main-header nav.active ul {
+    justify-content: flex-end;
+    gap: 1.2rem;
+    width: 100%;
+  }
+  header.main-header nav.main-nav.active {
+    padding-top: 4rem;
+  }
+  header.main-header nav.main-nav.active ul {
+    flex-direction: column;
+  }
+  header.main-header nav.main-nav.active ul li {
+    text-align: center;
+    width: 100%;
+  }
+  header.main-header nav.main-nav.active ul li a {
+    display: block;
+    width: 100%;
+  }
+  header.main-header nav.main-nav.active ul li a.active {
+    padding: 1.2rem 0;
+  }
+  header.main-header nav.main-nav.active ul li a:hover {
+    padding: 1.2rem 0;
+  }
+  .scrollbar {
+    position: relative;
+    height: 0.5rem;
+    width: 20rem;
+    margin: 2.4rem 0;
+    border-radius: 2rem;
+    background-color: #333333;
+    cursor: pointer;
+  }
+  .scrollbar .scrollbar-thumb {
+    position: absolute;
+    height: 100%;
+    background-color: #e50000;
+    border-radius: 2rem;
+  }
+  .scrollbar .scrollbar-thumb:hover {
+    background-color: #ff3333;
+  }
+  #free-trial-cta {
+    flex-direction: column;
+    padding: 5rem 3rem;
+    margin: 0 2rem 8rem;
+    background: linear-gradient(180deg, #0F0F0F 2.42%, rgba(20, 15, 15, 0.974681) 25.46%, rgba(34, 14, 14, 0.909574) 46.72%, rgba(229, 0, 0, 0) 168.98%);
+  }
+  #free-trial-cta .background-mashup {
+    top: -10rem;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: 16rem;
+  }
+  #free-trial-cta .cta-title {
+    text-align: center;
+    font-size: 2.4rem;
+  }
+  #free-trial-cta .cta-description {
+    text-align: center;
+    margin: 1rem 0 5rem;
+  }
+  footer {
+    padding: 6rem 2rem 2rem 2rem;
+  }
+  footer .footer-links {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem 0;
+    margin-bottom: 5rem;
+  }
+  footer .footer-links .footer-column-title {
+    font-size: 1.6rem;
+    margin: 0 0 1.6rem 0;
+  }
+  footer .footer-links .footer-column-list {
+    gap: 0.8rem;
   }
 }
 @media screen and (max-width: 767px) {
-  body {
-    font-size: 1.4rem;
+  header.main-header {
+    padding: 4rem 1.6rem 1.4rem;
   }
-  main {
-    padding: 0 1.5rem;
+  .scrollbar {
+    width: 10rem;
+  }
+  #free-trial-cta {
+    margin: 0 1.6rem 8rem;
+  }
+  #free-trial-cta .background-mashup {
+    top: -8rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  footer {
+    padding: 6rem 1.6rem 2rem 1.6rem;
+  }
+  footer .footer-links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  footer .footer-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+  footer .footer-info p {
+    margin: 0;
   }
 }
 #thumbnail {
