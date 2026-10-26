@@ -29,8 +29,13 @@ fetch('temp/movie-genres.json').then(async response => {
     const moviesGenresSection = document.querySelector('#movies-genres');
     const paginationElement = moviesGenresSection.querySelector('.pagination');
     const mainElement = moviesGenresSection.querySelector('.genre-cards');
+
+    let perPage = 5;
+    if (window.innerWidth < 1439) {
+        perPage = 4;
+    }
     
-    renderPagination(paginationElement, movieGenres, 1, 5, mainElement, renderGenres);
+    renderPagination(paginationElement, movieGenres, 1, perPage, mainElement, renderGenres);
 });
 
 fetch('temp/show-genres.json').then(async response => {
@@ -42,7 +47,11 @@ fetch('temp/show-genres.json').then(async response => {
     const paginationElement = showsGenresSection.querySelector('.pagination');
     const mainElement = showsGenresSection.querySelector('.genre-cards');
     
-    renderPagination(paginationElement, showGenres, 1, 5, mainElement, renderGenres);
+    let perPage = 5;
+    if (window.innerWidth < 1439) {
+        perPage = 4;
+    }
+    renderPagination(paginationElement, showGenres, 1, perPage, mainElement, renderGenres);
 });
 
 fetch('temp/popular-movie-by-genre.json').then(async response => {
@@ -96,35 +105,12 @@ fetch('temp/movies-trending-now.json').then(async response => {
     const paginationElement = trendingMoviesSection.querySelector('.pagination');
     const mainElement = trendingMoviesSection.querySelector('.trending-cards');
 
-    renderPagination(paginationElement, trendingMovies, 1, 5, mainElement, renderContentCards);
+    let perPage = 4;
+    if (window.innerWidth < 1439) {
+        perPage = 3;
+    }
 
-    const movieCards = mainElement.querySelectorAll('.content-card');
-    movieCards.forEach((card, index) => {
-        const infoContainer = card.querySelector('.content-info-container');
-
-        const runtime = document.createElement('div');
-        runtime.classList.add('content-runtime', 'content-info');
-        const runtimeIcon = document.createElement('img');
-        runtimeIcon.src = 'public/images/icons/clock.svg';
-        runtimeIcon.alt = 'Runtime';
-        runtime.appendChild(runtimeIcon);
-        const runtimeText = document.createElement('span');
-        runtimeText.textContent = trendingMovies[index].runtime;
-        runtime.appendChild(runtimeText);
-
-        const views = document.createElement('div');
-        views.classList.add('content-views', 'content-info');
-        const viewsIcon = document.createElement('img');
-        viewsIcon.src = 'public/images/icons/eye.svg';
-        viewsIcon.alt = 'Views';
-        views.appendChild(viewsIcon);
-        const viewsText = document.createElement('span');
-        viewsText.textContent = trendingMovies[index].views;
-        views.appendChild(viewsText);
-
-        infoContainer.appendChild(runtime);
-        infoContainer.appendChild(views);
-    });
+    renderPagination(paginationElement, trendingMovies, 1, perPage, mainElement, renderContentCardsWithRuntimeAndViews);
 });
 
 fetch('temp/shows-trending-now.json').then(async response => {
@@ -136,35 +122,12 @@ fetch('temp/shows-trending-now.json').then(async response => {
     const paginationElement = trendingShowsSection.querySelector('.pagination');
     const mainElement = trendingShowsSection.querySelector('.trending-cards');
 
-    renderPagination(paginationElement, trendingShows, 1, 4, mainElement, renderContentCards);
+    let perPage = 4;
+    if (window.innerWidth < 1439) {
+        perPage = 3;
+    }
 
-    const showCards = mainElement.querySelectorAll('.content-card');
-    showCards.forEach((card, index) => {
-        const infoContainer = card.querySelector('.content-info-container');
-
-        const runtime = document.createElement('div');
-        runtime.classList.add('content-runtime', 'content-info');
-        const runtimeIcon = document.createElement('img');
-        runtimeIcon.src = 'public/images/icons/clock.svg';
-        runtimeIcon.alt = 'Runtime';
-        runtime.appendChild(runtimeIcon);
-        const runtimeText = document.createElement('span');
-        runtimeText.textContent = trendingShows[index].runtime;
-        runtime.appendChild(runtimeText);
-
-        const seasons = document.createElement('div');
-        seasons.classList.add('content-seasons', 'content-info');
-        const seasonsIcon = document.createElement('img');
-        seasonsIcon.src = 'public/images/icons/stacks.svg';
-        seasonsIcon.alt = 'Seasons';
-        seasons.appendChild(seasonsIcon);
-        const seasonsText = document.createElement('span');
-        seasonsText.textContent = trendingShows[index].numberOfSeasons + ' Seasons';
-        seasons.appendChild(seasonsText);
-
-        infoContainer.appendChild(runtime);
-        infoContainer.appendChild(seasons);
-    });
+    renderPagination(paginationElement, trendingShows, 1, perPage, mainElement, renderContentCardsWithRuntimeAndSeasons);
 });
 
 fetch('temp/new-release-movies.json').then(async response => {
@@ -176,28 +139,12 @@ fetch('temp/new-release-movies.json').then(async response => {
     const paginationElement = newReleasesMoviesSection.querySelector('.pagination');
     const mainElement = newReleasesMoviesSection.querySelector('.new-releases-cards');
 
-    renderPagination(paginationElement, newReleasesMovies, 1, 5, mainElement, renderContentCards);
+    let perPage = 5;
+    if (window.innerWidth < 1439) {
+        perPage = 4;
+    }
 
-    const movieCards = mainElement.querySelectorAll('.content-card');
-
-    movieCards.forEach((card, index) => {
-        const infoContainer = card.querySelector('.content-info-container');
-
-        const releaseDate = document.createElement('div');
-        releaseDate.classList.add('content-release-date', 'content-info');
-        const releaseDatePrefix = document.createElement('span');
-        releaseDatePrefix.textContent = 'Released at ';
-
-        const releaseDateText = document.createElement('span');
-        releaseDateText.textContent = newReleasesMovies[index].releaseDate;
-        releaseDateText.style.color = "#bfbfbf";
-
-        releaseDate.appendChild(releaseDatePrefix);
-        releaseDate.appendChild(releaseDateText);
-
-        infoContainer.appendChild(releaseDate);
-        infoContainer.style.justifySelf = 'center'; // Center the release date info
-    });
+    renderPagination(paginationElement, newReleasesMovies, 1, perPage, mainElement, renderContentCardsWithReleaseDate);
 });
 
 fetch('temp/new-release-shows.json').then(async response => {
@@ -209,35 +156,12 @@ fetch('temp/new-release-shows.json').then(async response => {
     const paginationElement = newReleasesShowsSection.querySelector('.pagination');
     const mainElement = newReleasesShowsSection.querySelector('.new-releases-cards');
 
-    renderPagination(paginationElement, newReleasesShows, 1, 4, mainElement, renderContentCards);
+    let perPage = 4;
+    if (window.innerWidth < 1439) {
+        perPage = 3;
+    }
+    renderPagination(paginationElement, newReleasesShows, 1, perPage, mainElement, renderContentCardsWithRuntimeAndSeasons);
 
-    const showCards = mainElement.querySelectorAll('.content-card');
-    showCards.forEach((card, index) => {
-        const infoContainer = card.querySelector('.content-info-container');
-
-        const runtime = document.createElement('div');
-        runtime.classList.add('content-runtime', 'content-info');
-        const runtimeIcon = document.createElement('img');
-        runtimeIcon.src = 'public/images/icons/clock.svg';
-        runtimeIcon.alt = 'Runtime';
-        runtime.appendChild(runtimeIcon);
-        const runtimeText = document.createElement('span');
-        runtimeText.textContent = newReleasesShows[index].runtime;
-        runtime.appendChild(runtimeText);
-
-        const seasons = document.createElement('div');
-        seasons.classList.add('content-seasons', 'content-info');
-        const seasonsIcon = document.createElement('img');
-        seasonsIcon.src = 'public/images/icons/stacks.svg';
-        seasonsIcon.alt = 'Seasons';
-        seasons.appendChild(seasonsIcon);
-        const seasonsText = document.createElement('span');
-        seasonsText.textContent = newReleasesShows[index].numberOfSeasons + ' Seasons';
-        seasons.appendChild(seasonsText);
-
-        infoContainer.appendChild(runtime);
-        infoContainer.appendChild(seasons);
-    });
 });
 
 fetch('temp/must-watch-movies.json').then(async response => {
@@ -249,63 +173,13 @@ fetch('temp/must-watch-movies.json').then(async response => {
     const paginationElement = mustWatchMoviesSection.querySelector('.pagination');
     const mainElement = mustWatchMoviesSection.querySelector('.must-watch-cards');
 
-    renderPagination(paginationElement, mustWatchMovies, 1, 5, mainElement, renderContentCards);
+    let perPage = 5;
+    if (window.innerWidth < 1439) {
+        perPage = 4;
+    }
 
-    const movieCards = mainElement.querySelectorAll('.content-card');
-    movieCards.forEach((card, index) => {
-        const infoContainer = card.querySelector('.content-info-container');
+    renderPagination(paginationElement, mustWatchMovies, 1, perPage, mainElement, renderContentCardsWithRuntimeAndRating);
 
-        const runtime = document.createElement('div');
-        runtime.classList.add('content-runtime', 'content-info');
-        const runtimeIcon = document.createElement('img');
-        runtimeIcon.src = 'public/images/icons/clock.svg';
-        runtimeIcon.alt = 'Runtime';
-        runtime.appendChild(runtimeIcon);
-        const runtimeText = document.createElement('span');
-        runtimeText.textContent = mustWatchMovies[index].runtime;
-        runtime.appendChild(runtimeText);
-
-        const starRating = mustWatchMovies[index].starRating;
-        const ratedBy = mustWatchMovies[index].ratedBy;
-
-        const rating = document.createElement('div');
-        rating.classList.add('content-rating', 'content-info');
-        
-        const starContainer = document.createElement('div');
-        starContainer.classList.add('star-container');
-        for (let i = 1; i <= 5; i++) {
-            const starIcon = document.createElement('img');
-            if (i <= Math.floor(starRating)) {
-                starIcon.src = 'public/images/icons/star-filled.svg';
-            } else if (i === Math.ceil(starRating) && starRating % 1 !== 0) {
-                starIcon.src = 'public/images/icons/star-half-filled.svg';
-            } else {
-                starIcon.src = 'public/images/icons/star-empty.svg';
-            }
-            starIcon.alt = 'Star Rating';
-            starContainer.appendChild(starIcon);
-        }
-
-        const ratedByText = document.createElement('span');
-        ratedByText.textContent = `(${ratedBy})`;
-        const units = ['K', 'M', 'B', 'T'];
-        let formattedRatedBy = ratedBy;
-        let unitIndex = -1;
-        while (formattedRatedBy >= 1000 && unitIndex < units.length - 1) {
-            formattedRatedBy /= 1000;
-            unitIndex++;
-        }
-        if (unitIndex >= 0) {
-            formattedRatedBy = formattedRatedBy.toFixed(1) + units[unitIndex];
-        }
-        ratedByText.textContent = `${formattedRatedBy}`;
-
-        rating.appendChild(starContainer);
-        rating.appendChild(ratedByText);
-
-        infoContainer.appendChild(runtime);
-        infoContainer.appendChild(rating);
-    });
 });
 
 fetch('temp/must-watch-shows.json').then(async response => {
@@ -317,63 +191,13 @@ fetch('temp/must-watch-shows.json').then(async response => {
     const paginationElement = mustWatchShowsSection.querySelector('.pagination');
     const mainElement = mustWatchShowsSection.querySelector('.must-watch-cards');
 
-    renderPagination(paginationElement, mustWatchShows, 1, 4, mainElement, renderContentCards);
+    let perPage = 4;
+    if (window.innerWidth < 1439) {
+        perPage = 3;
+    }
 
-    const showCards = mainElement.querySelectorAll('.content-card');
-    showCards.forEach((card, index) => {
-        const infoContainer = card.querySelector('.content-info-container');
+    renderPagination(paginationElement, mustWatchShows, 1, perPage, mainElement, renderContentCardsWithRuntimeAndRating);
 
-        const runtime = document.createElement('div');
-        runtime.classList.add('content-runtime', 'content-info');
-        const runtimeIcon = document.createElement('img');
-        runtimeIcon.src = 'public/images/icons/clock.svg';
-        runtimeIcon.alt = 'Runtime';
-        runtime.appendChild(runtimeIcon);
-        const runtimeText = document.createElement('span');
-        runtimeText.textContent = mustWatchShows[index].runtime;
-        runtime.appendChild(runtimeText);
-
-        const starRating = mustWatchShows[index].starRating;
-        const ratedBy = mustWatchShows[index].ratedBy;
-
-        const rating = document.createElement('div');
-        rating.classList.add('content-rating', 'content-info');
-        
-        const starContainer = document.createElement('div');
-        starContainer.classList.add('star-container');
-        for (let i = 1; i <= 5; i++) {
-            const starIcon = document.createElement('img');
-            if (i <= Math.floor(starRating)) {
-                starIcon.src = 'public/images/icons/star-filled.svg';
-            } else if (i === Math.ceil(starRating) && starRating % 1 !== 0) {
-                starIcon.src = 'public/images/icons/star-half-filled.svg';
-            } else {
-                starIcon.src = 'public/images/icons/star-empty.svg';
-            }
-            starIcon.alt = 'Star Rating';
-            starContainer.appendChild(starIcon);
-        }
-
-        const ratedByText = document.createElement('span');
-        ratedByText.textContent = `(${ratedBy})`;
-        const units = ['K', 'M', 'B', 'T'];
-        let formattedRatedBy = ratedBy;
-        let unitIndex = -1;
-        while (formattedRatedBy >= 1000 && unitIndex < units.length - 1) {
-            formattedRatedBy /= 1000;
-            unitIndex++;
-        }
-        if (unitIndex >= 0) {
-            formattedRatedBy = formattedRatedBy.toFixed(1) + units[unitIndex];
-        }
-        ratedByText.textContent = `${formattedRatedBy}`;
-
-        rating.appendChild(starContainer);
-        rating.appendChild(ratedByText);
-
-        infoContainer.appendChild(runtime);
-        infoContainer.appendChild(rating);
-    });
 });
 
 // Render the content
@@ -409,6 +233,71 @@ const renderContentCards = (containerElement, entries, currentPage, perPage) => 
         });
 
         containerElement.appendChild(card);
+    });
+}
+
+const renderContentCardsWithRuntimeAndSeasons = (containerElement, entries, currentPage, perPage) => {
+    renderContentCards(containerElement, entries, currentPage, perPage);
+
+    const cards = containerElement.querySelectorAll('.content-card');
+    cards.forEach((card, index) => {
+        const infoContainer = card.querySelector('.content-info-container');
+        const entry = entries[(currentPage - 1) * perPage + index];
+
+        if (entry.runtime) {
+            addRuntimeToCard(infoContainer, entry);
+        }
+        if (entry.numberOfSeasons) {
+            addSeasonsToCard(infoContainer, entry);
+        }
+    });
+}
+
+const renderContentCardsWithReleaseDate = (containerElement, entries, currentPage, perPage) => {
+    renderContentCards(containerElement, entries, currentPage, perPage);
+    
+    const cards = containerElement.querySelectorAll('.content-card');
+    cards.forEach((card, index) => {
+        const infoContainer = card.querySelector('.content-info-container');
+        const entry = entries[(currentPage - 1) * perPage + index];
+
+        if (entry.releaseDate) {
+            addReleaseDateToCard(infoContainer, entry);
+        }
+    });
+}
+
+const renderContentCardsWithRuntimeAndRating = (containerElement, entries, currentPage, perPage) => {
+    renderContentCards(containerElement, entries, currentPage, perPage);
+
+    const cards = containerElement.querySelectorAll('.content-card');
+    cards.forEach((card, index) => {
+        const infoContainer = card.querySelector('.content-info-container');
+        const entry = entries[(currentPage - 1) * perPage + index];
+
+        if (entry.runtime) {
+            addRuntimeToCard(infoContainer, entry);
+        }
+        if (entry.starRating && entry.ratedBy) {
+            addRatingToCard(infoContainer, entry);
+        }
+    });
+}
+
+const renderContentCardsWithRuntimeAndViews = (containerElement, entries, currentPage, perPage) => {
+    renderContentCards(containerElement, entries, currentPage, perPage);
+
+    const cards = containerElement.querySelectorAll('.content-card');
+    cards.forEach((card, index) => {
+        const infoContainer = card.querySelector('.content-info-container');
+        const entry = entries[(currentPage - 1) * perPage + index];
+
+        if (entry.runtime) {
+            addRuntimeToCard(infoContainer, entry);
+        }
+        if (entry.views) {
+            addViewsToCard(infoContainer, entry);
+        }
     });
 }
 
@@ -458,4 +347,104 @@ const renderTrailers = (carousel, trailers, currentPage, perPage) => {
     carousel.style.backgroundSize = 'cover';
     carousel.style.backgroundPosition = 'center';
     carousel.style.backgroundClip = 'padding-box';
+}
+
+const addRuntimeToCard = (cardInfoContainer, content) => {
+    const runtime = document.createElement('div');
+    runtime.classList.add('content-runtime', 'content-info');
+    const runtimeIcon = document.createElement('img');
+    runtimeIcon.src = 'public/images/icons/clock.svg';
+    runtimeIcon.alt = 'Runtime';
+    runtime.appendChild(runtimeIcon);
+    const runtimeText = document.createElement('span');
+    runtimeText.textContent = content.runtime;
+    runtime.appendChild(runtimeText);
+
+    cardInfoContainer.appendChild(runtime);
+}
+
+const addSeasonsToCard = (cardInfoContainer, content) => {
+    const seasons = document.createElement('div');
+    seasons.classList.add('content-seasons', 'content-info');
+    const seasonsIcon = document.createElement('img');
+    seasonsIcon.src = 'public/images/icons/stacks.svg';
+    seasonsIcon.alt = 'Seasons';
+    seasons.appendChild(seasonsIcon);
+    const seasonsText = document.createElement('span');
+    seasonsText.textContent = content.numberOfSeasons + ' Seasons';
+    seasons.appendChild(seasonsText);
+
+    cardInfoContainer.appendChild(seasons);
+}
+
+const addReleaseDateToCard = (cardInfoContainer, content) => {
+    const releaseDate = document.createElement('div');
+    releaseDate.classList.add('content-release-date', 'content-info');
+    const releaseDatePrefix = document.createElement('span');
+    releaseDatePrefix.textContent = 'Released at ';
+
+    const releaseDateText = document.createElement('span');
+    releaseDateText.textContent = content.releaseDate;
+    releaseDateText.style.color = "#bfbfbf";
+
+    releaseDate.appendChild(releaseDatePrefix);
+    releaseDate.appendChild(releaseDateText);
+
+    cardInfoContainer.appendChild(releaseDate);
+}
+
+const addViewsToCard = (cardInfoContainer, content) => {
+    const views = document.createElement('div');
+    views.classList.add('content-views', 'content-info');
+    const viewsIcon = document.createElement('img');
+    viewsIcon.src = 'public/images/icons/eye.svg';
+    viewsIcon.alt = 'Views';
+    views.appendChild(viewsIcon);
+    const viewsText = document.createElement('span');
+    viewsText.textContent = content.views;
+    views.appendChild(viewsText);
+
+    cardInfoContainer.appendChild(views);
+}
+
+const addRatingToCard = (cardInfoContainer, content) => {
+    const starRating = content.starRating;
+    const ratedBy = content.ratedBy;
+
+    const rating = document.createElement('div');
+    rating.classList.add('content-rating', 'content-info');
+    
+    const starContainer = document.createElement('div');
+    starContainer.classList.add('star-container');
+    for (let i = 1; i <= 5; i++) {
+        const starIcon = document.createElement('img');
+        if (i <= Math.floor(starRating)) {
+            starIcon.src = 'public/images/icons/star-filled.svg';
+        } else if (i === Math.ceil(starRating) && starRating % 1 !== 0) {
+            starIcon.src = 'public/images/icons/star-half-filled.svg';
+        } else {
+            starIcon.src = 'public/images/icons/star-empty.svg';
+        }
+        starIcon.alt = 'Star Rating';
+        starContainer.appendChild(starIcon);
+    }
+
+    const ratedByText = document.createElement('span');
+    ratedByText.textContent = `(${ratedBy})`;
+    const units = ['K', 'M', 'B', 'T'];
+    let formattedRatedBy = ratedBy;
+    let unitIndex = -1;
+    while (formattedRatedBy >= 1000 && unitIndex < units.length - 1) {
+        formattedRatedBy /= 1000;
+        unitIndex++;
+    }
+    if (unitIndex >= 0) {
+        formattedRatedBy = formattedRatedBy.toFixed(1) + units[unitIndex];
+    }
+    ratedByText.textContent = `${formattedRatedBy}`;
+
+    rating.appendChild(starContainer);
+    rating.appendChild(ratedByText);
+
+    cardInfoContainer.appendChild(rating);
 }

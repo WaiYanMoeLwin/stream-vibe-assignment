@@ -735,4 +735,50 @@ footer .footer-info a:hover {
   cursor: pointer;
 }
 
+@media screen and (max-width: 1439px) {
+  #trailers-carousel {
+    height: 60rem;
+    padding: 0 3rem 1.6rem;
+    margin: 0 4rem 10rem;
+  }
+  #trailers-carousel .section-header {
+    margin-bottom: 2rem;
+    padding: 0 8rem;
+  }
+  #trailers-carousel .section-header .trailer-title {
+    font-size: 2.4rem;
+  }
+  #trailers-carousel .media-buttons-container {
+    margin-bottom: 3rem;
+  }
+  #trailers-carousel .media-buttons-container .play-button {
+    gap: 0.8rem;
+  }
+  .content-container {
+    margin: 0 4rem 10rem;
+    padding: 3rem;
+    gap: 6rem;
+  }
+  .content-container .genre-cards, .content-container .popular-genre-cards {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+  .content-container .genre-cards .genre-item-container, .content-container .popular-genre-cards .genre-item-container {
+    padding: 2rem;
+  }
+  .content-container .genre-cards .genre-item-container .genre-images-container, .content-container .popular-genre-cards .genre-item-container .genre-images-container {
+    height: 17rem;
+  }
+  .content-container .content-cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .content-container .content-cards .content-card {
+    padding: 1.2rem;
+  }
+  .content-container .content-cards .content-card .content-image-container {
+    margin-bottom: 1.2rem;
+  }
+}
+
 /*# sourceMappingURL=movies-and-shows.css.map */
