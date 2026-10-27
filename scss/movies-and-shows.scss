@@ -260,6 +260,11 @@
             }
         }
     }
+    &#movies {
+        .new-releases-cards, .trending-cards {
+            grid-template-columns: repeat(5, 1fr);
+        }
+    }
 }
 
 @media screen and (max-width: 1439px) {
@@ -289,6 +294,12 @@
         margin: 0 4rem 10rem;
         padding: 3rem;
         gap: 6rem;
+
+        .section-header {
+            .section-title {
+                font-size: 2.8rem;
+            }
+        }
 
         .genre-cards, .popular-genre-cards {
             grid-template-columns: repeat(4, 1fr);
@@ -369,8 +380,15 @@
     .content-container {
         margin: 0 2rem 8rem;
         padding: 0;
-        gap: 2rem;
+        gap: 5rem;
         border: none;
+
+        .section-header {
+            margin-bottom: 2rem;
+            .section-title {
+                font-size: 2.4rem;
+            }
+        }
 
         .content-title {
             display: none;
@@ -405,6 +423,8 @@
                 min-width: 20rem;
                 max-width: 20rem;
                 padding: 1.2rem;
+
+
 
                 .content-image-container {
                     margin-bottom: 1.2rem;
