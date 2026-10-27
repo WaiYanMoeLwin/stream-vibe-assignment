@@ -1,6 +1,6 @@
 
 // Render the pagination
-export const renderPagination = (paginationElement, items, currentPage, perPage, mainElement, renderMainElement, hasPages = true) => {
+export const renderPagination = (paginationElement, items, currentPage, perPage, mainElement, renderMainElement, hasPages = true, hasScrollbar=true) => {
     const totalPages = Math.ceil(items.length / perPage);
     if (hasPages) {
         const pageElement = paginationElement.querySelector('.pages');
@@ -50,7 +50,10 @@ export const renderPagination = (paginationElement, items, currentPage, perPage,
     // Render the items for the current page
     renderMainElement(mainElement, items, currentPage, perPage);
 
-    renderScrollbar(mainElement, items);
+    if (hasScrollbar) {
+        // Render the scrollbar for the items container
+        renderScrollbar(mainElement, items);
+    }
 };
 
 // Render background mashup images

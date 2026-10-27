@@ -32,7 +32,6 @@
         @include base.flex-row;
         justify-content: center;
         gap: 2rem;
-        margin-bottom: 4rem;
 
         img {
             width: 2.4rem;
@@ -74,12 +73,6 @@
         gap: 2rem;
         width: 85rem;
 
-        .section-title {
-            font-size: 2.4rem;
-            font-weight: 600;
-            margin: 0;
-        }
-
         .episodes-section {
             display: flex;
             flex-direction: column;
@@ -88,6 +81,11 @@
 
             &.hidden {
                 display: none;
+            }
+            .section-title {
+                font-size: 2rem;
+                font-weight: 600;
+                margin: 0;
             }
 
             .seasons-list {
@@ -266,11 +264,11 @@
             }
 
             .cast-list {
-                @include base.flex-row;
+                display: grid;
+                grid-template-columns: repeat(8, 1fr);
+                gap: 1rem;
                 
                 .cast-item {
-                    width: 8.75rem;
-                    height: 8.9rem;
                     overflow: hidden;
                     border-radius: 1rem;
 
@@ -344,113 +342,304 @@
         padding: 4rem;
         width: 41.6rem;
         box-sizing: border-box;
-
-        .section-header {
-            @include base.flex-row;
-            justify-content: flex-start;
-            gap: 0.15rem;
-            margin-bottom: 1rem;
-            h2 {
-                display: inline-block;
-                color: base.$grey-60;
-                font-size: 1.8rem;
-                font-weight: 500;
-                margin: 0;
-            }
-            img {
-                width: 2.4rem;
-                height: 2.4rem;
-            }
-        }
-
-        .released-year {
-            font-size: 1.6rem;
-            font-weight: 600;
-            margin: 0;
-            color: base.$white;
-        }
-
-        .available-languages-list, .genres-list {
-            @include base.reset-list;
-            @include base.flex-row;
-            justify-content: flex-start;
-            flex-wrap: wrap;
-            gap: 1rem;
-
-            li {
-                font-size: 1.4rem;
-                color: base.$white;
-                padding: 0.6rem 1.2rem;
-                border-radius: 0.6rem;
-                font-weight: 500;
-                background-color: base.$black-08;
-                border: 1px solid base.$black-15;
-            }
-        }
-
-        .content-rating {
-            @include base.flex-row;
-            justify-content: flex-start;
-            gap: 1.6rem;
-            flex-wrap: wrap;
-
-            .rating-item {
-                display: flex;
-                flex-direction: column;
-                gap: 0.4rem;
-                padding: 1.4rem;
-                background-color: base.$black-08;
-                border: 1px solid base.$black-15;
-                border-radius: 0.8rem;
-                width: 15rem;
-                box-sizing: border-box;
-
-                .rating-source {
+        section {
+            .section-header {
+                @include base.flex-row;
+                justify-content: flex-start;
+                gap: 0.15rem;
+                margin-bottom: 1rem;
+                h2 {
+                    display: inline-block;
+                    color: base.$grey-60;
                     font-size: 1.6rem;
-                    font-weight: 600;
-                    margin: 0;
-                }
-                .rating-stars {
-                    color: base.$white;
-                    font-size: 1.4rem;
                     font-weight: 500;
                     margin: 0;
                 }
+                img {
+                    width: 2.4rem;
+                    height: 2.4rem;
+                }
             }
-        }
+            .released-year {
+                font-size: 1.6rem;
+                font-weight: 600;
+                margin: 0;
+                color: base.$white;
+            }
 
-        .director-names, .music-composers {
-            @include base.reset-list;
-            @include base.flex-row;
-            justify-content: flex-start;
-            gap: 1rem;
-            flex-wrap: wrap;
-
-            li {
+            .available-languages-list, .genres-list {
+                @include base.reset-list;
                 @include base.flex-row;
                 justify-content: flex-start;
-                padding: 1.2rem;
-                border-radius: 0.8rem;
-                font-weight: 500;
-                background-color: base.$black-08;
-                border: 1px solid base.$black-15;
-                gap: 0.8rem;
+                flex-wrap: wrap;
+                gap: 1rem;
 
-                .name-text {
-                    font-size: 1.6rem;
-                    margin: 0;
-                }
-                .location {
+                li {
                     font-size: 1.4rem;
-                    margin: 0;
+                    color: base.$white;
+                    padding: 0.6rem 1.2rem;
+                    border-radius: 0.6rem;
+                    font-weight: 500;
+                    background-color: base.$black-08;
+                    border: 1px solid base.$black-15;
+                }
+            }
+
+            .content-rating {
+                @include base.flex-row;
+                justify-content: flex-start;
+                gap: 1.6rem;
+                flex-wrap: wrap;
+
+                .rating-item {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.4rem;
+                    padding: 1.4rem;
+                    background-color: base.$black-08;
+                    border: 1px solid base.$black-15;
+                    border-radius: 0.8rem;
+                    width: 15rem;
+                    box-sizing: border-box;
+
+                    .rating-source {
+                        font-size: 1.6rem;
+                        font-weight: 600;
+                        margin: 0;
+                    }
+                    .rating-stars {
+                        color: base.$white;
+                        font-size: 1.4rem;
+                        font-weight: 500;
+                        margin: 0;
+                    }
+                }
+            }
+
+            .director-names, .music-composers {
+                @include base.reset-list;
+                @include base.flex-row;
+                justify-content: flex-start;
+                gap: 1rem;
+                flex-wrap: wrap;
+
+                li {
+                    @include base.flex-row;
+                    justify-content: flex-start;
+                    padding: 1.2rem;
+                    border-radius: 0.8rem;
+                    font-weight: 500;
+                    background-color: base.$black-08;
+                    border: 1px solid base.$black-15;
+                    gap: 0.8rem;
+
+                    .name-text {
+                        font-size: 1.6rem;
+                        margin: 0;
+                    }
+                    .location {
+                        font-size: 1.4rem;
+                        margin: 0;
+                    }
+
+                    img {
+                        width: 5rem;
+                        height: 5rem;
+                        object-fit: cover;
+                        border-radius: 0.6rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1439px) {
+    #thumbnail {
+        padding: 0 2rem 1.6rem;
+        margin: 0 4rem 8rem;
+        height: 60rem;
+
+        .title {
+            font-size: 2.8rem;
+        }
+    }
+
+    #content-info {
+        padding: 0 4rem 12rem;
+
+        .main-info {
+            .episodes-section {
+                padding: 2.4rem;
+                .seasons-list {
+                    .season-item {
+                        padding: 2rem 2.4rem;
+                        .episodes-list {
+                            .episode-item {
+                                padding: 2.5rem 0 3rem;
+
+                                .episode-thumbnail {
+                                    height: 10rem;
+                                    width: 14rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            section {
+                padding: 2rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    #thumbnail {
+        padding: 0 2.4rem 1.6rem;
+        margin: 0 2rem 6rem;
+        height: 50rem;
+
+        .section-header {
+            padding: 0 8rem;
+            .title {
+                font-size: 2.4rem;
+            }
+        }
+    }
+
+    #content-info {
+        flex-direction: column;
+        padding: 0 2rem 8rem;
+
+        .main-info {
+            width: 100%;
+            .episodes-section, .description-section {
+                order: -2;
+            }
+        }
+            
+        .sidebar-info {
+            width: 100%;
+            order: -1;
+            padding: 2rem;
+            section {
+                padding: 0;
+                background-color: transparent;
+                border: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    #thumbnail {
+        padding: 0 2.4rem 1.6rem;
+        margin: 0 1.6rem 6rem;
+        height: 45rem;
+
+        .section-header {
+            padding: 0;
+            .title {
+                font-size: 2rem;
+            }
+            .description {
+                display: none;
+            }
+        }
+        .media-buttons-container {
+            width: 100%;
+            flex-direction: column;
+            .play-button {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    }
+
+    #content-info {
+        padding: 0 1.6rem 8rem;
+
+        .main-info {
+            .episodes-section {
+                .seasons-list {
+                    .season-item {
+                        padding: 1.6rem 2rem;
+                        .season-header {
+                            .season-info {
+                                gap: 0.6rem;
+                            }
+                            .season-title {
+                                font-size: 1.6rem;
+                            }
+                            .episode-count {
+                                font-size: 1.4rem;
+                            }
+                        }
+                        .episodes-list {
+                            gap: 2rem;
+                            .episode-item {
+                                border: none;
+                                background-color: base.$black-08;
+                                border-radius: 0.8rem;
+                                grid-template-columns: auto min-content;
+                                grid-auto-rows: min-content;
+                                grid-template-areas:
+                                    "thumbnail number"
+                                    "title title";
+                                padding: 2rem;
+
+                                .episode-number {
+                                    grid-area: number;
+                                }
+                                .episode-thumbnail {
+                                    grid-area: thumbnail;
+                                    width: 12rem;
+                                    height: 8rem;
+                                }
+                                .episode-info {
+                                    grid-area: title;
+                                    .episode-header {
+                                        display: flex;
+                                        flex-direction: column-reverse;
+                                        align-items: flex-start;
+                                        gap: 1rem;
+                                        .episode-title {
+                                            font-size: 1.6rem;
+                                        }
+                                        .episode-duration {
+                                            .duration-text {
+                                                font-size: 1.2rem;
+                                            }
+                                        }
+                                    }
+                                    .episode-description {
+                                        display: none;
+                                    }
+                                }
+                                
+                            }
+                        }
+                    }
+                }
+            }
+            section {
+                padding: 2.4rem;
+                .cast-list {
+                    grid-template-columns: repeat(4, 1fr);
                 }
 
-                img {
-                    width: 5rem;
-                    height: 5rem;
-                    object-fit: cover;
-                    border-radius: 0.6rem;
+                .reviews-list {
+                    grid-template-columns: 1fr;
                 }
+            }
+        }
+        .sidebar-info {
+            padding: 2.4rem;
+            section {
+                padding: 0;
+                background-color: transparent;
+                border: none;
             }
         }
     }

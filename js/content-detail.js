@@ -1,9 +1,24 @@
-import { renderBackgroundMashup, renderPagination } from './utils.js';
+import { menuToggle, renderBackgroundMashup, renderPagination } from './utils.js';
 
 const addReviewButton = document.querySelector('.reviews-section .add-review-button');
 addReviewButton.onclick = () => {
     // Implement the logic to add a new review
     console.log('Add review button clicked');
+};
+const menuButton = document.querySelector('header.main-header button.menu');
+const navElements = document.querySelectorAll('header.main-header nav');
+menuButton.addEventListener('click', () => {
+    menuToggle(menuButton, navElements);
+});
+
+if (window.innerWidth <= 1023) {
+    const mainInfoElement = document.querySelector('#content-info .main-info');
+    const sidebarInfoElement = document.querySelector('#content-info .sidebar-info');
+    mainInfoElement.appendChild(sidebarInfoElement);
+} else {
+    const mainInfoElement = document.querySelector('#content-info .main-info');
+    const sidebarInfoElement = document.querySelector('#content-info .sidebar-info');
+    mainInfoElement.parentNode.insertBefore(sidebarInfoElement, mainInfoElement.nextSibling);
 }
 
 fetch('temp/mock-movie-data.json').then( async response => {
@@ -184,11 +199,18 @@ const renderMainContentInfo = (mainContentInfoElement, contentEntry) => {
      const descriptionElement = mainContentInfoElement.querySelector('.description-section .description');
     renderDescription(descriptionElement, contentEntry);
 
+    let castPerPage = 8;
+    let reviewsPerPage = 2;
+    if (window.innerWidth <= 767) {
+        castPerPage = 4;
+        reviewsPerPage = 1;
+    }
+
     const castElement = mainContentInfoElement.querySelector('.cast-section .cast-list');
-    renderPagination(mainContentInfoElement.querySelector('.cast-section .pagination'), contentEntry.cast, 1, 8, castElement, renderCast, false);
+    renderPagination(mainContentInfoElement.querySelector('.cast-section .pagination'), contentEntry.cast, 1, castPerPage, castElement, renderCast, false, false);
 
     const reviewsElement = mainContentInfoElement.querySelector('.reviews-section .reviews-list');
-    renderPagination(mainContentInfoElement.querySelector('.reviews-section .pagination'), contentEntry.reviews, 1, 2, reviewsElement, renderReviews);
+    renderPagination(mainContentInfoElement.querySelector('.reviews-section .pagination'), contentEntry.reviews, 1, reviewsPerPage, reviewsElement, renderReviews, true, false);
 }
 
 const renderSideBarContentInfo = (sidebarContentInfoElement, contentEntry) => {
@@ -400,6 +422,7 @@ const renderSeasonList = (seasonsElement, seasons) => {
             durationIcon.src = 'public/images/icons/clock-unfilled.svg';
             durationIcon.alt = 'Duration';
             const durationText = document.createElement('span');
+            durationText.classList.add('duration-text');
             durationText.textContent = episode.durationMinutes + ' min';
             episodeDuration.appendChild(durationIcon);
             episodeDuration.appendChild(durationText);

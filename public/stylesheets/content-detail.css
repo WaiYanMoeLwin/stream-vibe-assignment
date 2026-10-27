@@ -524,7 +524,6 @@ footer .footer-info a:hover {
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  margin-bottom: 4rem;
 }
 #thumbnail .media-buttons-container img {
   width: 2.4rem;
@@ -578,11 +577,6 @@ footer .footer-info a:hover {
   gap: 2rem;
   width: 85rem;
 }
-#content-info .main-info .section-title {
-  font-size: 2.4rem;
-  font-weight: 600;
-  margin: 0;
-}
 #content-info .main-info .episodes-section {
   display: flex;
   flex-direction: column;
@@ -591,6 +585,11 @@ footer .footer-info a:hover {
 }
 #content-info .main-info .episodes-section.hidden {
   display: none;
+}
+#content-info .main-info .episodes-section .section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0;
 }
 #content-info .main-info .episodes-section .seasons-list {
   list-style: none;
@@ -769,14 +768,11 @@ footer .footer-info a:hover {
   border-radius: 10rem;
 }
 #content-info .main-info section .cast-list {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 1rem;
 }
 #content-info .main-info section .cast-list .cast-item {
-  width: 8.75rem;
-  height: 8.9rem;
   overflow: hidden;
   border-radius: 1rem;
 }
@@ -852,7 +848,7 @@ footer .footer-info a:hover {
   width: 41.6rem;
   box-sizing: border-box;
 }
-#content-info .sidebar-info .section-header {
+#content-info .sidebar-info section .section-header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -861,24 +857,24 @@ footer .footer-info a:hover {
   gap: 0.15rem;
   margin-bottom: 1rem;
 }
-#content-info .sidebar-info .section-header h2 {
+#content-info .sidebar-info section .section-header h2 {
   display: inline-block;
   color: #999999;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 500;
   margin: 0;
 }
-#content-info .sidebar-info .section-header img {
+#content-info .sidebar-info section .section-header img {
   width: 2.4rem;
   height: 2.4rem;
 }
-#content-info .sidebar-info .released-year {
+#content-info .sidebar-info section .released-year {
   font-size: 1.6rem;
   font-weight: 600;
   margin: 0;
   color: #ffffff;
 }
-#content-info .sidebar-info .available-languages-list, #content-info .sidebar-info .genres-list {
+#content-info .sidebar-info section .available-languages-list, #content-info .sidebar-info section .genres-list {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -890,7 +886,7 @@ footer .footer-info a:hover {
   flex-wrap: wrap;
   gap: 1rem;
 }
-#content-info .sidebar-info .available-languages-list li, #content-info .sidebar-info .genres-list li {
+#content-info .sidebar-info section .available-languages-list li, #content-info .sidebar-info section .genres-list li {
   font-size: 1.4rem;
   color: #ffffff;
   padding: 0.6rem 1.2rem;
@@ -899,7 +895,7 @@ footer .footer-info a:hover {
   background-color: #141414;
   border: 1px solid #262626;
 }
-#content-info .sidebar-info .content-rating {
+#content-info .sidebar-info section .content-rating {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -908,7 +904,7 @@ footer .footer-info a:hover {
   gap: 1.6rem;
   flex-wrap: wrap;
 }
-#content-info .sidebar-info .content-rating .rating-item {
+#content-info .sidebar-info section .content-rating .rating-item {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
@@ -919,18 +915,18 @@ footer .footer-info a:hover {
   width: 15rem;
   box-sizing: border-box;
 }
-#content-info .sidebar-info .content-rating .rating-item .rating-source {
+#content-info .sidebar-info section .content-rating .rating-item .rating-source {
   font-size: 1.6rem;
   font-weight: 600;
   margin: 0;
 }
-#content-info .sidebar-info .content-rating .rating-item .rating-stars {
+#content-info .sidebar-info section .content-rating .rating-item .rating-stars {
   color: #ffffff;
   font-size: 1.4rem;
   font-weight: 500;
   margin: 0;
 }
-#content-info .sidebar-info .director-names, #content-info .sidebar-info .music-composers {
+#content-info .sidebar-info section .director-names, #content-info .sidebar-info section .music-composers {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -942,7 +938,7 @@ footer .footer-info a:hover {
   gap: 1rem;
   flex-wrap: wrap;
 }
-#content-info .sidebar-info .director-names li, #content-info .sidebar-info .music-composers li {
+#content-info .sidebar-info section .director-names li, #content-info .sidebar-info section .music-composers li {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -955,19 +951,176 @@ footer .footer-info a:hover {
   border: 1px solid #262626;
   gap: 0.8rem;
 }
-#content-info .sidebar-info .director-names li .name-text, #content-info .sidebar-info .music-composers li .name-text {
+#content-info .sidebar-info section .director-names li .name-text, #content-info .sidebar-info section .music-composers li .name-text {
   font-size: 1.6rem;
   margin: 0;
 }
-#content-info .sidebar-info .director-names li .location, #content-info .sidebar-info .music-composers li .location {
+#content-info .sidebar-info section .director-names li .location, #content-info .sidebar-info section .music-composers li .location {
   font-size: 1.4rem;
   margin: 0;
 }
-#content-info .sidebar-info .director-names li img, #content-info .sidebar-info .music-composers li img {
+#content-info .sidebar-info section .director-names li img, #content-info .sidebar-info section .music-composers li img {
   width: 5rem;
   height: 5rem;
   object-fit: cover;
   border-radius: 0.6rem;
+}
+
+@media screen and (max-width: 1439px) {
+  #thumbnail {
+    padding: 0 2rem 1.6rem;
+    margin: 0 4rem 8rem;
+    height: 60rem;
+  }
+  #thumbnail .title {
+    font-size: 2.8rem;
+  }
+  #content-info {
+    padding: 0 4rem 12rem;
+  }
+  #content-info .main-info .episodes-section {
+    padding: 2.4rem;
+  }
+  #content-info .main-info .episodes-section .seasons-list .season-item {
+    padding: 2rem 2.4rem;
+  }
+  #content-info .main-info .episodes-section .seasons-list .season-item .episodes-list .episode-item {
+    padding: 2.5rem 0 3rem;
+  }
+  #content-info .main-info .episodes-section .seasons-list .season-item .episodes-list .episode-item .episode-thumbnail {
+    height: 10rem;
+    width: 14rem;
+  }
+  #content-info .main-info section {
+    padding: 2rem;
+  }
+}
+@media screen and (max-width: 1023px) {
+  #thumbnail {
+    padding: 0 2.4rem 1.6rem;
+    margin: 0 2rem 6rem;
+    height: 50rem;
+  }
+  #thumbnail .section-header {
+    padding: 0 8rem;
+  }
+  #thumbnail .section-header .title {
+    font-size: 2.4rem;
+  }
+  #content-info {
+    flex-direction: column;
+    padding: 0 2rem 8rem;
+  }
+  #content-info .main-info {
+    width: 100%;
+  }
+  #content-info .main-info .episodes-section, #content-info .main-info .description-section {
+    order: -2;
+  }
+  #content-info .sidebar-info {
+    width: 100%;
+    order: -1;
+    padding: 2rem;
+  }
+  #content-info .sidebar-info section {
+    padding: 0;
+    background-color: transparent;
+    border: none;
+  }
+}
+@media screen and (max-width: 767px) {
+  #thumbnail {
+    padding: 0 2.4rem 1.6rem;
+    margin: 0 1.6rem 6rem;
+    height: 45rem;
+  }
+  #thumbnail .section-header {
+    padding: 0;
+  }
+  #thumbnail .section-header .title {
+    font-size: 2rem;
+  }
+  #thumbnail .section-header .description {
+    display: none;
+  }
+  #thumbnail .media-buttons-container {
+    width: 100%;
+    flex-direction: column;
+  }
+  #thumbnail .media-buttons-container .play-button {
+    width: 100%;
+    justify-content: center;
+  }
+  #content-info {
+    padding: 0 1.6rem 8rem;
+  }
+  #content-info .main-info .episodes-section .seasons-list .season-item {
+    padding: 1.6rem 2rem;
+  }
+  #content-info .main-info .episodes-section .seasons-list .season-item .season-header .season-info {
+    gap: 0.6rem;
+  }
+  #content-info .main-info .episodes-section .seasons-list .season-item .season-header .season-title {
+    font-size: 1.6rem;
+  }
+  #content-info .main-info .episodes-section .seasons-list .season-item .season-header .episode-count {
+    font-size: 1.4rem;
+  }
+  #content-info .main-info .episodes-section .seasons-list .season-item .episodes-list {
+    gap: 2rem;
+  }
+  #content-info .main-info .episodes-section .seasons-list .season-item .episodes-list .episode-item {
+    border: none;
+    background-color: #141414;
+    border-radius: 0.8rem;
+    grid-template-columns: auto min-content;
+    grid-auto-rows: min-content;
+    grid-template-areas: "thumbnail number" "title title";
+    padding: 2rem;
+  }
+  #content-info .main-info .episodes-section .seasons-list .season-item .episodes-list .episode-item .episode-number {
+    grid-area: number;
+  }
+  #content-info .main-info .episodes-section .seasons-list .season-item .episodes-list .episode-item .episode-thumbnail {
+    grid-area: thumbnail;
+    width: 12rem;
+    height: 8rem;
+  }
+  #content-info .main-info .episodes-section .seasons-list .season-item .episodes-list .episode-item .episode-info {
+    grid-area: title;
+  }
+  #content-info .main-info .episodes-section .seasons-list .season-item .episodes-list .episode-item .episode-info .episode-header {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  #content-info .main-info .episodes-section .seasons-list .season-item .episodes-list .episode-item .episode-info .episode-header .episode-title {
+    font-size: 1.6rem;
+  }
+  #content-info .main-info .episodes-section .seasons-list .season-item .episodes-list .episode-item .episode-info .episode-header .episode-duration .duration-text {
+    font-size: 1.2rem;
+  }
+  #content-info .main-info .episodes-section .seasons-list .season-item .episodes-list .episode-item .episode-info .episode-description {
+    display: none;
+  }
+  #content-info .main-info section {
+    padding: 2.4rem;
+  }
+  #content-info .main-info section .cast-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  #content-info .main-info section .reviews-list {
+    grid-template-columns: 1fr;
+  }
+  #content-info .sidebar-info {
+    padding: 2.4rem;
+  }
+  #content-info .sidebar-info section {
+    padding: 0;
+    background-color: transparent;
+    border: none;
+  }
 }
 
 /*# sourceMappingURL=content-detail.css.map */
