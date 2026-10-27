@@ -535,6 +535,7 @@ header.main-header {
   position: relative;
   top: -8rem;
   box-sizing: border-box;
+  border-radius: 0.4rem;
 }
 #contact-us .contact-us-content .banner-image .background-mashup .background-mashup-image {
   width: 9.5rem;
@@ -550,7 +551,6 @@ header.main-header {
   background-color: #0f0f0f;
   border-radius: 1rem;
   border: 1px solid #262626;
-  width: 80rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
@@ -725,6 +725,155 @@ header.main-header {
 }
 #faq .faq-items-container .faq-list .faq-container.expanded .faq-sub-container {
   align-items: flex-start;
+}
+
+@media screen and (max-width: 1439px) {
+  header.main-header {
+    margin-bottom: 4rem;
+  }
+  #contact-us {
+    gap: 2rem;
+    margin: 4rem 4rem 10rem;
+  }
+  #contact-us .contact-us-content {
+    width: 38rem;
+    gap: 2rem;
+  }
+  #contact-us .contact-us-content .contact-us-text .title {
+    font-size: 3.2rem;
+  }
+  #contact-us .contact-us-content .banner-image {
+    height: 36rem;
+  }
+  #contact-us .contact-us-content .banner-image .background-mashup {
+    left: -3rem;
+    grid-auto-rows: 10rem;
+    gap: 1.6rem;
+  }
+  #contact-us .contact-form {
+    padding: 2rem;
+  }
+  #contact-us .contact-form .form-field.form-footer .privacy-policy label {
+    width: 30rem;
+  }
+  #faq {
+    padding: 0 4rem;
+    margin-bottom: 10rem;
+  }
+  #faq .section-header {
+    margin-bottom: 5rem;
+  }
+  #faq .section-header .section-title {
+    font-size: 2.4rem;
+  }
+  #faq .section-header .section-description {
+    font-size: 1.4rem;
+  }
+  #faq .section-header button {
+    width: 15rem;
+  }
+  #faq .faq-items-container {
+    gap: 3rem;
+  }
+  #faq .faq-items-container .faq-list .faq-container {
+    padding: 1.6rem;
+    gap: 1.4rem;
+    width: 44rem;
+  }
+  #faq .faq-items-container .faq-list .faq-container .faq-sub-container {
+    gap: 1.2rem;
+  }
+  #faq .faq-items-container .faq-list .faq-container .faq-sub-container .faq-question {
+    font-size: 1.8rem;
+  }
+}
+@media screen and (max-width: 1023px) {
+  #contact-us {
+    flex-direction: column;
+    gap: 5rem;
+    margin: 4rem 2rem 8rem;
+  }
+  #contact-us .contact-us-content {
+    width: 100%;
+    gap: 3rem;
+  }
+  #contact-us .contact-us-content .contact-us-text .title {
+    font-size: 2.8rem;
+  }
+  #contact-us .contact-us-content .contact-us-text .description {
+    font-size: 1.4rem;
+  }
+  #contact-us .contact-us-content .banner-image {
+    height: 34rem;
+  }
+  #contact-us .contact-us-content .banner-image .background-mashup {
+    grid-template-columns: repeat(8, 1fr);
+    left: -1rem;
+  }
+  #contact-us .contact-form {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 2.4rem;
+  }
+  #faq {
+    padding: 0 2rem;
+    margin-bottom: 8rem;
+  }
+  #faq .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+  #faq .section-header .section-title {
+    font-size: 2rem;
+  }
+  #faq .faq-items-container {
+    width: 100%;
+    flex-direction: column;
+    gap: 0;
+  }
+  #faq .faq-items-container .faq-list {
+    width: 100%;
+    border-bottom: 1px solid;
+    border-image: linear-gradient(90deg, rgba(229, 0, 0, 0) 0%, #E50000 16.67%, rgba(229, 0, 0, 0) 100%) 1;
+  }
+  #faq .faq-items-container .faq-list .faq-container {
+    width: 100%;
+    padding: 4rem 1rem;
+  }
+  #faq .faq-items-container .faq-list:last-child {
+    border-bottom: none;
+  }
+  #faq .faq-items-container .faq-list .faq-sub-container {
+    gap: 1.6rem;
+  }
+  #faq .faq-items-container .faq-list .faq-sub-container .faq-number {
+    font-size: 1.6rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  #contact-us {
+    margin: 4rem 1.6rem 8rem;
+  }
+  #contact-us .contact-form {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  #contact-us .contact-form .form-field.message {
+    grid-column: 1;
+  }
+  #contact-us .contact-form .form-field.form-footer {
+    flex-direction: column;
+    grid-column: 1;
+    gap: 2rem;
+  }
+  #contact-us .contact-form .form-field.form-footer .privacy-policy label {
+    width: 100%;
+  }
+  #contact-us .contact-form .form-field.form-footer button#submit-button {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=support.css.map */

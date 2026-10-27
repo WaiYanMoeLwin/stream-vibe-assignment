@@ -42,6 +42,7 @@ header.main-header {
                 position: relative;
                 top: -8rem;
                 box-sizing: border-box;
+                border-radius: 0.4rem;
 
                 .background-mashup-image {
                     width: 9.5rem;
@@ -62,7 +63,6 @@ header.main-header {
         background-color: base.$black-06;
         border-radius: 1rem;
         border: 1px solid base.$black-15;
-        width: 80rem;
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto;
@@ -232,4 +232,191 @@ header.main-header {
             }
         }
     }
+}
+
+@media screen and (max-width: 1439px) {
+    header.main-header {
+        margin-bottom: 4rem;
+    }
+    #contact-us {
+        gap: 2rem;
+        margin: 4rem 4rem 10rem;
+
+        .contact-us-content {
+            width: 38rem;
+            gap: 2rem;
+            
+            .contact-us-text {
+                .title {
+                    font-size: 3.2rem;
+                }
+            }
+            .banner-image {
+                height: 36rem;
+                .background-mashup {
+                    left: -3rem;
+                    grid-auto-rows: 10rem;
+                    gap: 1.6rem;
+                }
+            }
+        }
+
+        .contact-form {
+            padding: 2rem;
+            .form-field {
+                &.form-footer {
+                    .privacy-policy {
+                        label {
+                            width: 30rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #faq {
+        padding: 0 4rem;
+        margin-bottom: 10rem;
+
+        .section-header {
+            margin-bottom: 5rem;
+            .section-title {
+                font-size: 2.4rem;
+            }
+            .section-description {
+                font-size: 1.4rem;
+            }
+            button {
+                width: 15rem;
+            }
+        }
+
+        .faq-items-container {
+            gap: 3rem;
+            .faq-list {
+                .faq-container {
+                    padding: 1.6rem;
+                    gap: 1.4rem;
+                    width: 44rem;
+
+                    .faq-sub-container {
+                        gap: 1.2rem;
+                        .faq-question {
+                            font-size: 1.8rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    #contact-us {
+        flex-direction: column;
+        gap: 5rem;
+        margin: 4rem 2rem 8rem;
+
+        .contact-us-content {
+            width: 100%;
+            gap: 3rem;
+
+            .contact-us-text {
+                .title {
+                    font-size: 2.8rem;
+                }
+                .description {
+                    font-size: 1.4rem;
+                }
+            }
+            .banner-image {
+                height: 34rem;
+                .background-mashup {
+                    grid-template-columns: repeat(8, 1fr);
+                    left: -1rem;
+
+                }
+            }
+        }
+        .contact-form {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 2.4rem;
+        }
+    }
+
+    #faq {
+        padding: 0 2rem;
+        margin-bottom: 8rem;
+
+        .section-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 2rem;
+            margin-bottom: 4rem;
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        .faq-items-container {
+            width: 100%;
+            flex-direction: column;
+            gap: 0;
+
+            .faq-list {
+                width: 100%;
+                border-bottom: 1px solid;
+                border-image: linear-gradient(90deg, rgba(229, 0, 0, 0) 0%, #E50000 16.67%, rgba(229, 0, 0, 0) 100%) 1;
+                .faq-container {
+                    width: 100%;
+                    padding: 4rem 1rem;
+                }
+                &:last-child {
+                    border-bottom: none;
+                }
+                .faq-sub-container {
+                    gap: 1.6rem;
+                    .faq-number {
+                        font-size: 1.6rem;
+                    }
+
+
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    #contact-us {
+        margin: 4rem 1.6rem 8rem;
+
+        .contact-form {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+
+            .form-field {
+                &.message {
+                    grid-column: 1;
+                }
+                &.form-footer {
+                    flex-direction: column;
+                    grid-column: 1;
+                    gap: 2rem;
+
+                    .privacy-policy {
+                        label {
+                            width: 100%;
+                        }
+                    }
+                    button#submit-button {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
 }

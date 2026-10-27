@@ -1,5 +1,10 @@
-import { renderBackgroundMashup } from './utils.js';
+import { menuToggle, renderBackgroundMashup } from './utils.js';
 
+const menuButton = document.querySelector('header.main-header button.menu');
+const navElements = document.querySelectorAll('header.main-header nav');
+menuButton.addEventListener('click', () => {
+    menuToggle(menuButton, navElements);
+});
 
 fetch('temp/mock-movie-data.json').then( async response => {
     const moviesAndShows = await response.json();
@@ -10,8 +15,13 @@ fetch('temp/mock-movie-data.json').then( async response => {
     const mashupContainer = freeTrialCTA.querySelector('.background-mashup');
     renderBackgroundMashup(mashupContainer, moviesAndShows);
 
+    let numberOfMashupImages = 16;
+    if (window.innerWidth < 1023) {
+        numberOfMashupImages = 32;
+    }
+
     const contactUsMashup = document.querySelector('#contact-us .contact-us-content .background-mashup');
-    renderBackgroundMashup(contactUsMashup, moviesAndShows, 16);
+    renderBackgroundMashup(contactUsMashup, moviesAndShows, numberOfMashupImages);
 });
 
 fetch('temp/faqs.json').then(async (response) => {
