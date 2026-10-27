@@ -1,0 +1,8 @@
+{
+  "section": "new-releases",
+  "type": "movie",
+  "items": [
+    { "id": "thor-love-and-thunder-2022", "type": "movie", "title": "Thor: Love and Thunder", "year": 2022, "releaseDate": "2026-10-16", "runtime": "1h 59min", "poster": "public/images/posters/thor-love-and-thunder.png" },
+    { "id": "avengers-endgame-2019", "type": "movie", "title": "Avengers: Endgame", "year": 2019, "releaseDate": "2026-10-02", "runtime": "3h 1min", "poster": "public/images/posters/avengers-endgame.png" }
+  ]
+}
