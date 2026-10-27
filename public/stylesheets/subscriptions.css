@@ -40,6 +40,7 @@ header.main-header {
   box-sizing: border-box;
 }
 header.main-header button.menu {
+  display: none;
   width: 2.4rem;
   height: 2.4rem;
   padding: 1.2rem;
@@ -407,6 +408,9 @@ footer .footer-info a:hover {
   header.main-header nav.main-nav.active ul li a:hover {
     padding: 1.2rem 0;
   }
+  header.main-header button.menu {
+    display: block;
+  }
   .scrollbar {
     display: flex;
     justify-self: center;
@@ -661,6 +665,213 @@ header.main-header {
 }
 #features .feature-comparison-table tr:last-child td:last-child {
   border-bottom-right-radius: 1rem;
+}
+
+@media screen and (max-width: 1439px) {
+  #plans {
+    padding: 0 4rem;
+    margin-bottom: 10rem;
+  }
+  #plans .billing-cycles-selector {
+    padding: 0.6rem;
+  }
+  #plans .billing-cycles-selector .billing-cycle-button {
+    padding: 1rem 1.5rem;
+  }
+  #plans .pricing-cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  #plans .pricing-cards .pricing-card {
+    padding: 3rem;
+  }
+  #plans .pricing-cards .pricing-card .plan-title {
+    font-size: 1.8rem;
+  }
+  #plans .pricing-cards .pricing-card .plan-price {
+    margin-bottom: 3rem;
+  }
+  #plans .pricing-cards .pricing-card .plan-price .plan-price-numeric {
+    font-size: 2.5rem;
+  }
+  #plans .pricing-cards .pricing-card .pricing-card-buttons-container {
+    gap: 1rem;
+  }
+  #plans .pricing-cards .pricing-card .pricing-card-buttons-container button {
+    padding: 1.2rem 1.2rem;
+    font-size: 1.2rem;
+  }
+  #features {
+    padding: 0 4rem;
+    margin-bottom: 10rem;
+  }
+  #features .feature-comparison-title {
+    font-size: 3.2rem;
+  }
+  #features .feature-comparison-description {
+    margin: 0 10rem 4rem 0;
+  }
+  #features .feature-comparison-table th, #features .feature-comparison-table td {
+    padding: 1.6rem;
+  }
+}
+@media screen and (max-width: 1023px) {
+  header.main-header {
+    margin-bottom: 4rem;
+  }
+  #plans {
+    padding: 0 2rem;
+    margin-bottom: 8rem;
+  }
+  #plans .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+  #plans .section-header .section-title {
+    font-size: 2.4rem;
+  }
+  #plans .billing-cycles-selector {
+    padding: 0.6rem;
+  }
+  #plans .billing-cycles-selector .billing-cycle-button {
+    padding: 1rem 1.5rem;
+  }
+  #plans .pricing-cards {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  #plans .pricing-cards .pricing-card {
+    padding: 2.4rem;
+  }
+  #plans .pricing-cards .pricing-card .plan-title {
+    font-size: 1.8rem;
+  }
+  #plans .pricing-cards .pricing-card .plan-description {
+    margin-bottom: 3rem;
+  }
+  #plans .pricing-cards .pricing-card .plan-price {
+    margin-bottom: 3rem;
+  }
+  #plans .pricing-cards .pricing-card .plan-price .plan-price-numeric {
+    font-size: 2.5rem;
+  }
+  #plans .pricing-cards .pricing-card .pricing-card-buttons-container {
+    gap: 1rem;
+  }
+  #plans .pricing-cards .pricing-card .pricing-card-buttons-container button {
+    padding: 1.2rem 1.2rem;
+    font-size: 1.2rem;
+  }
+  #features {
+    padding: 0 2rem;
+    margin-bottom: 8rem;
+  }
+  #features .feature-comparison-title {
+    font-size: 2.4rem;
+  }
+  #features .feature-comparison-description {
+    margin: 0 0 4rem 0;
+  }
+  #features .feature-comparison-table th, #features .feature-comparison-table td {
+    padding: 1.2rem 0.8rem;
+  }
+  #features .feature-comparison-table th {
+    gap: 0.4rem;
+  }
+  #features .feature-comparison-table th .popular-badge {
+    font-size: 1.2rem;
+    padding: 0.4rem;
+  }
+  #features .feature-comparison-table th .feature-header-title {
+    font-size: 1.6rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  #features .feature-comparison-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  #features .feature-comparison-mobile .plan-tab-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    background-color: #0f0f0f;
+    border-radius: 0.8rem;
+    border: 1px solid #262626;
+    padding: 0.8rem;
+    box-sizing: border-box;
+  }
+  #features .feature-comparison-mobile .plan-tab-container .plan-tab {
+    padding: 1.4rem 2rem;
+    background-color: #e50000;
+    color: #ffffff;
+    font-family: "Manrope", sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    border-radius: 0.8rem;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    border-radius: 0.6rem;
+    padding: 1.2rem 0;
+    justify-content: center;
+  }
+  #features .feature-comparison-mobile .plan-tab-container .plan-tab.active {
+    background-color: #1f1f1f;
+    color: #ffffff;
+  }
+  #features .feature-comparison-mobile .features-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 2.4rem;
+    padding: 2.4rem;
+    background-color: #0f0f0f;
+    border-radius: 1.2rem;
+    border: 1px solid #262626;
+    grid-template-areas: "price freeTrial" "content content" "devices devices" "cancel hdr" "dolbyAtmos adFree" "offline sharing";
+  }
+  #features .feature-comparison-mobile .features-container .feature-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  #features .feature-comparison-mobile .features-container .feature-container .feature-value {
+    color: #ffffff;
+  }
+  #features .feature-comparison-mobile .features-container .feature-container.price {
+    grid-area: price;
+  }
+  #features .feature-comparison-mobile .features-container .feature-container.content {
+    grid-area: content;
+  }
+  #features .feature-comparison-mobile .features-container .feature-container.devices {
+    grid-area: devices;
+  }
+  #features .feature-comparison-mobile .features-container .feature-container.freeTrial {
+    grid-area: freeTrial;
+  }
+  #features .feature-comparison-mobile .features-container .feature-container.cancelAnytime {
+    grid-area: cancel;
+  }
+  #features .feature-comparison-mobile .features-container .feature-container.hdr {
+    grid-area: hdr;
+  }
+  #features .feature-comparison-mobile .features-container .feature-container.dolbyAtmos {
+    grid-area: dolbyAtmos;
+  }
+  #features .feature-comparison-mobile .features-container .feature-container.adFree {
+    grid-area: adFree;
+  }
+  #features .feature-comparison-mobile .features-container .feature-container.offlineViewing {
+    grid-area: offline;
+  }
+  #features .feature-comparison-mobile .features-container .feature-container.familySharing {
+    grid-area: sharing;
+  }
 }
 
 /*# sourceMappingURL=subscriptions.css.map */

@@ -40,6 +40,7 @@ header.main-header {
   box-sizing: border-box;
 }
 header.main-header button.menu {
+  display: none;
   width: 2.4rem;
   height: 2.4rem;
   padding: 1.2rem;
@@ -406,6 +407,9 @@ footer .footer-info a:hover {
   }
   header.main-header nav.main-nav.active ul li a:hover {
     padding: 1.2rem 0;
+  }
+  header.main-header button.menu {
+    display: block;
   }
   .scrollbar {
     display: flex;

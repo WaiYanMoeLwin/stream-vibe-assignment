@@ -1,4 +1,10 @@
-import { renderBackgroundMashup } from './utils.js';
+import { menuToggle, renderBackgroundMashup } from './utils.js';
+
+const menuButton = document.querySelector('header.main-header button.menu');
+const navElements = document.querySelectorAll('header.main-header nav');
+menuButton.addEventListener('click', () => {
+    menuToggle(menuButton, navElements);
+});
 
 fetch('temp/mock-movie-data.json').then( async response => {
     const moviesAndShows = await response.json();
@@ -23,7 +29,11 @@ fetch('temp/pricing-plans.json').then(async (response) => {
     renderBillingCycles(billingCyclesSelectorElement, billingCycles, currency, pricingPlansElement, plans, renderPricingPlans);
 
     const featureComparisonElement = document.querySelector('#features');
-    renderFeatureComparison(featureComparisonElement, pricingPlansData);
+    if (window.innerWidth >= 768) {
+        renderFeatureComparisonTable(featureComparisonElement, pricingPlansData);
+    } else {
+        renderFeatureComparisonMobile(featureComparisonElement, pricingPlansData);
+    }
 });
 
 
@@ -110,7 +120,7 @@ const renderPricingPlans = (element, plans, billingCycle, currency) => {
     });
 }
 
-const renderFeatureComparison = (element, pricingData) => {
+const renderFeatureComparisonTable = (element, pricingData) => {
     const featureComparisonDescription = element.querySelector('.feature-comparison-description');
     featureComparisonDescription.textContent = pricingData.comparisonDescription;
 
@@ -120,6 +130,11 @@ const renderFeatureComparison = (element, pricingData) => {
     const featureComparisonTable = element.querySelector('.feature-comparison-table');
     const tableHeader = featureComparisonTable.querySelector('thead');
     const tableBody = featureComparisonTable.querySelector('tbody');
+
+    // Remove hidden class from the table to make it visible
+    featureComparisonTable.classList.remove('hidden');
+    const featureComparisonMobile = element.querySelector('.feature-comparison-mobile');
+    featureComparisonMobile.classList.add('hidden');
 
     const headerRow = document.createElement('tr');
     const featureHeaderCell = document.createElement('th');
@@ -176,4 +191,84 @@ const renderFeatureComparison = (element, pricingData) => {
     rows.forEach((row, index) => {
         row.style.gridTemplateColumns = `repeat(${numberOfPlans + 1}, 1fr)`;
     });
+}
+
+const renderFeatureComparisonMobile = (element, pricingData) => {
+    const featureComparisonDescription = element.querySelector('.feature-comparison-description');
+    featureComparisonDescription.textContent = pricingData.comparisonDescription;
+
+    const numberOfPlans = pricingData.plans.length;
+    const numberOfFeatures = pricingData.comparisonRows.length;
+
+    const featureComparisonTable = element.querySelector('.feature-comparison-table');
+    const featureComparisonMobile = element.querySelector('.feature-comparison-mobile');
+    featureComparisonTable.classList.add('hidden');
+    featureComparisonMobile.classList.remove('hidden');
+
+    const planTabContainer = document.createElement('div');
+    planTabContainer.classList.add('plan-tab-container');
+    const planTabs = [];
+
+    pricingData.plans.forEach((plan, planIndex) => {
+        const planTab = document.createElement('button');
+        planTab.classList.add('plan-tab');
+        planTab.textContent = plan.shortName;
+        planTab.dataset.target = plan.id;
+        if (planIndex === 0) {
+            planTab.classList.add('active');
+        }
+        planTabContainer.appendChild(planTab);
+        planTabs.push(planTab);
+    });
+
+    const featuresContainer = document.createElement('div');
+    featuresContainer.classList.add('features-container');
+
+    planTabs.forEach((planTab) => {
+        planTab.addEventListener('click', () => {
+            // Remove active class from all tabs
+            planTabContainer.querySelectorAll('.plan-tab').forEach((tab) => {
+                tab.classList.remove('active');
+            });
+            // Add active class to the clicked tab
+            planTab.classList.add('active');
+
+            // Render the features for the selected plan
+            renderPlanFeatures(planTab.dataset.target);
+        });
+    });
+
+    const renderPlanFeatures = (planId) => {
+        // Clear existing features
+        featuresContainer.innerHTML = '';
+
+        const selectedPlan = pricingData.plans.find(plan => plan.id === planId);
+        if (!selectedPlan) return;
+
+        pricingData.comparisonRows.forEach((feature) => {
+            const featureContainer = document.createElement('div');
+            featureContainer.classList.add('feature-container', `${feature.key}`);
+
+            const featureName = document.createElement('span');
+            featureName.classList.add('feature-name');
+            featureName.textContent = feature.label;
+
+            const featureValue = document.createElement('span');
+            featureValue.classList.add('feature-value');
+            if (feature.key !== 'price') {
+                featureValue.textContent = selectedPlan.features[feature.key];
+            } else {
+                featureValue.textContent = `${pricingData.currency.symbol}${selectedPlan.price[pricingData.billingCycles[0].id]}${pricingData.billingCycles[0].suffix}`;
+            }
+
+            featureContainer.appendChild(featureName);
+            featureContainer.appendChild(featureValue);
+            featuresContainer.appendChild(featureContainer);
+        })
+    }
+
+    renderPlanFeatures(pricingData.plans[0].id); // Render features for the first plan by default
+
+    featureComparisonMobile.appendChild(planTabContainer);
+    featureComparisonMobile.appendChild(featuresContainer);
 }
