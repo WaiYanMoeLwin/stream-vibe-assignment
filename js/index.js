@@ -1,14 +1,27 @@
+import api from './api.js';
 import { menuToggle, renderBackgroundMashup, renderGenres, renderPagination } from './utils.js';
 
-const menuButton = document.querySelector('header.main-header button.menu');
-const navElements = document.querySelectorAll('header.main-header nav');
-menuButton.addEventListener('click', () => {
-    menuToggle(menuButton, navElements);
-});
+const renderPage = async () => {
+    const [
+        moviesAndShowsData,
+        genresData,
+        devicesData,
+        faqData,
+        pricingPlansData
+    ] = await Promise.all([
+        api.fetchMoviesAndShows(),
+        api.fetchGenres(),
+        api.fetchDevices(),
+        api.fetchFAQs(),
+        api.fetchPricingPlans()
+    ]);
 
-fetch('temp/mock-movie-data.json').then(async (response) => {
-    const moviesAndShowsData = await response.json();
-    console.log('mockData', moviesAndShowsData);
+    // Initialize the mobile menu
+    const menuButton = document.querySelector('header.main-header button.menu');
+    const navElements = document.querySelectorAll('header.main-header nav');
+    menuButton.addEventListener('click', () => {
+        menuToggle(menuButton, navElements);
+    });
 
     // Render the background mashup for the hero section
     const heroSection = document.getElementById('hero');
@@ -19,12 +32,8 @@ fetch('temp/mock-movie-data.json').then(async (response) => {
     const freeTrialCTA = document.getElementById('free-trial-cta');
     const backgroundMashup = freeTrialCTA.querySelector('.background-mashup');
     renderBackgroundMashup(backgroundMashup, moviesAndShowsData, 36);
-});
 
-fetch('temp/mock-genres.json').then(async (response) => {
-    const genresData = await response.json();
-    console.log('genresData', genresData);
-
+    // Render the genres
     const genresElement = document.querySelector('#categories .category-cards');
     const paginationElement = document.querySelector('#categories .pagination');
     const currentPage = 1;
@@ -37,30 +46,17 @@ fetch('temp/mock-genres.json').then(async (response) => {
         perPage = genresData.length; // Show all genres on smaller screens
     }
     renderPagination(paginationElement, genresData, currentPage, perPage, genresElement, renderGenres);
-});
 
-fetch('temp/devices.json').then(async (response) => {
-    const devicesData = await response.json();
-    console.log('devicesData', devicesData);
-
+    // Render the devices
     const devicesElement = document.querySelector('#devices .device-cards');
     renderDevices(devicesElement, devicesData);
-});
 
-fetch('temp/faqs.json').then(async (response) => {
-    const faqData = await response.json();
-    console.log('faqData', faqData);
-
+    // Render the FAQs
     const numberOfColumns = 2;
-
     const faqElement = document.querySelector('#faq .faq-items-container');
     renderFAQs(faqElement, faqData, numberOfColumns);
-});
 
-fetch('temp/pricing-plans.json').then(async (response) => {
-    const pricingPlansData = await response.json();
-    console.log('pricingPlansData', pricingPlansData);
-
+    // Render the pricing plans
     const billingCycles = pricingPlansData.billingCycles;
     const currency = pricingPlansData.currency;
     const plans = pricingPlansData.plans;
@@ -68,7 +64,7 @@ fetch('temp/pricing-plans.json').then(async (response) => {
     const pricingPlansElement = document.querySelector('#pricing .pricing-cards');
     const billingCyclesSelectorElement = document.querySelector('#pricing .billing-cycles-selector');
     renderBillingCycles(billingCyclesSelectorElement, billingCycles, currency, pricingPlansElement, plans, renderPricingPlans);
-});
+}
 
 // Render the devices
 const renderDevices = (element, devices) => {
@@ -270,3 +266,5 @@ const renderPricingPlans = (element, plans, billingCycle, currency) => {
         element.appendChild(pricingCard);
     });
 }
+
+renderPage();

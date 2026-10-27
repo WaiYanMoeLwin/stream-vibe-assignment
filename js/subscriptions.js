@@ -1,25 +1,29 @@
+import api from './api.js';
 import { menuToggle, renderBackgroundMashup } from './utils.js';
 
-const menuButton = document.querySelector('header.main-header button.menu');
-const navElements = document.querySelectorAll('header.main-header nav');
-menuButton.addEventListener('click', () => {
-    menuToggle(menuButton, navElements);
-});
 
-fetch('temp/mock-movie-data.json').then( async response => {
-    const moviesAndShows = await response.json();
-    console.log('Fetched movies and shows:', moviesAndShows);
+const renderPage = async () => {
+    const [
+        moviesAndShows,
+        pricingPlansData
+    ] = await Promise.all([
+        api.fetchMoviesAndShows(),
+        api.fetchPricingPlans()
+    ]);
+
+    // Event listener for the menu button
+    const menuButton = document.querySelector('header.main-header button.menu');
+    const navElements = document.querySelectorAll('header.main-header nav');
+    menuButton.addEventListener('click', () => {
+        menuToggle(menuButton, navElements);
+    });
 
     // Render the background mashup images
     const freeTrialCTA = document.querySelector('#free-trial-cta');
     const mashupContainer = freeTrialCTA.querySelector('.background-mashup');
     renderBackgroundMashup(mashupContainer, moviesAndShows);
-});
 
-fetch('temp/pricing-plans.json').then(async (response) => {
-    const pricingPlansData = await response.json();
-    console.log('pricingPlansData', pricingPlansData);
-
+    // Render the pricing plans and billing cycles
     const billingCycles = pricingPlansData.billingCycles;
     const currency = pricingPlansData.currency;
     const plans = pricingPlansData.plans;
@@ -28,14 +32,14 @@ fetch('temp/pricing-plans.json').then(async (response) => {
     const billingCyclesSelectorElement = document.querySelector('#plans .billing-cycles-selector');
     renderBillingCycles(billingCyclesSelectorElement, billingCycles, currency, pricingPlansElement, plans, renderPricingPlans);
 
+    // Render the feature comparison table or mobile view based on screen width
     const featureComparisonElement = document.querySelector('#features');
     if (window.innerWidth >= 768) {
         renderFeatureComparisonTable(featureComparisonElement, pricingPlansData);
     } else {
         renderFeatureComparisonMobile(featureComparisonElement, pricingPlansData);
     }
-});
-
+}
 
 const renderBillingCycles = (selectorElement, billingCycles, currency, pricingPlansElement, plans, renderPricingPlans) => {
     // Clear existing billing cycle options
@@ -272,3 +276,5 @@ const renderFeatureComparisonMobile = (element, pricingData) => {
     featureComparisonMobile.appendChild(planTabContainer);
     featureComparisonMobile.appendChild(featuresContainer);
 }
+
+renderPage();

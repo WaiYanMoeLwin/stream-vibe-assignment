@@ -1,41 +1,44 @@
+import api from './api.js';
 import { menuToggle, renderBackgroundMashup, renderPagination } from './utils.js';
 
-const addReviewButton = document.querySelector('.reviews-section .add-review-button');
-addReviewButton.onclick = () => {
-    // Implement the logic to add a new review
-    console.log('Add review button clicked');
-};
-const menuButton = document.querySelector('header.main-header button.menu');
-const navElements = document.querySelectorAll('header.main-header nav');
-menuButton.addEventListener('click', () => {
-    menuToggle(menuButton, navElements);
-});
+const renderPage = async () => {
+    const moviesAndShows = await api.fetchMoviesAndShows();
 
-if (window.innerWidth <= 1023) {
-    const mainInfoElement = document.querySelector('#content-info .main-info');
-    const sidebarInfoElement = document.querySelector('#content-info .sidebar-info');
-    mainInfoElement.appendChild(sidebarInfoElement);
-} else {
-    const mainInfoElement = document.querySelector('#content-info .main-info');
-    const sidebarInfoElement = document.querySelector('#content-info .sidebar-info');
-    mainInfoElement.parentNode.insertBefore(sidebarInfoElement, mainInfoElement.nextSibling);
-}
+    // Event listener for add review button
+    const addReviewButton = document.querySelector('.reviews-section .add-review-button');
+    addReviewButton.onclick = () => {
+        // Implement the logic to add a new review
+        console.log('Add review button clicked');
+    };
 
-fetch('temp/mock-movie-data.json').then( async response => {
-    const moviesAndShows = await response.json();
-    console.log('Fetched movies and shows:', moviesAndShows);
+    // Event listener for menu toggle
+    const menuButton = document.querySelector('header.main-header button.menu');
+    const navElements = document.querySelectorAll('header.main-header nav');
+    menuButton.addEventListener('click', () => {
+        menuToggle(menuButton, navElements);
+    });
 
-    // Render the background mashup images
+    // Adjust layout based on window width
+    if (window.innerWidth <= 1023) {
+        const mainInfoElement = document.querySelector('#content-info .main-info');
+        const sidebarInfoElement = document.querySelector('#content-info .sidebar-info');
+        mainInfoElement.appendChild(sidebarInfoElement);
+    } else {
+        const mainInfoElement = document.querySelector('#content-info .main-info');
+        const sidebarInfoElement = document.querySelector('#content-info .sidebar-info');
+        mainInfoElement.parentNode.insertBefore(sidebarInfoElement, mainInfoElement.nextSibling);
+    }
+
+    // Render background mashup images
     const freeTrialCTA = document.querySelector('#free-trial-cta');
     const mashupContainer = freeTrialCTA.querySelector('.background-mashup');
     renderBackgroundMashup(mashupContainer, moviesAndShows);
 
+    // Get content ID from URL and render content details
     const contentId = new URLSearchParams(window.location.search).get('id');
-    console.log('Content ID from URL:', contentId);
 
     const contentEntry = moviesAndShows.find(entry => entry.id === contentId);
     if (contentEntry) {
-        console.log('Found content entry:', contentEntry);
         const thumbnailElement = document.querySelector('#thumbnail');
         renderThumbnail(thumbnailElement, contentEntry);
         renderMainContentInfo(document.querySelector('#content-info .main-info'), contentEntry);
@@ -48,11 +51,10 @@ fetch('temp/mock-movie-data.json').then( async response => {
 
             renderSeasonList(seasonsElement, contentEntry.seasons);
         }
-
     } else {
         console.error('Content entry not found for ID:', contentId);
     }
-});
+};
 
 // Render the thumbnail
 const renderThumbnail = (thumbnailElement, entry) => {
@@ -465,3 +467,5 @@ const renderSeasonList = (seasonsElement, seasons) => {
         seasonsElement.appendChild(seasonItem);
     });
 }
+
+renderPage();

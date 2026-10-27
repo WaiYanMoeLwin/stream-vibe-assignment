@@ -1,39 +1,40 @@
+import api from './api.js';
 import { menuToggle, renderBackgroundMashup } from './utils.js';
 
-const menuButton = document.querySelector('header.main-header button.menu');
-const navElements = document.querySelectorAll('header.main-header nav');
-menuButton.addEventListener('click', () => {
-    menuToggle(menuButton, navElements);
-});
+const renderPage = async () => {
+    const [
+        moviesAndShowsData,
+        faqData
+    ] = await Promise.all([
+        api.fetchMoviesAndShows(),
+        api.fetchFAQs()
+    ]);
 
-fetch('temp/mock-movie-data.json').then( async response => {
-    const moviesAndShows = await response.json();
-    console.log('Fetched movies and shows:', moviesAndShows);
+    // Event listener for the menu button
+    const menuButton = document.querySelector('header.main-header button.menu');
+    const navElements = document.querySelectorAll('header.main-header nav');
+    menuButton.addEventListener('click', () => {
+        menuToggle(menuButton, navElements);
+    });
 
     // Render the background mashup images
     const freeTrialCTA = document.querySelector('#free-trial-cta');
     const mashupContainer = freeTrialCTA.querySelector('.background-mashup');
-    renderBackgroundMashup(mashupContainer, moviesAndShows);
+    renderBackgroundMashup(mashupContainer, moviesAndShowsData);
 
+    // Render the background mashup images for the contact us section
     let numberOfMashupImages = 16;
     if (window.innerWidth < 1023) {
         numberOfMashupImages = 32;
     }
-
     const contactUsMashup = document.querySelector('#contact-us .contact-us-content .background-mashup');
-    renderBackgroundMashup(contactUsMashup, moviesAndShows, numberOfMashupImages);
-});
+    renderBackgroundMashup(contactUsMashup, moviesAndShowsData, numberOfMashupImages);
 
-fetch('temp/faqs.json').then(async (response) => {
-    const faqData = await response.json();
-    console.log('faqData', faqData);
-
+    // Render the FAQs
     const numberOfColumns = 2;
-
     const faqElement = document.querySelector('#faq .faq-items-container');
     renderFAQs(faqElement, faqData, numberOfColumns);
-});
-
+}
 
 // Render the FAQs
 const renderFAQs = (element, faqs, numberOfColumns) => {
@@ -121,3 +122,5 @@ const renderFAQs = (element, faqs, numberOfColumns) => {
         renderFAQList(faqListElement, faqLists[index]);
     });
 }
+
+renderPage();

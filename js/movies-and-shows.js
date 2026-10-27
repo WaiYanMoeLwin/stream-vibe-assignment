@@ -1,246 +1,188 @@
+import api from './api.js';
 import { menuToggle, renderBackgroundMashup, renderGenres, renderPagination } from './utils.js';
 
-const menuButton = document.querySelector('header.main-header .menu');
-const navMenu = document.querySelectorAll('header.main-header nav');
+const renderPage = async () => {
+    // Fetch the data for movies and shows, genres, trending, new releases, and must-watch content
+    const [
+        trailersResponse,
+        moviesAndShows,
+        movieGenresResponse,
+        showGenresResponse,
+        popularMoviesResponse,
+        popularShowsResponse,
+        trendingMoviesResponse,
+        trendingShowsResponse,
+        newReleasesMoviesResponse,
+        newReleasesShowsResponse,
+        mustWatchMoviesResponse,
+        mustWatchShowsResponse
+    ] = await Promise.all([
+        api.fetchTrailers(),
+        api.fetchMoviesAndShows(),
+        api.fetchGenres('movies'),
+        api.fetchGenres('shows'),
+        api.fetchPopularGenres('movies'),
+        api.fetchPopularGenres('shows'),
+        api.fetchTrendingNow('movies'),
+        api.fetchTrendingNow('shows'),
+        api.fetchNewReleases('movies'),
+        api.fetchNewReleases('shows'),
+        api.fetchMustWatch('movies'),
+        api.fetchMustWatch('shows')
+    ]);
 
-menuButton.addEventListener('click', () => {
-    menuToggle(menuButton, navMenu);
-});
-Promise.all([
-    fetch('temp/trailers.json').then( async response => {
-        const trailersData = await response.json();
-        const trailers = trailersData.items;
-        console.log('Fetched trailers:', trailers);
+    // Render the menu toggle functionality
+    const menuButton = document.querySelector('header.main-header .menu');
+    const navMenu = document.querySelectorAll('header.main-header nav');
 
-        const carousel = document.querySelector('#trailers-carousel');
-        const paginationElement = carousel.querySelector('.pagination');
+    menuButton.addEventListener('click', () => {
+        menuToggle(menuButton, navMenu);
+    });
+    
+    // Render the background mashup images for free trial cta
+    const freeTrialCTA = document.querySelector('#free-trial-cta');
+    const mashupContainer = freeTrialCTA.querySelector('.background-mashup');
+    renderBackgroundMashup(mashupContainer, moviesAndShows);
 
-        renderPagination(paginationElement, trailers, 1, 1, carousel, renderTrailers);
-    }),
+    // Render the trailers carousel
+    const trailers = trailersResponse.items;
+    
+    const carousel = document.querySelector('#trailers-carousel');
+    const paginationElement = carousel.querySelector('.pagination');
+    renderPagination(paginationElement, trailers, 1, 1, carousel, renderTrailers);
 
-    fetch('temp/mock-movie-data.json').then( async response => {
-        const moviesAndShows = await response.json();
-        console.log('Fetched movies and shows:', moviesAndShows);
+    // Render the movie genres section
+    const movieGenres = movieGenresResponse.genres;
+    
+    const moviesGenresSection = document.querySelector('#movies-genres');
+    const paginationElementMovies = moviesGenresSection.querySelector('.pagination');
+    const mainElementMovies = moviesGenresSection.querySelector('.genre-cards');
 
-        // Render the background mashup images
-        const freeTrialCTA = document.querySelector('#free-trial-cta');
-        const mashupContainer = freeTrialCTA.querySelector('.background-mashup');
-        renderBackgroundMashup(mashupContainer, moviesAndShows);
-    }),
+    let perPageMovies = 5;
+    if (window.innerWidth < 1439) {
+        perPageMovies = 4;
+    }
+    if (window.innerWidth < 1023) {
+        perPageMovies = movieGenres.length; // Show all genres on smaller screens
+    }
+    
+    renderPagination(paginationElementMovies, movieGenres, 1, perPageMovies, mainElementMovies, renderGenres);
+    
+    // Render the show genres section
+    const showGenres = showGenresResponse.genres;
 
-    fetch('temp/movie-genres.json').then(async response => {
-        const movieGenresData = await response.json();
-        const movieGenres = movieGenresData.genres;
-        console.log('Fetched movie genres:', movieGenres);
+    const showsGenresSection = document.querySelector('#shows-genres');
+    const paginationElementShows = showsGenresSection.querySelector('.pagination');
+    const mainElementShows = showsGenresSection.querySelector('.genre-cards');
 
-        const moviesGenresSection = document.querySelector('#movies-genres');
-        const paginationElement = moviesGenresSection.querySelector('.pagination');
-        const mainElement = moviesGenresSection.querySelector('.genre-cards');
+    let perPageShows = 5;
+    if (window.innerWidth < 1439) {
+        perPageShows = 4;
+    }
+    if (window.innerWidth < 1023) {
+        perPageShows = showGenres.length; // Show all genres on smaller screens
+    }
+    
+    renderPagination(paginationElementShows, showGenres, 1, perPageShows, mainElementShows, renderGenres);
 
-        let perPage = 5;
-        if (window.innerWidth < 1439) {
-            perPage = 4;
-        }
-        if (window.innerWidth < 1023) {
-            perPage = movieGenres.length; // Show all genres on smaller screens
-        }
-        
-        renderPagination(paginationElement, movieGenres, 1, perPage, mainElement, renderGenres);
-    }),
+    // Render the movie and show genres sections for popular content
+    const popularMovies = popularMoviesResponse.genres;
 
-    fetch('temp/show-genres.json').then(async response => {
-        const showGenresData = await response.json();
-        const showGenres = showGenresData.genres;
-        console.log('Fetched show genres:', showGenres);
+    const popularMoviesSection = document.querySelector('#movies-popular-genres');
+    const paginationElementPopularMovies = popularMoviesSection.querySelector('.pagination');
+    const mainElementPopularMovies = popularMoviesSection.querySelector('.popular-genre-cards');
 
-        const showsGenresSection = document.querySelector('#shows-genres');
-        const paginationElement = showsGenresSection.querySelector('.pagination');
-        const mainElement = showsGenresSection.querySelector('.genre-cards');
-        
-        let perPage = 5;
-        if (window.innerWidth < 1439) {
-            perPage = 4;
-        }
-        if (window.innerWidth < 1023) {
-            perPage = showGenres.length; // Show all genres on smaller screens
-        }
-        renderPagination(paginationElement, showGenres, 1, perPage, mainElement, renderGenres);
-    }),
+    let perPagePopularMovies = 4;
+    if (window.innerWidth < 1023) {
+        perPagePopularMovies = popularMovies.length; // Show all genres on smaller screens
+    }
+    renderPagination(paginationElementPopularMovies, popularMovies, 1, perPagePopularMovies, mainElementPopularMovies, renderGenres);
 
-    fetch('temp/popular-movie-by-genre.json').then(async response => {
-        const popularMoviesData = await response.json();
-        const popularMovies = popularMoviesData.genres;
-        console.log('Fetched popular movies:', popularMovies);
+    const popularShows = popularShowsResponse.genres;
+    const popularShowsSection = document.querySelector('#shows-popular-genres');
+    const paginationElementPopularShows = popularShowsSection.querySelector('.pagination');
+    const mainElementPopularShows = popularShowsSection.querySelector('.popular-genre-cards');
+    let perPagePopularShows = 4;
+    if (window.innerWidth < 1023) {
+        perPagePopularShows = popularShows.length; // Show all genres on smaller screens
+    }
+    renderPagination(paginationElementPopularShows, popularShows, 1, perPagePopularShows, mainElementPopularShows, renderGenres);
 
-        const popularMoviesSection = document.querySelector('#movies-popular-genres');
-        const paginationElement = popularMoviesSection.querySelector('.pagination');
-        const mainElement = popularMoviesSection.querySelector('.popular-genre-cards');
-        let perPage = 4;
-        if (window.innerWidth < 1023) {
-            perPage = popularMovies.length; // Show all genres on smaller screens
-        }
-        
-        renderPagination(paginationElement, popularMovies, 1, perPage, mainElement, renderGenres);
+    // Render the trending movies and shows sections
+    const trendingMovies = trendingMoviesResponse.items;
+    const trendingMoviesSection = document.querySelector('#movies-trending');
+    const paginationElementTrendingMovies = trendingMoviesSection.querySelector('.pagination');
+    const mainElementTrendingMovies = trendingMoviesSection.querySelector('.trending-cards');
+    let perPageTrendingMovies = 5;
+    if (window.innerWidth < 1439) {
+        perPageTrendingMovies = 4;
+    }
+    if (window.innerWidth < 1023) {
+        perPageTrendingMovies = trendingMovies.length; // Show all movies on smaller screens
+    }
+    renderPagination(paginationElementTrendingMovies, trendingMovies, 1, perPageTrendingMovies, mainElementTrendingMovies, renderContentCardsWithRuntimeAndViews);
 
-        const genreCards = mainElement.querySelectorAll('.genre-item-container');
-        genreCards.forEach((card, index) => {
-            const top10Tag = document.createElement('div');
-            top10Tag.classList.add('top-10-tag');
-            top10Tag.textContent = 'Top 10 In';
-            const genreTitleContainer = card.querySelector('.genre-title-container');
-            card.insertBefore(top10Tag, genreTitleContainer);
-        });
-    }),
+    const trendingShows = trendingShowsResponse.items;
+    const trendingShowsSection = document.querySelector('#shows-trending');
+    const paginationElementTrendingShows = trendingShowsSection.querySelector('.pagination');
+    const mainElementTrendingShows = trendingShowsSection.querySelector('.trending-cards');
+    let perPageTrendingShows = 4;
+    if (window.innerWidth < 1023) {
+        perPageTrendingShows = trendingShows.length; // Show all shows on smaller screens
+    }
+    renderPagination(paginationElementTrendingShows, trendingShows, 1, perPageTrendingShows, mainElementTrendingShows, renderContentCardsWithRuntimeAndViews);
 
-    fetch('temp/popular-show-by-genre.json').then(async response => {
-        const popularShowsData = await response.json();
-        const popularShows = popularShowsData.genres;
-        console.log('Fetched popular shows:', popularShows);
+    // Render the new releases movies and shows sections
+    const newReleasesMovies = newReleasesMoviesResponse.items;
+    const newReleasesMoviesSection = document.querySelector('#movies-new-releases');
+    const paginationElementNewReleasesMovies = newReleasesMoviesSection.querySelector('.pagination');
+    const mainElementNewReleasesMovies = newReleasesMoviesSection.querySelector('.new-releases-cards');
+    let perPageNewReleasesMovies = 5;
+    if (window.innerWidth < 1439) {
+        perPageNewReleasesMovies = 4;
+    }
+    if (window.innerWidth < 1023) {
+        perPageNewReleasesMovies = newReleasesMovies.length; // Show all movies on smaller screens
+    }
+    renderPagination(paginationElementNewReleasesMovies, newReleasesMovies, 1, perPageNewReleasesMovies, mainElementNewReleasesMovies, renderContentCardsWithReleaseDate);
 
-        const popularShowsSection = document.querySelector('#shows-popular-genres');
-        const paginationElement = popularShowsSection.querySelector('.pagination');
-        const mainElement = popularShowsSection.querySelector('.popular-genre-cards');
-        
-        let perPage = 4;
-        if (window.innerWidth < 1023) {
-            perPage = popularShows.length; // Show all genres on smaller screens
-        }
-        renderPagination(paginationElement, popularShows, 1, perPage, mainElement, renderGenres);
+    const newReleasesShows = newReleasesShowsResponse.items;
+    const newReleasesShowsSection = document.querySelector('#shows-new-releases');
+    const paginationElementNewReleasesShows = newReleasesShowsSection.querySelector('.pagination');
+    const mainElementNewReleasesShows = newReleasesShowsSection.querySelector('.new-releases-cards');
+    let perPageNewReleasesShows = 4;
+    if (window.innerWidth < 1023) {
+        perPageNewReleasesShows = newReleasesShows.length; // Show all shows on smaller screens
+    }
+    renderPagination(paginationElementNewReleasesShows, newReleasesShows, 1, perPageNewReleasesShows, mainElementNewReleasesShows, renderContentCardsWithRuntimeAndSeasons);
 
-        const genreCards = mainElement.querySelectorAll('.genre-item-container');
-        genreCards.forEach((card, index) => {
-            const top10Tag = document.createElement('div');
-            top10Tag.classList.add('top-10-tag');
-            top10Tag.textContent = 'Top 10 In';
-            const genreTitleContainer = card.querySelector('.genre-title-container');
-            card.insertBefore(top10Tag, genreTitleContainer);
-        });
-    }),
+    // Render the must-watch movies and shows sections
+    const mustWatchMovies = mustWatchMoviesResponse.items;
+    const mustWatchMoviesSection = document.querySelector('#movies-popular');
+    const paginationElementMustWatchMovies = mustWatchMoviesSection.querySelector('.pagination');
+    const mainElementMustWatchMovies = mustWatchMoviesSection.querySelector('.must-watch-cards');
+    let perPageMustWatchMovies = 4;
+    if (window.innerWidth < 1023) {
+        perPageMustWatchMovies = mustWatchMovies.length; // Show all movies on smaller screens
+    }
+    renderPagination(paginationElementMustWatchMovies, mustWatchMovies, 1, perPageMustWatchMovies, mainElementMustWatchMovies, renderContentCardsWithRuntimeAndRating);
 
-    fetch('temp/movies-trending-now.json').then(async response => {
-        const trendingMoviesData = await response.json();
-        const trendingMovies = trendingMoviesData.items;
-        console.log('Fetched trending movies:', trendingMovies);
-        
-        const trendingMoviesSection = document.querySelector('#movies-trending');
-        const paginationElement = trendingMoviesSection.querySelector('.pagination');
-        const mainElement = trendingMoviesSection.querySelector('.trending-cards');
+    const mustWatchShows = mustWatchShowsResponse.items;
+    const mustWatchShowsSection = document.querySelector('#shows-popular');
+    const paginationElementMustWatchShows = mustWatchShowsSection.querySelector('.pagination');
+    const mainElementMustWatchShows = mustWatchShowsSection.querySelector('.must-watch-cards');
+    let perPageMustWatchShows = 4;
+    if (window.innerWidth < 1439) {
+        perPageMustWatchShows = 3;
+    }
+    if (window.innerWidth < 1023) {
+        perPageMustWatchShows = mustWatchShows.length; // Show all shows on smaller screens
+    }
+    renderPagination(paginationElementMustWatchShows, mustWatchShows, 1, perPageMustWatchShows, mainElementMustWatchShows, renderContentCardsWithRuntimeAndRating);
 
-        let perPage = 4;
-        if (window.innerWidth < 1439) {
-            perPage = 3;
-        }
-        if (window.innerWidth < 1023) {
-            perPage = trendingMovies.length; // Show all movies on smaller screens
-        }
-
-        renderPagination(paginationElement, trendingMovies, 1, perPage, mainElement, renderContentCardsWithRuntimeAndViews);
-    }),
-
-    fetch('temp/shows-trending-now.json').then(async response => {
-        const trendingShowsData = await response.json();
-        const trendingShows = trendingShowsData.items;
-        console.log('Fetched trending shows:', trendingShows);
-        
-        const trendingShowsSection = document.querySelector('#shows-trending');
-        const paginationElement = trendingShowsSection.querySelector('.pagination');
-        const mainElement = trendingShowsSection.querySelector('.trending-cards');
-
-        let perPage = 4;
-        if (window.innerWidth < 1439) {
-            perPage = 3;
-        }
-        if (window.innerWidth < 1023) {
-            perPage = trendingShows.length; // Show all shows on smaller screens
-        }
-
-        renderPagination(paginationElement, trendingShows, 1, perPage, mainElement, renderContentCardsWithRuntimeAndSeasons);
-    }),
-
-    fetch('temp/new-release-movies.json').then(async response => {
-        const newReleasesMoviesData = await response.json();
-        const newReleasesMovies = newReleasesMoviesData.items;
-        console.log('Fetched new releases movies:', newReleasesMovies);
-        
-        const newReleasesMoviesSection = document.querySelector('#movies-new-releases');
-        const paginationElement = newReleasesMoviesSection.querySelector('.pagination');
-        const mainElement = newReleasesMoviesSection.querySelector('.new-releases-cards');
-
-        let perPage = 5;
-        if (window.innerWidth < 1439) {
-            perPage = 4;
-        }
-        if (window.innerWidth < 1023) {
-            perPage = newReleasesMovies.length; // Show all movies on smaller screens
-        }
-
-        renderPagination(paginationElement, newReleasesMovies, 1, perPage, mainElement, renderContentCardsWithReleaseDate);
-    }),
-
-    fetch('temp/new-release-shows.json').then(async response => {
-        const newReleasesShowsData = await response.json();
-        const newReleasesShows = newReleasesShowsData.items;
-        console.log('Fetched new releases shows:', newReleasesShows);
-        
-        const newReleasesShowsSection = document.querySelector('#shows-new-releases');
-        const paginationElement = newReleasesShowsSection.querySelector('.pagination');
-        const mainElement = newReleasesShowsSection.querySelector('.new-releases-cards');
-
-        let perPage = 4;
-        if (window.innerWidth < 1439) {
-            perPage = 3;
-        }
-        if (window.innerWidth < 1023) {
-            perPage = newReleasesShows.length; // Show all shows on smaller screens
-        }
-        renderPagination(paginationElement, newReleasesShows, 1, perPage, mainElement, renderContentCardsWithRuntimeAndSeasons);
-
-    }),
-
-    fetch('temp/must-watch-movies.json').then(async response => {
-        const mustWatchMoviesData = await response.json();
-        const mustWatchMovies = mustWatchMoviesData.items;
-        console.log('Fetched must-watch movies:', mustWatchMovies);
-        
-        const mustWatchMoviesSection = document.querySelector('#movies-popular');
-        const paginationElement = mustWatchMoviesSection.querySelector('.pagination');
-        const mainElement = mustWatchMoviesSection.querySelector('.must-watch-cards');
-
-        let perPage = 5;
-        if (window.innerWidth < 1439) {
-            perPage = 4;
-        }
-        if (window.innerWidth < 1023) {
-            perPage = mustWatchMovies.length; // Show all movies on smaller screens
-        }
-
-        renderPagination(paginationElement, mustWatchMovies, 1, perPage, mainElement, renderContentCardsWithRuntimeAndRating);
-
-    }),
-
-    fetch('temp/must-watch-shows.json').then(async response => {
-        const mustWatchShowsData = await response.json();
-        const mustWatchShows = mustWatchShowsData.items;
-        console.log('Fetched must-watch shows:', mustWatchShows);
-        
-        const mustWatchShowsSection = document.querySelector('#shows-popular');
-        const paginationElement = mustWatchShowsSection.querySelector('.pagination');
-        const mainElement = mustWatchShowsSection.querySelector('.must-watch-cards');
-
-        let perPage = 4;
-        if (window.innerWidth < 1439) {
-            perPage = 3;
-        }
-        if (window.innerWidth < 1023) {
-            perPage = mustWatchShows.length; // Show all shows on smaller screens
-        }
-
-        renderPagination(paginationElement, mustWatchShows, 1, perPage, mainElement, renderContentCardsWithRuntimeAndRating);
-
-    })
-]).then(() => {
+    // Render the active tab content to switch between movies and shows for smaller screens
     const activeTab = document.querySelector('.tab .tab-button.active');
-    if (activeTab) {
+    if (window.innerWidth < 1023 && activeTab) {
         const target = activeTab.dataset.target;
         const contentContainers = document.querySelectorAll('.content-container');
         contentContainers.forEach(container => {
@@ -251,8 +193,7 @@ Promise.all([
             }
         });
     }
-});
-
+}
 
 // Render the content
 const renderContentCards = (containerElement, entries, currentPage, perPage) => {
@@ -522,3 +463,5 @@ tabButtons.forEach(button => {
         });
     });
 });
+
+renderPage();
