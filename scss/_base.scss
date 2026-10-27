@@ -78,6 +78,7 @@ header.main-header {
     box-sizing: border-box;
 
     button.menu {
+        display: none;
         width: 2.4rem;
         height: 2.4rem;
         padding: 1.2rem;
@@ -471,6 +472,9 @@ footer {
                     }
                 }
             }
+        }
+        button.menu {
+            display: block;
         }
     }
 
