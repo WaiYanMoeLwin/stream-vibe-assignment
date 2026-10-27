@@ -312,6 +312,9 @@ footer .footer-info a:hover {
     padding: 2rem 4rem;
     margin-bottom: 3rem;
   }
+  .logo {
+    width: 16rem;
+  }
   nav ul {
     gap: 1.2rem;
   }
@@ -369,6 +372,9 @@ footer .footer-info a:hover {
   }
   header.main-header {
     padding: 4rem 2rem 1.4rem;
+  }
+  header.main-header .logo {
+    width: 14rem;
   }
   header.main-header nav {
     display: none;
@@ -469,6 +475,9 @@ footer .footer-info a:hover {
 @media screen and (max-width: 767px) {
   header.main-header {
     padding: 4rem 1.6rem 1.4rem;
+  }
+  header.main-header .logo {
+    width: 12rem;
   }
   .scrollbar {
     width: 10rem;

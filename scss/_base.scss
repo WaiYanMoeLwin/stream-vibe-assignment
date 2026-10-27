@@ -362,6 +362,10 @@ footer {
         padding: 2rem 4rem;
         margin-bottom: 3rem;
     }
+    
+    .logo {
+        width: 16rem;
+    }
 
     nav {
         ul {
@@ -434,6 +438,10 @@ footer {
 
     header.main-header {
         padding: 4rem 2rem 1.4rem;
+
+        .logo {
+            width: 14rem;
+        }
 
         nav {
             display: none;
@@ -543,6 +551,10 @@ footer {
 @media screen and (max-width: 767px) {
     header.main-header {
         padding: 4rem 1.6rem 1.4rem;
+
+        .logo {
+            width: 12rem;
+        }
     }
 
     .scrollbar {
