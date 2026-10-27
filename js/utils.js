@@ -1,4 +1,6 @@
-
+window.addEventListener('resize', () => {
+    window.location.reload();
+});
 // Render the pagination
 export const renderPagination = (paginationElement, items, currentPage, perPage, mainElement, renderMainElement, hasPages = true, hasScrollbar=true) => {
     const totalPages = Math.ceil(items.length / perPage);

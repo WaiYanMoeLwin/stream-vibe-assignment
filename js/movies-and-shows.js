@@ -464,4 +464,20 @@ tabButtons.forEach(button => {
     });
 });
 
-renderPage();
+renderPage().then(() => {
+    window.addEventListener('hashchange', () => {
+        const targetId = window.location.hash.substring(1);
+        const targetElement = document.getElementById(targetId);
+
+        const contentType = targetId.split('-')[0]; // Extract the content type (movies or shows) from the targetId
+        const tabButton = document.querySelector(`.tab .tab-button[data-target="${contentType}"]`);
+        if (tabButton) {
+            // Simulate a click on the corresponding tab button to switch to the correct content type
+            tabButton.click();
+        }
+
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});

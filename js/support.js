@@ -123,4 +123,12 @@ const renderFAQs = (element, faqs, numberOfColumns) => {
     });
 }
 
-renderPage();
+renderPage().then(() => {
+    if (window.location.hash) {
+        const targetId = window.location.hash.substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+});
