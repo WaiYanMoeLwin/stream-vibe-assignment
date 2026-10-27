@@ -408,6 +408,8 @@ footer .footer-info a:hover {
     padding: 1.2rem 0;
   }
   .scrollbar {
+    display: flex;
+    justify-self: center;
     position: relative;
     height: 0.5rem;
     width: 20rem;

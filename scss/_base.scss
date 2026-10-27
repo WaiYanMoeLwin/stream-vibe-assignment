@@ -475,6 +475,8 @@ footer {
     }
 
     .scrollbar {
+        display: flex;
+        justify-self: center;
         position: relative;
         height: 0.5rem;
         width: 20rem;

@@ -49,6 +49,8 @@ export const renderPagination = (paginationElement, items, currentPage, perPage,
 
     // Render the items for the current page
     renderMainElement(mainElement, items, currentPage, perPage);
+
+    renderScrollbar(mainElement, items);
 };
 
 // Render background mashup images
@@ -148,21 +150,24 @@ export const renderGenres = (genresContainer, genres, currentPage, perPage) => {
 
         genresContainer.appendChild(genreItem);
     });
+};
 
-    // Render the scrollbar for the genres section]
-    const scrollbar = genresContainer.parentElement.querySelector('.scrollbar');
+export const renderScrollbar = (container, entries) => {
+     // Render the scrollbar for the genres section]
+    const scrollbar = container.parentElement.querySelector('.scrollbar');
     const scrollbarThumb = scrollbar.querySelector('.scrollbar-thumb');
-    if (window.innerWidth < 1023) {
-        scrollbar.classList.remove('hidden');
-    } else {
-        scrollbar.classList.add('hidden');
-    }
-    const scrollbarThumbWidth = 100 / genres.length;
+    
+    const scrollbarThumbWidth = Math.max((container.clientWidth / container.scrollWidth) * 100, 10); // Minimum width of 10%
     scrollbarThumb.style.width = `${scrollbarThumbWidth}%`;
+    if (scrollbarThumbWidth >= 100) {
+        scrollbar.style.display = 'none'; // Hide the scrollbar if all items fit in the container
+    } else {
+        scrollbar.style.display = 'flex'; // Show the scrollbar if not all items fit in the container
+    }
 
-    genresContainer.addEventListener('scroll', () => {
-        const scrollLeft = genresContainer.scrollLeft;
-        const scrollWidth = genresContainer.scrollWidth - genresContainer.clientWidth;
+    container.addEventListener('scroll', () => {
+        const scrollLeft = container.scrollLeft;
+        const scrollWidth = container.scrollWidth - container.clientWidth;
         const scrollPercentage = (scrollLeft / scrollWidth) * (100 - scrollbarThumbWidth);
         scrollbarThumb.style.left = `${scrollPercentage}%`;
     });
@@ -170,22 +175,22 @@ export const renderGenres = (genresContainer, genres, currentPage, perPage) => {
     scrollbar.addEventListener('click', (event) => {
         const scrollbarRect = scrollbar.getBoundingClientRect();
         const clickX = event.clientX - scrollbarRect.left;
-        const scrollWidth = genresContainer.scrollWidth - genresContainer.clientWidth;
+        const scrollWidth = container.scrollWidth - container.clientWidth;
         const scrollPercentage = clickX / scrollbarRect.width;
-        genresContainer.scrollLeft = scrollPercentage * scrollWidth;
+        container.scrollLeft = scrollPercentage * scrollWidth;
     });
 
     scrollbarThumb.addEventListener('mousedown', (event) => {
         event.preventDefault();
         const initialX = event.clientX;
-        const initialScrollLeft = genresContainer.scrollLeft;
+        const initialScrollLeft = container.scrollLeft;
 
         const onMouseMove = (moveEvent) => {
             const deltaX = moveEvent.clientX - initialX;
-            const scrollWidth = genresContainer.scrollWidth - genresContainer.clientWidth;
+            const scrollWidth = container.scrollWidth - container.clientWidth;
             const scrollbarWidth = scrollbar.offsetWidth - scrollbarThumb.offsetWidth;
             const scrollPercentage = deltaX / scrollbarWidth;
-            genresContainer.scrollLeft = initialScrollLeft + scrollPercentage * scrollWidth;
+            container.scrollLeft = initialScrollLeft + scrollPercentage * scrollWidth;
         };
 
         document.addEventListener('mousemove', onMouseMove);
@@ -194,7 +199,7 @@ export const renderGenres = (genresContainer, genres, currentPage, perPage) => {
             document.removeEventListener('mousemove', onMouseMove);
         });
     });
-};
+}
 
 export const menuToggle = (menuButton, navElements) => {
     navElements.forEach((navElement) => {

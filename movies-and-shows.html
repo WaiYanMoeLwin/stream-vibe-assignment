@@ -31,6 +31,9 @@
                             alt="Notifications"></button></li>
             </ul>
         </nav>
+        <button class="menu" aria-label="Menu">
+            <img src="public/images/icons/menu.svg" alt="Menu">
+        </button>
     </header>
 
     <main>
@@ -63,11 +66,16 @@
             </article>
         </section>
 
+        <div class="tab">
+            <button class="tab-button active" data-target="movies">Movies</button>
+            <button class="tab-button" data-target="shows">Shows</button>
+        </div>
+
         <article id="movies" class="content-container">
             <h2 class="content-title">Movies</h2>
             <section id="movies-genres">
                 <header class="section-header">
-                    <h3 class="section-title">Genres</h3>
+                    <h3 class="section-title">Our Genres</h3>
                     <div class="pagination">
                         <button class="pagination-button" aria-label="Previous"><img
                                 src="public/images/icons/arrow-left.svg" alt="Previous"></button>
@@ -77,6 +85,9 @@
                     </div>
                 </header>
                 <article class="genre-cards"></article>
+                <div class="scrollbar">
+                    <div class="scrollbar-thumb"></div>
+                </div>
             </section>
             <section id="movies-popular-genres">
                 <header class="section-header">
@@ -90,6 +101,9 @@
                     </div>
                 </header>
                 <article class="popular-genre-cards"></article>
+                <div class="scrollbar">
+                    <div class="scrollbar-thumb"></div>
+                </div>
             </section>
             <section id="movies-trending">
                 <header class="section-header">
@@ -103,6 +117,9 @@
                     </div>
                 </header>
                 <article class="trending-cards content-cards"></article>
+                <div class="scrollbar">
+                    <div class="scrollbar-thumb"></div>
+                </div>
             </section>
             <section id="movies-new-releases">
                 <header class="section-header">
@@ -116,6 +133,9 @@
                     </div>
                 </header>
                 <article class="new-releases-cards content-cards"></article>
+                <div class="scrollbar">
+                    <div class="scrollbar-thumb"></div>
+                </div>
             </section>
             <section id="movies-popular">
                 <header class="section-header">
@@ -129,6 +149,9 @@
                     </div>
                 </header>
                 <article class="must-watch-cards content-cards"></article>
+                <div class="scrollbar">
+                    <div class="scrollbar-thumb"></div>
+                </div>
             </section>
         </article>
 
@@ -146,6 +169,9 @@
                     </div>
                 </header>
                 <article class="genre-cards"></article>
+                <div class="scrollbar">
+                    <div class="scrollbar-thumb"></div>
+                </div>
             </section>
             <section id="shows-popular-genres">
                 <header class="section-header">
@@ -159,6 +185,9 @@
                     </div>
                 </header>
                 <article class="popular-genre-cards"></article>
+                <div class="scrollbar">
+                    <div class="scrollbar-thumb"></div>
+                </div>
             </section>
             <section id="shows-trending">
                 <header class="section-header">
@@ -172,6 +201,9 @@
                     </div>
                 </header>
                 <article class="trending-cards content-cards"></article>
+                <div class="scrollbar">
+                    <div class="scrollbar-thumb"></div>
+                </div>
             </section>
             <section id="shows-new-releases">
                 <header class="section-header">
@@ -185,6 +217,9 @@
                     </div>
                 </header>
                 <article class="new-releases-cards content-cards"></article>
+                <div class="scrollbar">
+                    <div class="scrollbar-thumb"></div>
+                </div>
             </section>
             <section id="shows-popular">
                 <header class="section-header">
@@ -198,6 +233,9 @@
                     </div>
                 </header>
                 <article class="must-watch-cards content-cards"></article>
+                <div class="scrollbar">
+                    <div class="scrollbar-thumb"></div>
+                </div>
             </section>
         </article>
 
