@@ -1,6 +1,6 @@
 [
     {
-      "id": "avengers-endgame-2019",
+      "id": "avengers-endgame",
       "type": "movie",
       "title": "Avengers: Endgame",
       "year": 2019,
@@ -35,7 +35,7 @@
       ]
     },
     {
-      "id": "thor-love-and-thunder-2022",
+      "id": "thor-love-and-thunder",
       "type": "movie",
       "title": "Thor: Love and Thunder",
       "year": 2022,
@@ -337,7 +337,7 @@
       ]
     },
     {
-      "id": "locke-and-key",
+      "id": "locke-key",
       "type": "show",
       "title": "Locke & Key",
       "years": "2020–2022",

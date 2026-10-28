@@ -39,7 +39,7 @@
         { "id": "13-reasons-why", "title": "13 Reasons Why", "years": "2017–2020", "poster": "public/images/posters/13-reasons-why.png" },
         { "id": "1899", "title": "1899", "years": "2022", "poster": "public/images/posters/1899.png" },
         { "id": "glow", "title": "GLOW", "years": "2017–2019", "poster": "public/images/posters/glow.png" },
-        { "id": "locke-and-key", "title": "Locke & Key", "years": "2020–2022", "poster": "public/images/posters/locke-and-key.png" },
+        { "id": "locke-key", "title": "Locke & Key", "years": "2020–2022", "poster": "public/images/posters/locke-and-key.png" },
         { "id": "shadow-and-bone", "title": "Shadow and Bone", "years": "2021–2023", "poster": "public/images/posters/shadow-and-bone.png" },
         { "id": "stranger-things", "title": "Stranger Things", "years": "2016–2025", "poster": "public/images/posters/stranger-things.png" },
         { "id": "the-sandman", "title": "The Sandman", "years": "2022–2025", "poster": "public/images/posters/the-sandman.png" },
@@ -50,7 +50,7 @@
       "name": "Fantasy",
       "count": 4,
       "items": [
-        { "id": "locke-and-key", "title": "Locke & Key", "years": "2020–2022", "poster": "public/images/posters/locke-and-key.png" },
+        { "id": "locke-key", "title": "Locke & Key", "years": "2020–2022", "poster": "public/images/posters/locke-and-key.png" },
         { "id": "shadow-and-bone", "title": "Shadow and Bone", "years": "2021–2023", "poster": "public/images/posters/shadow-and-bone.png" },
         { "id": "the-sandman", "title": "The Sandman", "years": "2022–2025", "poster": "public/images/posters/the-sandman.png" },
         { "id": "wednesday", "title": "Wednesday", "years": "2022–present", "poster": "public/images/posters/wednesday.png" }
@@ -60,7 +60,7 @@
       "name": "Horror",
       "count": 3,
       "items": [
-        { "id": "locke-and-key", "title": "Locke & Key", "years": "2020–2022", "poster": "public/images/posters/locke-and-key.png" },
+        { "id": "locke-key", "title": "Locke & Key", "years": "2020–2022", "poster": "public/images/posters/locke-and-key.png" },
         { "id": "stranger-things", "title": "Stranger Things", "years": "2016–2025", "poster": "public/images/posters/stranger-things.png" },
         { "id": "the-sandman", "title": "The Sandman", "years": "2022–2025", "poster": "public/images/posters/the-sandman.png" }
       ]

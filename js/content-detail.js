@@ -1,5 +1,5 @@
 import api from './api.js';
-import { menuToggle, renderBackgroundMashup, renderPagination } from './utils.js';
+import { checkImageSource, menuToggle, renderBackgroundMashup, renderPagination } from './utils.js';
 
 const renderPage = async () => {
     const moviesAndShows = await api.fetchMoviesAndShows();
@@ -36,20 +36,22 @@ const renderPage = async () => {
 
     // Get content ID from URL and render content details
     const contentId = new URLSearchParams(window.location.search).get('id');
+    const contentDetails = await api.fetchContentDetails(contentId);
+    console.log('Fetched content details:', contentDetails);
 
     const contentEntry = moviesAndShows.find(entry => entry.id === contentId);
-    if (contentEntry) {
+    if (contentEntry && contentDetails) {
         const thumbnailElement = document.querySelector('#thumbnail');
-        renderThumbnail(thumbnailElement, contentEntry);
-        renderMainContentInfo(document.querySelector('#content-info .main-info'), contentEntry);
-        renderSideBarContentInfo(document.querySelector('#content-info .sidebar-info'), contentEntry);
+        renderThumbnail(thumbnailElement, contentDetails);
+        renderMainContentInfo(document.querySelector('#content-info .main-info'), contentDetails, contentEntry);
+        renderSideBarContentInfo(document.querySelector('#content-info .sidebar-info'), contentDetails, contentEntry);
 
         if (contentEntry.type === 'show') {
             const episodesSection = document.querySelector('.main-info .episodes-section');
             episodesSection.classList.remove('hidden');
             const seasonsElement = episodesSection.querySelector('.seasons-list');
 
-            renderSeasonList(seasonsElement, contentEntry.seasons);
+            renderSeasonList(seasonsElement, contentDetails);
         }
     } else {
         console.error('Content entry not found for ID:', contentId);
@@ -57,33 +59,30 @@ const renderPage = async () => {
 };
 
 // Render the thumbnail
-const renderThumbnail = (thumbnailElement, entry) => {
-    const img = document.createElement('img');
-    img.src = entry.poster;
-    img.alt = entry.title;
+const renderThumbnail = async (thumbnailElement, entry) => {
 
     const trailerTitle = thumbnailElement.querySelector('.title');
-    trailerTitle.textContent = entry.title;
+    trailerTitle.textContent = entry.Title;
 
     const trailerDescription = thumbnailElement.querySelector('.description');
-    trailerDescription.textContent = entry.description;
+    trailerDescription.textContent = entry.Plot;
 
     const playButton = thumbnailElement.querySelector('.play-button');
     playButton.onclick = () => {
         // Implement the logic to play the trailer video
-        console.log(`Playing trailer: ${entry.title}`);
+        console.log(`Playing trailer: ${entry.Title}`);
     };
 
     const addToWatchlistButton = thumbnailElement.querySelector('.add-to-watch-list-button');
     addToWatchlistButton.onclick = () => {
         // Implement the logic to add the trailer to the watchlist
-        console.log(`Added to watchlist: ${entry.title}`);
+        console.log(`Added to watchlist: ${entry.Title}`);
     };
 
     const likeButton = thumbnailElement.querySelector('.like-button');
     likeButton.onclick = () => {
         // Implement the logic to like the trailer
-        console.log(`Liked trailer: ${entry.title}`);
+        console.log(`Liked trailer: ${entry.Title}`);
     };
 
     const muteButton = thumbnailElement.querySelector('.mute-button');
@@ -98,16 +97,18 @@ const renderThumbnail = (thumbnailElement, entry) => {
             muteButton.querySelector('img[alt="Mute"]').classList.remove('hidden');
         }
         // Implement the logic to mute/unmute the trailer
-        console.log(`Toggled mute for trailer: ${entry.title}`);
+        console.log(`Toggled mute for trailer: ${entry.Title}`);
     };
-    thumbnailElement.style.backgroundImage = `linear-gradient(to bottom, rgba(20, 20, 20, 0), rgba(20, 20, 20, 1)), url(${entry.poster})`;
+    const isImageValid = await checkImageSource(entry.Poster);
+    const imageUrl = isImageValid ? entry.Poster : 'public/images/general-placeholder.jpg';
+    thumbnailElement.style.backgroundImage = `linear-gradient(to bottom, rgba(20, 20, 20, 0), rgba(20, 20, 20, 1)), url(${imageUrl})`;
     thumbnailElement.style.backgroundSize = 'cover';
     thumbnailElement.style.backgroundPosition = 'center';
     thumbnailElement.style.backgroundClip = 'padding-box';
 }
 
 const renderDescription = (descriptionElement, entry) => {
-    descriptionElement.textContent = entry.description;
+    descriptionElement.textContent = entry.Plot;
 }
 
 const renderCast = (castElement, entries, currentPage, itemsPerPage) => {
@@ -121,8 +122,9 @@ const renderCast = (castElement, entries, currentPage, itemsPerPage) => {
         castItem.classList.add('cast-item');
 
         const img = document.createElement('img');
-        img.src = castMember.photo;
-        img.alt = castMember.name;
+        img.src = 'public/images/person-placeholder.jpg'; // Placeholder image as API does not provide actor photos
+        img.alt = castMember;
+        img.title = castMember;
 
         castItem.appendChild(img);
         castElement.appendChild(castItem);
@@ -197,9 +199,9 @@ const renderReviews = (reviewsElement, reviews, currentPage, itemsPerPage) => {
     });
 }
 
-const renderMainContentInfo = (mainContentInfoElement, contentEntry) => {
+const renderMainContentInfo = (mainContentInfoElement, contentDetails, contentEntry) => {
      const descriptionElement = mainContentInfoElement.querySelector('.description-section .description');
-    renderDescription(descriptionElement, contentEntry);
+    renderDescription(descriptionElement, contentDetails);
 
     let castPerPage = 8;
     let reviewsPerPage = 2;
@@ -209,18 +211,19 @@ const renderMainContentInfo = (mainContentInfoElement, contentEntry) => {
     }
 
     const castElement = mainContentInfoElement.querySelector('.cast-section .cast-list');
-    renderPagination(mainContentInfoElement.querySelector('.cast-section .pagination'), contentEntry.cast, 1, castPerPage, castElement, renderCast, false, false);
+    renderPagination(mainContentInfoElement.querySelector('.cast-section .pagination'), contentDetails.Actors.split(',').map(actor => actor.trim()), 1, castPerPage, castElement, renderCast, false, false);
 
+    // Reviews section is still using the mock data.
     const reviewsElement = mainContentInfoElement.querySelector('.reviews-section .reviews-list');
     renderPagination(mainContentInfoElement.querySelector('.reviews-section .pagination'), contentEntry.reviews, 1, reviewsPerPage, reviewsElement, renderReviews, true, false);
 }
 
-const renderSideBarContentInfo = (sidebarContentInfoElement, contentEntry) => {
+const renderSideBarContentInfo = (sidebarContentInfoElement, contentDetails, contentEntry) => {
     const releasedYear = sidebarContentInfoElement.querySelector('.released-year-section .released-year');
-    releasedYear.textContent = contentEntry.releaseYear;
+    releasedYear.textContent = contentDetails.Year;
     
     const availableLanguagesList = sidebarContentInfoElement.querySelector('.available-languages-section .available-languages-list');
-    const availableLanguages = contentEntry.languages;
+    const availableLanguages = contentDetails.Language.split(',').map(lang => lang.trim());
     availableLanguages.forEach((language) => {
         const languageItem = document.createElement('li');
         languageItem.textContent = language;
@@ -228,28 +231,41 @@ const renderSideBarContentInfo = (sidebarContentInfoElement, contentEntry) => {
     });
 
     const ratingElement = sidebarContentInfoElement.querySelector('.content-rating-section .content-rating');
-    const ratings = contentEntry.ratings;
-    for (const [source, value] of Object.entries(ratings)) {
+    const ratings = contentDetails.Ratings;
+
+    for (const rating of Object.values(ratings)) {
         const ratingItem = document.createElement('div');
         ratingItem.classList.add('rating-item');
         
         const ratingSource = document.createElement('span');
         ratingSource.classList.add('rating-source');
-        ratingSource.textContent = source;
+        ratingSource.textContent = rating.Source;
 
         const ratingValue = document.createElement('span');
         ratingValue.classList.add('rating-value');
-        ratingValue.textContent = value;
+        ratingValue.textContent = rating.Value;
+
+        let starRating;
+        if (rating.Value.includes('/')) {
+            const [value, scale] = rating.Value.split('/').map(Number);
+            starRating = (value / scale) * 5;
+        } else if (rating.Value.includes('%')) {
+            const value = parseFloat(rating.Value);
+            starRating = (value / 100) * 5;
+        } else {
+            starRating = parseFloat(rating.Value);
+        }
+
 
         const ratingStars = document.createElement('div');
         ratingStars.classList.add('rating-stars');
         for (let i = 1; i <= 5; i++) {
             const star = document.createElement('img');
             star.classList.add('star');
-            if (i <= Math.floor(value)) {
+            if (i <= Math.floor(starRating)) {
                 star.src = 'public/images/icons/star-filled.svg';
                 star.alt = 'Filled Star';
-            } else if (i === Math.ceil(value) && value % 1 !== 0) {
+            } else if (i === Math.ceil(starRating) && starRating % 1 !== 0) {
                 star.src = 'public/images/icons/star-half-filled.svg';
                 star.alt = 'Half Filled Star';
             } else {
@@ -266,7 +282,7 @@ const renderSideBarContentInfo = (sidebarContentInfoElement, contentEntry) => {
     }
 
     const genresElement = sidebarContentInfoElement.querySelector('.genres-section .genres-list');
-    const genres = contentEntry.genres;
+    const genres = contentDetails.Genre.split(',').map(genre => genre.trim());
     genres.forEach((genre) => {
         const genreItem = document.createElement('li');
         genreItem.classList.add('genre-item');
@@ -275,13 +291,14 @@ const renderSideBarContentInfo = (sidebarContentInfoElement, contentEntry) => {
     });
 
     const directorElement = sidebarContentInfoElement.querySelector('.director-section .director-names');
-    const directors = contentEntry.directors;
+    const directors = contentDetails.Director.split(',').map(director => director.trim());
     directors.forEach((director) => {
         const directorItem = document.createElement('li');
         directorItem.classList.add('director-name');
         const directorImage = document.createElement('img');
-        directorImage.src = director.photo;
-        directorImage.alt = director.name;
+        directorImage.src = 'public/images/person-placeholder.jpg'; // Placeholder image as API does not provide director photos
+        directorImage.alt = director;
+        directorImage.title = director;
         directorImage.classList.add('photo');
 
         const directorInfo = document.createElement('div');
@@ -289,11 +306,11 @@ const renderSideBarContentInfo = (sidebarContentInfoElement, contentEntry) => {
 
         const directorName = document.createElement('h3');
         directorName.classList.add('name-text');
-        directorName.textContent = director.name;
+        directorName.textContent = director;
 
         const directorLocation = document.createElement('span');
         directorLocation.classList.add('location');
-        directorLocation.textContent = `From ${director.country}`;
+        directorLocation.textContent = `From ${contentDetails.Country}`;
 
         directorInfo.appendChild(directorName);
         directorInfo.appendChild(directorLocation);
@@ -303,6 +320,7 @@ const renderSideBarContentInfo = (sidebarContentInfoElement, contentEntry) => {
         directorElement.appendChild(directorItem);
     });
 
+    // This section is for music composers, but since the OMDb API does not provide composer information, we will use a placeholder for demonstration purposes.
     const musicElement = sidebarContentInfoElement.querySelector('.music-section .music-composers');
     const composers = contentEntry.music;
     composers.forEach((composer) => {
@@ -335,8 +353,24 @@ const renderSideBarContentInfo = (sidebarContentInfoElement, contentEntry) => {
     });
 }
 
-const renderSeasonList = (seasonsElement, seasons) => {
-    console.log('Rendering seasons:', seasons);
+const renderSeasonList = async (seasonsElement, contentDetails) => {
+    const loadingIndicator = document.createElement('div');
+    loadingIndicator.classList.add('loading-indicator');
+    loadingIndicator.textContent = 'Loading seasons...';
+    seasonsElement.appendChild(loadingIndicator);
+
+    const totalSeasons = parseInt(contentDetails.totalSeasons, 10);
+    const seasons = [];
+    for (let i = 1; i <= totalSeasons; i++) {
+        const seasonInfo = await api.fetchContentDetails(contentDetails.Title, i);
+        console.log(`Fetched season ${i} details:`, seasonInfo);
+        const totalEpisodes = seasonInfo.Episodes.length;
+        seasons.push({
+            seasonNumber: i,
+            episodes: seasonInfo.Episodes,
+            totalEpisodes: totalEpisodes
+        });
+    }
 
     seasons.forEach((season) => {
         const seasonItem = document.createElement('li');
@@ -394,13 +428,13 @@ const renderSeasonList = (seasonsElement, seasons) => {
             const episodeDuration = document.createElement('div');
 
             episodeNumber.classList.add('episode-number');
-            episodeNumber.textContent = `${episode.episodeNumber.toString().padStart(2, '0')}`;
+            // episodeNumber.textContent = `${episode.episodeNumber.toString().padStart(2, '0')}`;
 
             episodeThumbnail.classList.add('episode-thumbnail');
             const thumbnailImg = document.createElement('img');
             thumbnailImg.classList.add('thumbnail-img');
-            thumbnailImg.src = episode.thumbnail;
-            thumbnailImg.alt = episode.title;
+            // thumbnailImg.src = episode.thumbnail;
+            // thumbnailImg.alt = episode.title;
             episodeThumbnail.appendChild(thumbnailImg);
 
             const playButton = document.createElement('button');
@@ -414,10 +448,10 @@ const renderSeasonList = (seasonsElement, seasons) => {
 
             episodeInfo.classList.add('episode-info');
             episodeTitle.classList.add('episode-title');
-            episodeTitle.textContent = episode.title;
+            // episodeTitle.textContent = episode.title;
 
             episodeDescription.classList.add('episode-description');
-            episodeDescription.textContent = episode.description;
+            // episodeDescription.textContent = episode.description;
 
             episodeDuration.classList.add('episode-duration');
             const durationIcon = document.createElement('img');
@@ -425,7 +459,7 @@ const renderSeasonList = (seasonsElement, seasons) => {
             durationIcon.alt = 'Duration';
             const durationText = document.createElement('span');
             durationText.classList.add('duration-text');
-            durationText.textContent = episode.durationMinutes + ' min';
+            // durationText.textContent = episode.durationMinutes + ' min';
             episodeDuration.appendChild(durationIcon);
             episodeDuration.appendChild(durationText);
 
@@ -458,14 +492,24 @@ const renderSeasonList = (seasonsElement, seasons) => {
                 // Implement the logic to play the episode video
                 console.log(`Playing episode: ${episode.title}`);
             });
-        
+            api.fetchContentDetailsById(episode.imdbID).then(async (episodeDetails) => {
+                episodeNumber.textContent = `${episodeDetails.Episode.toString().padStart(2, '0')}`;
+
+                const isImageValid = await checkImageSource(episodeDetails.Poster);
+                thumbnailImg.src = isImageValid ? episodeDetails.Poster : 'public/images/general-placeholder.jpg';
+                thumbnailImg.alt = episodeDetails.Title;
+                episodeTitle.textContent = episodeDetails.Title;
+                episodeDescription.textContent = episodeDetails.Plot;
+                durationText.textContent = episodeDetails.Runtime;
+            })
         });
 
         seasonItem.appendChild(seasonHeader);
         seasonItem.appendChild(episodesList);
-
+        
         seasonsElement.appendChild(seasonItem);
     });
+    seasonsElement.removeChild(loadingIndicator);
 }
 
 renderPage();

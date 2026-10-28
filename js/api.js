@@ -1,3 +1,4 @@
+import apiKey from './config.js';
 // Mock API
 
 const api = {
@@ -130,6 +131,22 @@ const api = {
                 console.error('Invalid type for must-watch fetch');
         }
     },
+    fetchContentDetails: async (name, season=null, episode=null) => {
+        const url = `https://www.omdbapi.com/?apiKey=${apiKey}&t=${encodeURIComponent(name)}${season ? `&Season=${season}` : ''}${episode ? `&Episode=${episode}` : ''}`;
+        const response = await fetch(url);
+        if (!response.ok) {
+            console.error('Failed to fetch content details');
+        }
+        return response.json();
+    },
+    fetchContentDetailsById: async (id) => {
+        const url = `https://www.omdbapi.com/?apiKey=${apiKey}&i=${encodeURIComponent(id)}`;
+        const response = await fetch(url);
+        if (!response.ok) {
+            console.error('Failed to fetch content details by ID');
+        }
+        return response.json();
+    }
 };
 
 export default api;

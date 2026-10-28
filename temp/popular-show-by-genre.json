@@ -36,7 +36,7 @@
         { "rank": 3, "id": "13-reasons-why", "title": "13 Reasons Why", "years": "2017–2020", "poster": "public/images/posters/13-reasons-why.png" },
         { "rank": 4, "id": "the-sandman", "title": "The Sandman", "years": "2022–2025", "poster": "public/images/posters/the-sandman.png" },
         { "rank": 5, "id": "shadow-and-bone", "title": "Shadow and Bone", "years": "2021–2023", "poster": "public/images/posters/shadow-and-bone.png" },
-        { "rank": 6, "id": "locke-and-key", "title": "Locke & Key", "years": "2020–2022", "poster": "public/images/posters/locke-and-key.png" },
+        { "rank": 6, "id": "locke-key", "title": "Locke & Key", "years": "2020–2022", "poster": "public/images/posters/locke-and-key.png" },
         { "rank": 7, "id": "1899", "title": "1899", "years": "2022", "poster": "public/images/posters/1899.png" },
         { "rank": 8, "id": "glow", "title": "GLOW", "years": "2017–2019", "poster": "public/images/posters/glow.png" }
       ]
@@ -47,7 +47,7 @@
         { "rank": 1, "id": "wednesday", "title": "Wednesday", "years": "2022–present", "poster": "public/images/posters/wednesday.png" },
         { "rank": 2, "id": "the-sandman", "title": "The Sandman", "years": "2022–2025", "poster": "public/images/posters/the-sandman.png" },
         { "rank": 3, "id": "shadow-and-bone", "title": "Shadow and Bone", "years": "2021–2023", "poster": "public/images/posters/shadow-and-bone.png" },
-        { "rank": 4, "id": "locke-and-key", "title": "Locke & Key", "years": "2020–2022", "poster": "public/images/posters/locke-and-key.png" }
+        { "rank": 4, "id": "locke-key", "title": "Locke & Key", "years": "2020–2022", "poster": "public/images/posters/locke-and-key.png" }
       ]
     },
     {
@@ -55,7 +55,7 @@
       "items": [
         { "rank": 1, "id": "stranger-things", "title": "Stranger Things", "years": "2016–2025", "poster": "public/images/posters/stranger-things.png" },
         { "rank": 2, "id": "the-sandman", "title": "The Sandman", "years": "2022–2025", "poster": "public/images/posters/the-sandman.png" },
-        { "rank": 3, "id": "locke-and-key", "title": "Locke & Key", "years": "2020–2022", "poster": "public/images/posters/locke-and-key.png" }
+        { "rank": 3, "id": "locke-key", "title": "Locke & Key", "years": "2020–2022", "poster": "public/images/posters/locke-and-key.png" }
       ]
     },
     {

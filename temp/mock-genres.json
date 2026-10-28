@@ -4,8 +4,8 @@
     "name": "Action",
     "count": 3,
     "items": [
-      { "id": "avengers-endgame-2019", "type": "movie", "title": "Avengers: Endgame", "poster": "public/images/posters/avengers-endgame.png" },
-      { "id": "thor-love-and-thunder-2022", "type": "movie", "title": "Thor: Love and Thunder", "poster": "public/images/posters/thor-love-and-thunder.png" },
+      { "id": "avengers-endgame", "type": "movie", "title": "Avengers: Endgame", "poster": "public/images/posters/avengers-endgame.png" },
+      { "id": "thor-love-and-thunder", "type": "movie", "title": "Thor: Love and Thunder", "poster": "public/images/posters/thor-love-and-thunder.png" },
       { "id": "money-heist-korea", "type": "show", "title": "Money Heist: Korea – Joint Economic Area", "poster": "public/images/posters/money-heist-korea.png" }
     ]
   },
@@ -14,7 +14,7 @@
     "name": "Adventure",
     "count": 2,
     "items": [
-      { "id": "avengers-endgame-2019", "type": "movie", "title": "Avengers: Endgame", "poster": "public/images/posters/avengers-endgame.png" },
+      { "id": "avengers-endgame", "type": "movie", "title": "Avengers: Endgame", "poster": "public/images/posters/avengers-endgame.png" },
       { "id": "shadow-and-bone", "type": "show", "title": "Shadow and Bone", "poster": "public/images/posters/shadow-and-bone.png" }
     ]
   },
@@ -23,7 +23,7 @@
     "name": "Comedy",
     "count": 3,
     "items": [
-      { "id": "thor-love-and-thunder-2022", "type": "movie", "title": "Thor: Love and Thunder", "poster": "public/images/posters/thor-love-and-thunder.png" },
+      { "id": "thor-love-and-thunder", "type": "movie", "title": "Thor: Love and Thunder", "poster": "public/images/posters/thor-love-and-thunder.png" },
       { "id": "glow", "type": "show", "title": "GLOW", "poster": "public/images/posters/glow.png" },
       { "id": "wednesday", "type": "show", "title": "Wednesday", "poster": "public/images/posters/wednesday.png" }
     ]
@@ -45,7 +45,7 @@
       { "id": "13-reasons-why", "type": "show", "title": "13 Reasons Why", "poster": "public/images/posters/13-reasons-why.png" },
       { "id": "1899", "type": "show", "title": "1899", "poster": "public/images/posters/1899.png" },
       { "id": "glow", "type": "show", "title": "GLOW", "poster": "public/images/posters/glow.png" },
-      { "id": "locke-and-key", "type": "show", "title": "Locke & Key", "poster": "public/images/posters/locke-and-key.png" },
+      { "id": "locke-key", "type": "show", "title": "Locke & Key", "poster": "public/images/posters/locke-and-key.png" },
       { "id": "the-sandman", "type": "show", "title": "The Sandman", "poster": "public/images/posters/the-sandman.png" },
       { "id": "shadow-and-bone", "type": "show", "title": "Shadow and Bone", "poster": "public/images/posters/shadow-and-bone.png" },
       { "id": "stranger-things", "type": "show", "title": "Stranger Things", "poster": "public/images/posters/stranger-things.png" },
@@ -57,8 +57,8 @@
     "name": "Fantasy",
     "count": 5,
     "items": [
-      { "id": "thor-love-and-thunder-2022", "type": "movie", "title": "Thor: Love and Thunder", "poster": "public/images/posters/thor-love-and-thunder.png" },
-      { "id": "locke-and-key", "type": "show", "title": "Locke & Key", "poster": "public/images/posters/locke-and-key.png" },
+      { "id": "thor-love-and-thunder", "type": "movie", "title": "Thor: Love and Thunder", "poster": "public/images/posters/thor-love-and-thunder.png" },
+      { "id": "locke-key", "type": "show", "title": "Locke & Key", "poster": "public/images/posters/locke-and-key.png" },
       { "id": "the-sandman", "type": "show", "title": "The Sandman", "poster": "public/images/posters/the-sandman.png" },
       { "id": "shadow-and-bone", "type": "show", "title": "Shadow and Bone", "poster": "public/images/posters/shadow-and-bone.png" },
       { "id": "wednesday", "type": "show", "title": "Wednesday", "poster": "public/images/posters/wednesday.png" }
@@ -69,7 +69,7 @@
     "name": "Horror",
     "count": 3,
     "items": [
-      { "id": "locke-and-key", "type": "show", "title": "Locke & Key", "poster": "public/images/posters/locke-and-key.png" },
+      { "id": "locke-key", "type": "show", "title": "Locke & Key", "poster": "public/images/posters/locke-and-key.png" },
       { "id": "the-sandman", "type": "show", "title": "The Sandman", "poster": "public/images/posters/the-sandman.png" },
       { "id": "stranger-things", "type": "show", "title": "Stranger Things", "poster": "public/images/posters/stranger-things.png" }
     ]
@@ -89,7 +89,7 @@
     "name": "Sci-Fi",
     "count": 3,
     "items": [
-      { "id": "avengers-endgame-2019", "type": "movie", "title": "Avengers: Endgame", "poster": "public/images/posters/avengers-endgame.png" },
+      { "id": "avengers-endgame", "type": "movie", "title": "Avengers: Endgame", "poster": "public/images/posters/avengers-endgame.png" },
       { "id": "1899", "type": "show", "title": "1899", "poster": "public/images/posters/1899.png" },
       { "id": "stranger-things", "type": "show", "title": "Stranger Things", "poster": "public/images/posters/stranger-things.png" }
     ]

@@ -9,6 +9,6 @@
     { "id": "shadow-and-bone", "type": "show", "title": "Shadow and Bone", "runtime": "14h 42min", "numberOfSeasons": 2, "latestSeason": 2, "latestSeasonYear": 2023, "badge": "New Season", "poster": "public/images/posters/shadow-and-bone.png" },
     { "id": "money-heist-korea", "type": "show", "title": "Money Heist: Korea – Joint Economic Area", "runtime": "12h 34min", "numberOfSeasons": 2, "latestSeason": 2, "latestSeasonYear": 2022, "badge": "New Season", "poster": "public/images/posters/money-heist-korea.png" },
     { "id": "1899", "type": "show", "title": "1899", "runtime": "7h 34min", "numberOfSeasons": 1, "latestSeason": 1, "latestSeasonYear": 2022, "badge": "New Series", "poster": "public/images/posters/1899.png" },
-    { "id": "locke-and-key", "type": "show", "title": "Locke & Key", "runtime": "22h 41min", "numberOfSeasons": 3, "latestSeason": 3, "latestSeasonYear": 2022, "badge": "Final Season", "poster": "public/images/posters/locke-and-key.png" }
+    { "id": "locke-key", "type": "show", "title": "Locke & Key", "runtime": "22h 41min", "numberOfSeasons": 3, "latestSeason": 3, "latestSeasonYear": 2022, "badge": "Final Season", "poster": "public/images/posters/locke-and-key.png" }
   ]
 }

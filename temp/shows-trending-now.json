@@ -6,7 +6,7 @@
     { "rank": 2, "id": "stranger-things", "type": "show", "title": "Stranger Things", "years": "2016–2025", "runtime": "44h 59min", "numberOfSeasons": 5, "genres": ["Sci-Fi", "Horror", "Drama"], "poster": "public/images/posters/stranger-things.png" },
     { "rank": 3, "id": "the-sandman", "type": "show", "title": "The Sandman", "years": "2022–2025", "runtime": "18h 55min", "numberOfSeasons": 2, "genres": ["Fantasy", "Drama", "Horror"], "poster": "public/images/posters/the-sandman.png" },
     { "rank": 4, "id": "you", "type": "show", "title": "You", "years": "2018–2025", "runtime": "40h 18min", "numberOfSeasons": 5, "genres": ["Thriller", "Crime", "Drama"], "poster": "public/images/posters/you.png" },
-    { "rank": 5, "id": "locke-and-key", "type": "show", "title": "Locke & Key", "years": "2020–2022", "runtime": "22h 41min", "numberOfSeasons": 3, "genres": ["Fantasy", "Horror", "Drama"], "poster": "public/images/posters/locke-and-key.png" },
+    { "rank": 5, "id": "locke-key", "type": "show", "title": "Locke & Key", "years": "2020–2022", "runtime": "22h 41min", "numberOfSeasons": 3, "genres": ["Fantasy", "Horror", "Drama"], "poster": "public/images/posters/locke-and-key.png" },
     { "rank": 6, "id": "1899", "type": "show", "title": "1899", "years": "2022", "runtime": "7h 34min", "numberOfSeasons": 1, "genres": ["Sci-Fi", "Mystery", "Drama"], "poster": "public/images/posters/1899.png" }
   ]
 }

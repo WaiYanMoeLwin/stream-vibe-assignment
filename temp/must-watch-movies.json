@@ -4,6 +4,6 @@
   "ratingScale": 5,
   "ratingStep": 0.5,
   "items": [
-    { "id": "avengers-endgame-2019", "type": "movie", "title": "Avengers: Endgame", "year": 2019, "ratedBy": 123456789, "runtime": "3h 1min", "starRating": 4.5, "reason": "The epic finale to over a decade of interconnected Marvel films.", "poster": "public/images/posters/avengers-endgame.png" }
+    { "id": "avengers-endgame", "type": "movie", "title": "Avengers: Endgame", "year": 2019, "ratedBy": 123456789, "runtime": "3h 1min", "starRating": 4.5, "reason": "The epic finale to over a decade of interconnected Marvel films.", "poster": "public/images/posters/avengers-endgame.png" }
   ]
 }

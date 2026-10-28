@@ -211,3 +211,13 @@ export const menuToggle = (menuButton, navElements) => {
         navElement.classList.toggle('active');
     });
 };
+
+export const checkImageSource = async (source) => {
+    try {
+        const response = await fetch(source);
+        return response.ok;
+    } catch (error) {
+        console.error('Error fetching image:', error);
+        return false;
+    }
+}

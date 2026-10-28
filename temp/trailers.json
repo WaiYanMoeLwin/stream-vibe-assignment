@@ -24,7 +24,7 @@
       "trailer": "public/videos/trailers/wednesday.mp4"
     },
     {
-      "id": "avengers-endgame-2019",
+      "id": "avengers-endgame",
       "type": "movie",
       "title": "Avengers: Endgame",
       "year": 2019,
@@ -32,7 +32,7 @@
       "genres": ["Action", "Sci-Fi", "Adventure"],
       "runtime": "3h 1min",
       "poster": "public/images/posters/avengers-endgame.svg",
-      "trailer": "public/videos/trailers/avengers-endgame-2019.mp4"
+      "trailer": "public/videos/trailers/avengers-endgame.mp4"
     },
     {
       "id": "the-sandman",
