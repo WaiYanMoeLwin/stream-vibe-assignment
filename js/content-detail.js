@@ -233,7 +233,7 @@ const renderSideBarContentInfo = (sidebarContentInfoElement, contentEntry) => {
         const ratingItem = document.createElement('div');
         ratingItem.classList.add('rating-item');
         
-        const ratingSource = document.createElement('h3');
+        const ratingSource = document.createElement('span');
         ratingSource.classList.add('rating-source');
         ratingSource.textContent = source;
 

@@ -37,6 +37,7 @@ header.main-header {
   top: 0;
   width: 100%;
   z-index: 1000;
+  font-size: 1.4rem;
   box-sizing: border-box;
 }
 header.main-header button.menu {
@@ -247,6 +248,9 @@ footer .footer-info {
   border-top: 1px solid #262626;
   padding: 2rem 0 0 0;
 }
+footer .footer-info p {
+  margin: 0;
+}
 footer .footer-info .footer-legal-links {
   display: flex;
   flex-direction: row;
@@ -310,7 +314,6 @@ footer .footer-info a:hover {
 @media screen and (max-width: 1439px) {
   header.main-header {
     padding: 2rem 4rem;
-    margin-bottom: 3rem;
   }
   .logo {
     width: 16rem;
@@ -348,9 +351,6 @@ footer .footer-info a:hover {
   footer .footer-links {
     gap: 1.6rem;
     margin-bottom: 6rem;
-  }
-  footer .footer-info {
-    padding: 1.6rem 0 0 0;
   }
   .pagination {
     padding: 1rem;
@@ -593,8 +593,8 @@ footer .footer-info a:hover {
 #content-info .main-info .episodes-section {
   display: flex;
   flex-direction: column;
-  gap: 2.4rem;
-  padding: 2rem 4rem;
+  gap: 3rem;
+  padding: 3rem;
 }
 #content-info .main-info .episodes-section.hidden {
   display: none;
@@ -615,7 +615,7 @@ footer .footer-info a:hover {
 #content-info .main-info .episodes-section .seasons-list .season-item {
   display: flex;
   flex-direction: column;
-  padding: 2.4rem 4rem;
+  padding: 2rem 4rem;
   gap: 2.4rem;
   background-color: #0f0f0f;
   border: 1px solid #262626;
@@ -764,7 +764,6 @@ footer .footer-info a:hover {
 }
 #content-info .main-info section .description {
   color: #ffffff;
-  font-size: 1.6rem;
   font-weight: 500;
   margin: 0;
 }
@@ -798,6 +797,7 @@ footer .footer-info a:hover {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.6rem;
+  margin-top: 3rem;
 }
 #content-info .main-info section .reviews-list .review-item {
   display: flex;
@@ -823,6 +823,19 @@ footer .footer-info a:hover {
 #content-info .main-info section .reviews-list .review-item .review-header .reviewer .reviewer-location {
   font-size: 1.6rem;
   font-weight: 500;
+  margin: 0;
+}
+#content-info .main-info section .reviews-list .review-item .review-header .rating-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5rem;
+  background-color: #141414;
+  border: 1px solid #262626;
+}
+#content-info .main-info section .reviews-list .review-item .review-content {
   margin: 0;
 }
 #content-info .main-info section .add-review-button {
@@ -929,7 +942,7 @@ footer .footer-info a:hover {
   box-sizing: border-box;
 }
 #content-info .sidebar-info section .content-rating .rating-item .rating-source {
-  font-size: 1.6rem;
+  color: #ffffff;
   font-weight: 600;
   margin: 0;
 }
@@ -1049,9 +1062,10 @@ footer .footer-info a:hover {
   }
   #thumbnail .section-header {
     padding: 0;
+    margin-bottom: 2rem;
   }
   #thumbnail .section-header .title {
-    font-size: 2rem;
+    font-size: 2.4rem;
   }
   #thumbnail .section-header .description {
     display: none;
@@ -1067,7 +1081,11 @@ footer .footer-info a:hover {
   #content-info {
     padding: 0 1.6rem 8rem;
   }
+  #content-info .main-info .episodes-section {
+    gap: 2rem;
+  }
   #content-info .main-info .episodes-section .seasons-list .season-item {
+    gap: 2rem;
     padding: 1.6rem 2rem;
   }
   #content-info .main-info .episodes-section .seasons-list .season-item .season-header .season-info {
@@ -1120,11 +1138,24 @@ footer .footer-info a:hover {
   #content-info .main-info section {
     padding: 2.4rem;
   }
+  #content-info .main-info section .section-header {
+    margin-bottom: 0.8rem;
+  }
+  #content-info .main-info section .section-header h2 {
+    font-size: 1.4rem;
+  }
   #content-info .main-info section .cast-list {
     grid-template-columns: repeat(4, 1fr);
   }
   #content-info .main-info section .reviews-list {
     grid-template-columns: 1fr;
+    margin-top: 2.4rem;
+  }
+  #content-info .main-info section .reviews-list .review-item .review-header .reviewer .reviewer-name {
+    font-size: 1.6rem;
+  }
+  #content-info .main-info section .reviews-list .review-item .review-header .reviewer .reviewer-location {
+    font-size: 1.4rem;
   }
   #content-info .sidebar-info {
     padding: 2.4rem;

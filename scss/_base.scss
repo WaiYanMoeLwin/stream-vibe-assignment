@@ -75,6 +75,7 @@ header.main-header {
     top: 0;
     width: 100%;
     z-index: 1000;
+    font-size: 1.4rem;
     box-sizing: border-box;
 
     button.menu {
@@ -298,6 +299,9 @@ footer {
         @include flex-row;
         border-top: 1px solid $black-15;
         padding: 2rem 0 0 0;
+        p {
+            margin: 0;
+        }
 
         .footer-legal-links {
             @include flex-row;
@@ -360,7 +364,6 @@ footer {
 @media screen and (max-width: 1439px) {
     header.main-header {
         padding: 2rem 4rem;
-        margin-bottom: 3rem;
     }
     
     .logo {
@@ -407,10 +410,6 @@ footer {
         .footer-links {
             gap: 1.6rem;
             margin-bottom: 6rem;
-        }
-
-        .footer-info {
-            padding: 1.6rem 0 0 0;
         }
     }
 

@@ -37,6 +37,7 @@ header.main-header {
   top: 0;
   width: 100%;
   z-index: 1000;
+  font-size: 1.4rem;
   box-sizing: border-box;
 }
 header.main-header button.menu {
@@ -247,6 +248,9 @@ footer .footer-info {
   border-top: 1px solid #262626;
   padding: 2rem 0 0 0;
 }
+footer .footer-info p {
+  margin: 0;
+}
 footer .footer-info .footer-legal-links {
   display: flex;
   flex-direction: row;
@@ -310,7 +314,6 @@ footer .footer-info a:hover {
 @media screen and (max-width: 1439px) {
   header.main-header {
     padding: 2rem 4rem;
-    margin-bottom: 3rem;
   }
   .logo {
     width: 16rem;
@@ -348,9 +351,6 @@ footer .footer-info a:hover {
   footer .footer-links {
     gap: 1.6rem;
     margin-bottom: 6rem;
-  }
-  footer .footer-info {
-    padding: 1.6rem 0 0 0;
   }
   .pagination {
     padding: 1rem;
@@ -638,11 +638,12 @@ footer .footer-info a:hover {
   gap: 2rem;
 }
 .content-container .genre-cards .genre-item-container, .content-container .popular-genre-cards .genre-item-container {
+  display: flex;
+  flex-direction: column;
   padding: 2.4rem;
   background-color: #1a1a1a;
   border-radius: 1rem;
   border: 1px solid #262626;
-  gap: 2rem;
 }
 .content-container .genre-cards .genre-item-container .genre-images-container, .content-container .popular-genre-cards .genre-item-container .genre-images-container {
   display: grid;
@@ -672,6 +673,15 @@ footer .footer-info a:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.content-container .genre-cards .genre-item-container .top-10-badge, .content-container .popular-genre-cards .genre-item-container .top-10-badge {
+  align-self: flex-start;
+  color: #ffffff;
+  background-color: #e50000;
+  font-size: 1.2rem;
+  line-height: 1;
+  padding: 0.8rem;
+  border-radius: 0.4rem;
 }
 .content-container .genre-cards .genre-item-container .genre-title-container, .content-container .popular-genre-cards .genre-item-container .genre-title-container {
   display: flex;
@@ -715,6 +725,7 @@ footer .footer-info a:hover {
   background-color: #1a1a1a;
   border-radius: 1rem;
   border: 1px solid #262626;
+  box-sizing: border-box;
 }
 .content-container .content-cards .content-card .content-image-container {
   width: 100%;
@@ -888,9 +899,29 @@ footer .footer-info a:hover {
     display: none;
   }
   .content-container .genre-cards .genre-item-container, .content-container .popular-genre-cards .genre-item-container {
-    min-width: 20rem;
-    max-width: 20rem;
-    padding: 1.6rem;
+    min-width: 18rem;
+    max-width: 18rem;
+    height: 20rem;
+    padding: 2rem;
+    box-sizing: border-box;
+  }
+  .content-container .genre-cards .genre-item-container .genre-images-container, .content-container .popular-genre-cards .genre-item-container .genre-images-container {
+    height: 14rem;
+  }
+  .content-container .genre-cards .genre-item-container .genre-title-container .genre-title, .content-container .popular-genre-cards .genre-item-container .genre-title-container .genre-title {
+    font-size: 1.4rem;
+  }
+  .content-container .genre-cards .genre-item-container .genre-title-container img, .content-container .popular-genre-cards .genre-item-container .genre-title-container img {
+    width: 2rem;
+    height: 2rem;
+  }
+  .content-container .popular-genre-cards .genre-item-container {
+    min-width: 23rem;
+    max-width: 23rem;
+    height: 27rem;
+  }
+  .content-container .popular-genre-cards .genre-item-container .genre-images-container {
+    height: 16rem;
   }
   .content-container .content-cards {
     display: flex;
@@ -908,16 +939,28 @@ footer .footer-info a:hover {
     gap: 1.5rem;
   }
   .content-container .content-cards .content-card {
-    min-width: 20rem;
-    max-width: 20rem;
+    min-width: 18rem;
+    max-width: 18rem;
+    height: 28rem;
     padding: 1.2rem;
   }
   .content-container .content-cards .content-card .content-image-container {
     margin-bottom: 1.2rem;
   }
   .content-container .content-cards.must-watch-cards .content-card {
-    min-width: 23rem;
-    max-width: 23rem;
+    min-width: 24rem;
+    max-width: 24rem;
+    height: 36rem;
+  }
+  .content-container#shows .content-cards .content-card {
+    min-width: 24rem;
+    max-width: 24rem;
+    height: 36rem;
+  }
+  .content-container#shows .content-cards.must-watch-cards .content-card {
+    min-width: 25rem;
+    max-width: 25rem;
+    height: 37rem;
   }
 }
 @media screen and (max-width: 767px) {
@@ -931,6 +974,12 @@ footer .footer-info a:hover {
     width: 100%;
     justify-content: center;
     padding: 1.4rem 0;
+  }
+  .tab {
+    margin: 0 1.6rem 5rem;
+  }
+  .content-container {
+    margin: 0 1.6rem 8rem;
   }
 }
 

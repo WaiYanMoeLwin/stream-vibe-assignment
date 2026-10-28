@@ -116,7 +116,6 @@ header.main-header {
         margin: 0 0 1rem;
     }
     .feature-comparison-description {
-        font-size: 1.6rem;
         margin: 0 15rem 6rem 0;
     }
     .feature-comparison-table {
@@ -200,15 +199,15 @@ header.main-header {
                     margin-bottom: 3rem;
 
                     .plan-price-numeric {
-                        font-size: 2.5rem;
+                        font-size: 2.4rem;
                     }
                 }
 
                 .pricing-card-buttons-container {
-                    gap: 1rem;
+                    gap: 1.2rem;
 
                     button {
-                        padding: 1.2rem 1.2rem;
+                        padding: 1.4rem 0;
                         font-size: 1.2rem;
                     }
                 }
@@ -253,10 +252,10 @@ header.main-header {
         }
 
         .billing-cycles-selector {
-            padding: 0.6rem;
+            padding: 0.8rem;
 
             .billing-cycle-button {
-                padding: 1rem 1.5rem;
+                padding: 1.2rem 2rem;
             }
         }
 
@@ -266,28 +265,8 @@ header.main-header {
 
             .pricing-card {
                 padding: 2.4rem;
-
-                .plan-title {
-                    font-size: 1.8rem;
-                }
                 .plan-description {
                     margin-bottom: 3rem;
-                }
-                .plan-price {
-                    margin-bottom: 3rem;
-
-                    .plan-price-numeric {
-                        font-size: 2.5rem;
-                    }
-                }
-
-                .pricing-card-buttons-container {
-                    gap: 1rem;
-
-                    button {
-                        padding: 1.2rem 1.2rem;
-                        font-size: 1.2rem;
-                    }
                 }
             }
         }
@@ -324,7 +303,19 @@ header.main-header {
 }
 
 @media screen and (max-width: 767px) {
+    #plans {
+        padding: 0 1.6rem;
+        .pricing-cards {
+            .pricing-card {
+                .plan-title {
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+    }
+
     #features {
+        padding: 0 1.6rem;
         .feature-comparison-mobile {
             display: flex;
             flex-direction: column;
@@ -358,7 +349,7 @@ header.main-header {
             .features-container {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
-                gap: 2rem 2.4rem;
+                gap: 2.4rem 2rem;
                 padding: 2.4rem;
                 background-color: base.$black-06;
                 border-radius: 1.2rem;

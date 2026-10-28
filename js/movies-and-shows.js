@@ -96,7 +96,7 @@ const renderPage = async () => {
     if (window.innerWidth < 1023) {
         perPagePopularMovies = popularMovies.length; // Show all genres on smaller screens
     }
-    renderPagination(paginationElementPopularMovies, popularMovies, 1, perPagePopularMovies, mainElementPopularMovies, renderGenres);
+    renderPagination(paginationElementPopularMovies, popularMovies, 1, perPagePopularMovies, mainElementPopularMovies, renderPopularGenres);
 
     const popularShows = popularShowsResponse.genres;
     const popularShowsSection = document.querySelector('#shows-popular-genres');
@@ -106,7 +106,7 @@ const renderPage = async () => {
     if (window.innerWidth < 1023) {
         perPagePopularShows = popularShows.length; // Show all genres on smaller screens
     }
-    renderPagination(paginationElementPopularShows, popularShows, 1, perPagePopularShows, mainElementPopularShows, renderGenres);
+    renderPagination(paginationElementPopularShows, popularShows, 1, perPagePopularShows, mainElementPopularShows, renderPopularGenres);
 
     // Render the trending movies and shows sections
     const trendingMovies = trendingMoviesResponse.items;
@@ -130,7 +130,7 @@ const renderPage = async () => {
     if (window.innerWidth < 1023) {
         perPageTrendingShows = trendingShows.length; // Show all shows on smaller screens
     }
-    renderPagination(paginationElementTrendingShows, trendingShows, 1, perPageTrendingShows, mainElementTrendingShows, renderContentCardsWithRuntimeAndViews);
+    renderPagination(paginationElementTrendingShows, trendingShows, 1, perPageTrendingShows, mainElementTrendingShows, renderContentCardsWithRuntimeAndSeasons);
 
     // Render the new releases movies and shows sections
     const newReleasesMovies = newReleasesMoviesResponse.items;
@@ -342,6 +342,19 @@ const renderTrailers = (carousel, trailers, currentPage, perPage) => {
     carousel.style.backgroundSize = 'cover';
     carousel.style.backgroundPosition = 'center';
     carousel.style.backgroundClip = 'padding-box';
+}
+
+const renderPopularGenres = (containerElement, genres, currentPage, perPage) => {
+    renderGenres(containerElement, genres, currentPage, perPage);
+
+    // Add Top 10 badge to popular genres cards
+    const popularGenreCards = containerElement.querySelectorAll('.genre-item-container');
+    popularGenreCards.forEach((card, index) => {
+        const top10Badge = document.createElement('span');
+        top10Badge.classList.add('top-10-badge');
+        top10Badge.textContent = `Top 10 in`;
+        card.insertBefore(top10Badge, card.lastChild);
+    });
 }
 
 const addRuntimeToCard = (cardInfoContainer, content) => {

@@ -130,11 +130,12 @@
         gap: 2rem;
 
         .genre-item-container {
+            display: flex;
+            flex-direction: column;
             padding: 2.4rem;
             background-color: base.$black-10;
             border-radius: 1rem;
             border: 1px solid base.$black-15;
-            gap: 2rem;
 
             .genre-images-container {
                 display: grid;
@@ -166,6 +167,16 @@
                     height: 100%;
                     object-fit: cover;
                 }
+            }
+
+            .top-10-badge {
+                align-self: flex-start;
+                color: base.$white;
+                background-color: base.$red-45;
+                font-size: 1.2rem;
+                line-height: 1;
+                padding: 0.8rem;
+                border-radius: 0.4rem;
             }
 
             .genre-title-container {
@@ -215,6 +226,7 @@
             background-color: base.$black-10;
             border-radius: 1rem;
             border: 1px solid base.$black-15;
+            box-sizing: border-box;
 
             .content-image-container {
                 width: 100%;
@@ -404,9 +416,35 @@
                 display: none;
             }
             .genre-item-container {
-                min-width: 20rem;
-                max-width: 20rem;
-                padding: 1.6rem;
+                min-width: 18rem;
+                max-width: 18rem;
+                height: 20rem;
+                padding: 2rem;
+                box-sizing: border-box;
+
+                .genre-images-container {
+                    height: 14rem;
+                }
+                .genre-title-container {
+                    .genre-title {
+                        font-size: 1.4rem;
+                    }
+                    img {
+                        width: 2rem;
+                        height: 2rem;
+                    }
+                }
+            }
+        }
+        .popular-genre-cards {
+            .genre-item-container {
+                min-width: 23rem;
+                max-width: 23rem;
+                height: 27rem;
+
+                .genre-images-container {
+                    height: 16rem;
+                }
             }
         }
         .content-cards {
@@ -420,20 +458,36 @@
             gap: 1.5rem;
 
             .content-card {
-                min-width: 20rem;
-                max-width: 20rem;
+                min-width: 18rem;
+                max-width: 18rem;
+                height: 28rem;
                 padding: 1.2rem;
-
-
-
                 .content-image-container {
                     margin-bottom: 1.2rem;
                 }
             }
             &.must-watch-cards {
                 .content-card {
-                    min-width: 23rem;
-                    max-width: 23rem;
+                    min-width: 24rem;
+                    max-width: 24rem;
+                    height: 36rem;
+
+                }
+            }
+        }
+        &#shows {
+            .content-cards {
+                .content-card {
+                    min-width: 24rem;
+                    max-width: 24rem;
+                    height: 36rem;
+                }
+                &.must-watch-cards {
+                    .content-card {
+                        min-width: 25rem;
+                        max-width: 25rem;
+                        height: 37rem;
+                    }
                 }
             }
         }
@@ -452,6 +506,14 @@
                 padding: 1.4rem 0;
             }
         }
+    }
+
+    .tab {
+        margin: 0 1.6rem 5rem;
+    }
+
+    .content-container {
+        margin: 0 1.6rem 8rem;
     }
 
 }

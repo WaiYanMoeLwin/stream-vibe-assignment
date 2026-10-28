@@ -706,4 +706,47 @@ header.main-header {
             grid-template-columns: 1fr;
         }
     }
+
+    #pricing {
+        padding: 0 1.6rem;
+        .pricing-cards {
+            .pricing-card {
+                .plan-title {
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+    }
+
+    #faq {
+        .faq-items-container {
+            .faq-list {
+                .faq-container {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.2rem;
+                    .faq-main-container {
+                        @include base.flex-row;
+                        gap: 1.6rem;
+                        .faq-sub-container {
+                            gap: 1.6rem;
+                            .faq-number {
+                                padding: 1.2rem;
+                            }
+                            .faq-content {
+                                .faq-question {
+                                    font-size: 1.8rem;
+                                }
+                            }
+                        }
+                    }
+                    &.expanded {
+                        .faq-sub-container {
+                            align-items: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

@@ -37,6 +37,7 @@ header.main-header {
   top: 0;
   width: 100%;
   z-index: 1000;
+  font-size: 1.4rem;
   box-sizing: border-box;
 }
 header.main-header button.menu {
@@ -247,6 +248,9 @@ footer .footer-info {
   border-top: 1px solid #262626;
   padding: 2rem 0 0 0;
 }
+footer .footer-info p {
+  margin: 0;
+}
 footer .footer-info .footer-legal-links {
   display: flex;
   flex-direction: row;
@@ -310,7 +314,6 @@ footer .footer-info a:hover {
 @media screen and (max-width: 1439px) {
   header.main-header {
     padding: 2rem 4rem;
-    margin-bottom: 3rem;
   }
   .logo {
     width: 16rem;
@@ -348,9 +351,6 @@ footer .footer-info a:hover {
   footer .footer-links {
     gap: 1.6rem;
     margin-bottom: 6rem;
-  }
-  footer .footer-info {
-    padding: 1.6rem 0 0 0;
   }
   .pagination {
     padding: 1rem;
@@ -1148,6 +1148,36 @@ header.main-header {
   }
   #devices .device-cards {
     grid-template-columns: 1fr;
+  }
+  #pricing {
+    padding: 0 1.6rem;
+  }
+  #pricing .pricing-cards .pricing-card .plan-title {
+    margin-bottom: 1rem;
+  }
+  #faq .faq-items-container .faq-list .faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  #faq .faq-items-container .faq-list .faq-container .faq-main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.6rem;
+  }
+  #faq .faq-items-container .faq-list .faq-container .faq-main-container .faq-sub-container {
+    gap: 1.6rem;
+  }
+  #faq .faq-items-container .faq-list .faq-container .faq-main-container .faq-sub-container .faq-number {
+    padding: 1.2rem;
+  }
+  #faq .faq-items-container .faq-list .faq-container .faq-main-container .faq-sub-container .faq-content .faq-question {
+    font-size: 1.8rem;
+  }
+  #faq .faq-items-container .faq-list .faq-container.expanded .faq-sub-container {
+    align-items: center;
   }
 }
 

@@ -76,8 +76,8 @@
         .episodes-section {
             display: flex;
             flex-direction: column;
-            gap: 2.4rem;
-            padding: 2rem 4rem;
+            gap: 3rem;
+            padding: 3rem;
 
             &.hidden {
                 display: none;
@@ -97,7 +97,7 @@
                 .season-item {
                     display: flex;
                     flex-direction: column;
-                    padding: 2.4rem 4rem;
+                    padding: 2rem 4rem;
                     gap: 2.4rem;
 
                     background-color: base.$black-06;
@@ -244,7 +244,6 @@
 
             .description {
                 color: base.$white;
-                font-size: 1.6rem;
                 font-weight: 500;
                 margin: 0;
             }
@@ -284,6 +283,7 @@
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
                 gap: 1.6rem;
+                margin-top: 3rem;
 
                 .review-item {
                     display: flex;
@@ -310,6 +310,17 @@
                                 margin: 0;
                             }
                         }
+
+                        .rating-container {
+                            @include base.flex-row;
+                            padding: 0.4rem 0.8rem;
+                            border-radius: 5rem;
+                            background-color: base.$black-08;
+                            border: 1px solid base.$black-15;
+                        }
+                    }
+                    .review-content {
+                        margin: 0;
                     }
                 }
             }
@@ -403,7 +414,7 @@
                     box-sizing: border-box;
 
                     .rating-source {
-                        font-size: 1.6rem;
+                        color: base.$white;
                         font-weight: 600;
                         margin: 0;
                     }
@@ -540,8 +551,9 @@
 
         .section-header {
             padding: 0;
+            margin-bottom: 2rem;
             .title {
-                font-size: 2rem;
+                font-size: 2.4rem;
             }
             .description {
                 display: none;
@@ -562,8 +574,10 @@
 
         .main-info {
             .episodes-section {
+                gap: 2rem;
                 .seasons-list {
                     .season-item {
+                        gap: 2rem;
                         padding: 1.6rem 2rem;
                         .season-header {
                             .season-info {
@@ -625,12 +639,32 @@
             }
             section {
                 padding: 2.4rem;
+
+                .section-header {
+                    margin-bottom: 0.8rem;
+                    h2 {
+                        font-size: 1.4rem;
+                    }
+                }
                 .cast-list {
                     grid-template-columns: repeat(4, 1fr);
                 }
 
                 .reviews-list {
                     grid-template-columns: 1fr;
+                    margin-top: 2.4rem;
+                    .review-item {
+                        .review-header {
+                            .reviewer {
+                                .reviewer-name {
+                                    font-size: 1.6rem;
+                                }
+                                .reviewer-location {
+                                    font-size: 1.4rem;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }

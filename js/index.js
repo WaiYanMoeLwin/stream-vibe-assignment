@@ -168,6 +168,17 @@ const renderFAQs = (element, faqs, numberOfColumns) => {
             });
 
             faqListElement.appendChild(faqContainer);
+            
+            // Adjust the answer element's width based on screen size
+            if (window.innerWidth < 767) {
+                const faqMainContainer = document.createElement('div');
+                faqMainContainer.classList.add('faq-main-container');
+                faqMainContainer.appendChild(faqSubContainer);
+                faqMainContainer.appendChild(openButton);
+                faqMainContainer.appendChild(closeButton);
+                faqContainer.appendChild(faqMainContainer);
+                faqContainer.appendChild(answerElement);
+            }
         });
     }
 

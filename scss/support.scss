@@ -67,6 +67,8 @@ header.main-header {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto;
         gap: 4rem 2rem;
+        width: 80rem;
+        box-sizing: border-box;
 
         .form-field {
             display: flex;
@@ -197,11 +199,19 @@ header.main-header {
                         border: 1px solid base.$black-15;
                     }
 
-                    .faq-question {
-                        font-size: 2rem;
-                        font-weight: 500;
-                        margin: 0;
+                    .faq-content {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1.4rem;
+                        .faq-question {
+                            font-size: 2rem;
+                            font-weight: 500;
+                            margin: 0;
+                        }
                     }
+                }
+                .faq-answer {
+                    margin: 0;
                 }
 
                 button.faq-toggle-button {
@@ -239,11 +249,11 @@ header.main-header {
         margin-bottom: 4rem;
     }
     #contact-us {
-        gap: 2rem;
+        gap: 4rem;
         margin: 4rem 4rem 10rem;
 
         .contact-us-content {
-            width: 38rem;
+            width: 32rem;
             gap: 2rem;
             
             .contact-us-text {
@@ -413,6 +423,38 @@ header.main-header {
                     }
                     button#submit-button {
                         width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    #faq {
+        .faq-items-container {
+            .faq-list {
+                .faq-container {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.2rem;
+                    .faq-main-container {
+                        @include base.flex-row;
+                        gap: 1.6rem;
+                        .faq-sub-container {
+                            gap: 1.6rem;
+                            .faq-number {
+                                padding: 1.2rem;
+                            }
+                            .faq-content {
+                                .faq-question {
+                                    font-size: 1.8rem;
+                                }
+                            }
+                        }
+                    }
+                    &.expanded {
+                        .faq-sub-container {
+                            align-items: center;
+                        }
                     }
                 }
             }
