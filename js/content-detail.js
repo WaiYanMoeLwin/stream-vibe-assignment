@@ -39,14 +39,19 @@ const renderPage = async () => {
     const contentDetails = await api.fetchContentDetails(contentId);
     console.log('Fetched content details:', contentDetails);
 
-    const contentEntry = moviesAndShows.find(entry => entry.id === contentId);
-    if (contentEntry && contentDetails) {
+    const contentEntry = moviesAndShows.find(entry => entry.id === contentId) || {
+        id: contentId,
+        reviews: [],
+        music: []
+    };
+    console.log('Content entry:', contentEntry);
+    if (contentDetails) {
         const thumbnailElement = document.querySelector('#thumbnail');
         renderThumbnail(thumbnailElement, contentDetails);
         renderMainContentInfo(document.querySelector('#content-info .main-info'), contentDetails, contentEntry);
         renderSideBarContentInfo(document.querySelector('#content-info .sidebar-info'), contentDetails, contentEntry);
 
-        if (contentEntry.type === 'show') {
+        if (contentDetails.Type === 'series') {
             const episodesSection = document.querySelector('.main-info .episodes-section');
             episodesSection.classList.remove('hidden');
             const seasonsElement = episodesSection.querySelector('.seasons-list');
@@ -137,6 +142,13 @@ const renderReviews = (reviewsElement, reviews, currentPage, itemsPerPage) => {
 
     const reviewsToRender = reviews.slice((currentPage - 1) * itemsPerPage, reviews.length < currentPage * itemsPerPage ? reviews.length : currentPage * itemsPerPage);
 
+    if (reviewsToRender.length === 0) {
+        const noReviewsMessage = document.createElement('p');
+        noReviewsMessage.classList.add('no-reviews-message');
+        noReviewsMessage.textContent = 'No reviews to display.';
+        reviewsElement.appendChild(noReviewsMessage);
+        return;
+    }
     reviewsToRender.forEach((review) => {
         const reviewItem = document.createElement('article');
         reviewItem.classList.add('review-item');
@@ -323,34 +335,39 @@ const renderSideBarContentInfo = (sidebarContentInfoElement, contentDetails, con
     // This section is for music composers, but since the OMDb API does not provide composer information, we will use a placeholder for demonstration purposes.
     const musicElement = sidebarContentInfoElement.querySelector('.music-section .music-composers');
     const composers = contentEntry.music;
-    composers.forEach((composer) => {
-        const composerItem = document.createElement('li');
-        composerItem.classList.add('music-composer');
-        
-        const composerImage = document.createElement('img');
-        composerImage.src = composer.photo;
-        composerImage.alt = composer.name;
-        composerImage.classList.add('photo');
+    if (composers && composers.length > 0) {
+        composers.forEach((composer) => {
+            const composerItem = document.createElement('li');
+            composerItem.classList.add('music-composer');
+            
+            const composerImage = document.createElement('img');
+            composerImage.src = 'public/images/person-placeholder.jpg'; // Placeholder image as API does not provide composer photos
+            composerImage.alt = composer.name;
+            composerImage.classList.add('photo');
 
-        const composerInfo = document.createElement('div');
-        composerInfo.classList.add('info');
+            const composerInfo = document.createElement('div');
+            composerInfo.classList.add('info');
 
-        const composerName = document.createElement('h3');
-        composerName.classList.add('name-text');
-        composerName.textContent = composer.name;
+            const composerName = document.createElement('h3');
+            composerName.classList.add('name-text');
+            composerName.textContent = composer.name;
 
-        const composerLocation = document.createElement('span');
-        composerLocation.classList.add('location');
-        composerLocation.textContent = `From ${composer.country}`;
+            const composerLocation = document.createElement('span');
+            composerLocation.classList.add('location');
+            composerLocation.textContent = `From ${composer.country}`;
 
-        composerInfo.appendChild(composerName);
-        composerInfo.appendChild(composerLocation);
+            composerInfo.appendChild(composerName);
+            composerInfo.appendChild(composerLocation);
 
-        composerItem.appendChild(composerImage);
-        composerItem.appendChild(composerInfo);
+            composerItem.appendChild(composerImage);
+            composerItem.appendChild(composerInfo);
 
-        musicElement.appendChild(composerItem);
-    });
+            musicElement.appendChild(composerItem);
+        });
+    } else {
+        const musicSection = sidebarContentInfoElement.querySelector('.music-section');
+        musicSection.classList.add('hidden');
+    }
 }
 
 const renderSeasonList = async (seasonsElement, contentDetails) => {

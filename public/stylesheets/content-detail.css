@@ -841,6 +841,10 @@ footer .footer-info a:hover {
 #content-info .main-info section .reviews-list .review-item .review-content {
   margin: 0;
 }
+#content-info .main-info section .reviews-list .no-reviews-message {
+  text-align: center;
+  grid-column: 1/-1;
+}
 #content-info .main-info section .add-review-button {
   display: flex;
   flex-direction: row;

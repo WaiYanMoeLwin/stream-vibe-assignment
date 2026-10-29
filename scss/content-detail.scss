@@ -325,6 +325,10 @@
                         margin: 0;
                     }
                 }
+                .no-reviews-message {
+                    text-align: center;
+                    grid-column: 1 / -1;
+                }
             }
 
             .add-review-button {
