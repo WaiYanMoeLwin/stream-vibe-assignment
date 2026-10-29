@@ -1,967 +1,161 @@
 [
-    {
-      "id": "avengers-endgame",
-      "type": "movie",
-      "title": "Avengers: Endgame",
-      "year": 2019,
-      "description": "After Thanos wipes out half of all life in the universe, the surviving Avengers regroup for one final mission to undo the devastation, whatever the cost.",
-      "runtimeMinutes": 181,
-      "runtime": "3h 1min",
-      "genres": ["Action", "Sci-Fi", "Adventure"],
-      "releaseYear": 2019,
-      "languages": ["English", "Hindi", "Tamil", "Telugu", "Spanish", "French"],
-      "ratings": { "imdb": 4.0, "streamvibe": 4.5 },
-      "poster": "public/images/posters/avengers-endgame.png",
-      "thumbnail": "public/images/posters/avengers-endgame.png",
-      "directors": [
-        { "name": "Anthony Russo", "country": "United States", "photo": "public/images/posters/avengers-endgame.png" },
-        { "name": "Joe Russo", "country": "United States", "photo": "public/images/posters/avengers-endgame.png" }
-      ],
-      "music": [
-        { "name": "Alan Silvestri", "role": "Composer", "country": "United States", "photo": "public/images/posters/avengers-endgame.png" }
-      ],
-      "cast": [
-        { "name": "Robert Downey Jr.", "character": "Tony Stark / Iron Man", "photo": "public/images/posters/avengers-endgame.png" },
-        { "name": "Chris Evans", "character": "Steve Rogers / Captain America", "photo": "public/images/posters/avengers-endgame.png" },
-        { "name": "Mark Ruffalo", "character": "Bruce Banner / Hulk", "photo": "public/images/posters/avengers-endgame.png" },
-        { "name": "Chris Hemsworth", "character": "Thor", "photo": "public/images/posters/avengers-endgame.png" },
-        { "name": "Scarlett Johansson", "character": "Natasha Romanoff / Black Widow", "photo": "public/images/posters/avengers-endgame.png" },
-        { "name": "Josh Brolin", "character": "Thanos", "photo": "public/images/posters/avengers-endgame.png" }
-      ],
-      "reviews": [
-        { "id": "r1", "name": "Priya Nair", "country": "India", "rating": 5.0, "text": "Ten years of build-up paid off. The final battle had my whole theatre cheering, and the farewells hit harder than I expected." },
-        { "id": "r2", "name": "Lucas Moreau", "country": "France", "rating": 4.5, "text": "Three hours long, but it never drags. The time-travel middle act is fan service in the best possible way." },
-        { "id": "r3", "name": "Hana Sato", "country": "Japan", "rating": 4.0, "text": "A satisfying ending if you've followed the series. Newcomers will be lost, but this film clearly isn't made for them." }
-      ]
-    },
-    {
-      "id": "thor-love-and-thunder",
-      "type": "movie",
-      "title": "Thor: Love and Thunder",
-      "year": 2022,
-      "description": "Thor's quest for inner peace is interrupted by Gorr the God Butcher, and he teams up with Valkyrie, Korg, and ex-girlfriend Jane Foster, who now wields Mjolnir.",
-      "runtimeMinutes": 119,
-      "runtime": "1h 59min",
-      "genres": ["Action", "Comedy", "Fantasy"],
-      "releaseYear": 2022,
-      "languages": ["English", "Hindi", "Tamil", "Telugu", "Spanish"],
-      "ratings": { "imdb": 3.0, "streamvibe": 3.5 },
-      "poster": "public/images/posters/thor-love-and-thunder.png",
-      "thumbnail": "public/images/posters/thor-love-and-thunder.png",
-      "directors": [
-        { "name": "Taika Waititi", "country": "New Zealand", "photo": "public/images/posters/thor-love-and-thunder.png" }
-      ],
-      "music": [
-        { "name": "Michael Giacchino", "role": "Composer", "country": "United States", "photo": "public/images/posters/thor-love-and-thunder.png" },
-        { "name": "Nami Melumad", "role": "Composer", "country": "Israel", "photo": "public/images/posters/thor-love-and-thunder.png" }
-      ],
-      "cast": [
-        { "name": "Chris Hemsworth", "character": "Thor", "photo": "public/images/posters/thor-love-and-thunder.png" },
-        { "name": "Natalie Portman", "character": "Jane Foster / Mighty Thor", "photo": "public/images/posters/thor-love-and-thunder.png" },
-        { "name": "Christian Bale", "character": "Gorr the God Butcher", "photo": "public/images/posters/thor-love-and-thunder.png" },
-        { "name": "Tessa Thompson", "character": "Valkyrie", "photo": "public/images/posters/thor-love-and-thunder.png" },
-        { "name": "Taika Waititi", "character": "Korg", "photo": "public/images/posters/thor-love-and-thunder.png" },
-        { "name": "Russell Crowe", "character": "Zeus", "photo": "public/images/posters/thor-love-and-thunder.png" }
-      ],
-      "reviews": [
-        { "id": "r1", "name": "Marcus Bell", "country": "USA", "rating": 3.5, "text": "Fun and colourful with a genuinely creepy villain, though the jokes undercut some of the emotional moments." },
-        { "id": "r2", "name": "Ananya Iyer", "country": "India", "rating": 3.0, "text": "Jane's return was the highlight for me. The screaming goats wore thin after the third time." },
-        { "id": "r3", "name": "Tom Riley", "country": "UK", "rating": 3.5, "text": "Not as tight as the previous Thor film, but a breezy, good-looking watch on a lazy evening." }
-      ]
-    },
-    {
-      "id": "13-reasons-why",
-      "type": "show",
-      "title": "13 Reasons Why",
-      "years": "2017–2020",
-      "description": "After classmate Hannah Baker dies, Clay Jensen receives a box of cassette tapes she recorded explaining the thirteen reasons behind her decision.",
-      "numberOfSeasons": 4,
-      "totalEpisodes": 49,
-      "runtimeMinutes": 2868,
-      "runtime": "47h 48min",
-      "genres": ["Drama", "Mystery", "Teen"],
-      "releaseYear": 2017,
-      "languages": ["English", "Spanish", "French", "German"],
-      "ratings": { "imdb": 3.5, "streamvibe": 3.5 },
-      "poster": "public/images/posters/13-reasons-why.png",
-      "thumbnail": "public/images/posters/13-reasons-why.png",
-      "directors": [
-        { "name": "Brian Yorkey", "role": "Creator", "country": "United States", "photo": "public/images/posters/13-reasons-why.png" }
-      ],
-      "music": [
-        { "name": "Eskmo", "role": "Composer", "country": "United States", "photo": "public/images/posters/13-reasons-why.png" }
-      ],
-      "cast": [
-        { "name": "Dylan Minnette", "character": "Clay Jensen", "photo": "public/images/posters/13-reasons-why.png" },
-        { "name": "Katherine Langford", "character": "Hannah Baker", "photo": "public/images/posters/13-reasons-why.png" },
-        { "name": "Christian Navarro", "character": "Tony Padilla", "photo": "public/images/posters/13-reasons-why.png" },
-        { "name": "Alisha Boe", "character": "Jessica Davis", "photo": "public/images/posters/13-reasons-why.png" },
-        { "name": "Brandon Flynn", "character": "Justin Foley", "photo": "public/images/posters/13-reasons-why.png" },
-        { "name": "Justin Prentice", "character": "Bryce Walker", "photo": "public/images/posters/13-reasons-why.png" }
-      ],
-      "reviews": [
-        { "id": "r1", "name": "Sofia Martinez", "country": "Spain", "rating": 4.0, "text": "Season one is gripping and uncomfortable in a way that stays with you. Clay carries every single episode." },
-        { "id": "r2", "name": "Rahul Mehta", "country": "India", "rating": 3.0, "text": "Started strong, but the later seasons stretched the story far thinner than it needed to be." },
-        { "id": "r3", "name": "Emily Carter", "country": "USA", "rating": 3.5, "text": "Tough to watch at times. Worth it for the performances, but go in prepared for very heavy themes." }
-      ],
-      "seasons": [
-        {
-          "seasonNumber": 1,
-          "year": 2017,
-          "totalEpisodes": 13,
-          "poster": "public/images/posters/13-reasons-why.png",
-          "episodes": [
-            { "episodeNumber": 1, "title": "Tape 1, Side A", "description": "Clay finds a mysterious box of tapes on his doorstep, recorded by Hannah.", "durationMinutes": 51, "thumbnail": "public/images/posters/13-reasons-why.png" },
-            { "episodeNumber": 2, "title": "Tape 1, Side B", "description": "Hannah's story turns to a friendship that went sour, and Clay struggles to keep listening.", "durationMinutes": 52, "thumbnail": "public/images/posters/13-reasons-why.png" },
-            { "episodeNumber": 3, "title": "Tape 2, Side A", "description": "A list passed around school changes how others see Hannah.", "durationMinutes": 54, "thumbnail": "public/images/posters/13-reasons-why.png" },
-            { "episodeNumber": 4, "title": "Tape 2, Side B", "description": "Clay confronts someone named on the tapes as Tony keeps a close watch.", "durationMinutes": 56, "thumbnail": "public/images/posters/13-reasons-why.png" },
-            { "episodeNumber": 5, "title": "Tape 3, Side A", "description": "Hannah recalls a Valentine's Day date that didn't go as planned.", "durationMinutes": 55, "thumbnail": "public/images/posters/13-reasons-why.png" },
-            { "episodeNumber": 6, "title": "Tape 3, Side B", "description": "The people on the tapes start coordinating to keep their secrets buried.", "durationMinutes": 53, "thumbnail": "public/images/posters/13-reasons-why.png" },
-            { "episodeNumber": 7, "title": "Tape 4, Side A", "description": "A betrayal at a poetry club hits Hannah hard.", "durationMinutes": 57, "thumbnail": "public/images/posters/13-reasons-why.png" },
-            { "episodeNumber": 8, "title": "Tape 4, Side B", "description": "Clay takes matters into his own hands with one of the students on the tapes.", "durationMinutes": 55, "thumbnail": "public/images/posters/13-reasons-why.png" },
-            { "episodeNumber": 9, "title": "Tape 5, Side A", "description": "A party night reveals more than Hannah ever wanted to see.", "durationMinutes": 56, "thumbnail": "public/images/posters/13-reasons-why.png" },
-            { "episodeNumber": 10, "title": "Tape 5, Side B", "description": "Clay faces the tape about himself and what he could have done differently.", "durationMinutes": 58, "thumbnail": "public/images/posters/13-reasons-why.png" },
-            { "episodeNumber": 11, "title": "Tape 6, Side A", "description": "The consequences of a car accident ripple through the group.", "durationMinutes": 60, "thumbnail": "public/images/posters/13-reasons-why.png" },
-            { "episodeNumber": 12, "title": "Tape 6, Side B", "description": "Clay gets closer to the truth about the person behind Hannah's darkest tape.", "durationMinutes": 59, "thumbnail": "public/images/posters/13-reasons-why.png" },
-            { "episodeNumber": 13, "title": "Tape 7, Side A", "description": "Hannah's final tape comes to light, and the school must reckon with what happened.", "durationMinutes": 61, "thumbnail": "public/images/posters/13-reasons-why.png" }
-          ]
-        },
-        {
-          "seasonNumber": 2,
-          "year": 2018,
-          "totalEpisodes": 13,
-          "poster": "public/images/posters/13-reasons-why.png",
-          "episodes": [
-            { "episodeNumber": 1, "title": "The First Polaroid", "description": "The Bakers' lawsuit against the school heads to trial, and a strange Polaroid appears.", "durationMinutes": 58, "thumbnail": "public/images/posters/13-reasons-why.png" },
-            { "episodeNumber": 2, "title": "Two Girls Kissing", "description": "Courtney takes the stand while Clay chases the source of the photos.", "durationMinutes": 55, "thumbnail": "public/images/posters/13-reasons-why.png" },
-            { "episodeNumber": 3, "title": "The Drunk Slut", "description": "Jessica struggles with testifying as old wounds reopen.", "durationMinutes": 57, "thumbnail": "public/images/posters/13-reasons-why.png" },
-            { "episodeNumber": 4, "title": "The Second Polaroid", "description": "Another Polaroid points to something hidden at Liberty High.", "durationMinutes": 54, "thumbnail": "public/images/posters/13-reasons-why.png" },
-            { "episodeNumber": 5, "title": "The Chalk Machine", "description": "Zach's testimony reveals a side of Hannah nobody knew about.", "durationMinutes": 56, "thumbnail": "public/images/posters/13-reasons-why.png" },
-            { "episodeNumber": 6, "title": "The Smile at the End of the Dock", "description": "A summer romance from Hannah's past comes to light in court.", "durationMinutes": 59, "thumbnail": "public/images/posters/13-reasons-why.png" },
-            { "episodeNumber": 7, "title": "The Third Polaroid", "description": "Clay and his friends discover a secret location tied to the jocks.", "durationMinutes": 55, "thumbnail": "public/images/posters/13-reasons-why.png" },
-            { "episodeNumber": 8, "title": "The Little Girl", "description": "Mrs. Baker learns something new about her daughter's final months.", "durationMinutes": 57, "thumbnail": "public/images/posters/13-reasons-why.png" },
-            { "episodeNumber": 9, "title": "The Missing Page", "description": "A missing page from Hannah's journal becomes key evidence.", "durationMinutes": 58, "thumbnail": "public/images/posters/13-reasons-why.png" },
-            { "episodeNumber": 10, "title": "Smile, Bitches", "description": "Clay tries to get proof of what really happened in the clubhouse.", "durationMinutes": 56, "thumbnail": "public/images/posters/13-reasons-why.png" },
-            { "episodeNumber": 11, "title": "Bryce and Chloe", "description": "Chloe's testimony becomes the turning point of the trial.", "durationMinutes": 60, "thumbnail": "public/images/posters/13-reasons-why.png" },
-            { "episodeNumber": 12, "title": "The Box of Polaroids", "description": "The trial reaches its verdict as the students make a risky decision.", "durationMinutes": 57, "thumbnail": "public/images/posters/13-reasons-why.png" },
-            { "episodeNumber": 13, "title": "Bye", "description": "The school dance turns tense as one student reaches a breaking point.", "durationMinutes": 67, "thumbnail": "public/images/posters/13-reasons-why.png" }
-          ]
-        },
-        {
-          "seasonNumber": 3,
-          "year": 2019,
-          "totalEpisodes": 13,
-          "poster": "public/images/posters/13-reasons-why.png",
-          "episodes": [
-            { "episodeNumber": 1, "title": "Yeah. I'm the New Girl", "description": "New student Ani narrates as a homecoming game ends with someone missing.", "durationMinutes": 60, "thumbnail": "public/images/posters/13-reasons-why.png" },
-            { "episodeNumber": 2, "title": "If You're Breathing, You're a Liar", "description": "Suspicion falls on Clay as the police begin asking questions.", "durationMinutes": 58, "thumbnail": "public/images/posters/13-reasons-why.png" },
-            { "episodeNumber": 3, "title": "Angry, Young and Man", "description": "Ani and Clay team up to retrace the night of the disappearance.", "durationMinutes": 57, "thumbnail": "public/images/posters/13-reasons-why.png" },
-            { "episodeNumber": 4, "title": "The Good Person Is Always a Fool", "description": "Justin's return to Liberty brings complications.", "durationMinutes": 59, "thumbnail": "public/images/posters/13-reasons-why.png" },
-            { "episodeNumber": 5, "title": "The World Is Waiting", "description": "Jessica finds her voice and starts organizing at school.", "durationMinutes": 55, "thumbnail": "public/images/posters/13-reasons-why.png" },
-            { "episodeNumber": 6, "title": "The Kids Are Not All Right", "description": "A new suspect emerges with a clear motive.", "durationMinutes": 56, "thumbnail": "public/images/posters/13-reasons-why.png" },
-            { "episodeNumber": 7, "title": "There Are a Number of Problems with Clay Jensen", "description": "Clay's behavior raises red flags for the people closest to him.", "durationMinutes": 58, "thumbnail": "public/images/posters/13-reasons-why.png" },
-            { "episodeNumber": 8, "title": "The Cops Can't Help You", "description": "The investigation zeroes in, and the friends start protecting each other.", "durationMinutes": 57, "thumbnail": "public/images/posters/13-reasons-why.png" },
-            { "episodeNumber": 9, "title": "Nobody's Clean", "description": "Hidden secrets about the victim start to surface.", "durationMinutes": 60, "thumbnail": "public/images/posters/13-reasons-why.png" },
-            { "episodeNumber": 10, "title": "Where Are You", "description": "Ani's own connection to the case comes under scrutiny.", "durationMinutes": 56, "thumbnail": "public/images/posters/13-reasons-why.png" },
-            { "episodeNumber": 11, "title": "The Morning After", "description": "A confession shakes the group to its core.", "durationMinutes": 59, "thumbnail": "public/images/posters/13-reasons-why.png" },
-            { "episodeNumber": 12, "title": "The Truth Comes Out", "description": "The friends decide how far they'll go to protect one of their own.", "durationMinutes": 61, "thumbnail": "public/images/posters/13-reasons-why.png" },
-            { "episodeNumber": 13, "title": "Let the Dead Bury the Dead", "description": "A plan to close the case is set in motion, but at a cost.", "durationMinutes": 72, "thumbnail": "public/images/posters/13-reasons-why.png" }
-          ]
-        },
-        {
-          "seasonNumber": 4,
-          "year": 2020,
-          "totalEpisodes": 10,
-          "poster": "public/images/posters/13-reasons-why.png",
-          "episodes": [
-            { "episodeNumber": 1, "title": "Winter Break", "description": "Senior year begins, and Clay is haunted by the secrets the group is keeping.", "durationMinutes": 58, "thumbnail": "public/images/posters/13-reasons-why.png" },
-            { "episodeNumber": 2, "title": "College Tour", "description": "A campus visit turns stressful as anonymous threats escalate.", "durationMinutes": 56, "thumbnail": "public/images/posters/13-reasons-why.png" },
-            { "episodeNumber": 3, "title": "Senior Camping Trip", "description": "A school trip into the woods pushes everyone's nerves to the edge.", "durationMinutes": 57, "thumbnail": "public/images/posters/13-reasons-why.png" },
-            { "episodeNumber": 4, "title": "Thursday", "description": "A lockdown drill becomes a frightening ordeal for the students.", "durationMinutes": 55, "thumbnail": "public/images/posters/13-reasons-why.png" },
-            { "episodeNumber": 5, "title": "Valentine's Day", "description": "Relationships are tested as the group grows more divided.", "durationMinutes": 59, "thumbnail": "public/images/posters/13-reasons-why.png" },
-            { "episodeNumber": 6, "title": "House Party", "description": "A wild party leads to unexpected confessions.", "durationMinutes": 57, "thumbnail": "public/images/posters/13-reasons-why.png" },
-            { "episodeNumber": 7, "title": "Senior Prank", "description": "A prank meant to unite the class spirals out of control.", "durationMinutes": 58, "thumbnail": "public/images/posters/13-reasons-why.png" },
-            { "episodeNumber": 8, "title": "Prom", "description": "Prom night brings long-awaited moments and devastating news.", "durationMinutes": 62, "thumbnail": "public/images/posters/13-reasons-why.png" },
-            { "episodeNumber": 9, "title": "Acceptance/Rejection", "description": "College letters arrive as the friends rally around one of their own.", "durationMinutes": 66, "thumbnail": "public/images/posters/13-reasons-why.png" },
-            { "episodeNumber": 10, "title": "Graduation", "description": "The class of Liberty High says goodbye and looks to the future.", "durationMinutes": 96, "thumbnail": "public/images/posters/13-reasons-why.png" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "1899",
-      "type": "show",
-      "title": "1899",
-      "years": "2022",
-      "description": "Immigrants sailing from Europe to New York aboard the Kerberos encounter a ghost ship adrift at sea, and their journey turns into a nightmarish riddle.",
-      "numberOfSeasons": 1,
-      "totalEpisodes": 8,
-      "runtimeMinutes": 454,
-      "runtime": "7h 34min",
-      "genres": ["Sci-Fi", "Mystery", "Drama"],
-      "releaseYear": 2022,
-      "languages": ["English", "German", "Danish", "Polish", "Spanish", "French", "Cantonese"],
-      "ratings": { "imdb": 3.5, "streamvibe": 4.0 },
-      "poster": "public/images/posters/1899.png",
-      "thumbnail": "public/images/posters/1899.png",
-      "directors": [
-        { "name": "Baran bo Odar", "role": "Creator / Director", "country": "Germany", "photo": "public/images/posters/1899.png" },
-        { "name": "Jantje Friese", "role": "Creator / Writer", "country": "Germany", "photo": "public/images/posters/1899.png" }
-      ],
-      "music": [
-        { "name": "Ben Frost", "role": "Composer", "country": "Australia", "photo": "public/images/posters/1899.png" }
-      ],
-      "cast": [
-        { "name": "Emily Beecham", "character": "Maura Franklin", "photo": "public/images/posters/1899.png" },
-        { "name": "Andreas Pietschmann", "character": "Eyk Larsen", "photo": "public/images/posters/1899.png" },
-        { "name": "Aneurin Barnard", "character": "Daniel Solace", "photo": "public/images/posters/1899.png" },
-        { "name": "Miguel Bernardeau", "character": "Ángel", "photo": "public/images/posters/1899.png" },
-        { "name": "Mathilde Ollivier", "character": "Clémence", "photo": "public/images/posters/1899.png" },
-        { "name": "Isabella Wei", "character": "Ling Yi", "photo": "public/images/posters/1899.png" }
-      ],
-      "reviews": [
-        { "id": "r1", "name": "Jonas Weber", "country": "Germany", "rating": 4.5, "text": "Every episode ends on a hook. The multilingual cast makes life aboard the ship feel chaotic and real." },
-        { "id": "r2", "name": "Isabel Costa", "country": "Brazil", "rating": 4.0, "text": "Moody, beautiful, and confusing in a good way. A real shame we only got one season." },
-        { "id": "r3", "name": "Arjun Rao", "country": "India", "rating": 3.5, "text": "The ending raised more questions than it answered, but the atmosphere is unlike anything else." }
-      ],
-      "seasons": [
-        {
-          "seasonNumber": 1,
-          "year": 2022,
-          "totalEpisodes": 8,
-          "poster": "public/images/posters/1899.png",
-          "episodes": [
-            { "episodeNumber": 1, "title": "The Ship", "description": "The Kerberos receives a signal from the Prometheus, a sister ship missing for months.", "durationMinutes": 61, "thumbnail": "public/images/posters/1899.png" },
-            { "episodeNumber": 2, "title": "The Fog", "description": "A mysterious boy found aboard the Prometheus unsettles the passengers.", "durationMinutes": 56, "thumbnail": "public/images/posters/1899.png" },
-            { "episodeNumber": 3, "title": "The Fight", "description": "Panic spreads below deck as strange events multiply.", "durationMinutes": 55, "thumbnail": "public/images/posters/1899.png" },
-            { "episodeNumber": 4, "title": "The Calling", "description": "Passengers begin hearing voices pulling them toward the sea.", "durationMinutes": 52, "thumbnail": "public/images/posters/1899.png" },
-            { "episodeNumber": 5, "title": "The Storm", "description": "A violent storm forces the crew to make a desperate choice.", "durationMinutes": 58, "thumbnail": "public/images/posters/1899.png" },
-            { "episodeNumber": 6, "title": "The Pyramid", "description": "Maura uncovers a connection between the ship and her brother.", "durationMinutes": 54, "thumbnail": "public/images/posters/1899.png" },
-            { "episodeNumber": 7, "title": "The Space", "description": "Reality begins to fracture as the passengers question what is real.", "durationMinutes": 59, "thumbnail": "public/images/posters/1899.png" },
-            { "episodeNumber": 8, "title": "The Key", "description": "Maura discovers the truth behind the voyage and the purpose of the key.", "durationMinutes": 59, "thumbnail": "public/images/posters/1899.png" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "glow",
-      "type": "show",
-      "title": "GLOW",
-      "years": "2017–2019",
-      "description": "In 1980s Los Angeles, a struggling actress joins a group of misfit women to star in a low-budget TV show called the Gorgeous Ladies of Wrestling.",
-      "numberOfSeasons": 3,
-      "totalEpisodes": 30,
-      "runtimeMinutes": 948,
-      "runtime": "15h 48min",
-      "genres": ["Comedy", "Drama", "Sports"],
-      "releaseYear": 2017,
-      "languages": ["English", "Spanish", "French"],
-      "ratings": { "imdb": 4.0, "streamvibe": 4.0 },
-      "poster": "public/images/posters/glow.png",
-      "thumbnail": "public/images/posters/glow.png",
-      "directors": [
-        { "name": "Liz Flahive", "role": "Creator", "country": "United States", "photo": "public/images/posters/glow.png" },
-        { "name": "Carly Mensch", "role": "Creator", "country": "United States", "photo": "public/images/posters/glow.png" }
-      ],
-      "music": [
-        { "name": "Craig Wedren", "role": "Composer", "country": "United States", "photo": "public/images/posters/glow.png" }
-      ],
-      "cast": [
-        { "name": "Alison Brie", "character": "Ruth Wilder / Zoya the Destroya", "photo": "public/images/posters/glow.png" },
-        { "name": "Betty Gilpin", "character": "Debbie Eagan / Liberty Belle", "photo": "public/images/posters/glow.png" },
-        { "name": "Marc Maron", "character": "Sam Sylvia", "photo": "public/images/posters/glow.png" },
-        { "name": "Britney Young", "character": "Carmen Wade / Machu Picchu", "photo": "public/images/posters/glow.png" },
-        { "name": "Chris Lowell", "character": "Bash Howard", "photo": "public/images/posters/glow.png" },
-        { "name": "Sydelle Noel", "character": "Cherry Bang", "photo": "public/images/posters/glow.png" }
-      ],
-      "reviews": [
-        { "id": "r1", "name": "Megan Brooks", "country": "USA", "rating": 4.5, "text": "Funny, warm, and surprisingly moving. Debbie steals every scene she's in." },
-        { "id": "r2", "name": "Kavya Reddy", "country": "India", "rating": 4.0, "text": "I knew nothing about wrestling and still loved it. The half-hour episodes make it very easy to binge." },
-        { "id": "r3", "name": "Daniel Okafor", "country": "Nigeria", "rating": 4.0, "text": "A brilliant ensemble cast, and the 80s costumes and soundtrack are a treat from start to finish." }
-      ],
-      "seasons": [
-        {
-          "seasonNumber": 1,
-          "year": 2017,
-          "totalEpisodes": 10,
-          "poster": "public/images/posters/glow.png",
-          "episodes": [
-            { "episodeNumber": 1, "title": "Pilot", "description": "Out-of-work actress Ruth shows up to an unusual audition for a women's wrestling show.", "durationMinutes": 35, "thumbnail": "public/images/posters/glow.png" },
-            { "episodeNumber": 2, "title": "Slouch. Submit.", "description": "Training begins, and Ruth fights to earn her place in the ring.", "durationMinutes": 30, "thumbnail": "public/images/posters/glow.png" },
-            { "episodeNumber": 3, "title": "Wrestling Is Fake", "description": "The women start shaping their wrestling personas.", "durationMinutes": 31, "thumbnail": "public/images/posters/glow.png" },
-            { "episodeNumber": 4, "title": "The Wrath of Kuntar", "description": "Sam's film ambitions clash with the show's needs.", "durationMinutes": 29, "thumbnail": "public/images/posters/glow.png" },
-            { "episodeNumber": 5, "title": "This Is One of Those Moments", "description": "Debbie joins the show, and old tensions with Ruth flare up.", "durationMinutes": 32, "thumbnail": "public/images/posters/glow.png" },
-            { "episodeNumber": 6, "title": "The Dusty Spur", "description": "The crew stages a test match at a local bar.", "durationMinutes": 30, "thumbnail": "public/images/posters/glow.png" },
-            { "episodeNumber": 7, "title": "Live Studio Audience", "description": "A trial taping in front of a crowd brings chaos.", "durationMinutes": 31, "thumbnail": "public/images/posters/glow.png" },
-            { "episodeNumber": 8, "title": "Debbie Does Something", "description": "Debbie takes charge of her life and her character.", "durationMinutes": 33, "thumbnail": "public/images/posters/glow.png" },
-            { "episodeNumber": 9, "title": "The Liberty Bell", "description": "Money troubles threaten the show right before the big premiere.", "durationMinutes": 30, "thumbnail": "public/images/posters/glow.png" },
-            { "episodeNumber": 10, "title": "Money's in the Chase", "description": "The ladies of GLOW face their first real audience.", "durationMinutes": 34, "thumbnail": "public/images/posters/glow.png" }
-          ]
-        },
-        {
-          "seasonNumber": 2,
-          "year": 2018,
-          "totalEpisodes": 10,
-          "poster": "public/images/posters/glow.png",
-          "episodes": [
-            { "episodeNumber": 1, "title": "Viking Funeral", "description": "GLOW gets picked up, and the team scrambles to make a real TV show.", "durationMinutes": 33, "thumbnail": "public/images/posters/glow.png" },
-            { "episodeNumber": 2, "title": "Candy of the Year", "description": "Ruth shoots a new opening sequence behind Sam's back.", "durationMinutes": 31, "thumbnail": "public/images/posters/glow.png" },
-            { "episodeNumber": 3, "title": "Mother of All Matches", "description": "Debbie's new producer role strains her friendships.", "durationMinutes": 30, "thumbnail": "public/images/posters/glow.png" },
-            { "episodeNumber": 4, "title": "Work the Leg", "description": "An injury forces the team to rethink their matches.", "durationMinutes": 32, "thumbnail": "public/images/posters/glow.png" },
-            { "episodeNumber": 5, "title": "Perverts Are People, Too", "description": "Ruth faces an uncomfortable meeting with a network executive.", "durationMinutes": 29, "thumbnail": "public/images/posters/glow.png" },
-            { "episodeNumber": 6, "title": "Rosalie", "description": "A new wrestler joins the roster and shakes up the team.", "durationMinutes": 30, "thumbnail": "public/images/posters/glow.png" },
-            { "episodeNumber": 7, "title": "Nobody Gets Fired", "description": "Budget cuts put everyone's job on the line.", "durationMinutes": 31, "thumbnail": "public/images/posters/glow.png" },
-            { "episodeNumber": 8, "title": "The Good Twin", "description": "The cast films a wildly ambitious special episode.", "durationMinutes": 35, "thumbnail": "public/images/posters/glow.png" },
-            { "episodeNumber": 9, "title": "Every Potato Has a Receipt", "description": "A charity event brings out the best and worst in everyone.", "durationMinutes": 31, "thumbnail": "public/images/posters/glow.png" },
-            { "episodeNumber": 10, "title": "Freedom of the Press", "description": "The show's future hangs on a big decision from the network.", "durationMinutes": 34, "thumbnail": "public/images/posters/glow.png" }
-          ]
-        },
-        {
-          "seasonNumber": 3,
-          "year": 2019,
-          "totalEpisodes": 10,
-          "poster": "public/images/posters/glow.png",
-          "episodes": [
-            { "episodeNumber": 1, "title": "Up, Up, Up", "description": "The ladies kick off a residency in Las Vegas.", "durationMinutes": 33, "thumbnail": "public/images/posters/glow.png" },
-            { "episodeNumber": 2, "title": "Hot Tub Time Machine", "description": "Life on the Strip starts to wear on the cast.", "durationMinutes": 30, "thumbnail": "public/images/posters/glow.png" },
-            { "episodeNumber": 3, "title": "Outward Bound", "description": "A camping trip turns into a bonding exercise nobody wanted.", "durationMinutes": 31, "thumbnail": "public/images/posters/glow.png" },
-            { "episodeNumber": 4, "title": "Freaky Tuesday", "description": "The wrestlers swap characters for one chaotic night.", "durationMinutes": 32, "thumbnail": "public/images/posters/glow.png" },
-            { "episodeNumber": 5, "title": "Desert Pollen", "description": "Debbie weighs a big business opportunity.", "durationMinutes": 29, "thumbnail": "public/images/posters/glow.png" },
-            { "episodeNumber": 6, "title": "Hope Springs Eternal", "description": "Ruth gets a surprise offer that could change her career.", "durationMinutes": 34, "thumbnail": "public/images/posters/glow.png" },
-            { "episodeNumber": 7, "title": "Say Yes", "description": "Relationships hit a turning point in the desert heat.", "durationMinutes": 30, "thumbnail": "public/images/posters/glow.png" },
-            { "episodeNumber": 8, "title": "The Libertines", "description": "Old friends and rivals reunite for one more show.", "durationMinutes": 31, "thumbnail": "public/images/posters/glow.png" },
-            { "episodeNumber": 9, "title": "Keep Ridin'", "description": "The cast prepares for life after Vegas.", "durationMinutes": 32, "thumbnail": "public/images/posters/glow.png" },
-            { "episodeNumber": 10, "title": "A Very GLOW Christmas", "description": "A holiday show brings the season, and the residency, to a close.", "durationMinutes": 35, "thumbnail": "public/images/posters/glow.png" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "locke-key",
-      "type": "show",
-      "title": "Locke & Key",
-      "years": "2020–2022",
-      "description": "After their father's murder, three siblings move into their ancestral home and discover magical keys that unlock powers and secrets, along with a demon who wants them.",
-      "numberOfSeasons": 3,
-      "totalEpisodes": 28,
-      "runtimeMinutes": 1361,
-      "runtime": "22h 41min",
-      "genres": ["Fantasy", "Horror", "Drama"],
-      "releaseYear": 2020,
-      "languages": ["English", "Hindi", "Spanish", "Portuguese"],
-      "ratings": { "imdb": 3.5, "streamvibe": 3.5 },
-      "poster": "public/images/posters/locke-and-key.png",
-      "thumbnail": "public/images/posters/locke-and-key.png",
-      "directors": [
-        { "name": "Carlton Cuse", "role": "Developer / Showrunner", "country": "United States", "photo": "public/images/posters/locke-and-key.png" },
-        { "name": "Meredith Averill", "role": "Developer / Showrunner", "country": "United States", "photo": "public/images/posters/locke-and-key.png" }
-      ],
-      "music": [
-        { "name": "Torin Borrowdale", "role": "Composer", "country": "United States", "photo": "public/images/posters/locke-and-key.png" }
-      ],
-      "cast": [
-        { "name": "Darby Stanchfield", "character": "Nina Locke", "photo": "public/images/posters/locke-and-key.png" },
-        { "name": "Connor Jessup", "character": "Tyler Locke", "photo": "public/images/posters/locke-and-key.png" },
-        { "name": "Emilia Jones", "character": "Kinsey Locke", "photo": "public/images/posters/locke-and-key.png" },
-        { "name": "Jackson Robert Scott", "character": "Bode Locke", "photo": "public/images/posters/locke-and-key.png" },
-        { "name": "Laysla De Oliveira", "character": "Dodge", "photo": "public/images/posters/locke-and-key.png" },
-        { "name": "Petrice Jones", "character": "Scot Cavendish", "photo": "public/images/posters/locke-and-key.png" }
-      ],
-      "reviews": [
-        { "id": "r1", "name": "Chloe Martin", "country": "Canada", "rating": 4.0, "text": "A cosy kind of spooky. The key powers are creative, and Keyhouse itself feels like a character." },
-        { "id": "r2", "name": "Vikram Singh", "country": "India", "rating": 3.5, "text": "Season one is the strongest. The family drama gets in the way of the magic later on." },
-        { "id": "r3", "name": "Lena Fischer", "country": "Germany", "rating": 3.5, "text": "A good weekend binge with my younger siblings. Not too scary, but still properly tense." }
-      ],
-      "seasons": [
-        {
-          "seasonNumber": 1,
-          "year": 2020,
-          "totalEpisodes": 10,
-          "poster": "public/images/posters/locke-and-key.png",
-          "episodes": [
-            { "episodeNumber": 1, "title": "Welcome to Matheson", "description": "The Locke family moves into Keyhouse, and Bode hears a voice from the well.", "durationMinutes": 53, "thumbnail": "public/images/posters/locke-and-key.png" },
-            { "episodeNumber": 2, "title": "The Haunting of Keyhouse", "description": "Bode discovers a key that lets him travel anywhere.", "durationMinutes": 50, "thumbnail": "public/images/posters/locke-and-key.png" },
-            { "episodeNumber": 3, "title": "Head Games", "description": "Kinsey and Tyler explore a key that opens their own minds.", "durationMinutes": 48, "thumbnail": "public/images/posters/locke-and-key.png" },
-            { "episodeNumber": 4, "title": "Keepers of the Keys", "description": "The siblings learn their father once had the keys too.", "durationMinutes": 47, "thumbnail": "public/images/posters/locke-and-key.png" },
-            { "episodeNumber": 5, "title": "Family Tree", "description": "Kinsey removes her fear, with unexpected side effects.", "durationMinutes": 49, "thumbnail": "public/images/posters/locke-and-key.png" },
-            { "episodeNumber": 6, "title": "Ray of Light", "description": "A new key reveals what happened to Rendell's friends.", "durationMinutes": 51, "thumbnail": "public/images/posters/locke-and-key.png" },
-            { "episodeNumber": 7, "title": "Dissection", "description": "Dodge tightens her grip on the people around the Lockes.", "durationMinutes": 46, "thumbnail": "public/images/posters/locke-and-key.png" },
-            { "episodeNumber": 8, "title": "Echo", "description": "Someone from the past returns to Keyhouse in an unsettling form.", "durationMinutes": 50, "thumbnail": "public/images/posters/locke-and-key.png" },
-            { "episodeNumber": 9, "title": "Crown of Shadows", "description": "Dodge unleashes a powerful key against the family.", "durationMinutes": 48, "thumbnail": "public/images/posters/locke-and-key.png" },
-            { "episodeNumber": 10, "title": "The Black Door", "description": "The Lockes try to banish Dodge for good.", "durationMinutes": 58, "thumbnail": "public/images/posters/locke-and-key.png" }
-          ]
-        },
-        {
-          "seasonNumber": 2,
-          "year": 2021,
-          "totalEpisodes": 10,
-          "poster": "public/images/posters/locke-and-key.png",
-          "episodes": [
-            { "episodeNumber": 1, "title": "Best Laid Plans", "description": "The Lockes believe they're safe, but a new threat is already among them.", "durationMinutes": 50, "thumbnail": "public/images/posters/locke-and-key.png" },
-            { "episodeNumber": 2, "title": "Ghost Key", "description": "Bode finds a key that lets his spirit leave his body.", "durationMinutes": 48, "thumbnail": "public/images/posters/locke-and-key.png" },
-            { "episodeNumber": 3, "title": "Small World", "description": "A tiny version of Keyhouse holds a big secret.", "durationMinutes": 47, "thumbnail": "public/images/posters/locke-and-key.png" },
-            { "episodeNumber": 4, "title": "Sacrifice", "description": "Tyler and Kinsey make a difficult choice to protect their family.", "durationMinutes": 49, "thumbnail": "public/images/posters/locke-and-key.png" },
-            { "episodeNumber": 5, "title": "Light of Day", "description": "Gabe's true intentions begin to show.", "durationMinutes": 46, "thumbnail": "public/images/posters/locke-and-key.png" },
-            { "episodeNumber": 6, "title": "Bang", "description": "Kinsey's school play is threatened by dark forces.", "durationMinutes": 48, "thumbnail": "public/images/posters/locke-and-key.png" },
-            { "episodeNumber": 7, "title": "Past Is Present", "description": "A trip into memory reveals how the keys were first made.", "durationMinutes": 51, "thumbnail": "public/images/posters/locke-and-key.png" },
-            { "episodeNumber": 8, "title": "Mysteries", "description": "The siblings race to uncover who is working against them.", "durationMinutes": 47, "thumbnail": "public/images/posters/locke-and-key.png" },
-            { "episodeNumber": 9, "title": "Party Crasher", "description": "A celebration becomes the setting for a dangerous confrontation.", "durationMinutes": 49, "thumbnail": "public/images/posters/locke-and-key.png" },
-            { "episodeNumber": 10, "title": "Ten Bells", "description": "The battle for Keyhouse reaches a breaking point.", "durationMinutes": 55, "thumbnail": "public/images/posters/locke-and-key.png" }
-          ]
-        },
-        {
-          "seasonNumber": 3,
-          "year": 2022,
-          "totalEpisodes": 8,
-          "poster": "public/images/posters/locke-and-key.png",
-          "episodes": [
-            { "episodeNumber": 1, "title": "Return of the Keys", "description": "The Lockes find new keys as an old enemy plots a comeback.", "durationMinutes": 46, "thumbnail": "public/images/posters/locke-and-key.png" },
-            { "episodeNumber": 2, "title": "Hidden Truths", "description": "Kinsey and Bode follow clues to a secret their mother kept.", "durationMinutes": 44, "thumbnail": "public/images/posters/locke-and-key.png" },
-            { "episodeNumber": 3, "title": "Weathervane", "description": "A key that controls the weather causes chaos in Matheson.", "durationMinutes": 45, "thumbnail": "public/images/posters/locke-and-key.png" },
-            { "episodeNumber": 4, "title": "Long Shadows", "description": "An army of shadows rises against the family.", "durationMinutes": 47, "thumbnail": "public/images/posters/locke-and-key.png" },
-            { "episodeNumber": 5, "title": "Into the Past", "description": "Time travel offers a chance to change history, at a price.", "durationMinutes": 43, "thumbnail": "public/images/posters/locke-and-key.png" },
-            { "episodeNumber": 6, "title": "Revolution", "description": "The siblings face soldiers from a long-ago war.", "durationMinutes": 48, "thumbnail": "public/images/posters/locke-and-key.png" },
-            { "episodeNumber": 7, "title": "Siege", "description": "Keyhouse comes under attack from every direction.", "durationMinutes": 46, "thumbnail": "public/images/posters/locke-and-key.png" },
-            { "episodeNumber": 8, "title": "Farewell to Keyhouse", "description": "The Lockes make a final choice about the keys and their home.", "durationMinutes": 52, "thumbnail": "public/images/posters/locke-and-key.png" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "money-heist-korea",
-      "type": "show",
-      "title": "Money Heist: Korea – Joint Economic Area",
-      "years": "2022",
-      "description": "On the eve of Korean reunification, a mastermind called the Professor leads a team of thieves in a daring hostage heist at the Joint Economic Area's mint.",
-      "numberOfSeasons": 2,
-      "totalEpisodes": 12,
-      "runtimeMinutes": 754,
-      "runtime": "12h 34min",
-      "genres": ["Crime", "Thriller", "Action"],
-      "releaseYear": 2022,
-      "languages": ["Korean", "English", "Hindi", "Japanese"],
-      "ratings": { "imdb": 3.0, "streamvibe": 3.5 },
-      "poster": "public/images/posters/money-heist-korea.png",
-      "thumbnail": "public/images/posters/money-heist-korea.png",
-      "directors": [
-        { "name": "Kim Hong-sun", "role": "Director", "country": "South Korea", "photo": "public/images/posters/money-heist-korea.png" }
-      ],
-      "music": [
-        { "name": "Kim Tae-seong", "role": "Composer", "country": "South Korea", "photo": "public/images/posters/money-heist-korea.png" }
-      ],
-      "cast": [
-        { "name": "Yoo Ji-tae", "character": "The Professor", "photo": "public/images/posters/money-heist-korea.png" },
-        { "name": "Park Hae-soo", "character": "Berlin", "photo": "public/images/posters/money-heist-korea.png" },
-        { "name": "Jun Jong-seo", "character": "Tokyo", "photo": "public/images/posters/money-heist-korea.png" },
-        { "name": "Kim Yun-jin", "character": "Seon Woo-jin", "photo": "public/images/posters/money-heist-korea.png" },
-        { "name": "Lee Won-jong", "character": "Moscow", "photo": "public/images/posters/money-heist-korea.png" },
-        { "name": "Kim Ji-hun", "character": "Denver", "photo": "public/images/posters/money-heist-korea.png" }
-      ],
-      "reviews": [
-        { "id": "r1", "name": "Min-jun Park", "country": "South Korea", "rating": 3.5, "text": "Moving the heist to a reunified Korea is a clever twist, and Berlin is excellent in this version." },
-        { "id": "r2", "name": "Neha Kapoor", "country": "India", "rating": 3.0, "text": "If you've seen the Spanish original, this follows it closely. Still fun, just with fewer surprises." },
-        { "id": "r3", "name": "Carlos Ruiz", "country": "Mexico", "rating": 3.5, "text": "Tight and fast-paced. The cat-and-mouse scenes between the Professor and Woo-jin are the best part." }
-      ],
-      "seasons": [
-        {
-          "seasonNumber": 1,
-          "year": 2022,
-          "totalEpisodes": 6,
-          "poster": "public/images/posters/money-heist-korea.png",
-          "episodes": [
-            { "episodeNumber": 1, "title": "The Professor's Plan", "description": "Tokyo is recruited by the Professor for an unprecedented heist.", "durationMinutes": 66, "thumbnail": "public/images/posters/money-heist-korea.png" },
-            { "episodeNumber": 2, "title": "The Mint", "description": "The team storms the mint and takes hostages.", "durationMinutes": 63, "thumbnail": "public/images/posters/money-heist-korea.png" },
-            { "episodeNumber": 3, "title": "Hostages", "description": "Tension rises inside as the hostages test the robbers' resolve.", "durationMinutes": 61, "thumbnail": "public/images/posters/money-heist-korea.png" },
-            { "episodeNumber": 4, "title": "Negotiations", "description": "Woo-jin and the Professor begin a battle of wits.", "durationMinutes": 64, "thumbnail": "public/images/posters/money-heist-korea.png" },
-            { "episodeNumber": 5, "title": "Cracks in the Plan", "description": "A mistake on the outside puts the Professor in danger.", "durationMinutes": 62, "thumbnail": "public/images/posters/money-heist-korea.png" },
-            { "episodeNumber": 6, "title": "Berlin's Rules", "description": "Berlin takes control inside, and not everyone agrees with his methods.", "durationMinutes": 60, "thumbnail": "public/images/posters/money-heist-korea.png" }
-          ]
-        },
-        {
-          "seasonNumber": 2,
-          "year": 2022,
-          "totalEpisodes": 6,
-          "poster": "public/images/posters/money-heist-korea.png",
-          "episodes": [
-            { "episodeNumber": 1, "title": "The Mole", "description": "The team suspects someone is leaking information to the police.", "durationMinutes": 62, "thumbnail": "public/images/posters/money-heist-korea.png" },
-            { "episodeNumber": 2, "title": "Pressure", "description": "Authorities tighten the net around the mint.", "durationMinutes": 61, "thumbnail": "public/images/posters/money-heist-korea.png" },
-            { "episodeNumber": 3, "title": "Breaking Point", "description": "Loyalties are tested as the heist drags on.", "durationMinutes": 63, "thumbnail": "public/images/posters/money-heist-korea.png" },
-            { "episodeNumber": 4, "title": "Dead or Alive", "description": "A deadly confrontation changes the course of the heist.", "durationMinutes": 60, "thumbnail": "public/images/posters/money-heist-korea.png" },
-            { "episodeNumber": 5, "title": "Endgame", "description": "The Professor puts his final escape plan into motion.", "durationMinutes": 64, "thumbnail": "public/images/posters/money-heist-korea.png" },
-            { "episodeNumber": 6, "title": "Freedom", "description": "The survivors make a run for it as the world watches.", "durationMinutes": 68, "thumbnail": "public/images/posters/money-heist-korea.png" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "the-sandman",
-      "type": "show",
-      "title": "The Sandman",
-      "years": "2022–2025",
-      "description": "After a century of imprisonment, Dream, the cosmic ruler of all dreams, escapes and sets out to restore his realm and reclaim what was taken from him.",
-      "numberOfSeasons": 2,
-      "totalEpisodes": 22,
-      "runtimeMinutes": 1135,
-      "runtime": "18h 55min",
-      "genres": ["Fantasy", "Drama", "Horror"],
-      "releaseYear": 2022,
-      "languages": ["English", "Hindi", "Spanish", "French", "German"],
-      "ratings": { "imdb": 4.0, "streamvibe": 4.5 },
-      "poster": "public/images/posters/the-sandman.png",
-      "thumbnail": "public/images/posters/the-sandman.png",
-      "directors": [
-        { "name": "Allan Heinberg", "role": "Developer / Showrunner", "country": "United States", "photo": "public/images/posters/the-sandman.png" },
-        { "name": "Neil Gaiman", "role": "Developer", "country": "United Kingdom", "photo": "public/images/posters/the-sandman.png" }
-      ],
-      "music": [
-        { "name": "David Buckley", "role": "Composer", "country": "United Kingdom", "photo": "public/images/posters/the-sandman.png" }
-      ],
-      "cast": [
-        { "name": "Tom Sturridge", "character": "Dream / Morpheus", "photo": "public/images/posters/the-sandman.png" },
-        { "name": "Kirby Howell-Baptiste", "character": "Death", "photo": "public/images/posters/the-sandman.png" },
-        { "name": "Vivienne Acheampong", "character": "Lucienne", "photo": "public/images/posters/the-sandman.png" },
-        { "name": "Boyd Holbrook", "character": "The Corinthian", "photo": "public/images/posters/the-sandman.png" },
-        { "name": "Gwendoline Christie", "character": "Lucifer", "photo": "public/images/posters/the-sandman.png" },
-        { "name": "Jenna Coleman", "character": "Johanna Constantine", "photo": "public/images/posters/the-sandman.png" }
-      ],
-      "reviews": [
-        { "id": "r1", "name": "Oliver Hughes", "country": "UK", "rating": 5.0, "text": "Feels like the comic come to life. The episode with Death is one of the best hours of TV I've seen." },
-        { "id": "r2", "name": "Aisha Khan", "country": "Pakistan", "rating": 4.5, "text": "Gorgeous visuals, and the quiet, distant performance as Dream is exactly right." },
-        { "id": "r3", "name": "Mateo Rossi", "country": "Italy", "rating": 4.0, "text": "Slow in places, but the standalone episodes are fantastic and worth the wait." }
-      ],
-      "seasons": [
-        {
-          "seasonNumber": 1,
-          "year": 2022,
-          "totalEpisodes": 11,
-          "poster": "public/images/posters/the-sandman.png",
-          "episodes": [
-            { "episodeNumber": 1, "title": "Sleep of the Just", "description": "An occultist's ritual traps Dream in a glass cage for a hundred years.", "durationMinutes": 54, "thumbnail": "public/images/posters/the-sandman.png" },
-            { "episodeNumber": 2, "title": "Imperfect Hosts", "description": "Free at last, Dream returns to find his kingdom in ruins.", "durationMinutes": 48, "thumbnail": "public/images/posters/the-sandman.png" },
-            { "episodeNumber": 3, "title": "Dream a Little Dream of Me", "description": "Dream seeks out Johanna Constantine to recover his stolen pouch.", "durationMinutes": 47, "thumbnail": "public/images/posters/the-sandman.png" },
-            { "episodeNumber": 4, "title": "A Hope in Hell", "description": "Dream travels to Hell to reclaim his helm from a demon.", "durationMinutes": 49, "thumbnail": "public/images/posters/the-sandman.png" },
-            { "episodeNumber": 5, "title": "24/7", "description": "A man with Dream's ruby takes over a diner with terrible results.", "durationMinutes": 44, "thumbnail": "public/images/posters/the-sandman.png" },
-            { "episodeNumber": 6, "title": "The Sound of Her Wings", "description": "Dream spends a day with his sister Death as she does her work.", "durationMinutes": 52, "thumbnail": "public/images/posters/the-sandman.png" },
-            { "episodeNumber": 7, "title": "The Doll's House", "description": "Rose Walker searches for her lost brother and draws Dream's attention.", "durationMinutes": 56, "thumbnail": "public/images/posters/the-sandman.png" },
-            { "episodeNumber": 8, "title": "Playing House", "description": "Rose's powers begin to affect the Dreaming.", "durationMinutes": 50, "thumbnail": "public/images/posters/the-sandman.png" },
-            { "episodeNumber": 9, "title": "Collectors", "description": "Rose ends up at a disturbing convention with the Corinthian.", "durationMinutes": 47, "thumbnail": "public/images/posters/the-sandman.png" },
-            { "episodeNumber": 10, "title": "Lost Hearts", "description": "Dream must decide Rose's fate to protect the Dreaming.", "durationMinutes": 48, "thumbnail": "public/images/posters/the-sandman.png" },
-            { "episodeNumber": 11, "title": "Dream of a Thousand Cats / Calliope", "description": "Two standalone tales: a cat's vision of a new world, and a trapped muse.", "durationMinutes": 64, "thumbnail": "public/images/posters/the-sandman.png" }
-          ]
-        },
-        {
-          "seasonNumber": 2,
-          "year": 2025,
-          "totalEpisodes": 11,
-          "poster": "public/images/posters/the-sandman.png",
-          "episodes": [
-            { "episodeNumber": 1, "title": "Season of Mists", "description": "The Endless gather, and Dream resolves to right an old wrong.", "durationMinutes": 55, "thumbnail": "public/images/posters/the-sandman.png" },
-            { "episodeNumber": 2, "title": "The Ruler of Hell", "description": "Dream returns to Hell and receives an unexpected gift.", "durationMinutes": 52, "thumbnail": "public/images/posters/the-sandman.png" },
-            { "episodeNumber": 3, "title": "Lost Hours", "description": "Gods and demons arrive in the Dreaming to bargain for Hell's key.", "durationMinutes": 50, "thumbnail": "public/images/posters/the-sandman.png" },
-            { "episodeNumber": 4, "title": "Brief Lives", "description": "Dream and his sister Delirium search for their missing brother.", "durationMinutes": 53, "thumbnail": "public/images/posters/the-sandman.png" },
-            { "episodeNumber": 5, "title": "Time and Night", "description": "Dream confronts his parents about duty and family.", "durationMinutes": 51, "thumbnail": "public/images/posters/the-sandman.png" },
-            { "episodeNumber": 6, "title": "Fuel for the Fire", "description": "Dream visits his son Orpheus and makes a fateful choice.", "durationMinutes": 54, "thumbnail": "public/images/posters/the-sandman.png" },
-            { "episodeNumber": 7, "title": "The Kindly Ones", "description": "Ancient forces set out to punish Dream for spilling family blood.", "durationMinutes": 49, "thumbnail": "public/images/posters/the-sandman.png" },
-            { "episodeNumber": 8, "title": "Dead Man Walking", "description": "The Dreaming comes under siege as Dream's allies take sides.", "durationMinutes": 52, "thumbnail": "public/images/posters/the-sandman.png" },
-            { "episodeNumber": 9, "title": "Through the Gates", "description": "Dream accepts the consequences of his choices.", "durationMinutes": 56, "thumbnail": "public/images/posters/the-sandman.png" },
-            { "episodeNumber": 10, "title": "The Wake", "description": "The Endless and the Dreaming say farewell, and a new era begins.", "durationMinutes": 58, "thumbnail": "public/images/posters/the-sandman.png" },
-            { "episodeNumber": 11, "title": "Death: The Time of Your Life", "description": "A standalone story following Death as she helps a young woman in crisis.", "durationMinutes": 46, "thumbnail": "public/images/posters/the-sandman.png" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "shadow-and-bone",
-      "type": "show",
-      "title": "Shadow and Bone",
-      "years": "2021–2023",
-      "description": "In a war-torn world, soldier Alina Starkov discovers she can summon light, a power that could free her country from a deadly barrier of darkness called the Fold.",
-      "numberOfSeasons": 2,
-      "totalEpisodes": 16,
-      "runtimeMinutes": 882,
-      "runtime": "14h 42min",
-      "genres": ["Fantasy", "Adventure", "Drama"],
-      "releaseYear": 2021,
-      "languages": ["English", "Hindi", "Spanish", "French"],
-      "ratings": { "imdb": 3.5, "streamvibe": 4.0 },
-      "poster": "public/images/posters/shadow-and-bone.png",
-      "thumbnail": "public/images/posters/shadow-and-bone.png",
-      "directors": [
-        { "name": "Eric Heisserer", "role": "Creator / Showrunner", "country": "United States", "photo": "public/images/posters/shadow-and-bone.png" }
-      ],
-      "music": [
-        { "name": "Joseph Trapanese", "role": "Composer", "country": "United States", "photo": "public/images/posters/shadow-and-bone.png" }
-      ],
-      "cast": [
-        { "name": "Jessie Mei Li", "character": "Alina Starkov", "photo": "public/images/posters/shadow-and-bone.png" },
-        { "name": "Ben Barnes", "character": "General Kirigan", "photo": "public/images/posters/shadow-and-bone.png" },
-        { "name": "Archie Renaux", "character": "Malyen Oretsev", "photo": "public/images/posters/shadow-and-bone.png" },
-        { "name": "Freddy Carter", "character": "Kaz Brekker", "photo": "public/images/posters/shadow-and-bone.png" },
-        { "name": "Amita Suman", "character": "Inej Ghafa", "photo": "public/images/posters/shadow-and-bone.png" },
-        { "name": "Kit Young", "character": "Jesper Fahey", "photo": "public/images/posters/shadow-and-bone.png" }
-      ],
-      "reviews": [
-        { "id": "r1", "name": "Grace Kim", "country": "USA", "rating": 4.0, "text": "The Crows are the real stars. I'd happily watch a whole show of just Kaz, Inej and Jesper." },
-        { "id": "r2", "name": "Rohan Das", "country": "India", "rating": 4.0, "text": "Great world-building and costumes, and Kirigan makes a very convincing villain." },
-        { "id": "r3", "name": "Freya Larsen", "country": "Denmark", "rating": 3.5, "text": "Season two rushes through a lot of story, but it's still an enjoyable fantasy adventure." }
-      ],
-      "seasons": [
-        {
-          "seasonNumber": 1,
-          "year": 2021,
-          "totalEpisodes": 8,
-          "poster": "public/images/posters/shadow-and-bone.png",
-          "episodes": [
-            { "episodeNumber": 1, "title": "A Searing Burst of Light", "description": "Crossing the Fold, Alina unleashes a power she never knew she had.", "durationMinutes": 58, "thumbnail": "public/images/posters/shadow-and-bone.png" },
-            { "episodeNumber": 2, "title": "We're All Someone's Monster", "description": "Alina is whisked to the Little Palace to train among the Grisha.", "durationMinutes": 53, "thumbnail": "public/images/posters/shadow-and-bone.png" },
-            { "episodeNumber": 3, "title": "The Making at the Heart of the World", "description": "Kaz and his crew take a job to kidnap the Sun Summoner.", "durationMinutes": 55, "thumbnail": "public/images/posters/shadow-and-bone.png" },
-            { "episodeNumber": 4, "title": "Otkazat'sya", "description": "Mal heads north in search of a legendary creature.", "durationMinutes": 51, "thumbnail": "public/images/posters/shadow-and-bone.png" },
-            { "episodeNumber": 5, "title": "Show Me Who You Are", "description": "Alina grows closer to Kirigan as her powers strengthen.", "durationMinutes": 52, "thumbnail": "public/images/posters/shadow-and-bone.png" },
-            { "episodeNumber": 6, "title": "The Heart Is an Arrow", "description": "A shocking truth about Kirigan forces Alina to flee.", "durationMinutes": 54, "thumbnail": "public/images/posters/shadow-and-bone.png" },
-            { "episodeNumber": 7, "title": "The Unsea", "description": "Alina is captured and taken back toward the Fold.", "durationMinutes": 56, "thumbnail": "public/images/posters/shadow-and-bone.png" },
-            { "episodeNumber": 8, "title": "No Mourners", "description": "A battle inside the Fold decides the fate of Ravka.", "durationMinutes": 61, "thumbnail": "public/images/posters/shadow-and-bone.png" }
-          ]
-        },
-        {
-          "seasonNumber": 2,
-          "year": 2023,
-          "totalEpisodes": 8,
-          "poster": "public/images/posters/shadow-and-bone.png",
-          "episodes": [
-            { "episodeNumber": 1, "title": "Prey", "description": "Alina and Mal hunt for a legendary amplifier while hiding from the Darkling.", "durationMinutes": 57, "thumbnail": "public/images/posters/shadow-and-bone.png" },
-            { "episodeNumber": 2, "title": "Ravka's Hope", "description": "The Crows return to Ketterdam to find their territory taken.", "durationMinutes": 52, "thumbnail": "public/images/posters/shadow-and-bone.png" },
-            { "episodeNumber": 3, "title": "The Sea Wolf", "description": "A privateer offers Alina a dangerous alliance.", "durationMinutes": 54, "thumbnail": "public/images/posters/shadow-and-bone.png" },
-            { "episodeNumber": 4, "title": "Fears Feast", "description": "The Darkling's shadow monsters grow stronger.", "durationMinutes": 50, "thumbnail": "public/images/posters/shadow-and-bone.png" },
-            { "episodeNumber": 5, "title": "Promise of the Sun", "description": "Alina rallies allies for a war she cannot win alone.", "durationMinutes": 53, "thumbnail": "public/images/posters/shadow-and-bone.png" },
-            { "episodeNumber": 6, "title": "The Dead Eye", "description": "Kaz plans a heist to reclaim what was stolen from the Crows.", "durationMinutes": 55, "thumbnail": "public/images/posters/shadow-and-bone.png" },
-            { "episodeNumber": 7, "title": "Crooked Kingdom", "description": "Old wounds and new betrayals threaten every alliance.", "durationMinutes": 58, "thumbnail": "public/images/posters/shadow-and-bone.png" },
-            { "episodeNumber": 8, "title": "Rise of the Sun Summoner", "description": "Alina faces the Darkling in a final battle over the Fold.", "durationMinutes": 63, "thumbnail": "public/images/posters/shadow-and-bone.png" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "stranger-things",
-      "type": "show",
-      "title": "Stranger Things",
-      "years": "2016–2025",
-      "description": "When a young boy vanishes in 1980s Hawkins, Indiana, his friends, family, and police chief uncover secret experiments, supernatural forces, and a strange girl with powers.",
-      "numberOfSeasons": 5,
-      "totalEpisodes": 42,
-      "runtimeMinutes": 2699,
-      "runtime": "44h 59min",
-      "genres": ["Sci-Fi", "Horror", "Drama"],
-      "releaseYear": 2016,
-      "languages": ["English", "Hindi", "Tamil", "Telugu", "Kannada"],
-      "ratings": { "imdb": 4.5, "streamvibe": 4.5 },
-      "poster": "public/images/posters/stranger-things.png",
-      "thumbnail": "public/images/posters/stranger-things.png",
-      "directors": [
-        { "name": "Matt Duffer", "role": "Creator / Director", "country": "United States", "photo": "public/images/posters/stranger-things.png" },
-        { "name": "Ross Duffer", "role": "Creator / Director", "country": "United States", "photo": "public/images/posters/stranger-things.png" }
-      ],
-      "music": [
-        { "name": "Kyle Dixon", "role": "Composer", "country": "United States", "photo": "public/images/posters/stranger-things.png" },
-        { "name": "Michael Stein", "role": "Composer", "country": "United States", "photo": "public/images/posters/stranger-things.png" }
-      ],
-      "cast": [
-        { "name": "Millie Bobby Brown", "character": "Eleven", "photo": "public/images/posters/stranger-things.png" },
-        { "name": "Winona Ryder", "character": "Joyce Byers", "photo": "public/images/posters/stranger-things.png" },
-        { "name": "David Harbour", "character": "Jim Hopper", "photo": "public/images/posters/stranger-things.png" },
-        { "name": "Finn Wolfhard", "character": "Mike Wheeler", "photo": "public/images/posters/stranger-things.png" },
-        { "name": "Gaten Matarazzo", "character": "Dustin Henderson", "photo": "public/images/posters/stranger-things.png" },
-        { "name": "Noah Schnapp", "character": "Will Byers", "photo": "public/images/posters/stranger-things.png" }
-      ],
-      "reviews": [
-        { "id": "r1", "name": "Jake Morrison", "country": "USA", "rating": 5.0, "text": "I grew up with these kids. The finale wrapped everything up, and I'm not ashamed to say I cried." },
-        { "id": "r2", "name": "Meera Joshi", "country": "India", "rating": 4.5, "text": "The 80s vibe, the soundtrack, the friendships. Season four in particular is incredible." },
-        { "id": "r3", "name": "Sven Andersson", "country": "Sweden", "rating": 4.0, "text": "The seasons got longer and bigger, not always better, but it's still an absolute must-watch." }
-      ],
-      "seasons": [
-        {
-          "seasonNumber": 1,
-          "year": 2016,
-          "totalEpisodes": 8,
-          "poster": "public/images/posters/stranger-things.png",
-          "episodes": [
-            { "episodeNumber": 1, "title": "Chapter One: The Vanishing of Will Byers", "description": "Will disappears on his way home, and a strange girl turns up in the woods.", "durationMinutes": 49, "thumbnail": "public/images/posters/stranger-things.png" },
-            { "episodeNumber": 2, "title": "Chapter Two: The Weirdo on Maple Street", "description": "The boys hide Eleven while Joyce senses Will is trying to reach her.", "durationMinutes": 56, "thumbnail": "public/images/posters/stranger-things.png" },
-            { "episodeNumber": 3, "title": "Chapter Three: Holly, Jolly", "description": "Joyce uses Christmas lights to communicate with Will.", "durationMinutes": 52, "thumbnail": "public/images/posters/stranger-things.png" },
-            { "episodeNumber": 4, "title": "Chapter Four: The Body", "description": "A body is found, but Joyce refuses to believe it's her son.", "durationMinutes": 51, "thumbnail": "public/images/posters/stranger-things.png" },
-            { "episodeNumber": 5, "title": "Chapter Five: The Flea and the Acrobat", "description": "The boys learn about other dimensions and search for a gate.", "durationMinutes": 53, "thumbnail": "public/images/posters/stranger-things.png" },
-            { "episodeNumber": 6, "title": "Chapter Six: The Monster", "description": "Nancy and Jonathan team up to hunt the creature.", "durationMinutes": 47, "thumbnail": "public/images/posters/stranger-things.png" },
-            { "episodeNumber": 7, "title": "Chapter Seven: The Bathtub", "description": "Eleven uses a makeshift sensory tank to find Will.", "durationMinutes": 42, "thumbnail": "public/images/posters/stranger-things.png" },
-            { "episodeNumber": 8, "title": "Chapter Eight: The Upside Down", "description": "Joyce and Hopper enter the Upside Down to bring Will home.", "durationMinutes": 55, "thumbnail": "public/images/posters/stranger-things.png" }
-          ]
-        },
-        {
-          "seasonNumber": 2,
-          "year": 2017,
-          "totalEpisodes": 9,
-          "poster": "public/images/posters/stranger-things.png",
-          "episodes": [
-            { "episodeNumber": 1, "title": "Chapter One: MADMAX", "description": "A year later, Will has troubling visions and a new girl arrives in town.", "durationMinutes": 48, "thumbnail": "public/images/posters/stranger-things.png" },
-            { "episodeNumber": 2, "title": "Chapter Two: Trick or Treat, Freak", "description": "Halloween night brings Will's worst episode yet.", "durationMinutes": 56, "thumbnail": "public/images/posters/stranger-things.png" },
-            { "episodeNumber": 3, "title": "Chapter Three: The Pollywog", "description": "Dustin adopts a mysterious creature he finds in the trash.", "durationMinutes": 51, "thumbnail": "public/images/posters/stranger-things.png" },
-            { "episodeNumber": 4, "title": "Chapter Four: Will the Wise", "description": "Joyce and Hopper discover something growing beneath Hawkins.", "durationMinutes": 46, "thumbnail": "public/images/posters/stranger-things.png" },
-            { "episodeNumber": 5, "title": "Chapter Five: Dig Dug", "description": "Hopper is trapped underground as Eleven searches for her past.", "durationMinutes": 58, "thumbnail": "public/images/posters/stranger-things.png" },
-            { "episodeNumber": 6, "title": "Chapter Six: The Spy", "description": "Will leads a team into the tunnels with dangerous results.", "durationMinutes": 52, "thumbnail": "public/images/posters/stranger-things.png" },
-            { "episodeNumber": 7, "title": "Chapter Seven: The Lost Sister", "description": "Eleven tracks down another girl from the lab.", "durationMinutes": 46, "thumbnail": "public/images/posters/stranger-things.png" },
-            { "episodeNumber": 8, "title": "Chapter Eight: The Mind Flayer", "description": "The lab is overrun, and the group learns what controls Will.", "durationMinutes": 48, "thumbnail": "public/images/posters/stranger-things.png" },
-            { "episodeNumber": 9, "title": "Chapter Nine: The Gate", "description": "Eleven returns to close the gate for good.", "durationMinutes": 62, "thumbnail": "public/images/posters/stranger-things.png" }
-          ]
-        },
-        {
-          "seasonNumber": 3,
-          "year": 2019,
-          "totalEpisodes": 8,
-          "poster": "public/images/posters/stranger-things.png",
-          "episodes": [
-            { "episodeNumber": 1, "title": "Chapter One: Suzie, Do You Copy?", "description": "Summer arrives in Hawkins with a new mall and strange power outages.", "durationMinutes": 51, "thumbnail": "public/images/posters/stranger-things.png" },
-            { "episodeNumber": 2, "title": "Chapter Two: The Mall Rats", "description": "Dustin intercepts a secret Russian transmission.", "durationMinutes": 50, "thumbnail": "public/images/posters/stranger-things.png" },
-            { "episodeNumber": 3, "title": "Chapter Three: The Case of the Missing Lifeguard", "description": "Max and Eleven investigate Billy's odd behavior.", "durationMinutes": 50, "thumbnail": "public/images/posters/stranger-things.png" },
-            { "episodeNumber": 4, "title": "Chapter Four: The Sauna Test", "description": "The friends set a trap to prove Billy is possessed.", "durationMinutes": 53, "thumbnail": "public/images/posters/stranger-things.png" },
-            { "episodeNumber": 5, "title": "Chapter Five: The Flayed", "description": "The Mind Flayer's army grows across Hawkins.", "durationMinutes": 52, "thumbnail": "public/images/posters/stranger-things.png" },
-            { "episodeNumber": 6, "title": "Chapter Six: E Pluribus Unum", "description": "Dustin, Steve, Robin, and Erica explore a hidden Russian base.", "durationMinutes": 59, "thumbnail": "public/images/posters/stranger-things.png" },
-            { "episodeNumber": 7, "title": "Chapter Seven: The Bite", "description": "Eleven is wounded, and the group regroups at Starcourt Mall.", "durationMinutes": 55, "thumbnail": "public/images/posters/stranger-things.png" },
-            { "episodeNumber": 8, "title": "Chapter Eight: The Battle of Starcourt", "description": "A Fourth of July showdown with the Mind Flayer changes everything.", "durationMinutes": 77, "thumbnail": "public/images/posters/stranger-things.png" }
-          ]
-        },
-        {
-          "seasonNumber": 4,
-          "year": 2022,
-          "totalEpisodes": 9,
-          "poster": "public/images/posters/stranger-things.png",
-          "episodes": [
-            { "episodeNumber": 1, "title": "Chapter One: The Hellfire Club", "description": "The friends are split across the country as a new evil awakens in Hawkins.", "durationMinutes": 78, "thumbnail": "public/images/posters/stranger-things.png" },
-            { "episodeNumber": 2, "title": "Chapter Two: Vecna's Curse", "description": "A string of mysterious deaths terrifies the town.", "durationMinutes": 76, "thumbnail": "public/images/posters/stranger-things.png" },
-            { "episodeNumber": 3, "title": "Chapter Three: The Monster and the Superhero", "description": "Eleven is offered a chance to get her powers back.", "durationMinutes": 64, "thumbnail": "public/images/posters/stranger-things.png" },
-            { "episodeNumber": 4, "title": "Chapter Four: Dear Billy", "description": "Max fights to escape Vecna's grip.", "durationMinutes": 78, "thumbnail": "public/images/posters/stranger-things.png" },
-            { "episodeNumber": 5, "title": "Chapter Five: The Nina Project", "description": "Eleven confronts her past at a secret facility.", "durationMinutes": 75, "thumbnail": "public/images/posters/stranger-things.png" },
-            { "episodeNumber": 6, "title": "Chapter Six: The Dive", "description": "The group finds a new way into the Upside Down.", "durationMinutes": 74, "thumbnail": "public/images/posters/stranger-things.png" },
-            { "episodeNumber": 7, "title": "Chapter Seven: The Massacre at Hawkins Lab", "description": "Eleven remembers what really happened at the lab.", "durationMinutes": 98, "thumbnail": "public/images/posters/stranger-things.png" },
-            { "episodeNumber": 8, "title": "Chapter Eight: Papa", "description": "The friends plan an attack on Vecna on two fronts.", "durationMinutes": 85, "thumbnail": "public/images/posters/stranger-things.png" },
-            { "episodeNumber": 9, "title": "Chapter Nine: The Piggyback", "description": "A desperate battle to stop Vecna before Hawkins is torn apart.", "durationMinutes": 142, "thumbnail": "public/images/posters/stranger-things.png" }
-          ]
-        },
-        {
-          "seasonNumber": 5,
-          "year": 2025,
-          "totalEpisodes": 8,
-          "poster": "public/images/posters/stranger-things.png",
-          "episodes": [
-            { "episodeNumber": 1, "title": "Chapter One: The Crawl", "description": "Hawkins is under military quarantine as the group hunts for Vecna.", "durationMinutes": 68, "thumbnail": "public/images/posters/stranger-things.png" },
-            { "episodeNumber": 2, "title": "Chapter Two: The Vanishing of Holly Wheeler", "description": "A new disappearance sends the Wheelers into a panic.", "durationMinutes": 54, "thumbnail": "public/images/posters/stranger-things.png" },
-            { "episodeNumber": 3, "title": "Chapter Three: The Turnbow Trap", "description": "The friends set a trap to lure out Vecna's creatures.", "durationMinutes": 66, "thumbnail": "public/images/posters/stranger-things.png" },
-            { "episodeNumber": 4, "title": "Chapter Four: Sorcerer", "description": "Will discovers a surprising connection to Vecna's power.", "durationMinutes": 83, "thumbnail": "public/images/posters/stranger-things.png" },
-            { "episodeNumber": 5, "title": "Chapter Five: Shock Jock", "description": "A rescue mission into the Upside Down goes wrong.", "durationMinutes": 70, "thumbnail": "public/images/posters/stranger-things.png" },
-            { "episodeNumber": 6, "title": "Chapter Six: Escape from Camazotz", "description": "Trapped friends search for a way back home.", "durationMinutes": 75, "thumbnail": "public/images/posters/stranger-things.png" },
-            { "episodeNumber": 7, "title": "Chapter Seven: The Bridge", "description": "The group prepares for one final assault.", "durationMinutes": 66, "thumbnail": "public/images/posters/stranger-things.png" },
-            { "episodeNumber": 8, "title": "Chapter Eight: The Rightside Up", "description": "Eleven and her friends make their last stand against Vecna.", "durationMinutes": 128, "thumbnail": "public/images/posters/stranger-things.png" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "wednesday",
-      "type": "show",
-      "title": "Wednesday",
-      "years": "2022–present",
-      "description": "Wednesday Addams is sent to Nevermore Academy, where she tries to master her psychic powers and solve a string of killings that have terrorized the town.",
-      "numberOfSeasons": 2,
-      "totalEpisodes": 16,
-      "runtimeMinutes": 899,
-      "runtime": "14h 59min",
-      "genres": ["Comedy", "Mystery", "Fantasy"],
-      "releaseYear": 2022,
-      "languages": ["English", "Hindi", "Spanish", "Portuguese", "Italian"],
-      "ratings": { "imdb": 4.0, "streamvibe": 4.5 },
-      "poster": "public/images/posters/wednesday.png",
-      "thumbnail": "public/images/posters/wednesday.png",
-      "directors": [
-        { "name": "Tim Burton", "role": "Director / Executive Producer", "country": "United States", "photo": "public/images/posters/wednesday.png" },
-        { "name": "Alfred Gough", "role": "Creator", "country": "United States", "photo": "public/images/posters/wednesday.png" },
-        { "name": "Miles Millar", "role": "Creator", "country": "United Kingdom", "photo": "public/images/posters/wednesday.png" }
-      ],
-      "music": [
-        { "name": "Danny Elfman", "role": "Composer", "country": "United States", "photo": "public/images/posters/wednesday.png" },
-        { "name": "Chris Bacon", "role": "Composer", "country": "United States", "photo": "public/images/posters/wednesday.png" }
-      ],
-      "cast": [
-        { "name": "Jenna Ortega", "character": "Wednesday Addams", "photo": "public/images/posters/wednesday.png" },
-        { "name": "Emma Myers", "character": "Enid Sinclair", "photo": "public/images/posters/wednesday.png" },
-        { "name": "Gwendoline Christie", "character": "Larissa Weems", "photo": "public/images/posters/wednesday.png" },
-        { "name": "Catherine Zeta-Jones", "character": "Morticia Addams", "photo": "public/images/posters/wednesday.png" },
-        { "name": "Luis Guzmán", "character": "Gomez Addams", "photo": "public/images/posters/wednesday.png" },
-        { "name": "Hunter Doohan", "character": "Tyler Galpin", "photo": "public/images/posters/wednesday.png" }
-      ],
-      "reviews": [
-        { "id": "r1", "name": "Isla Thompson", "country": "Australia", "rating": 4.5, "text": "Dry, weird, and very funny. The dance scene at the Rave'N lives rent-free in my head." },
-        { "id": "r2", "name": "Pooja Sharma", "country": "India", "rating": 4.0, "text": "A fun mystery with great gothic style. Enid and Wednesday's friendship is the heart of the show." },
-        { "id": "r3", "name": "Lucas Silva", "country": "Brazil", "rating": 4.0, "text": "Season two goes darker and more ambitious. Some episodes drag, but the finale makes up for it." }
-      ],
-      "seasons": [
-        {
-          "seasonNumber": 1,
-          "year": 2022,
-          "totalEpisodes": 8,
-          "poster": "public/images/posters/wednesday.png",
-          "episodes": [
-            { "episodeNumber": 1, "title": "Wednesday's Child Is Full of Woe", "description": "Expelled again, Wednesday is sent to Nevermore Academy against her will.", "durationMinutes": 59, "thumbnail": "public/images/posters/wednesday.png" },
-            { "episodeNumber": 2, "title": "Woe Is the Loneliest Number", "description": "Wednesday enters a school race and keeps investigating a recent death.", "durationMinutes": 51, "thumbnail": "public/images/posters/wednesday.png" },
-            { "episodeNumber": 3, "title": "Friend or Woe", "description": "A town celebration reveals dark secrets about Jericho's history.", "durationMinutes": 47, "thumbnail": "public/images/posters/wednesday.png" },
-            { "episodeNumber": 4, "title": "Woe What a Night", "description": "The Rave'N dance gets a gruesome surprise.", "durationMinutes": 50, "thumbnail": "public/images/posters/wednesday.png" },
-            { "episodeNumber": 5, "title": "You Reap What You Woe", "description": "Parents' weekend brings the Addams family to Nevermore.", "durationMinutes": 54, "thumbnail": "public/images/posters/wednesday.png" },
-            { "episodeNumber": 6, "title": "Quid Pro Woe", "description": "Wednesday digs into her ancestor's link to the monster.", "durationMinutes": 49, "thumbnail": "public/images/posters/wednesday.png" },
-            { "episodeNumber": 7, "title": "If You Don't Woe Me by Now", "description": "Uncle Fester visits as Wednesday closes in on the killer.", "durationMinutes": 52, "thumbnail": "public/images/posters/wednesday.png" },
-            { "episodeNumber": 8, "title": "A Murder of Woes", "description": "Wednesday unmasks the monster and faces its master.", "durationMinutes": 56, "thumbnail": "public/images/posters/wednesday.png" }
-          ]
-        },
-        {
-          "seasonNumber": 2,
-          "year": 2025,
-          "totalEpisodes": 8,
-          "poster": "public/images/posters/wednesday.png",
-          "episodes": [
-            { "episodeNumber": 1, "title": "Here We Woe Again", "description": "Wednesday returns to Nevermore with a troubling vision about Enid.", "durationMinutes": 64, "thumbnail": "public/images/posters/wednesday.png" },
-            { "episodeNumber": 2, "title": "The Devil You Woe", "description": "A stalker leaves cryptic messages for Wednesday.", "durationMinutes": 58, "thumbnail": "public/images/posters/wednesday.png" },
-            { "episodeNumber": 3, "title": "Call of the Woe", "description": "Wednesday investigates a mysterious asylum outside town.", "durationMinutes": 56, "thumbnail": "public/images/posters/wednesday.png" },
-            { "episodeNumber": 4, "title": "If These Woes Could Talk", "description": "Wednesday's visions take a dangerous turn.", "durationMinutes": 60, "thumbnail": "public/images/posters/wednesday.png" },
-            { "episodeNumber": 5, "title": "Hyde and Woe Seek", "description": "Wednesday and Enid face an unexpected twist.", "durationMinutes": 62, "thumbnail": "public/images/posters/wednesday.png" },
-            { "episodeNumber": 6, "title": "Woe Thyself", "description": "Family secrets surface as the Addams clan gathers.", "durationMinutes": 57, "thumbnail": "public/images/posters/wednesday.png" },
-            { "episodeNumber": 7, "title": "Woe Me the Money", "description": "A gala at Nevermore becomes a trap.", "durationMinutes": 61, "thumbnail": "public/images/posters/wednesday.png" },
-            { "episodeNumber": 8, "title": "This Means Woe", "description": "Wednesday races to save Enid before her vision comes true.", "durationMinutes": 63, "thumbnail": "public/images/posters/wednesday.png" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "you",
-      "type": "show",
-      "title": "You",
-      "years": "2018–2025",
-      "description": "Charming bookstore manager Joe Goldberg becomes dangerously obsessed with the women he falls for, using social media and worse to get close to them.",
-      "numberOfSeasons": 5,
-      "totalEpisodes": 50,
-      "runtimeMinutes": 2418,
-      "runtime": "40h 18min",
-      "genres": ["Thriller", "Crime", "Drama"],
-      "releaseYear": 2018,
-      "languages": ["English", "Hindi", "Spanish", "French"],
-      "ratings": { "imdb": 4.0, "streamvibe": 4.0 },
-      "poster": "public/images/posters/you.png",
-      "thumbnail": "public/images/posters/you.png",
-      "directors": [
-        { "name": "Greg Berlanti", "role": "Developer", "country": "United States", "photo": "public/images/posters/you.png" },
-        { "name": "Sera Gamble", "role": "Developer / Showrunner", "country": "United States", "photo": "public/images/posters/you.png" }
-      ],
-      "music": [
-        { "name": "Blake Neely", "role": "Composer", "country": "United States", "photo": "public/images/posters/you.png" }
-      ],
-      "cast": [
-        { "name": "Penn Badgley", "character": "Joe Goldberg", "photo": "public/images/posters/you.png" },
-        { "name": "Elizabeth Lail", "character": "Guinevere Beck", "photo": "public/images/posters/you.png" },
-        { "name": "Victoria Pedretti", "character": "Love Quinn", "photo": "public/images/posters/you.png" },
-        { "name": "Ambyr Childers", "character": "Candace Stone", "photo": "public/images/posters/you.png" },
-        { "name": "Tati Gabrielle", "character": "Marienne Bellamy", "photo": "public/images/posters/you.png" },
-        { "name": "Charlotte Ritchie", "character": "Kate Galvin", "photo": "public/images/posters/you.png" }
-      ],
-      "reviews": [
-        { "id": "r1", "name": "Hannah Lee", "country": "USA", "rating": 4.0, "text": "Joe's narration is creepily addictive. You end up rooting for him and hating yourself for it." },
-        { "id": "r2", "name": "Siddharth Menon", "country": "India", "rating": 4.0, "text": "Season one is a masterclass in tension. Later seasons get wilder but stay entertaining." },
-        { "id": "r3", "name": "Clara Dubois", "country": "France", "rating": 3.5, "text": "The London season was a fun change of pace, though I saw the big twist coming." }
-      ],
-      "seasons": [
-        {
-          "seasonNumber": 1,
-          "year": 2018,
-          "totalEpisodes": 10,
-          "poster": "public/images/posters/you.png",
-          "episodes": [
-            { "episodeNumber": 1, "title": "Pilot", "description": "Joe meets aspiring writer Beck at his bookstore and becomes fixated on her.", "durationMinutes": 45, "thumbnail": "public/images/posters/you.png" },
-            { "episodeNumber": 2, "title": "The Last Nice Guy in New York", "description": "Joe works to remove Beck's boyfriend from the picture.", "durationMinutes": 43, "thumbnail": "public/images/posters/you.png" },
-            { "episodeNumber": 3, "title": "Maybe", "description": "Joe and Beck grow closer as he hides his tracks.", "durationMinutes": 44, "thumbnail": "public/images/posters/you.png" },
-            { "episodeNumber": 4, "title": "The Captain", "description": "Joe sees Beck's best friend as a threat.", "durationMinutes": 46, "thumbnail": "public/images/posters/you.png" },
-            { "episodeNumber": 5, "title": "Living with the Enemy", "description": "A weekend away puts Joe's control to the test.", "durationMinutes": 45, "thumbnail": "public/images/posters/you.png" },
-            { "episodeNumber": 6, "title": "Amour Fou", "description": "Joe and Beck finally become a couple.", "durationMinutes": 47, "thumbnail": "public/images/posters/you.png" },
-            { "episodeNumber": 7, "title": "Everythingship", "description": "Jealousy pushes Joe to spy on Beck's therapist.", "durationMinutes": 44, "thumbnail": "public/images/posters/you.png" },
-            { "episodeNumber": 8, "title": "You Got Me, Babe", "description": "Joe tries to escape his past, but it follows him.", "durationMinutes": 48, "thumbnail": "public/images/posters/you.png" },
-            { "episodeNumber": 9, "title": "Candace", "description": "Beck makes a discovery that changes everything.", "durationMinutes": 46, "thumbnail": "public/images/posters/you.png" },
-            { "episodeNumber": 10, "title": "Bluebeard's Castle", "description": "Beck is trapped, and Joe's secrets are fully exposed.", "durationMinutes": 50, "thumbnail": "public/images/posters/you.png" }
-          ]
-        },
-        {
-          "seasonNumber": 2,
-          "year": 2019,
-          "totalEpisodes": 10,
-          "poster": "public/images/posters/you.png",
-          "episodes": [
-            { "episodeNumber": 1, "title": "A Fresh Start", "description": "Joe flees to Los Angeles under a new name.", "durationMinutes": 47, "thumbnail": "public/images/posters/you.png" },
-            { "episodeNumber": 2, "title": "Just the Tip", "description": "Joe meets Love Quinn at a trendy grocery store.", "durationMinutes": 45, "thumbnail": "public/images/posters/you.png" },
-            { "episodeNumber": 3, "title": "What Are Friends For?", "description": "Joe gets pulled into Love's glamorous circle of friends.", "durationMinutes": 44, "thumbnail": "public/images/posters/you.png" },
-            { "episodeNumber": 4, "title": "The Good, the Bad, & the Hendy", "description": "Joe protects his neighbor Ellie from a predatory comedian.", "durationMinutes": 46, "thumbnail": "public/images/posters/you.png" },
-            { "episodeNumber": 5, "title": "Have a Good Wellness", "description": "A wellness retreat brings out ugly truths.", "durationMinutes": 48, "thumbnail": "public/images/posters/you.png" },
-            { "episodeNumber": 6, "title": "Fear and Loathing in Beverly Hills", "description": "Joe's past catches up with him in a big way.", "durationMinutes": 45, "thumbnail": "public/images/posters/you.png" },
-            { "episodeNumber": 7, "title": "Ex-istential Crisis", "description": "Candace threatens to reveal who Joe really is.", "durationMinutes": 47, "thumbnail": "public/images/posters/you.png" },
-            { "episodeNumber": 8, "title": "Farmers Market", "description": "Joe tries to keep his new life from collapsing.", "durationMinutes": 44, "thumbnail": "public/images/posters/you.png" },
-            { "episodeNumber": 9, "title": "P.I. Joe", "description": "Joe investigates a crime that may not be what it seems.", "durationMinutes": 46, "thumbnail": "public/images/posters/you.png" },
-            { "episodeNumber": 10, "title": "Love, Actually", "description": "Joe learns Love has secrets of her own.", "durationMinutes": 52, "thumbnail": "public/images/posters/you.png" }
-          ]
-        },
-        {
-          "seasonNumber": 3,
-          "year": 2021,
-          "totalEpisodes": 10,
-          "poster": "public/images/posters/you.png",
-          "episodes": [
-            { "episodeNumber": 1, "title": "And They Lived Happily Ever After", "description": "Joe and Love start a family in the suburbs of Madre Linda.", "durationMinutes": 49, "thumbnail": "public/images/posters/you.png" },
-            { "episodeNumber": 2, "title": "So I Married an Axe Murderer", "description": "The couple tries to cover up a deadly mistake.", "durationMinutes": 46, "thumbnail": "public/images/posters/you.png" },
-            { "episodeNumber": 3, "title": "Missing White Woman Syndrome", "description": "A disappearance grips the neighborhood.", "durationMinutes": 48, "thumbnail": "public/images/posters/you.png" },
-            { "episodeNumber": 4, "title": "Into the Woods", "description": "Joe takes an unwilling neighbor on a camping trip.", "durationMinutes": 47, "thumbnail": "public/images/posters/you.png" },
-            { "episodeNumber": 5, "title": "W.O.M.B.", "description": "Love grows suspicious of Joe's new obsession.", "durationMinutes": 45, "thumbnail": "public/images/posters/you.png" },
-            { "episodeNumber": 6, "title": "Hands Across the Sea", "description": "Couples therapy reveals more than either wants.", "durationMinutes": 50, "thumbnail": "public/images/posters/you.png" },
-            { "episodeNumber": 7, "title": "What Is Your Fantasy?", "description": "A party with the neighbors spirals out of control.", "durationMinutes": 46, "thumbnail": "public/images/posters/you.png" },
-            { "episodeNumber": 8, "title": "Swing and a Miss", "description": "Joe's feelings for Marienne put him in danger.", "durationMinutes": 48, "thumbnail": "public/images/posters/you.png" },
-            { "episodeNumber": 9, "title": "Red Flag", "description": "Love takes drastic action against a rival.", "durationMinutes": 47, "thumbnail": "public/images/posters/you.png" },
-            { "episodeNumber": 10, "title": "Thank You for Your Service", "description": "Joe and Love's marriage reaches a deadly conclusion.", "durationMinutes": 55, "thumbnail": "public/images/posters/you.png" }
-          ]
-        },
-        {
-          "seasonNumber": 4,
-          "year": 2023,
-          "totalEpisodes": 10,
-          "poster": "public/images/posters/you.png",
-          "episodes": [
-            { "episodeNumber": 1, "title": "Joe Takes a Holiday", "description": "Joe starts over as a professor in London.", "durationMinutes": 50, "thumbnail": "public/images/posters/you.png" },
-            { "episodeNumber": 2, "title": "Portrait of the Artist", "description": "Joe falls in with a circle of wealthy socialites.", "durationMinutes": 48, "thumbnail": "public/images/posters/you.png" },
-            { "episodeNumber": 3, "title": "Eat the Rich", "description": "A killer begins targeting Joe's new friends.", "durationMinutes": 47, "thumbnail": "public/images/posters/you.png" },
-            { "episodeNumber": 4, "title": "Philosophy of Composition", "description": "Joe plays detective to find the 'Eat the Rich Killer'.", "durationMinutes": 49, "thumbnail": "public/images/posters/you.png" },
-            { "episodeNumber": 5, "title": "The Fox and the Hound", "description": "A weekend at a country estate turns deadly.", "durationMinutes": 46, "thumbnail": "public/images/posters/you.png" },
-            { "episodeNumber": 6, "title": "Best Laid Plans", "description": "Joe gets closer to Kate as the threats escalate.", "durationMinutes": 51, "thumbnail": "public/images/posters/you.png" },
-            { "episodeNumber": 7, "title": "Nightmare, Interrupted", "description": "A rising politician becomes the prime suspect.", "durationMinutes": 48, "thumbnail": "public/images/posters/you.png" },
-            { "episodeNumber": 8, "title": "Rory", "description": "Joe meets someone who seems to know everything about him.", "durationMinutes": 47, "thumbnail": "public/images/posters/you.png" },
-            { "episodeNumber": 9, "title": "Hiding in Plain Sight", "description": "Joe confronts a shocking truth about himself.", "durationMinutes": 49, "thumbnail": "public/images/posters/you.png" },
-            { "episodeNumber": 10, "title": "Death of the Author", "description": "Joe makes a choice that reshapes his future.", "durationMinutes": 60, "thumbnail": "public/images/posters/you.png" }
-          ]
-        },
-        {
-          "seasonNumber": 5,
-          "year": 2025,
-          "totalEpisodes": 10,
-          "poster": "public/images/posters/you.png",
-          "episodes": [
-            { "episodeNumber": 1, "title": "Hello, Again", "description": "Joe returns to New York living a picture-perfect life.", "durationMinutes": 52, "thumbnail": "public/images/posters/you.png" },
-            { "episodeNumber": 2, "title": "Last Man Standing", "description": "A new woman catches Joe's eye at the bookstore.", "durationMinutes": 49, "thumbnail": "public/images/posters/you.png" },
-            { "episodeNumber": 3, "title": "Hit Me Baby One More Time", "description": "Old habits resurface as Joe guards his reputation.", "durationMinutes": 50, "thumbnail": "public/images/posters/you.png" },
-            { "episodeNumber": 4, "title": "The Twins", "description": "Kate's family complicates Joe's plans.", "durationMinutes": 48, "thumbnail": "public/images/posters/you.png" },
-            { "episodeNumber": 5, "title": "Wedding Bells", "description": "A family wedding becomes a minefield of secrets.", "durationMinutes": 51, "thumbnail": "public/images/posters/you.png" },
-            { "episodeNumber": 6, "title": "Trouble in Paradise", "description": "Kate begins to see cracks in Joe's story.", "durationMinutes": 47, "thumbnail": "public/images/posters/you.png" },
-            { "episodeNumber": 7, "title": "Unmasked", "description": "Someone close to Joe uncovers his past.", "durationMinutes": 53, "thumbnail": "public/images/posters/you.png" },
-            { "episodeNumber": 8, "title": "Full Circle", "description": "Joe's victims' stories start to come together.", "durationMinutes": 50, "thumbnail": "public/images/posters/you.png" },
-            { "episodeNumber": 9, "title": "The Reckoning", "description": "Joe is cornered with nowhere left to run.", "durationMinutes": 52, "thumbnail": "public/images/posters/you.png" },
-            { "episodeNumber": 10, "title": "The Last Chapter", "description": "Joe Goldberg's story comes to its final page.", "durationMinutes": 68, "thumbnail": "public/images/posters/you.png" }
-          ]
-        }
-      ]
-    }
+  {
+    "id": "avengers-endgame",
+    "type": "movie",
+    "title": "Avengers: Endgame",
+    "music": [
+      { "name": "Alan Silvestri", "role": "Composer", "country": "United States", "photo": "public/images/posters/avengers-endgame.png" }
+    ],
+    "reviews": [
+      { "id": "r1", "name": "Priya Nair", "country": "India", "rating": 5.0, "text": "Ten years of build-up paid off. The final battle had my whole theatre cheering, and the farewells hit harder than I expected." },
+      { "id": "r2", "name": "Lucas Moreau", "country": "France", "rating": 4.5, "text": "Three hours long, but it never drags. The time-travel middle act is fan service in the best possible way." },
+      { "id": "r3", "name": "Hana Sato", "country": "Japan", "rating": 4.0, "text": "A satisfying ending if you've followed the series. Newcomers will be lost, but this film clearly isn't made for them." }
+    ]
+  },
+  {
+    "id": "thor-love-and-thunder",
+    "type": "movie",
+    "title": "Thor: Love and Thunder",
+    "music": [
+      { "name": "Michael Giacchino", "role": "Composer", "country": "United States", "photo": "public/images/posters/thor-love-and-thunder.png" },
+      { "name": "Nami Melumad", "role": "Composer", "country": "Israel", "photo": "public/images/posters/thor-love-and-thunder.png" }
+    ],
+    "reviews": [
+      { "id": "r1", "name": "Marcus Bell", "country": "USA", "rating": 3.5, "text": "Fun and colourful with a genuinely creepy villain, though the jokes undercut some of the emotional moments." },
+      { "id": "r2", "name": "Ananya Iyer", "country": "India", "rating": 3.0, "text": "Jane's return was the highlight for me. The screaming goats wore thin after the third time." },
+      { "id": "r3", "name": "Tom Riley", "country": "UK", "rating": 3.5, "text": "Not as tight as the previous Thor film, but a breezy, good-looking watch on a lazy evening." }
+    ]
+  },
+  {
+    "id": "13-reasons-why",
+    "type": "show",
+    "title": "13 Reasons Why",
+    "music": [
+      { "name": "Eskmo", "role": "Composer", "country": "United States", "photo": "public/images/posters/13-reasons-why.png" }
+    ],
+    "reviews": [
+      { "id": "r1", "name": "Sofia Martinez", "country": "Spain", "rating": 4.0, "text": "Season one is gripping and uncomfortable in a way that stays with you. Clay carries every single episode." },
+      { "id": "r2", "name": "Rahul Mehta", "country": "India", "rating": 3.0, "text": "Started strong, but the later seasons stretched the story far thinner than it needed to be." },
+      { "id": "r3", "name": "Emily Carter", "country": "USA", "rating": 3.5, "text": "Tough to watch at times. Worth it for the performances, but go in prepared for very heavy themes." }
+    ]
+  },
+  {
+    "id": "1899",
+    "type": "show",
+    "title": "1899",
+    "music": [
+      { "name": "Ben Frost", "role": "Composer", "country": "Australia", "photo": "public/images/posters/1899.png" }
+    ],
+    "reviews": [
+      { "id": "r1", "name": "Jonas Weber", "country": "Germany", "rating": 4.5, "text": "Every episode ends on a hook. The multilingual cast makes life aboard the ship feel chaotic and real." },
+      { "id": "r2", "name": "Isabel Costa", "country": "Brazil", "rating": 4.0, "text": "Moody, beautiful, and confusing in a good way. A real shame we only got one season." },
+      { "id": "r3", "name": "Arjun Rao", "country": "India", "rating": 3.5, "text": "The ending raised more questions than it answered, but the atmosphere is unlike anything else." }
+    ]
+  },
+  {
+    "id": "glow",
+    "type": "show",
+    "title": "GLOW",
+    "music": [
+      { "name": "Craig Wedren", "role": "Composer", "country": "United States", "photo": "public/images/posters/glow.png" }
+    ],
+    "reviews": [
+      { "id": "r1", "name": "Megan Brooks", "country": "USA", "rating": 4.5, "text": "Funny, warm, and surprisingly moving. Debbie steals every scene she's in." },
+      { "id": "r2", "name": "Kavya Reddy", "country": "India", "rating": 4.0, "text": "I knew nothing about wrestling and still loved it. The half-hour episodes make it very easy to binge." },
+      { "id": "r3", "name": "Daniel Okafor", "country": "Nigeria", "rating": 4.0, "text": "A brilliant ensemble cast, and the 80s costumes and soundtrack are a treat from start to finish." }
+    ]
+  },
+  {
+    "id": "locke-key",
+    "type": "show",
+    "title": "Locke & Key",
+    "music": [
+      { "name": "Torin Borrowdale", "role": "Composer", "country": "United States", "photo": "public/images/posters/locke-and-key.png" }
+    ],
+    "reviews": [
+      { "id": "r1", "name": "Chloe Martin", "country": "Canada", "rating": 4.0, "text": "A cosy kind of spooky. The key powers are creative, and Keyhouse itself feels like a character." },
+      { "id": "r2", "name": "Vikram Singh", "country": "India", "rating": 3.5, "text": "Season one is the strongest. The family drama gets in the way of the magic later on." },
+      { "id": "r3", "name": "Lena Fischer", "country": "Germany", "rating": 3.5, "text": "A good weekend binge with my younger siblings. Not too scary, but still properly tense." }
+    ]
+  },
+  {
+    "id": "money-heist-korea",
+    "type": "show",
+    "title": "Money Heist: Korea – Joint Economic Area",
+    "music": [
+      { "name": "Kim Tae-seong", "role": "Composer", "country": "South Korea", "photo": "public/images/posters/money-heist-korea.png" }
+    ],
+    "reviews": [
+      { "id": "r1", "name": "Min-jun Park", "country": "South Korea", "rating": 3.5, "text": "Moving the heist to a reunified Korea is a clever twist, and Berlin is excellent in this version." },
+      { "id": "r2", "name": "Neha Kapoor", "country": "India", "rating": 3.0, "text": "If you've seen the Spanish original, this follows it closely. Still fun, just with fewer surprises." },
+      { "id": "r3", "name": "Carlos Ruiz", "country": "Mexico", "rating": 3.5, "text": "Tight and fast-paced. The cat-and-mouse scenes between the Professor and Woo-jin are the best part." }
+    ]
+  },
+  {
+    "id": "the-sandman",
+    "type": "show",
+    "title": "The Sandman",
+    "music": [
+      { "name": "David Buckley", "role": "Composer", "country": "United Kingdom", "photo": "public/images/posters/the-sandman.png" }
+    ],
+    "reviews": [
+      { "id": "r1", "name": "Oliver Hughes", "country": "UK", "rating": 5.0, "text": "Feels like the comic come to life. The episode with Death is one of the best hours of TV I've seen." },
+      { "id": "r2", "name": "Aisha Khan", "country": "Pakistan", "rating": 4.5, "text": "Gorgeous visuals, and the quiet, distant performance as Dream is exactly right." },
+      { "id": "r3", "name": "Mateo Rossi", "country": "Italy", "rating": 4.0, "text": "Slow in places, but the standalone episodes are fantastic and worth the wait." }
+    ]
+  },
+  {
+    "id": "shadow-and-bone",
+    "type": "show",
+    "title": "Shadow and Bone",
+    "music": [
+      { "name": "Joseph Trapanese", "role": "Composer", "country": "United States", "photo": "public/images/posters/shadow-and-bone.png" }
+    ],
+    "reviews": [
+      { "id": "r1", "name": "Grace Kim", "country": "USA", "rating": 4.0, "text": "The Crows are the real stars. I'd happily watch a whole show of just Kaz, Inej and Jesper." },
+      { "id": "r2", "name": "Rohan Das", "country": "India", "rating": 4.0, "text": "Great world-building and costumes, and Kirigan makes a very convincing villain." },
+      { "id": "r3", "name": "Freya Larsen", "country": "Denmark", "rating": 3.5, "text": "Season two rushes through a lot of story, but it's still an enjoyable fantasy adventure." }
+    ]
+  },
+  {
+    "id": "stranger-things",
+    "type": "show",
+    "title": "Stranger Things",
+    "music": [
+      { "name": "Kyle Dixon", "role": "Composer", "country": "United States", "photo": "public/images/posters/stranger-things.png" },
+      { "name": "Michael Stein", "role": "Composer", "country": "United States", "photo": "public/images/posters/stranger-things.png" }
+    ],
+    "reviews": [
+      { "id": "r1", "name": "Jake Morrison", "country": "USA", "rating": 5.0, "text": "I grew up with these kids. The finale wrapped everything up, and I'm not ashamed to say I cried." },
+      { "id": "r2", "name": "Meera Joshi", "country": "India", "rating": 4.5, "text": "The 80s vibe, the soundtrack, the friendships. Season four in particular is incredible." },
+      { "id": "r3", "name": "Sven Andersson", "country": "Sweden", "rating": 4.0, "text": "The seasons got longer and bigger, not always better, but it's still an absolute must-watch." }
+    ]
+  },
+  {
+    "id": "wednesday",
+    "type": "show",
+    "title": "Wednesday",
+    "music": [
+      { "name": "Danny Elfman", "role": "Composer", "country": "United States", "photo": "public/images/posters/wednesday.png" },
+      { "name": "Chris Bacon", "role": "Composer", "country": "United States", "photo": "public/images/posters/wednesday.png" }
+    ],
+    "reviews": [
+      { "id": "r1", "name": "Isla Thompson", "country": "Australia", "rating": 4.5, "text": "Dry, weird, and very funny. The dance scene at the Rave'N lives rent-free in my head." },
+      { "id": "r2", "name": "Pooja Sharma", "country": "India", "rating": 4.0, "text": "A fun mystery with great gothic style. Enid and Wednesday's friendship is the heart of the show." },
+      { "id": "r3", "name": "Lucas Silva", "country": "Brazil", "rating": 4.0, "text": "Season two goes darker and more ambitious. Some episodes drag, but the finale makes up for it." }
+    ]
+  },
+  {
+    "id": "you",
+    "type": "show",
+    "title": "You",
+    "music": [
+      { "name": "Blake Neely", "role": "Composer", "country": "United States", "photo": "public/images/posters/you.png" }
+    ],
+    "reviews": [
+      { "id": "r1", "name": "Hannah Lee", "country": "USA", "rating": 4.0, "text": "Joe's narration is creepily addictive. You end up rooting for him and hating yourself for it." },
+      { "id": "r2", "name": "Siddharth Menon", "country": "India", "rating": 4.0, "text": "Season one is a masterclass in tension. Later seasons get wilder but stay entertaining." },
+      { "id": "r3", "name": "Clara Dubois", "country": "France", "rating": 3.5, "text": "The London season was a fun change of pace, though I saw the big twist coming." }
+    ]
+  }
 ]

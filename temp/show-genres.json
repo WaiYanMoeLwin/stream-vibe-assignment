@@ -6,102 +6,102 @@
       "name": "Action",
       "count": 1,
       "items": [
-        { "id": "money-heist-korea", "title": "Money Heist: Korea – Joint Economic Area", "years": "2022", "poster": "public/images/posters/money-heist-korea.png" }
+        { "id": "money-heist-korea", "title": "Money Heist: Korea – Joint Economic Area" }
       ]
     },
     {
       "name": "Adventure",
       "count": 1,
       "items": [
-        { "id": "shadow-and-bone", "title": "Shadow and Bone", "years": "2021–2023", "poster": "public/images/posters/shadow-and-bone.png" }
+        { "id": "shadow-and-bone", "title": "Shadow and Bone" }
       ]
     },
     {
       "name": "Comedy",
       "count": 2,
       "items": [
-        { "id": "glow", "title": "GLOW", "years": "2017–2019", "poster": "public/images/posters/glow.png" },
-        { "id": "wednesday", "title": "Wednesday", "years": "2022–present", "poster": "public/images/posters/wednesday.png" }
+        { "id": "glow", "title": "GLOW" },
+        { "id": "wednesday", "title": "Wednesday" }
       ]
     },
     {
       "name": "Crime",
       "count": 2,
       "items": [
-        { "id": "money-heist-korea", "title": "Money Heist: Korea – Joint Economic Area", "years": "2022", "poster": "public/images/posters/money-heist-korea.png" },
-        { "id": "you", "title": "You", "years": "2018–2025", "poster": "public/images/posters/you.png" }
+        { "id": "money-heist-korea", "title": "Money Heist: Korea – Joint Economic Area" },
+        { "id": "you", "title": "You" }
       ]
     },
     {
       "name": "Drama",
       "count": 8,
       "items": [
-        { "id": "13-reasons-why", "title": "13 Reasons Why", "years": "2017–2020", "poster": "public/images/posters/13-reasons-why.png" },
-        { "id": "1899", "title": "1899", "years": "2022", "poster": "public/images/posters/1899.png" },
-        { "id": "glow", "title": "GLOW", "years": "2017–2019", "poster": "public/images/posters/glow.png" },
-        { "id": "locke-key", "title": "Locke & Key", "years": "2020–2022", "poster": "public/images/posters/locke-and-key.png" },
-        { "id": "shadow-and-bone", "title": "Shadow and Bone", "years": "2021–2023", "poster": "public/images/posters/shadow-and-bone.png" },
-        { "id": "stranger-things", "title": "Stranger Things", "years": "2016–2025", "poster": "public/images/posters/stranger-things.png" },
-        { "id": "the-sandman", "title": "The Sandman", "years": "2022–2025", "poster": "public/images/posters/the-sandman.png" },
-        { "id": "you", "title": "You", "years": "2018–2025", "poster": "public/images/posters/you.png" }
+        { "id": "13-reasons-why", "title": "13 Reasons Why" },
+        { "id": "1899", "title": "1899" },
+        { "id": "glow", "title": "GLOW" },
+        { "id": "locke-key", "title": "Locke & Key" },
+        { "id": "shadow-and-bone", "title": "Shadow and Bone" },
+        { "id": "stranger-things", "title": "Stranger Things" },
+        { "id": "the-sandman", "title": "The Sandman" },
+        { "id": "you", "title": "You" }
       ]
     },
     {
       "name": "Fantasy",
       "count": 4,
       "items": [
-        { "id": "locke-key", "title": "Locke & Key", "years": "2020–2022", "poster": "public/images/posters/locke-and-key.png" },
-        { "id": "shadow-and-bone", "title": "Shadow and Bone", "years": "2021–2023", "poster": "public/images/posters/shadow-and-bone.png" },
-        { "id": "the-sandman", "title": "The Sandman", "years": "2022–2025", "poster": "public/images/posters/the-sandman.png" },
-        { "id": "wednesday", "title": "Wednesday", "years": "2022–present", "poster": "public/images/posters/wednesday.png" }
+        { "id": "locke-key", "title": "Locke & Key" },
+        { "id": "shadow-and-bone", "title": "Shadow and Bone" },
+        { "id": "the-sandman", "title": "The Sandman" },
+        { "id": "wednesday", "title": "Wednesday" }
       ]
     },
     {
       "name": "Horror",
       "count": 3,
       "items": [
-        { "id": "locke-key", "title": "Locke & Key", "years": "2020–2022", "poster": "public/images/posters/locke-and-key.png" },
-        { "id": "stranger-things", "title": "Stranger Things", "years": "2016–2025", "poster": "public/images/posters/stranger-things.png" },
-        { "id": "the-sandman", "title": "The Sandman", "years": "2022–2025", "poster": "public/images/posters/the-sandman.png" }
+        { "id": "locke-key", "title": "Locke & Key" },
+        { "id": "stranger-things", "title": "Stranger Things" },
+        { "id": "the-sandman", "title": "The Sandman" }
       ]
     },
     {
       "name": "Mystery",
       "count": 3,
       "items": [
-        { "id": "13-reasons-why", "title": "13 Reasons Why", "years": "2017–2020", "poster": "public/images/posters/13-reasons-why.png" },
-        { "id": "1899", "title": "1899", "years": "2022", "poster": "public/images/posters/1899.png" },
-        { "id": "wednesday", "title": "Wednesday", "years": "2022–present", "poster": "public/images/posters/wednesday.png" }
+        { "id": "13-reasons-why", "title": "13 Reasons Why" },
+        { "id": "1899", "title": "1899" },
+        { "id": "wednesday", "title": "Wednesday" }
       ]
     },
     {
       "name": "Sci-Fi",
       "count": 2,
       "items": [
-        { "id": "1899", "title": "1899", "years": "2022", "poster": "public/images/posters/1899.png" },
-        { "id": "stranger-things", "title": "Stranger Things", "years": "2016–2025", "poster": "public/images/posters/stranger-things.png" }
+        { "id": "1899", "title": "1899" },
+        { "id": "stranger-things", "title": "Stranger Things" }
       ]
     },
     {
       "name": "Sports",
       "count": 1,
       "items": [
-        { "id": "glow", "title": "GLOW", "years": "2017–2019", "poster": "public/images/posters/glow.png" }
+        { "id": "glow", "title": "GLOW" }
       ]
     },
     {
       "name": "Teen",
       "count": 1,
       "items": [
-        { "id": "13-reasons-why", "title": "13 Reasons Why", "years": "2017–2020", "poster": "public/images/posters/13-reasons-why.png" }
+        { "id": "13-reasons-why", "title": "13 Reasons Why" }
       ]
     },
     {
       "name": "Thriller",
       "count": 2,
       "items": [
-        { "id": "money-heist-korea", "title": "Money Heist: Korea – Joint Economic Area", "years": "2022", "poster": "public/images/posters/money-heist-korea.png" },
-        { "id": "you", "title": "You", "years": "2018–2025", "poster": "public/images/posters/you.png" }
+        { "id": "money-heist-korea", "title": "Money Heist: Korea – Joint Economic Area" },
+        { "id": "you", "title": "You" }
       ]
     }
   ]

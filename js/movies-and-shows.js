@@ -254,12 +254,8 @@ const renderContentCardsWithRuntimeAndSeasons = async (containerElement, entries
         const infoContainer = card.querySelector('.content-info-container');
         const entry = entries[(currentPage - 1) * perPage + index];
 
-        if (entry.runtime) {
-            addRuntimeToCard(infoContainer, entry);
-        }
-        if (entry.numberOfSeasons) {
-            addSeasonsToCard(infoContainer, entry);
-        }
+        addRuntimeToCard(infoContainer, entry);
+        addSeasonsToCard(infoContainer, entry);
     });
 }
 
@@ -271,9 +267,7 @@ const renderContentCardsWithReleaseDate = (containerElement, entries, currentPag
         const infoContainer = card.querySelector('.content-info-container');
         const entry = entries[(currentPage - 1) * perPage + index];
 
-        if (entry.releaseDate) {
-            addReleaseDateToCard(infoContainer, entry);
-        }
+        addReleaseDateToCard(infoContainer, entry);
     });
 }
 
@@ -285,12 +279,8 @@ const renderContentCardsWithRuntimeAndRating = (containerElement, entries, curre
         const infoContainer = card.querySelector('.content-info-container');
         const entry = entries[(currentPage - 1) * perPage + index];
 
-        if (entry.runtime) {
-            addRuntimeToCard(infoContainer, entry);
-        }
-        if (entry.starRating && entry.ratedBy) {
-            addRatingToCard(infoContainer, entry);
-        }
+        addRuntimeToCard(infoContainer, entry);
+        addRatingToCard(infoContainer, entry);
     });
 }
 
@@ -302,12 +292,8 @@ const renderContentCardsWithRuntimeAndViews = (containerElement, entries, curren
         const infoContainer = card.querySelector('.content-info-container');
         const entry = entries[(currentPage - 1) * perPage + index];
 
-        if (entry.runtime) {
-            addRuntimeToCard(infoContainer, entry);
-        }
-        if (entry.views) {
-            addViewsToCard(infoContainer, entry);
-        }
+        addRuntimeToCard(infoContainer, entry);
+        addViewsToCard(infoContainer, entry);
     });
 }
 

@@ -2,7 +2,7 @@
   "section": "trending-now",
   "type": "movie",
   "items": [
-    { "rank": 1, "id": "thor-love-and-thunder", "type": "movie", "title": "Thor: Love and Thunder", "year": 2022, "runtime": "1h 59min", "genres": ["Action", "Comedy", "Fantasy"], "poster": "public/images/posters/thor-love-and-thunder.png", "views": "1.2M" },
-    { "rank": 2, "id": "avengers-endgame", "type": "movie", "title": "Avengers: Endgame", "year": 2019, "runtime": "3h 1min", "genres": ["Action", "Sci-Fi", "Adventure"], "poster": "public/images/posters/avengers-endgame.png", "views": "3.5M" }
+    { "rank": 1, "id": "thor-love-and-thunder", "type": "movie", "title": "Thor: Love and Thunder" },
+    { "rank": 2, "id": "avengers-endgame", "type": "movie", "title": "Avengers: Endgame" }
   ]
 }

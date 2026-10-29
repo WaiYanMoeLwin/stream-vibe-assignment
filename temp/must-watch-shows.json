@@ -4,11 +4,11 @@
   "ratingScale": 5,
   "ratingStep": 0.5,
   "items": [
-    { "id": "stranger-things", "type": "show", "title": "Stranger Things", "years": "2016–2025", "runtime": "44h 59min", "numberOfSeasons": 5, "starRating": 4.5, "ratedBy": 32425, "reason": "A complete five-season saga of 80s nostalgia and supernatural horror.", "poster": "public/images/posters/stranger-things.png" },
-    { "id": "the-sandman", "type": "show", "title": "The Sandman", "years": "2022–2025", "runtime": "18h 55min", "numberOfSeasons": 2, "starRating": 4.5, "ratedBy": 12345, "reason": "A lavish, faithful adaptation of Neil Gaiman's legendary comic.", "poster": "public/images/posters/the-sandman.png" },
-    { "id": "wednesday", "type": "show", "title": "Wednesday", "years": "2022–present", "runtime": "14h 59min", "numberOfSeasons": 2, "starRating": 4.5, "ratedBy": 982984, "reason": "A darkly funny mystery led by a standout performance from Jenna Ortega.", "poster": "public/images/posters/wednesday.png" },
-    { "id": "glow", "type": "show", "title": "GLOW", "years": "2017–2019", "runtime": "15h 48min", "numberOfSeasons": 3, "starRating": 4.0, "ratedBy": 123456, "reason": "A sharp, heartfelt comedy about friendship, ambition, and 80s wrestling.", "poster": "public/images/posters/glow.png" },
-    { "id": "you", "type": "show", "title": "You", "years": "2018–2025", "runtime": "40h 18min", "numberOfSeasons": 5, "starRating": 4.0, "ratedBy": 90343, "reason": "A gripping psychological thriller told from inside a stalker's head.", "poster": "public/images/posters/you.png" },
-    { "id": "1899", "type": "show", "title": "1899", "years": "2022", "runtime": "7h 34min", "numberOfSeasons": 1, "starRating": 4.0, "ratedBy": 1234567, "reason": "A mind-bending single-season puzzle from the creators of Dark.", "poster": "public/images/posters/1899.png" }
+    { "id": "stranger-things", "type": "show", "title": "Stranger Things" },
+    { "id": "the-sandman", "type": "show", "title": "The Sandman" },
+    { "id": "wednesday", "type": "show", "title": "Wednesday" },
+    { "id": "glow", "type": "show", "title": "GLOW" },
+    { "id": "you", "type": "show", "title": "You" },
+    { "id": "1899", "type": "show", "title": "1899" }
   ]
 }

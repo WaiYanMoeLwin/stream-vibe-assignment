@@ -6,36 +6,36 @@
       "name": "Action",
       "count": 2,
       "items": [
-        { "id": "avengers-endgame", "title": "Avengers: Endgame", "year": 2019, "poster": "public/images/posters/avengers-endgame.png" },
-        { "id": "thor-love-and-thunder", "title": "Thor: Love and Thunder", "year": 2022, "poster": "public/images/posters/thor-love-and-thunder.png" }
+        { "id": "avengers-endgame", "title": "Avengers: Endgame" },
+        { "id": "thor-love-and-thunder", "title": "Thor: Love and Thunder" }
       ]
     },
     {
       "name": "Adventure",
       "count": 1,
       "items": [
-        { "id": "avengers-endgame", "title": "Avengers: Endgame", "year": 2019, "poster": "public/images/posters/avengers-endgame.png" }
+        { "id": "avengers-endgame", "title": "Avengers: Endgame" }
       ]
     },
     {
       "name": "Comedy",
       "count": 1,
       "items": [
-        { "id": "thor-love-and-thunder", "title": "Thor: Love and Thunder", "year": 2022, "poster": "public/images/posters/thor-love-and-thunder.png" }
+        { "id": "thor-love-and-thunder", "title": "Thor: Love and Thunder" }
       ]
     },
     {
       "name": "Fantasy",
       "count": 1,
       "items": [
-        { "id": "thor-love-and-thunder", "title": "Thor: Love and Thunder", "year": 2022, "poster": "public/images/posters/thor-love-and-thunder.png" }
+        { "id": "thor-love-and-thunder", "title": "Thor: Love and Thunder" }
       ]
     },
     {
       "name": "Sci-Fi",
       "count": 1,
       "items": [
-        { "id": "avengers-endgame", "title": "Avengers: Endgame", "year": 2019, "poster": "public/images/posters/avengers-endgame.png" }
+        { "id": "avengers-endgame", "title": "Avengers: Endgame" }
       ]
     }
   ]
