@@ -793,6 +793,7 @@ footer .footer-info a:hover {
 #content-info .main-info section .cast-list .cast-item img {
   width: 100%;
   height: 100%;
+  aspect-ratio: 1/1;
   object-fit: cover;
 }
 #content-info .main-info section .reviews-list {
