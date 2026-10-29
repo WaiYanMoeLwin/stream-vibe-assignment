@@ -1,3 +1,4 @@
+import api from './api.js';
 window.addEventListener('resize', () => {
     window.location.reload();
 });
@@ -79,10 +80,14 @@ export const renderBackgroundMashup = (containerElement, entries, maxEntries = 3
         const imgContainer = document.createElement('div');
         imgContainer.classList.add('background-mashup-image');
         const img = document.createElement('img');
-        img.src = entry.poster;
-        img.alt = entry.title;
+        // img.src = entry.poster;
+        // img.alt = entry.title;
         imgContainer.appendChild(img);
         mashup.appendChild(imgContainer);
+        api.fetchContentDetails(entry.id).then(contentDetails => {
+            img.src = contentDetails.Poster;
+            img.alt = contentDetails.Title;
+        });
     }
 
     selectedEntries.forEach(entry => {
@@ -122,10 +127,14 @@ export const renderGenres = (genresContainer, genres, currentPage, perPage) => {
             const imageContainer = document.createElement('div');
             imageContainer.classList.add('genre-image');
             const img = document.createElement('img');
-            img.src = item.poster;
-            img.alt = item.title;
+            // img.src = item.poster;
+            // img.alt = item.title;
             imageContainer.appendChild(img);
             imagesContainer.appendChild(imageContainer);
+            api.fetchContentDetails(item.id).then(contentDetails => {
+                img.src = contentDetails.Poster;
+                img.alt = contentDetails.Title;
+            });
         });
 
         const fadeOutBottom = document.createElement('div');

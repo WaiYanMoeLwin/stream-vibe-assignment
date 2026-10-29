@@ -765,11 +765,11 @@ footer .footer-info a:hover {
   transform: scale(1.05);
   cursor: pointer;
 }
-.content-container .content-cards.new-releases-cards .content-card .content-info-container {
-  justify-content: center;
-}
 .content-container#movies .new-releases-cards, .content-container#movies .trending-cards {
   grid-template-columns: repeat(5, 1fr);
+}
+.content-container#movies .new-releases-cards .content-card .content-info-container {
+  justify-content: center;
 }
 
 @media screen and (max-width: 1439px) {

@@ -264,17 +264,17 @@
                 cursor: pointer;
             }
         }
-        &.new-releases-cards {
+    }
+    &#movies {
+        .new-releases-cards, .trending-cards {
+            grid-template-columns: repeat(5, 1fr);
+        }
+        .new-releases-cards {
             .content-card {
                 .content-info-container {
                     justify-content: center;
                 }
             }
-        }
-    }
-    &#movies {
-        .new-releases-cards, .trending-cards {
-            grid-template-columns: repeat(5, 1fr);
         }
     }
 }

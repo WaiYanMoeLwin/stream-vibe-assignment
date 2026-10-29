@@ -1,5 +1,5 @@
 import api from './api.js';
-import { menuToggle, renderBackgroundMashup, renderGenres, renderPagination } from './utils.js';
+import { checkImageSource, menuToggle, renderBackgroundMashup, renderGenres, renderPagination } from './utils.js';
 
 const renderPage = async () => {
     // Fetch the data for movies and shows, genres, trending, new releases, and must-watch content
@@ -196,7 +196,7 @@ const renderPage = async () => {
 }
 
 // Render the content
-const renderContentCards = (containerElement, entries, currentPage, perPage) => {
+const renderContentCards = async (containerElement, entries, currentPage, perPage) => {
     // Clear existing content
     containerElement.innerHTML = '';
 
@@ -211,8 +211,8 @@ const renderContentCards = (containerElement, entries, currentPage, perPage) => 
 
         const img = document.createElement('img');
         img.classList.add('content-card-image');
-        img.src = entry.poster;
-        img.alt = entry.title;
+        // img.src = entry.poster;
+        // img.alt = entry.title;
         imgContainer.appendChild(img);
 
         const infoContainer = document.createElement('div');
@@ -221,17 +221,32 @@ const renderContentCards = (containerElement, entries, currentPage, perPage) => 
         card.appendChild(imgContainer);
         card.appendChild(infoContainer);
 
-        card.addEventListener('click', () => {
-            const type = entry.type;
-            const id = entry.id;
-            window.location.href = `content-detail.html?id=${id}`;
-        });
+        // card.addEventListener('click', () => {
+        //     const type = entry.type;
+        //     const id = entry.id;
+        //     window.location.href = `content-detail.html?id=${id}`;
+        // });
+
+        api.fetchContentDetails(entry.id).then((contentDetails) => {
+            const isImageAvailable = checkImageSource(contentDetails.Poster);
+            const posterUrl = isImageAvailable ? contentDetails.Poster : 'public/images/general-placeholder.jpg';
+            img.src = posterUrl;
+            img.alt = contentDetails.Title;
+            img.title = contentDetails.Title;
+
+            // Add click event listener to navigate to content detail page
+            card.addEventListener('click', () => {
+                const type = contentDetails.Type;
+                const id = entry.id;    // Todo: Use contentDetails.imdbID instead of entry.id if available
+                window.location.href = `content-detail.html?id=${id}&type=${type}`;
+            });
+        })
 
         containerElement.appendChild(card);
     });
 }
 
-const renderContentCardsWithRuntimeAndSeasons = (containerElement, entries, currentPage, perPage) => {
+const renderContentCardsWithRuntimeAndSeasons = async (containerElement, entries, currentPage, perPage) => {
     renderContentCards(containerElement, entries, currentPage, perPage);
 
     const cards = containerElement.querySelectorAll('.content-card');
@@ -297,30 +312,31 @@ const renderContentCardsWithRuntimeAndViews = (containerElement, entries, curren
 }
 
 // Render the trailers in the carousel
-const renderTrailers = (carousel, trailers, currentPage, perPage) => {
+const renderTrailers = async (carousel, trailers, currentPage, perPage) => {
     const trailer = trailers.slice((currentPage - 1) * perPage, trailers.length < currentPage * perPage ? trailers.length : currentPage * perPage)[0];
+    const trailerInfo = await api.fetchContentDetails(trailer.id);
     const trailerTitle = carousel.querySelector('.trailer-title');
-    trailerTitle.textContent = trailer.title;
+    trailerTitle.textContent = trailerInfo.Title;
 
     const trailerDescription = carousel.querySelector('.trailer-description');
-    trailerDescription.textContent = trailer.description;
+    trailerDescription.textContent = trailerInfo.Plot;
 
     const playButton = carousel.querySelector('.play-button');
     playButton.onclick = () => {
         // Implement the logic to play the trailer video
-        console.log(`Playing trailer: ${trailer.title}`);
+        console.log(`Playing trailer: ${trailerInfo.Title}`);
     };
 
     const addToWatchlistButton = carousel.querySelector('.add-to-watch-list-button');
     addToWatchlistButton.onclick = () => {
         // Implement the logic to add the trailer to the watchlist
-        console.log(`Added to watchlist: ${trailer.title}`);
+        console.log(`Added to watchlist: ${trailerInfo.Title}`);
     };
 
     const likeButton = carousel.querySelector('.like-button');
     likeButton.onclick = () => {
         // Implement the logic to like the trailer
-        console.log(`Liked trailer: ${trailer.title}`);
+        console.log(`Liked trailer: ${trailerInfo.Title}`);
     };
 
     const muteButton = carousel.querySelector('.mute-button');
@@ -335,10 +351,12 @@ const renderTrailers = (carousel, trailers, currentPage, perPage) => {
             muteButton.querySelector('img[alt="Mute"]').classList.remove('hidden');
         }
         // Implement the logic to mute/unmute the trailer
-        console.log(`Toggled mute for trailer: ${trailer.title}`);
+        console.log(`Toggled mute for trailer: ${trailerInfo.Title}`);
     };
+    const isImageAvailable = await checkImageSource(trailerInfo.Poster);
+    const trailerPosterUrl = isImageAvailable ? trailerInfo.Poster : 'public/images/general-placeholder.jpg';
 
-    carousel.style.backgroundImage = `linear-gradient(to bottom, rgba(20, 20, 20, 0), rgba(20, 20, 20, 1)), url(${trailer.poster})`;
+    carousel.style.backgroundImage = `linear-gradient(to bottom, rgba(20, 20, 20, 0), rgba(20, 20, 20, 1)), url(${trailerPosterUrl})`;
     carousel.style.backgroundSize = 'cover';
     carousel.style.backgroundPosition = 'center';
     carousel.style.backgroundClip = 'padding-box';
@@ -365,8 +383,26 @@ const addRuntimeToCard = (cardInfoContainer, content) => {
     runtimeIcon.alt = 'Runtime';
     runtime.appendChild(runtimeIcon);
     const runtimeText = document.createElement('span');
-    runtimeText.textContent = content.runtime;
+    // runtimeText.textContent = content.runtime;
     runtime.appendChild(runtimeText);
+    api.fetchContentDetails(content.id).then(contentDetails => {
+        let runtimeTextValue = contentDetails.Runtime;
+        if (runtimeTextValue.match(/(\d+)\sh\s*(\d+)\smin/)) {
+            const [_, hours, minutes] = runtimeTextValue.match(/(\d+)\sh\s*(\d+)\smin/);
+            runtimeText.textContent = `${hours}h ${minutes}min`;
+        } else if (runtimeTextValue.match(/(\d+).*min/)) {
+            const minutes = parseInt(runtimeTextValue.match(/(\d+).*min/)[1], 10);
+            const hours = Math.floor(minutes / 60);
+            const remainingMinutes = minutes % 60;
+            if (hours > 0) {
+                runtimeText.textContent = `${hours}h ${remainingMinutes}min`;
+            } else {
+                runtimeText.textContent = `${remainingMinutes}min`;
+            }
+        } else {
+            runtimeText.textContent = runtimeTextValue; // Fallback to the original value if no match
+        }
+    });
 
     cardInfoContainer.appendChild(runtime);
 }
@@ -379,7 +415,10 @@ const addSeasonsToCard = (cardInfoContainer, content) => {
     seasonsIcon.alt = 'Seasons';
     seasons.appendChild(seasonsIcon);
     const seasonsText = document.createElement('span');
-    seasonsText.textContent = content.numberOfSeasons + ' Seasons';
+    // seasonsText.textContent = content.numberOfSeasons + ' Seasons';
+    api.fetchContentDetails(content.id).then(contentDetails => {
+        seasonsText.textContent = contentDetails.totalSeasons + ' Seasons';
+    });
     seasons.appendChild(seasonsText);
 
     cardInfoContainer.appendChild(seasons);
@@ -392,11 +431,14 @@ const addReleaseDateToCard = (cardInfoContainer, content) => {
     releaseDatePrefix.textContent = 'Released at ';
 
     const releaseDateText = document.createElement('span');
-    releaseDateText.textContent = content.releaseDate;
+    // releaseDateText.textContent = content.releaseDate;
     releaseDateText.style.color = "#bfbfbf";
 
     releaseDate.appendChild(releaseDatePrefix);
     releaseDate.appendChild(releaseDateText);
+    api.fetchContentDetails(content.id).then(contentDetails => {
+        releaseDateText.textContent = contentDetails.Released;
+    });
 
     cardInfoContainer.appendChild(releaseDate);
 }
@@ -409,15 +451,23 @@ const addViewsToCard = (cardInfoContainer, content) => {
     viewsIcon.alt = 'Views';
     views.appendChild(viewsIcon);
     const viewsText = document.createElement('span');
-    viewsText.textContent = content.views;
+    // viewsText.textContent = content.views;
     views.appendChild(viewsText);
+
+    api.fetchContentDetails(content.id).then(contentDetails => {
+        // As the views is not directly available in OMDB API, use the imdbVotes as a proxy for views
+        const views = contentDetails.imdbVotes ? parseInt(contentDetails.imdbVotes.replace(/,/g, '')) : 0;
+        let formattedViews = formatNumberWithUnits(views);
+        viewsText.textContent = `${formattedViews}`;
+    });
 
     cardInfoContainer.appendChild(views);
 }
 
-const addRatingToCard = (cardInfoContainer, content) => {
-    const starRating = content.starRating;
-    const ratedBy = content.ratedBy;
+const addRatingToCard = async (cardInfoContainer, content) => {
+    const contentDetails = await api.fetchContentDetails(content.id);
+    const starRating = (contentDetails.imdbRating ? parseFloat(contentDetails.imdbRating) : 0) / 2; // Convert to a 5-star scale
+    const ratedBy = contentDetails.imdbVotes ? parseInt(contentDetails.imdbVotes.replace(/,/g, '')) : 0;
 
     const rating = document.createElement('div');
     rating.classList.add('content-rating', 'content-info');
@@ -439,22 +489,27 @@ const addRatingToCard = (cardInfoContainer, content) => {
 
     const ratedByText = document.createElement('span');
     ratedByText.textContent = `(${ratedBy})`;
-    const units = ['K', 'M', 'B', 'T'];
-    let formattedRatedBy = ratedBy;
-    let unitIndex = -1;
-    while (formattedRatedBy >= 1000 && unitIndex < units.length - 1) {
-        formattedRatedBy /= 1000;
-        unitIndex++;
-    }
-    if (unitIndex >= 0) {
-        formattedRatedBy = formattedRatedBy.toFixed(1) + units[unitIndex];
-    }
+    let formattedRatedBy = formatNumberWithUnits(ratedBy);
     ratedByText.textContent = `${formattedRatedBy}`;
 
     rating.appendChild(starContainer);
     rating.appendChild(ratedByText);
 
     cardInfoContainer.appendChild(rating);
+}
+
+const formatNumberWithUnits = (number) => {
+    const units = ['K', 'M', 'B', 'T'];
+    let formattedNumber = number;
+    let unitIndex = -1;
+    while (formattedNumber >= 1000 && unitIndex < units.length - 1) {
+        formattedNumber /= 1000;
+        unitIndex++;
+    }
+    if (unitIndex >= 0) {
+        formattedNumber = formattedNumber.toFixed(1) + units[unitIndex];
+    }
+    return formattedNumber;
 }
 
 const tabButtons = document.querySelectorAll('.tab .tab-button');
