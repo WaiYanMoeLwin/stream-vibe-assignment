@@ -4,13 +4,13 @@ import { menuToggle, renderBackgroundMashup, renderGenres, renderPagination } fr
 const renderPage = async () => {
     const [
         moviesAndShowsData,
-        genresData,
+        contentListsData,
         devicesData,
         faqData,
         pricingPlansData
     ] = await Promise.all([
         api.fetchMoviesAndShows(),
-        api.fetchGenres(),
+        api.fetchContentLists(),
         api.fetchDevices(),
         api.fetchFAQs(),
         api.fetchPricingPlans()
@@ -34,6 +34,13 @@ const renderPage = async () => {
     renderBackgroundMashup(backgroundMashup, moviesAndShowsData, 36);
 
     // Render the genres
+    const genresData = contentListsData.genres.map((genre) => {
+        return {
+            id: genre.id,
+            name: genre.name,
+            items: [...genre.movie, ...genre.show]
+        }
+    });
     const genresElement = document.querySelector('#categories .category-cards');
     const paginationElement = document.querySelector('#categories .pagination');
     const currentPage = 1;

@@ -1,8 +1,0 @@
-{
-  "section": "new-releases",
-  "type": "movie",
-  "items": [
-    { "id": "thor-love-and-thunder", "type": "movie", "title": "Thor: Love and Thunder" },
-    { "id": "avengers-endgame", "type": "movie", "title": "Avengers: Endgame" }
-  ]
-}

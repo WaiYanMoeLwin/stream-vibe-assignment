@@ -4,31 +4,11 @@ import { checkImageSource, menuToggle, renderBackgroundMashup, renderGenres, ren
 const renderPage = async () => {
     // Fetch the data for movies and shows, genres, trending, new releases, and must-watch content
     const [
-        trailersResponse,
         moviesAndShows,
-        movieGenresResponse,
-        showGenresResponse,
-        popularMoviesResponse,
-        popularShowsResponse,
-        trendingMoviesResponse,
-        trendingShowsResponse,
-        newReleasesMoviesResponse,
-        newReleasesShowsResponse,
-        mustWatchMoviesResponse,
-        mustWatchShowsResponse
+        contentListsResponse
     ] = await Promise.all([
-        api.fetchTrailers(),
         api.fetchMoviesAndShows(),
-        api.fetchGenres('movies'),
-        api.fetchGenres('shows'),
-        api.fetchPopularGenres('movies'),
-        api.fetchPopularGenres('shows'),
-        api.fetchTrendingNow('movies'),
-        api.fetchTrendingNow('shows'),
-        api.fetchNewReleases('movies'),
-        api.fetchNewReleases('shows'),
-        api.fetchMustWatch('movies'),
-        api.fetchMustWatch('shows')
+        api.fetchContentLists()
     ]);
 
     // Render the menu toggle functionality
@@ -45,14 +25,15 @@ const renderPage = async () => {
     renderBackgroundMashup(mashupContainer, moviesAndShows);
 
     // Render the trailers carousel
-    const trailers = trailersResponse.items;
+    const trailers = contentListsResponse.trailers;
     
     const carousel = document.querySelector('#trailers-carousel');
     const paginationElement = carousel.querySelector('.pagination');
     renderPagination(paginationElement, trailers, 1, 1, carousel, renderTrailers);
 
     // Render the movie genres section
-    const movieGenres = movieGenresResponse.genres;
+    const genres = contentListsResponse.genres;
+    const movieGenres = genres.map(genre => ({ id: genre.id, name: genre.name, items: genre.movie }));
     
     const moviesGenresSection = document.querySelector('#movies-genres');
     const paginationElementMovies = moviesGenresSection.querySelector('.pagination');
@@ -69,7 +50,7 @@ const renderPage = async () => {
     renderPagination(paginationElementMovies, movieGenres, 1, perPageMovies, mainElementMovies, renderGenres);
     
     // Render the show genres section
-    const showGenres = showGenresResponse.genres;
+    const showGenres = genres.map(genre => ({ id: genre.id, name: genre.name, items: genre.show }));
 
     const showsGenresSection = document.querySelector('#shows-genres');
     const paginationElementShows = showsGenresSection.querySelector('.pagination');
@@ -86,7 +67,7 @@ const renderPage = async () => {
     renderPagination(paginationElementShows, showGenres, 1, perPageShows, mainElementShows, renderGenres);
 
     // Render the movie and show genres sections for popular content
-    const popularMovies = popularMoviesResponse.genres;
+    const popularMovies = genres.map(genre => ({ id: genre.id, name: genre.name, items: (genre.movie.length > 10 ? genre.movie.slice(0, 10) : genre.movie) }));
 
     const popularMoviesSection = document.querySelector('#movies-popular-genres');
     const paginationElementPopularMovies = popularMoviesSection.querySelector('.pagination');
@@ -98,7 +79,7 @@ const renderPage = async () => {
     }
     renderPagination(paginationElementPopularMovies, popularMovies, 1, perPagePopularMovies, mainElementPopularMovies, renderPopularGenres);
 
-    const popularShows = popularShowsResponse.genres;
+    const popularShows = genres.map(genre => ({ id: genre.id, name: genre.name, items: (genre.show.length > 10 ? genre.show.slice(0, 10) : genre.show) }));
     const popularShowsSection = document.querySelector('#shows-popular-genres');
     const paginationElementPopularShows = popularShowsSection.querySelector('.pagination');
     const mainElementPopularShows = popularShowsSection.querySelector('.popular-genre-cards');
@@ -109,7 +90,7 @@ const renderPage = async () => {
     renderPagination(paginationElementPopularShows, popularShows, 1, perPagePopularShows, mainElementPopularShows, renderPopularGenres);
 
     // Render the trending movies and shows sections
-    const trendingMovies = trendingMoviesResponse.items;
+    const trendingMovies = contentListsResponse.trendingNow.movie;
     const trendingMoviesSection = document.querySelector('#movies-trending');
     const paginationElementTrendingMovies = trendingMoviesSection.querySelector('.pagination');
     const mainElementTrendingMovies = trendingMoviesSection.querySelector('.trending-cards');
@@ -122,7 +103,7 @@ const renderPage = async () => {
     }
     renderPagination(paginationElementTrendingMovies, trendingMovies, 1, perPageTrendingMovies, mainElementTrendingMovies, renderContentCardsWithRuntimeAndViews);
 
-    const trendingShows = trendingShowsResponse.items;
+    const trendingShows = contentListsResponse.trendingNow.show;
     const trendingShowsSection = document.querySelector('#shows-trending');
     const paginationElementTrendingShows = trendingShowsSection.querySelector('.pagination');
     const mainElementTrendingShows = trendingShowsSection.querySelector('.trending-cards');
@@ -133,7 +114,7 @@ const renderPage = async () => {
     renderPagination(paginationElementTrendingShows, trendingShows, 1, perPageTrendingShows, mainElementTrendingShows, renderContentCardsWithRuntimeAndSeasons);
 
     // Render the new releases movies and shows sections
-    const newReleasesMovies = newReleasesMoviesResponse.items;
+    const newReleasesMovies = contentListsResponse.newReleases.movie;
     const newReleasesMoviesSection = document.querySelector('#movies-new-releases');
     const paginationElementNewReleasesMovies = newReleasesMoviesSection.querySelector('.pagination');
     const mainElementNewReleasesMovies = newReleasesMoviesSection.querySelector('.new-releases-cards');
@@ -146,7 +127,7 @@ const renderPage = async () => {
     }
     renderPagination(paginationElementNewReleasesMovies, newReleasesMovies, 1, perPageNewReleasesMovies, mainElementNewReleasesMovies, renderContentCardsWithReleaseDate);
 
-    const newReleasesShows = newReleasesShowsResponse.items;
+    const newReleasesShows = contentListsResponse.newReleases.show;
     const newReleasesShowsSection = document.querySelector('#shows-new-releases');
     const paginationElementNewReleasesShows = newReleasesShowsSection.querySelector('.pagination');
     const mainElementNewReleasesShows = newReleasesShowsSection.querySelector('.new-releases-cards');
@@ -157,7 +138,7 @@ const renderPage = async () => {
     renderPagination(paginationElementNewReleasesShows, newReleasesShows, 1, perPageNewReleasesShows, mainElementNewReleasesShows, renderContentCardsWithRuntimeAndSeasons);
 
     // Render the must-watch movies and shows sections
-    const mustWatchMovies = mustWatchMoviesResponse.items;
+    const mustWatchMovies = contentListsResponse.mustWatch.movie;
     const mustWatchMoviesSection = document.querySelector('#movies-popular');
     const paginationElementMustWatchMovies = mustWatchMoviesSection.querySelector('.pagination');
     const mainElementMustWatchMovies = mustWatchMoviesSection.querySelector('.must-watch-cards');
@@ -167,7 +148,7 @@ const renderPage = async () => {
     }
     renderPagination(paginationElementMustWatchMovies, mustWatchMovies, 1, perPageMustWatchMovies, mainElementMustWatchMovies, renderContentCardsWithRuntimeAndRating);
 
-    const mustWatchShows = mustWatchShowsResponse.items;
+    const mustWatchShows = contentListsResponse.mustWatch.show;
     const mustWatchShowsSection = document.querySelector('#shows-popular');
     const paginationElementMustWatchShows = mustWatchShowsSection.querySelector('.pagination');
     const mainElementMustWatchShows = mustWatchShowsSection.querySelector('.must-watch-cards');
@@ -227,7 +208,7 @@ const renderContentCards = async (containerElement, entries, currentPage, perPag
         //     window.location.href = `content-detail.html?id=${id}`;
         // });
 
-        api.fetchContentDetails(entry.id).then((contentDetails) => {
+        api.fetchContentDetails(entry).then((contentDetails) => {
             const isImageAvailable = checkImageSource(contentDetails.Poster);
             const posterUrl = isImageAvailable ? contentDetails.Poster : 'public/images/general-placeholder.jpg';
             img.src = posterUrl;
@@ -237,7 +218,7 @@ const renderContentCards = async (containerElement, entries, currentPage, perPag
             // Add click event listener to navigate to content detail page
             card.addEventListener('click', () => {
                 const type = contentDetails.Type;
-                const id = entry.id;    // Todo: Use contentDetails.imdbID instead of entry.id if available
+                const id = entry;    // Todo: Use contentDetails.imdbID instead of entry.id if available
                 window.location.href = `content-detail.html?id=${id}&type=${type}`;
             });
         })
@@ -371,7 +352,7 @@ const addRuntimeToCard = (cardInfoContainer, content) => {
     const runtimeText = document.createElement('span');
     // runtimeText.textContent = content.runtime;
     runtime.appendChild(runtimeText);
-    api.fetchContentDetails(content.id).then(contentDetails => {
+    api.fetchContentDetails(content).then(contentDetails => {
         let runtimeTextValue = contentDetails.Runtime;
         if (runtimeTextValue.match(/(\d+)\sh\s*(\d+)\smin/)) {
             const [_, hours, minutes] = runtimeTextValue.match(/(\d+)\sh\s*(\d+)\smin/);
@@ -402,7 +383,7 @@ const addSeasonsToCard = (cardInfoContainer, content) => {
     seasons.appendChild(seasonsIcon);
     const seasonsText = document.createElement('span');
     // seasonsText.textContent = content.numberOfSeasons + ' Seasons';
-    api.fetchContentDetails(content.id).then(contentDetails => {
+    api.fetchContentDetails(content).then(contentDetails => {
         seasonsText.textContent = contentDetails.totalSeasons + ' Seasons';
     });
     seasons.appendChild(seasonsText);
@@ -422,7 +403,7 @@ const addReleaseDateToCard = (cardInfoContainer, content) => {
 
     releaseDate.appendChild(releaseDatePrefix);
     releaseDate.appendChild(releaseDateText);
-    api.fetchContentDetails(content.id).then(contentDetails => {
+    api.fetchContentDetails(content).then(contentDetails => {
         releaseDateText.textContent = contentDetails.Released;
     });
 
@@ -440,7 +421,7 @@ const addViewsToCard = (cardInfoContainer, content) => {
     // viewsText.textContent = content.views;
     views.appendChild(viewsText);
 
-    api.fetchContentDetails(content.id).then(contentDetails => {
+    api.fetchContentDetails(content).then(contentDetails => {
         // As the views is not directly available in OMDB API, use the imdbVotes as a proxy for views
         const views = contentDetails.imdbVotes ? parseInt(contentDetails.imdbVotes.replace(/,/g, '')) : 0;
         let formattedViews = formatNumberWithUnits(views);
@@ -451,7 +432,7 @@ const addViewsToCard = (cardInfoContainer, content) => {
 }
 
 const addRatingToCard = async (cardInfoContainer, content) => {
-    const contentDetails = await api.fetchContentDetails(content.id);
+    const contentDetails = await api.fetchContentDetails(content);
     const starRating = (contentDetails.imdbRating ? parseFloat(contentDetails.imdbRating) : 0) / 2; // Convert to a 5-star scale
     const ratedBy = contentDetails.imdbVotes ? parseInt(contentDetails.imdbVotes.replace(/,/g, '')) : 0;
 

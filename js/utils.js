@@ -101,7 +101,9 @@ export const renderGenres = (genresContainer, genres, currentPage, perPage) => {
     // Clear existing genres
     genresContainer.innerHTML = '';
 
-    const genresToRender = genres.slice((currentPage - 1) * perPage, currentPage * perPage);
+    const genresToRender = genres
+        .slice((currentPage - 1) * perPage, (currentPage * perPage) < genres.length ? (currentPage * perPage) : genres.length)
+        .filter(genre => genre.items && genre.items.length > 0); // Filter out genres with no items
     genresToRender.forEach((genre) => {
         const genreItem = document.createElement('div');
         genreItem.classList.add('genre-item-container');
@@ -131,7 +133,7 @@ export const renderGenres = (genresContainer, genres, currentPage, perPage) => {
             // img.alt = item.title;
             imageContainer.appendChild(img);
             imagesContainer.appendChild(imageContainer);
-            api.fetchContentDetails(item.id).then(contentDetails => {
+            api.fetchContentDetails(item).then(contentDetails => {
                 img.src = contentDetails.Poster;
                 img.alt = contentDetails.Title;
             });

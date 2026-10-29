@@ -1,9 +1,0 @@
-{
-  "section": "must-watch",
-  "type": "movie",
-  "ratingScale": 5,
-  "ratingStep": 0.5,
-  "items": [
-    { "id": "avengers-endgame", "type": "movie", "title": "Avengers: Endgame" }
-  ]
-}

@@ -1,8 +1,0 @@
-{
-  "section": "trending-now",
-  "type": "movie",
-  "items": [
-    { "rank": 1, "id": "thor-love-and-thunder", "type": "movie", "title": "Thor: Love and Thunder" },
-    { "rank": 2, "id": "avengers-endgame", "type": "movie", "title": "Avengers: Endgame" }
-  ]
-}
