@@ -819,6 +819,9 @@ footer .footer-info a:hover {
   .content-container .content-cards .content-card .content-image-container {
     margin-bottom: 1.2rem;
   }
+  .content-container#movies .new-releases-cards, .content-container#movies .trending-cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 @media screen and (max-width: 1023px) {
   .pagination {
@@ -902,7 +905,7 @@ footer .footer-info a:hover {
   .content-container .genre-cards .genre-item-container, .content-container .popular-genre-cards .genre-item-container {
     min-width: 18rem;
     max-width: 18rem;
-    height: 20rem;
+    height: 22rem;
     padding: 2rem;
     box-sizing: border-box;
   }
@@ -919,7 +922,7 @@ footer .footer-info a:hover {
   .content-container .popular-genre-cards .genre-item-container {
     min-width: 23rem;
     max-width: 23rem;
-    height: 27rem;
+    height: 28rem;
   }
   .content-container .popular-genre-cards .genre-item-container .genre-images-container {
     height: 16rem;
@@ -940,28 +943,28 @@ footer .footer-info a:hover {
     gap: 1.5rem;
   }
   .content-container .content-cards .content-card {
-    min-width: 18rem;
-    max-width: 18rem;
-    height: 28rem;
+    min-width: 20rem;
+    max-width: 20rem;
+    height: 34rem;
     padding: 1.2rem;
   }
   .content-container .content-cards .content-card .content-image-container {
     margin-bottom: 1.2rem;
   }
   .content-container .content-cards.must-watch-cards .content-card {
-    min-width: 24rem;
-    max-width: 24rem;
-    height: 36rem;
+    min-width: 25rem;
+    max-width: 25rem;
+    height: 41rem;
   }
   .content-container#shows .content-cards .content-card {
     min-width: 24rem;
     max-width: 24rem;
-    height: 36rem;
+    height: 39rem;
   }
   .content-container#shows .content-cards.must-watch-cards .content-card {
     min-width: 25rem;
     max-width: 25rem;
-    height: 37rem;
+    height: 41rem;
   }
 }
 @media screen and (max-width: 767px) {

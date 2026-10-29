@@ -108,6 +108,9 @@ const renderPage = async () => {
     const paginationElementTrendingShows = trendingShowsSection.querySelector('.pagination');
     const mainElementTrendingShows = trendingShowsSection.querySelector('.trending-cards');
     let perPageTrendingShows = 4;
+    if (window.innerWidth < 1439) {
+        perPageTrendingShows = 3;
+    }
     if (window.innerWidth < 1023) {
         perPageTrendingShows = trendingShows.length; // Show all shows on smaller screens
     }
@@ -132,6 +135,9 @@ const renderPage = async () => {
     const paginationElementNewReleasesShows = newReleasesShowsSection.querySelector('.pagination');
     const mainElementNewReleasesShows = newReleasesShowsSection.querySelector('.new-releases-cards');
     let perPageNewReleasesShows = 4;
+    if (window.innerWidth < 1439) {
+        perPageNewReleasesShows = 3;
+    }
     if (window.innerWidth < 1023) {
         perPageNewReleasesShows = newReleasesShows.length; // Show all shows on smaller screens
     }
@@ -143,6 +149,9 @@ const renderPage = async () => {
     const paginationElementMustWatchMovies = mustWatchMoviesSection.querySelector('.pagination');
     const mainElementMustWatchMovies = mustWatchMoviesSection.querySelector('.must-watch-cards');
     let perPageMustWatchMovies = 4;
+    if (window.innerWidth < 1439) {
+        perPageMustWatchMovies = 3;
+    }
     if (window.innerWidth < 1023) {
         perPageMustWatchMovies = mustWatchMovies.length; // Show all movies on smaller screens
     }
